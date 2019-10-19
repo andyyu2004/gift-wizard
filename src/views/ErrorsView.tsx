@@ -5,11 +5,13 @@ import { RouteComponentProps } from '@reach/router';
 //     errorCode: number
 // }
 
-type PropType = { errorCode: number }
+type PropType = RouteComponentProps & { 
+  errorCode: number 
+}
 
-const ErrorsView: React.FC<RouteComponentProps<PropType>> = props => {
-    const { errorCode } = props;
-    return <h3>Error: {errorCode}</h3>
+const ErrorsView: React.FC<PropType> = props => {
+  const { errorCode } = props;
+  return <h3>Error: {errorCode}</h3>
 }
 
 export default ErrorsView;

@@ -1,0 +1,7 @@
+.cell {
+    display: inline-block;
+}
+
+.cell .celltext {
+    text-align: center;
+}

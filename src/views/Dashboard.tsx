@@ -8,13 +8,13 @@ type PropType = RouteComponentProps & StateProps;
 
 const Dashboard: React.FC<PropType> = props => {
   const { userType } = props;
-
+  
   useEffect(() => {
     // Just navigate to home if not authorized
     console.log("User Type", userType);
     if (userType === UserType.Regular) navigate('/'); 
     else if (userType === UserType.None) navigate('login');
-  }, []);
+  }, [userType]);
 
   return (
     <div>

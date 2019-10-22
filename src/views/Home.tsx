@@ -1,32 +1,31 @@
 import React from 'react'
 import { RouteComponentProps } from '@reach/router';
-import { Header } from '../components';
-import { AppState } from '../reducers';
-import { UserType } from '../types';
-import { connect } from 'react-redux';
+import { Header, CellRow, Cell } from '../components';
+import create_img from '../images/create_icon.svg';
+import list_icon from '../images/list_icon.svg';
 
-type PropType = RouteComponentProps & StateProps;
 
-const Home: React.FC<PropType> = props => {
-  const { userType } = props;
+const Home: React.FC<RouteComponentProps> = props => {
   return (
-    <div>
-      <Header 
-        title="Gift Wizard"
-        subtitle="Struggling to find a gift for your loved ones? 
-          Congracts! You have found the place for that!"
-        displayLogin={userType === UserType.None}/>
-    </div>
+    <>
+      <CellRow 
+        title="Looking for a gift for him/her?"
+        subtitle="By sending him/her an anonymous questionnaire, get the best 'hints'!">
+        <Cell image={create_img} text="Create New"/>
+        <Cell image={list_icon} text="Random icon to check layout a little"/>
+        <Cell image={create_img} text="More placeholder"/>
+        <Cell image={list_icon} text="And more..."/>
+      </CellRow>
+      <CellRow 
+        title="Build up your profile"
+        subtitle="To help out your family/friends picking a gift for you!">
+        <Cell image={create_img} text="PLACEHOLDERS!!!"/>
+        <Cell image={list_icon} text="Random icon to check layout a little"/>
+        <Cell image={create_img} text="More placeholder"/>
+        <Cell image={list_icon} text="And more..."/>
+      </CellRow>
+    </>
   )
 };
 
-type StateProps = { 
-  userType: UserType;
-}
-
-const mapStateToProps = (state: AppState) => {
-  const { userType } = state;
-  return { userType };
-};
-
-export default connect(mapStateToProps, null)(Home);
+export default Home;

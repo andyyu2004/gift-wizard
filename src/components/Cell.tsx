@@ -1,8 +1,8 @@
 import React from 'react'
-
+import './Cell.css';
 
 type PropType = {
-  image: string, // path to image
+  image?: string, // path to image
   text?: string,
 }
 
@@ -13,7 +13,10 @@ type PropType = {
 const Cell: React.FC<PropType> = props => {
   const { image, text } = props;
   return (
-    <div></div>
+    <div className="cell">
+      <img src={image} alt="img" />
+      <h6 className="celltext">{text}</h6>
+    </div>
   );
 }
 

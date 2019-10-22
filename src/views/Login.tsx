@@ -1,5 +1,5 @@
 import React from 'react'
-import { RouteComponentProps, navigate } from '@reach/router';
+import { RouteComponentProps, navigate, Redirect } from '@reach/router';
 import { Header } from '../components';
 import { Form, Button } from 'react-bootstrap';
 import { useState, Dispatch } from 'react';
@@ -15,7 +15,7 @@ type PropType =
   & RouteComponentProps;
 
 const LoginView: React.FC<PropType> = props => {
-  const { setUser } = props;
+  const { setUser, navigate } = props;
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -44,8 +44,8 @@ const LoginView: React.FC<PropType> = props => {
 
   return (
     <>
-      <Header title="Gift Wizard"/>
       <span>{error}</span>
+      <p>Login Details: user/user or admin/admin for now</p>
       <div className='input-group w-auto'>
         <Form>
           <Form.Group controlId="formBasicEmail">

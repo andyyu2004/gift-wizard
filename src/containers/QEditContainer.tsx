@@ -7,6 +7,7 @@ import shortanswericon from '../images/written_type_icon.png';
 import staricon from '../images/star_icon.png';
 import checkboxicon from '../images/multiple_select_icon.png';
 import questionmarkicon from '../images/question_mark.png';
+import './QEditContainer.css';
 
 enum QuestionType {
   MultiChoice = "Multiple Choice",

@@ -1,28 +1,17 @@
-import { Action, UpdateUserTypeAction } from "../actions";
-import { UserType } from "../types";
+import { combineReducers } from "redux";
+import themeReducer, { initialThemeState, ThemeState } from "./themeReducer";
+import userReducer, { initialUserState, UserState } from "./userReducer";
 
 
 export type AppState = {
-    userType: UserType
+    user: UserState,
+    theme: ThemeState,
 }
 
-const initialState: AppState = {
-    userType: UserType.None,
-};
-
-const rootReducer = (state: AppState = initialState, action: Action) => {
-    switch (action.type) {
-        case "UPDATE_USER_TYPE": {
-            const { userType } = action.payload;
-            return {
-                ...state,
-                userType: userType,
-            };
-        }
-        default: return state;
-    }
-    
-}
+const rootReducer = combineReducers({
+    user: userReducer,
+    theme: themeReducer,
+});
 
 export default rootReducer;
 

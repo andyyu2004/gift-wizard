@@ -5,3 +5,4 @@ export const updateUserType: (userType: UserType) => UpdateUserTypeAction = user
     type: "UPDATE_USER_TYPE",
     payload: { userType }
 });
+

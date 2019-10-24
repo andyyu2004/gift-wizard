@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 type PropType = RouteComponentProps;
 
 const Dashboard: React.FC<PropType> = props => {
-  const userType = useSelector<AppState, UserType>(state => state.userType);
+  const userType = useSelector<AppState, UserType>(state => state.user.userType);
   
   useEffect(() => {
     // Just navigate to home if not authorized

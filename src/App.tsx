@@ -15,7 +15,7 @@ import { Dashboard, ErrorsView, Home, LoginView, QCreate, ProfileView } from './
 const App: React.SFC = props => {
   const mainTitle = "Gift Wizard (plz style everything! :))";
   const mainSubtitle = "Struggling to find a gift for your loved ones? Congrats! You have found the place for that!";
-  const userType = useSelector((state: AppState) => state.userType);
+  const userType = useSelector((state: AppState) => state.user.userType);
   return (
     <>
       <Header 

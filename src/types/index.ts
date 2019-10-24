@@ -1,5 +1,7 @@
-import UserType from './UserType';
+export { default as UserType } from './UserType';
 
-export {
-    UserType,
-}
+export type Friend = {
+    name: string,
+    relationship: string,
+    picture: string,
+};

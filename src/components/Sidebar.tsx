@@ -10,7 +10,7 @@ type PropTypes = {
 const Sidebar: React.FC<PropTypes> = ({ img, text, entries }) => {
   return (
     <div className="sidebar">
-      <img src={img} />
+      <img src={img} alt="sidebarimage"/>
       <h6>{text}</h6>
       {entries && entries.map(([text, cb], i) => {
         return <h5 onClick={cb} key={i}>{text}</h5>

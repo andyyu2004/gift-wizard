@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { useSelector } from 'react-redux';
-import './CellRow.css';
 import { ThemeState } from '../reducers/themeReducer';
 import { AppState } from '../reducers';
 

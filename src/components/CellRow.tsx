@@ -17,10 +17,7 @@ const RowContainer = ({ title, subtitle, children }) => {
       color: theme.colorDark,
     },
     cellRow: {
-      borderStyle:"solid",
-      borderWidth:"3px",
-      borderColor: theme.colorLight,
-      borderRadius: "25px",
+      borderTop:"solid 2px #DCDCDC",
       padding: "30px",
       margin: "2px",
       minHeight: "300px",

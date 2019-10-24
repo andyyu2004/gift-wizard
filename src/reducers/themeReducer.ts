@@ -5,8 +5,9 @@ export interface ThemeState {
 }
 
 export const initialThemeState: ThemeState = {
-    
-}
+    "colorDark": "#66B3FF",
+    "colorLight": "#C4E1FF"
+};
 
 const themeReducer = (state: ThemeState = initialThemeState, action: Action) => {
     return state;

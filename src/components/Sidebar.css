@@ -1,7 +1,23 @@
 .sidebar {
     width: 250px;
-    background-color: #fafafa;
-    height: 100%;
+    background-color:#F0F0F0;
     text-align: center;
+    height: 100%;
 }
-    
+.tabs{
+    text-align: center;
+    height: 50px;
+    background-color:#ffffff;
+    padding:12.5px;
+    margin: 2px;
+}
+.user{
+    height: 250px;
+    margin-top:20px;
+}
+.tabText{
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+.userText{
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+}

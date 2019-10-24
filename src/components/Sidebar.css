@@ -4,20 +4,27 @@
     text-align: center;
     height: 100%;
 }
-.tabs{
+.tabs { 
     text-align: center;
     height: 50px;
     background-color:#ffffff;
     padding:12.5px;
     margin: 2px;
 }
-.user{
+
+.user {
     height: 250px;
     margin-top:20px;
 }
-.tabText{
+
+.tabText {
     font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
-.userText{
+
+.userText {
     font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.tabs:hover {
+    background-color: lightblue;
 }

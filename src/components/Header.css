@@ -2,3 +2,10 @@
     width: 30px;
 }
 
+#navbar-brand {
+    padding: 10px;
+}
+
+#navbar-brand:hover {
+    background-color: lightblue;
+}

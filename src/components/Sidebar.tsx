@@ -1,7 +1,5 @@
 import React from 'react'
 import "./Sidebar.css";
-import {Tab, Row, Nav} from 'react-bootstrap';
-
 
 type PropTypes = {
   img?: string,
@@ -13,17 +11,15 @@ const Sidebar: React.FC<PropTypes> = ({ img, text, entries }) => {
   return (
     <div className="sidebar">
       <div className="user">
-        <img src={img} alt="sidebarimage"/>
+        <img src={img} alt="sidebarimage" style={{padding: "10px"}}/>
         <h6 className="userText">{text}</h6>
       </div>
       
-      {entries && entries.map(([text, cb], i) => {
-        return (
+      {entries && entries.map(([text, cb], i) => (
         <div className="tabs" onClick={cb} key={i}>
           <h5 className="tabText">{text}</h5>
         </div>
-        )
-      })}
+      ))}
     </div>
     /*
     <div className="sidebar">

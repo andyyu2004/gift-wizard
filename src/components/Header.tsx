@@ -10,11 +10,10 @@ type PropTypes = {
   isLoggedIn?: boolean,
 }
 
-const Header: React.FC<PropTypes> = props => {
-  const { title, subtitle, isLoggedIn } = props;
+const Header: React.FC<PropTypes> = ({ title, subtitle, isLoggedIn }) => {
   return (
     <Navbar bg="light" variant="light">
-    <Navbar.Brand onClick={() => navigate("/")}><b>{title}</b></Navbar.Brand>
+    <Navbar.Brand id="navbar-brand" onClick={() => navigate("/")}><b>{title}</b></Navbar.Brand>
     <Navbar.Text onClick={() => navigate("/")}>{subtitle}</Navbar.Text>
     <Nav className="mr-auto">
       {/* <Nav.Link href="#home">Home</Nav.Link>*/}

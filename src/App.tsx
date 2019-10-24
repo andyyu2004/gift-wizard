@@ -11,6 +11,7 @@ import { Dashboard, ErrorsView, Home, LoginView, QCreate, ProfileView } from './
  * Putting Header in the top level as the header should be the same throughout all views?
  * @param props 
  */
+
 const App: React.SFC = props => {
   const mainTitle = "GiftWizards";
   const mainSubtitle = "Struggling to find a gift for your loved ones? Congrats! You have found the place for that!";
@@ -21,7 +22,7 @@ const App: React.SFC = props => {
         title={mainTitle}
         subtitle={mainSubtitle}
         isLoggedIn={userType !== UserType.None} />
-      <Router style={{height: "100%"}}>
+      <Router>
         <Home path="/" />
         <Dashboard path="admin" />
         <QCreate path="create" />

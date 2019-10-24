@@ -9,8 +9,7 @@ type PropType = RouteComponentProps & {
   errorCode: number 
 }
 
-const ErrorsView: React.FC<PropType> = props => {
-  const { errorCode } = props;
+const ErrorsView: React.FC<PropType> = ({ errorCode }) => {
   return <h3>Error: {errorCode}</h3>
 }
 

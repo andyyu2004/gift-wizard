@@ -1,26 +1,20 @@
-import React from 'react'
-import { RouteComponentProps, navigate, Redirect } from '@reach/router';
-import { Header } from '../components';
-import { Form, Button } from 'react-bootstrap';
-import { useState, Dispatch } from 'react';
-import { connect } from 'react-redux';
-import { AppState } from '../reducers';
-import { Action, UpdateUserTypeAction } from '../actions';
+import { RouteComponentProps } from '@reach/router';
+import React, { useCallback, useState } from 'react';
+import { Button, Form } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { updateUserType } from '../actions/actionCreaters';
 import { UserType } from '../types';
 
 
-type PropType = 
-  ReturnType<typeof mapStateToProps> 
-  & ReturnType<typeof mapDispatchToProps>
-  & RouteComponentProps;
-
-const LoginView: React.FC<PropType> = props => {
-  const { setUser, navigate } = props;
+const LoginView: React.FC<RouteComponentProps> = ({ navigate }) => {  
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  
+
+  const dispatch = useDispatch();
+
+
   const handleLoginSubmission = e => {
     e.preventDefault();
     console.log('submitted credentials', email, password);
@@ -30,8 +24,10 @@ const LoginView: React.FC<PropType> = props => {
     else setError("Invalid credentials");  
   }
 
+  const setUserType = useCallback((userType: UserType) => dispatch(updateUserType(userType)), [dispatch]);
+
   const login = (userType: UserType) => {
-    setUser(userType);
+    setUserType(userType);
     switch (userType) {
       case UserType.Admin:
         navigate("/admin");
@@ -44,7 +40,7 @@ const LoginView: React.FC<PropType> = props => {
 
   return (
     <>
-      <span>{error}</span>
+      <span style={{color: "red"}}>{error}</span>
       <p>Login Details: user/user or admin/admin for now</p>
       <div className='input-group w-auto'>
         <Form>
@@ -77,24 +73,7 @@ const LoginView: React.FC<PropType> = props => {
   );
 }
 
-// type StateProps = (state: AppState) => {};
-const mapStateToProps = (state: AppState) => ({});
 
-const mapDispatchToProps = (dispatch: Dispatch<Action>) => {
-  return {
-    setUser: (userType: UserType) => {
-      const action: UpdateUserTypeAction = {
-        type: "UPDATE_USER_TYPE",
-        payload: { userType }
-      }
-      dispatch(action);
-    },
-  };
-}
-
-export default connect(
-  mapStateToProps, 
-  mapDispatchToProps
-)(LoginView);
+export default LoginView;
 
 

@@ -20,7 +20,7 @@ const Header: React.FC<PropTypes> = props => {
     </Nav>
     
   { isLoggedIn 
-      ? <img src={usericon} className="small-icon" onClick={() => console.log("User profile icon clicked")}/> 
+      ? <img src={usericon} className="small-icon" onClick={() => navigate("profile")}/> 
       : <Link to="/login">Log In/Sign Up</Link> } 
   </Navbar>
   )

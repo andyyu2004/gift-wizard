@@ -2,8 +2,7 @@
 
 import React from 'react'
 
-const RowContainer = props => {
-  const { title, subtitle, children } = props;
+const RowContainer = ({ title, subtitle, children }) => {
   return (
     <div>
       <h5>{title}</h5>

@@ -2,12 +2,12 @@ import React, { useEffect } from 'react'
 import { RouteComponentProps, navigate } from '@reach/router';
 import { AppState } from '../reducers';
 import { UserType } from '../types';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-type PropType = RouteComponentProps & StateProps;
+type PropType = RouteComponentProps;
 
 const Dashboard: React.FC<PropType> = props => {
-  const { userType } = props;
+  const userType = useSelector<AppState, UserType>(state => state.userType);
   
   useEffect(() => {
     // Just navigate to home if not authorized
@@ -23,11 +23,4 @@ const Dashboard: React.FC<PropType> = props => {
   );
 }
 
-type StateProps = { userType: UserType };
-
-const mapStateToProps = (state: AppState) => {
-  const { userType } = state;
-  return { userType };
-};
-
-export default connect(mapStateToProps, null)(Dashboard);
+export default Dashboard;

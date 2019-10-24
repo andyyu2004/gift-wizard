@@ -15,14 +15,14 @@ import { Dashboard, ErrorsView, Home, LoginView, QCreate, ProfileView } from './
 const App: React.SFC = props => {
   const mainTitle = "GiftWizards";
   const mainSubtitle = "Struggling to find a gift for your loved ones? Congrats! You have found the place for that!";
-  const userType = useSelector((state: AppState) => state.userType);
+  const userType = useSelector((state: AppState) => state.user.userType);
   return (
-    <>
+    <div className="App">
       <Header 
         title={mainTitle}
         subtitle={mainSubtitle}
         isLoggedIn={userType !== UserType.None} />
-      <Router>
+      <Router style={{height: "100%"}}>
         <Home path="/" />
         <Dashboard path="admin" />
         <QCreate path="create" />
@@ -30,7 +30,7 @@ const App: React.SFC = props => {
         <ProfileView path="profile" />
         <ErrorsView path="*" errorCode={404}/>
       </Router>
-    </>
+    </div>
   );
 }
 

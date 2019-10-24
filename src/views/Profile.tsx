@@ -39,7 +39,6 @@ const Profile = props => {
     [Subview.Settings]: <Settings />,
   };
 
-
   const [view, setView] = useState(Subview.PersonalProfile);
   const entries: [string, () => void][] = Object.values(Subview).map(subview => [subview, () => setView(subview)]);
   

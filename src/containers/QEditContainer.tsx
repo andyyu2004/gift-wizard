@@ -17,21 +17,28 @@ enum QuestionType {
   TrueFalse   = "True / False",
 }
 
-const typeImageMap = {
-  [QuestionType.MultiChoice]: multichoiceicon,
-  [QuestionType.Rank]: rankicon,
-  [QuestionType.ShortAnswer]: shortanswericon,
-  [QuestionType.RateOption]: staricon,
-  [QuestionType.Checkboxes]: checkboxicon,
-  [QuestionType.TrueFalse]: questionmarkicon,
-}
+/** TODO: Replace the paragraphs with the actual components */
+const typeImageMap = [
+  [QuestionType.MultiChoice, multichoiceicon, <p>Multichoice Question Component</p>], 
+  [QuestionType.Rank, rankicon, <p>Rank Question Component</p>],
+  [QuestionType.ShortAnswer, shortanswericon, <p>Short Answer Question Component</p>],
+  [QuestionType.RateOption, staricon, <p>Rate Question Component</p>],
+  [QuestionType.Checkboxes, checkboxicon, <p>Checkbox Question Component</p>],
+  [QuestionType.TrueFalse, questionmarkicon, <p>True False Question Component</p>],
+];
 
 const QEditContainer = props => {
   const [questions, setQuestions] = useState([]);
 
+  const addQuestion = question => {
+    const newQuestions = [...questions];
+    newQuestions.push(question);
+    setQuestions(newQuestions);
+  };
+
   return (
     <div className="flex-container">
-      <QuestionSelection questions={Object.entries(typeImageMap)} />
+      <QuestionSelection addQuestion={addQuestion} questions={typeImageMap} />
       <QEdit>{questions}</QEdit>
     </div>
   );

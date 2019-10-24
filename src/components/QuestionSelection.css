@@ -1,0 +1,21 @@
+.questions{
+    width: 20%;
+    background-color: #F0F0F0;
+    padding: 10px;
+    margin: 10px;
+}
+
+.question{
+    height: 60px;
+    border: solid;
+    border-width: 2px;
+    background-color: #FFFFFF;
+    padding-top: 14px;
+    padding-left: 25px;
+    margin: 15px;
+    border-color: #d0d0d0;
+}
+
+.qText{
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+}

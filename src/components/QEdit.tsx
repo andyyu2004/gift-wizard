@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import './QEdit.css'
 
 /** Questionnaire edit component */
 const QEdit = ({ children }) => {
   return (
-    <div style={{backgroundColor: "#dddddd"}}>
+    <div className= "edit" >
       Questionnaire Edit
       {children}
     </div>

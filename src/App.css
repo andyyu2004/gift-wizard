@@ -24,3 +24,9 @@
 .flex-container {
   display: flex;
 }
+
+/* Vertical flex */
+.v-flex-container {
+  display: flex;
+  flex-direction: column;
+}

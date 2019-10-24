@@ -4,6 +4,7 @@ import { Button, Form } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { updateUserType } from '../actions/actionCreaters';
 import { UserType } from '../types';
+import './Login.css';
 
 
 const LoginView: React.FC<RouteComponentProps> = ({ navigate }) => {  
@@ -41,8 +42,9 @@ const LoginView: React.FC<RouteComponentProps> = ({ navigate }) => {
   return (
     <>
       <span style={{color: "red"}}>{error}</span>
-      <p>Login Details: user/user or admin/admin for now</p>
-      <div className='input-group w-auto'>
+      
+      <div className='loginForm'>
+        <p>Login Details: user/user or admin/admin for now</p>
         <Form>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>

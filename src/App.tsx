@@ -7,7 +7,6 @@ import { AppState } from './reducers';
 import { UserType } from './types';
 import { Dashboard, ErrorsView, Home, LoginView, QCreate, ProfileView } from './views';
 
-
 /**
  * Putting Header in the top level as the header should be the same throughout all views?
  * @param props 

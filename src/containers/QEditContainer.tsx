@@ -1,5 +1,5 @@
 import React, { useState, Dispatch } from 'react'
-import { QuestionSelection, QEdit } from '../components';
+import { QuestionSelection, QEdit, MultichoiceQ } from '../components';
 
 import multichoiceicon from '../images/multiple_choice_icon1.png';
 import rankicon from '../images/up_and_down.png';
@@ -7,6 +7,7 @@ import shortanswericon from '../images/written_type_icon.png';
 import staricon from '../images/star_icon.png';
 import checkboxicon from '../images/multiple_select_icon.png';
 import questionmarkicon from '../images/question_mark.png';
+import uuid from 'uuid/v1';
 
 enum QuestionType {
   MultiChoice = "Multiple Choice",
@@ -19,18 +20,18 @@ enum QuestionType {
 
 /** TODO: Replace the paragraphs with the actual components */
 const typeImageMap = [
-  [QuestionType.MultiChoice, multichoiceicon, <p>Multichoice Question Component</p>], 
-  [QuestionType.Rank, rankicon, <p>Rank Question Component</p>],
-  [QuestionType.ShortAnswer, shortanswericon, <p>Short Answer Question Component</p>],
-  [QuestionType.RateOption, staricon, <p>Rate Question Component</p>],
-  [QuestionType.Checkboxes, checkboxicon, <p>Checkbox Question Component</p>],
-  [QuestionType.TrueFalse, questionmarkicon, <p>True False Question Component</p>],
+  [QuestionType.MultiChoice, multichoiceicon, () => <MultichoiceQ key={uuid()} />], 
+  [QuestionType.Rank, rankicon, () => <p key={uuid()}>Rank Question Component</p>],
+  [QuestionType.ShortAnswer, shortanswericon, () => <p key={uuid()}>Short Answer Question Component</p>],
+  [QuestionType.RateOption, staricon, () => <p key={uuid()}>Rate Question Component</p>],
+  [QuestionType.Checkboxes, checkboxicon, () => <p key={uuid()}>Checkbox Question Component</p>],
+  [QuestionType.TrueFalse, questionmarkicon, () => <p key={uuid()}>True False Question Component</p>],
 ];
 
 const QEditContainer = props => {
   const [questions, setQuestions] = useState([]);
 
-  const addQuestion = question => {
+  const addQuestion = (question: React.FC) => {
     const newQuestions = [...questions];
     newQuestions.push(question);
     setQuestions(newQuestions);

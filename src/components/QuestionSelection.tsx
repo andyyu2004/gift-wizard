@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import './QuestionSelection.css';
+import { QuestionType } from '../containers/QEditContainer';
 
-const QuestionSelection = ({ questions, addQuestion }) => (
+type PropType = {
+  questionData: [QuestionType, string, () => ReactElement][],
+  addQuestion: (q: ReactElement) => void,
+};
+
+const QuestionSelection: React.FC<PropType> = ({ questionData, addQuestion }) => (
   <div className="questions">
-    {questions.map(([qtype, img, component]) => (
-      <div className="question" key={qtype} onClick={() => addQuestion(component)}>
-        <img src={img} style={{width:"20px"}} />
-        <span className="qText">    {qtype}</span>
+    {questionData.map(([qtype, img, componentThunk]) => (
+      <div className="question" key={qtype} onClick={() => addQuestion(componentThunk())}>
+        <img src={img} style={{width:"20px"}} alt="question icon"/>
+        <span className="qText">{qtype}</span>
       </div>
     ))}
   </div>

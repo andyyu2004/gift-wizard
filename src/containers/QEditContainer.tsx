@@ -1,4 +1,4 @@
-import React, { useState, Dispatch } from 'react'
+import React, { useState, ReactElement } from 'react'
 import { QuestionSelection, QEdit, MultichoiceQ } from '../components';
 
 import multichoiceicon from '../images/multiple_choice_icon1.png';
@@ -9,7 +9,7 @@ import checkboxicon from '../images/multiple_select_icon.png';
 import questionmarkicon from '../images/question_mark.png';
 import uuid from 'uuid/v1';
 
-enum QuestionType {
+export enum QuestionType {
   MultiChoice = "Multiple Choice",
   Rank        = "Rank Options", /** Rank multiple options */
   ShortAnswer = "Short Answer",
@@ -18,8 +18,7 @@ enum QuestionType {
   TrueFalse   = "True / False",
 }
 
-/** TODO: Replace the paragraphs with the actual components */
-const typeImageMap = [
+const questionData: [QuestionType, string, () => ReactElement][] = [
   [QuestionType.MultiChoice, multichoiceicon, () => <MultichoiceQ key={uuid()} />], 
   [QuestionType.Rank, rankicon, () => <p key={uuid()}>Rank Question Component</p>],
   [QuestionType.ShortAnswer, shortanswericon, () => <p key={uuid()}>Short Answer Question Component</p>],
@@ -31,15 +30,11 @@ const typeImageMap = [
 const QEditContainer = props => {
   const [questions, setQuestions] = useState([]);
 
-  const addQuestion = (question: React.FC) => {
-    const newQuestions = [...questions];
-    newQuestions.push(question);
-    setQuestions(newQuestions);
-  };
+  const addQuestion = (question: ReactElement) => setQuestions([...questions, question]);
 
   return (
     <div className="flex-container">
-      <QuestionSelection addQuestion={addQuestion} questions={typeImageMap} />
+      <QuestionSelection addQuestion={addQuestion} questionData={questionData} />
       <QEdit>{questions}</QEdit>
     </div>
   );

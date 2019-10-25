@@ -8,7 +8,6 @@ const QEdit = ({ children }) => {
       Questionnaire Edit
       {children}
     </div>
-
   );
 };
 

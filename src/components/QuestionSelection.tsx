@@ -1,20 +1,23 @@
 import React, { ReactElement } from 'react';
 import './QuestionSelection.css';
-import { QuestionType } from '../containers/QEditContainer';
+import { QuestionType, FormRepr } from './QEdit';
+import { FormAction } from '../containers/QEditContainer';
+import uuid from 'uuid';
+import { addForm } from '../actions/actionCreaters';
 
 type PropType = {
-  questionData: [QuestionType, string, () => ReactElement][],
-  addQuestion: (q: ReactElement) => void,
+  questionData: [QuestionType, string, (id: string) => FormRepr][],
+  dispatch: React.Dispatch<FormAction>,
 };
 
-const QuestionSelection: React.FC<PropType> = ({ questionData, addQuestion }) => (
+const QuestionSelection: React.FC<PropType> = ({ questionData, dispatch }) => (
   <div className="questions">
-    {questionData.map(([qtype, img, componentThunk]) => (
-      <div className="question" key={qtype} onClick={() => addQuestion(componentThunk())}>
+    {questionData.map(([qtype, img, form]) => (id =>
+      <div className="question" key={id} onClick={() => dispatch(addForm(form(id)))}>
         <img src={img} style={{width:"20px"}} alt="question icon"/>
         <span className="qText">{qtype}</span>
-      </div>
-    ))}
+      </div>)(uuid()) // IIFE with an id to apply to the form
+    )}
   </div>
 );
 

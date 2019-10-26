@@ -1,12 +1,19 @@
 import React from 'react'
+import { MultichoiceRepr } from './QEdit';
+import { FormAction } from '../containers/QEditContainer';
 
-const MultichoiceQ: React.FC = props => {
+type PropType = {
+  formRepr: MultichoiceRepr,
+  dispatch: React.Dispatch<FormAction>,
+};
+
+const MultichoiceQ: React.FC<PropType> = ({ formRepr }) => {
+  const { options, question } = formRepr;
   return (
-    <div>
-      <form>
-        <input type="checkbox"/>
-      </form>
-    </div>
+    <>
+      <h6>{question}</h6>
+      <input type="checkbox"/>
+    </>
   );
 };
 

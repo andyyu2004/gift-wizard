@@ -31,12 +31,16 @@ export type ShortAnswerRepr = {
   answer: string,
 }
 
+/** Make sure to enforce uniqueness of the options
+ *  1. Because its stupid to have multiple of the same thing
+ *  2. They may be used as react keys
+ */
 export type MultichoiceRepr = {
   kind: "MCR",
   id: string,
   question: string,
-  options: string[]
-}
+  options: [string, boolean][], /** (option, isChecked) pairs; Allow multiple select */
+};
 
 // const repr: FormRepr = {
 //   kind: QuestionType.ShortAnswer,
@@ -47,15 +51,18 @@ export type MultichoiceRepr = {
 type PropType = {
   forms: FormRepr[],  
   dispatch: React.Dispatch<FormAction>,
+  editable: boolean,
 };
 
-/** Questionnaire edit component */
-const QEdit: React.FC<PropType> = ({ forms, dispatch }) => {
+/** Questionnaire edit component 
+ *  Probably need to pass a mode flag or something to this component and all the subcomponents indicating whether to allow editing or not
+*/
+const QEdit: React.FC<PropType> = ({ forms, dispatch, editable }) => {
   
   const render = (repr: FormRepr) => {
     switch (repr.kind) {
-      case "MCR": return <MultichoiceQ dispatch={dispatch} key={repr.id} formRepr={repr} />
-      case "SAR": return <ShortAnswerQ dispatch={dispatch} key={repr.id} formRepr={repr} />
+      case "MCR": return <MultichoiceQ dispatch={dispatch} key={repr.id} formRepr={repr} editable={editable} />
+      case "SAR": return <ShortAnswerQ dispatch={dispatch} key={repr.id} formRepr={repr} editable={editable} />
     }
   };
 

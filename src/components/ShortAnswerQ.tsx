@@ -6,13 +6,17 @@ import { setShortAnswerQuestion, setShortAnswer } from '../actions/actionCreater
 type PropType = {
   formRepr: ShortAnswerRepr,
   dispatch: React.Dispatch<FormAction>,
+  editable: boolean,
 };
 
-const ShortAnswerQ: React.FC<PropType> = ({ formRepr, dispatch }) => {
+const ShortAnswerQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
   const { answer, question } = formRepr;
   return (
     <>
-      <input type="text" onChange={e => dispatch(setShortAnswerQuestion(e.target.value, formRepr))} value={question} /><br/>
+      {editable  
+        ? <input type="text" onChange={e => dispatch(setShortAnswerQuestion(e.target.value, formRepr))} value={question} />
+        : <span>{question}</span>}
+      <br/>
       <input type="text" onChange={e => dispatch(setShortAnswer(e.target.value, formRepr))} value={answer} />
       <br />
     </>

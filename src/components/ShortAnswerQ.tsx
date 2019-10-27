@@ -15,7 +15,7 @@ const ShortAnswerQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
   return (
     <>
       <Question formRepr={formRepr} dispatch={dispatch} editable={editable} />
-      <input type="text" onChange={e => dispatch(setShortAnswer(e.target.value, formRepr))} value={answer} />
+      <input type="text" onChange={e => dispatch(setShortAnswer(e.target.value, formRepr.id))} value={answer} />
       <br />
     </>
   );

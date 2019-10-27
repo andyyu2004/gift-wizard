@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShortAnswerQ, RateQ } from '.';
+import { ShortAnswerQ, RateQ, RankQ } from '.';
 import { FormAction } from '../containers/QEditContainer';
 import MultichoiceQ from './MultichoiceQ';
 import './QEdit.css';
@@ -49,14 +49,14 @@ export interface MultichoiceRepr extends IForm {
   id: string,
   question: string,
   mutex: boolean, /** Mutually exclusive options? */
-  options: [string, boolean][], /** (option, isChecked) pairs; */
+  options: [string, boolean, string][], /** (option, isChecked, id) triples; */
 };
 
 export interface RankFormRepr extends IForm {
   kind: "RNKR",
   id: string,
   question: string,
-  options: [string, number][], /** The objects to rank paired with some form of score */
+  options: [string, string][], /** (option, id) pairs. Rank is just the array order */
 };
 
 export interface RateFormRepr extends IForm {
@@ -85,9 +85,10 @@ const QEdit: React.FC<PropType> = ({ forms, dispatch, editable }) => {
   
   const render = (repr: FormRepr) => {
     switch (repr.kind) {
-      case "MCR": return <MultichoiceQ dispatch={dispatch} key={repr.id} formRepr={repr} editable={editable} />
-      case "SAR": return <ShortAnswerQ dispatch={dispatch} key={repr.id} formRepr={repr} editable={editable} />
-      case "RTR": return <RateQ key={repr.id} dispatch={dispatch} formRepr={repr} editable={editable} />
+      case "MCR":  return <MultichoiceQ dispatch={dispatch} key={repr.id} formRepr={repr} editable={editable} />
+      case "SAR":  return <ShortAnswerQ dispatch={dispatch} key={repr.id} formRepr={repr} editable={editable} />
+      case "RTR":  return <RateQ key={repr.id} dispatch={dispatch} formRepr={repr} editable={editable} />
+      case "RNKR": return <RankQ key={repr.id} dispatch={dispatch} formRepr={repr} editable={editable} />
     }
   };
 

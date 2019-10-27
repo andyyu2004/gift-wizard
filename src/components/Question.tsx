@@ -12,7 +12,7 @@ type PropType = {
 const Question: React.FC<PropType> = ({ editable, formRepr, dispatch }) => (
   <>
     {editable  
-      ? <><input type="text" onChange={e => dispatch(setQuestion(e.target.value, formRepr))} value={formRepr.question} /> <br /></>
+      ? <><input type="text" onChange={e => dispatch(setQuestion(e.target.value, formRepr.id))} value={formRepr.question} /> <br /></>
       : <h6>{formRepr.question}</h6>}
   </>
 );

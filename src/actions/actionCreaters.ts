@@ -1,7 +1,7 @@
 import { UserType } from "../types";
 import { UpdateUserTypeAction } from ".";
 import { FormRepr } from "../components/QEdit";
-import { AddFormAction, SetShortAnswerAction, SetQuestionAction, SetCheckboxStatusAction, UpdateCheckboxOptionAction, UpdateRatingAction } from "../containers/QEditContainer";
+import { AddFormAction, SetShortAnswerAction, SetQuestionAction, SetCheckboxStatusAction, UpdateOptionAction, UpdateRatingAction, ReorderRankAction } from "../containers/QEditContainer";
 
 /** Redux action creators */
 export const updateUserType: (userType: UserType) => UpdateUserTypeAction = userType => ({
@@ -15,37 +15,46 @@ export const updateUserType: (userType: UserType) => UpdateUserTypeAction = user
 export const addForm: (form: FormRepr) => AddFormAction = form => ({
     type: "ADD_FORM", 
     form,
+    formId: form.id,
 })
 
-export const setShortAnswer: (answer: string, form: FormRepr) => SetShortAnswerAction = (answer, form) => ({
+export const setShortAnswer: (answer: string, form: string) => SetShortAnswerAction = (answer, formId) => ({
     type: "SET_SHORT_ANSWER",
-    form,
+    formId,
     answer,
 });
 
-
-export const setQuestion: (question: string, form: FormRepr) => SetQuestionAction = (question, form) => ({
+export const setQuestion: (question: string, form: string) => SetQuestionAction = (question, formId) => ({
     type: "SET_QUESTION",
-    form,
+    formId,
     question,
 });
 
-export const setCheckboxStatus: (option: string, status: boolean, form: FormRepr) => SetCheckboxStatusAction = (option, status, form) => ({
+export const setCheckboxStatus: (option: string, status: boolean, form: string) => SetCheckboxStatusAction = (option, status, formId) => ({
     type: "SET_CHECK_BOX_STATUS",
     option,
     status,
-    form,
+    formId,
 });
 
-export const updateCheckboxOption: (option: string, index: number, form: FormRepr) => UpdateCheckboxOptionAction = (newOption, index, form) => ({
-    type: "UPDATE_CHECK_BOX_OPTION",
+export const updateOption: (option: string, index: number, form: string) => UpdateOptionAction = (newOption, index, formId) => ({
+    type: "UPDATE_OPTION",
     newOption,
     index,
-    form,
+    formId,
 });
 
-export const updateRating: (rating: number, form: FormRepr) => UpdateRatingAction = (rating, form) => ({
+export const updateRating: (rating: number, form: string) => UpdateRatingAction = (rating, formId) => ({
     type: "UPDATE_RATING",
-    form,
+    formId,
     rating,
 });
+
+export const reorderRank: (source: number, dest: number, formId: string) => ReorderRankAction = (sourceIndex, destIndex, formId) => ({
+    type: "REORDER_RANK",
+    sourceIndex,
+    destIndex,
+    formId,
+});
+
+

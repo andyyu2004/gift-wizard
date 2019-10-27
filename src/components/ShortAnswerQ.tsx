@@ -1,7 +1,8 @@
 import React from 'react'
 import { ShortAnswerRepr } from './QEdit';
 import { FormAction } from '../containers/QEditContainer';
-import { setShortAnswerQuestion, setShortAnswer } from '../actions/actionCreaters';
+import { setQuestion, setShortAnswer } from '../actions/actionCreaters';
+import { Question } from '.';
 
 type PropType = {
   formRepr: ShortAnswerRepr,
@@ -13,10 +14,7 @@ const ShortAnswerQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
   const { answer, question } = formRepr;
   return (
     <>
-      {editable  
-        ? <input type="text" onChange={e => dispatch(setShortAnswerQuestion(e.target.value, formRepr))} value={question} />
-        : <span>{question}</span>}
-      <br/>
+      <Question formRepr={formRepr} dispatch={dispatch} editable={editable} />
       <input type="text" onChange={e => dispatch(setShortAnswer(e.target.value, formRepr))} value={answer} />
       <br />
     </>

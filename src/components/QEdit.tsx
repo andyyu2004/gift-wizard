@@ -1,9 +1,8 @@
 import React from 'react';
-import uuid from 'uuid/v1';
-import { ShortAnswerQ } from '.';
+import { ShortAnswerQ, RateQ } from '.';
+import { FormAction } from '../containers/QEditContainer';
 import MultichoiceQ from './MultichoiceQ';
 import './QEdit.css';
-import { FormAction } from '../containers/QEditContainer';
 
 /**
  * QEdit takes some representation of a form and renders from there instead of accepting children prop directly
@@ -12,34 +11,59 @@ import { FormAction } from '../containers/QEditContainer';
 
 export enum QuestionType {
   MultiChoice = "Multiple Choice",
+  Checkboxes  = "Checkboxes",
   Rank        = "Rank Options", /** Rank multiple options */
   ShortAnswer = "Short Answer",
   RateOption  = "Rate Option", /** Rate 1-10 for one single option */ 
-  Checkboxes  = "Checkboxes",
-  TrueFalse   = "True / False",
+  // TrueFalse   = "True / False", // Just use multichoice for this
 }
 
-/** To determine which type, do a switch on the kind */
+/** To determine which type, do a switch on the kind 
+ * All FormRepr must have:
+ * kind,
+ * id,
+ * question,
+*/
+
+interface IForm {
+  kind: string,
+  id: string,
+  question: string,
+}
+
 export type FormRepr 
   = MultichoiceRepr 
-  | ShortAnswerRepr;
+  | ShortAnswerRepr
+  | RankFormRepr
+  | RateFormRepr;
 
-export type ShortAnswerRepr = {
+export interface ShortAnswerRepr extends IForm {
   kind: "SAR",
   id: string,
   question: string,
   answer: string,
-}
+};
 
-/** Make sure to enforce uniqueness of the options
- *  1. Because its stupid to have multiple of the same thing
- *  2. They may be used as react keys
- */
-export type MultichoiceRepr = {
+export interface MultichoiceRepr extends IForm {
   kind: "MCR",
   id: string,
   question: string,
-  options: [string, boolean][], /** (option, isChecked) pairs; Allow multiple select */
+  mutex: boolean, /** Mutually exclusive options? */
+  options: [string, boolean][], /** (option, isChecked) pairs; */
+};
+
+export interface RankFormRepr extends IForm {
+  kind: "RNKR",
+  id: string,
+  question: string,
+  options: [string, number][], /** The objects to rank paired with some form of score */
+};
+
+export interface RateFormRepr extends IForm {
+  kind: "RTR",
+  id: string,
+  question: string, /** The object to rate */
+  rating: number,
 };
 
 // const repr: FormRepr = {
@@ -63,6 +87,7 @@ const QEdit: React.FC<PropType> = ({ forms, dispatch, editable }) => {
     switch (repr.kind) {
       case "MCR": return <MultichoiceQ dispatch={dispatch} key={repr.id} formRepr={repr} editable={editable} />
       case "SAR": return <ShortAnswerQ dispatch={dispatch} key={repr.id} formRepr={repr} editable={editable} />
+      case "RTR": return <RateQ key={repr.id} dispatch={dispatch} formRepr={repr} editable={editable} />
     }
   };
 

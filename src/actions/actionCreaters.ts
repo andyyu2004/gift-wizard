@@ -1,7 +1,7 @@
 import { UserType } from "../types";
 import { UpdateUserTypeAction } from ".";
 import { FormRepr } from "../components/QEdit";
-import { AddFormAction, SetShortAnswerAction, SetShortAnswerQuestionAction, SetCheckboxStatusAction, UpdateCheckboxOptionAction } from "../containers/QEditContainer";
+import { AddFormAction, SetShortAnswerAction, SetQuestionAction, SetCheckboxStatusAction, UpdateCheckboxOptionAction, UpdateRatingAction } from "../containers/QEditContainer";
 
 /** Redux action creators */
 export const updateUserType: (userType: UserType) => UpdateUserTypeAction = userType => ({
@@ -24,8 +24,8 @@ export const setShortAnswer: (answer: string, form: FormRepr) => SetShortAnswerA
 });
 
 
-export const setShortAnswerQuestion: (question: string, form: FormRepr) => SetShortAnswerQuestionAction = (question, form) => ({
-    type: "SET_SHORT_ANSWER_QUESTION",
+export const setQuestion: (question: string, form: FormRepr) => SetQuestionAction = (question, form) => ({
+    type: "SET_QUESTION",
     form,
     question,
 });
@@ -37,10 +37,15 @@ export const setCheckboxStatus: (option: string, status: boolean, form: FormRepr
     form,
 });
 
-
 export const updateCheckboxOption: (option: string, index: number, form: FormRepr) => UpdateCheckboxOptionAction = (newOption, index, form) => ({
     type: "UPDATE_CHECK_BOX_OPTION",
     newOption,
     index,
     form,
+});
+
+export const updateRating: (rating: number, form: FormRepr) => UpdateRatingAction = (rating, form) => ({
+    type: "UPDATE_RATING",
+    form,
+    rating,
 });

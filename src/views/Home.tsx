@@ -1,17 +1,16 @@
-
-import React from 'react'
-import { RouteComponentProps, navigate } from '@reach/router';
-import { Header, CellRow, Cell} from '../components';
+import { navigate, RouteComponentProps } from '@reach/router';
+import React from 'react';
+import { Cell, CellRow } from '../components';
+import connectionsIcon from '../images/connections_btn1.png';
 import createNewIcon from '../images/create_new_icon.png';
+import areaOfInterestIcon from '../images/hobby_icon.png';
+import template4 from '../images/more_features_icon.png';
+import moreIcon from '../images/more_options_icon.png';
 import openFromExistingIcon from '../images/open_icon.png';
 import template1 from '../images/template1.png';
 import template2 from '../images/template2.png';
 import template3 from '../images/template4.png';
-import template4 from '../images/more_features_icon.png';
-import areaOfInterestIcon from '../images/hobby_icon.png';
 import wishListIcon from '../images/wishlist_icon2.png';
-import connectionsIcon from '../images/connections_btn1.png';
-import moreIcon from '../images/more_options_icon.png';
 
 const Home: React.FC<RouteComponentProps> = props => {
   return (

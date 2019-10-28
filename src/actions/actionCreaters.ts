@@ -1,7 +1,7 @@
 import { UserType } from "../types";
 import { UpdateUserTypeAction } from ".";
 import { FormRepr } from "../components/QEdit";
-import { AddFormAction, SetShortAnswerAction, SetQuestionAction, SetCheckboxStatusAction, UpdateOptionAction, UpdateRatingAction, ReorderRankAction } from "../containers/QEditContainer";
+import { AddFormAction, SetShortAnswerAction, SetQuestionAction, SetCheckboxStatusAction, UpdateOptionAction, UpdateRatingAction, ReorderRankAction, AddOptionAction, RemoveOptionAction } from "../containers/QEditContainer";
 
 /** Redux action creators */
 export const updateUserType: (userType: UserType) => UpdateUserTypeAction = userType => ({
@@ -30,9 +30,9 @@ export const setQuestion: (question: string, form: string) => SetQuestionAction 
     question,
 });
 
-export const setCheckboxStatus: (option: string, status: boolean, form: string) => SetCheckboxStatusAction = (option, status, formId) => ({
+export const setCheckboxStatus: (index: number, status: boolean, form: string) => SetCheckboxStatusAction = (index, status, formId) => ({
     type: "SET_CHECK_BOX_STATUS",
-    option,
+    index,
     status,
     formId,
 });
@@ -57,4 +57,16 @@ export const reorderRank: (source: number, dest: number, formId: string) => Reor
     formId,
 });
 
+export function addOption(elem: any, formId: string): AddOptionAction {
+    return {
+        type: "ADD_OPTION",
+        elem,
+        formId,
+    };
+}
 
+export const removeOption: (index: number, formId: string) => RemoveOptionAction = (index, formId) => ({
+    type: "REMOVE_OPTION",
+    index,
+    formId,
+});

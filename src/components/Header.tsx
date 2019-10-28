@@ -1,6 +1,6 @@
-import React from 'react'
-import { Navbar, Nav, Button } from 'react-bootstrap';
 import { Link, navigate } from '@reach/router';
+import React from 'react';
+import { Nav, Navbar } from 'react-bootstrap';
 import usericon from '../images/user_icon.svg';
 import './Header.css';
 

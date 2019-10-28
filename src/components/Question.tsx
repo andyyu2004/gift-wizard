@@ -9,12 +9,15 @@ type PropType = {
   editable: boolean,
 };
 
-const Question: React.FC<PropType> = ({ editable, formRepr, dispatch }) => (
-  <>
-    {editable  
-      ? <><input type="text" onChange={e => dispatch(setQuestion(e.target.value, formRepr.id))} value={formRepr.question} /> <br /></>
-      : <h6>{formRepr.question}</h6>}
-  </>
-);
+const Question: React.FC<PropType> = ({ editable, formRepr, dispatch }) => {
+  const { id, question, defaultQuestion } = formRepr;
+  return (
+    <>
+      {editable  
+        ? <input type="text" onChange={e => dispatch(setQuestion(e.target.value, id))} value={question} placeholder={defaultQuestion} />
+        : <span>{question}</span>}
+    </>
+  );
+};
 
 export default Question;

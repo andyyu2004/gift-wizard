@@ -21,7 +21,7 @@ const RankQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
     dispatch(reorderRank(source.index, destination.index, source.droppableId));
   };
 
-  // TODO Beautiful pyramid of death! Refactor!
+  // TODO Beautiful pyramid of death! Refactor?
   return (
     <DragDropContext onDragEnd={onDragEnd} >
       <Question formRepr={formRepr} dispatch={dispatch} editable={editable} />

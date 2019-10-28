@@ -36,15 +36,15 @@ const generatedefaultRankOptions: () => [string, string][] = () => [
 
 const questionData: [QuestionType, string, (id: string) => FormRepr][] = [
   [QuestionType.MultiChoice, multichoiceicon,
-    id => ({ kind: "MCR", id, question: "Write Your Multichoice Question Here", mutex: true, options: generateMCQDefaults() })],
+    id => ({ kind: "MCR", id, question: "", defaultQuestion: "Write Your Multichoice Question Here", mutex: true, options: generateMCQDefaults() })],
   [QuestionType.Checkboxes, checkboxicon,
-    id => ({ kind: "MCR", id, question: "Write Your Multichoice Question Here", mutex: false, options: generateMCQDefaults() })],
+    id => ({ kind: "MCR", id, question: "", defaultQuestion: "Write Your Checkbox Question Here", mutex: false, options: generateMCQDefaults() })],
   [QuestionType.RateOption, staricon,
-    id => ({ kind: "RTR", id: uuid(), question: "Write Your Rating Question Here", rating: 0 })],
+    id => ({ kind: "RTR", id: uuid(), question: "", defaultQuestion: "Write Your Rating Question Here", rating: 0 })],
   [QuestionType.Rank, rankicon,
-    id => ({ kind: "RNKR", id: uuid(), question: "Write Your Rank Answer Question Here", options: generatedefaultRankOptions() })],
+    id => ({ kind: "RNKR", id: uuid(), question: "", defaultQuestion: "Write Your Rank Answer Question Here", options: generatedefaultRankOptions() })],
   [QuestionType.ShortAnswer, shortanswericon,
-    id => ({ kind: "SAR", id: uuid(), question: "Write Your Short Answer Question Here", answer: "Write Answer Here" })],
+    id => ({ kind: "SAR", id: uuid(), question: "", defaultQuestion: "Write Your Short Answer Question Here", answer: "" })],
 ];
 
 /** Non Optional Fields for Form Actions are:
@@ -59,7 +59,8 @@ export type FormAction
   | UpdateRatingAction
   | SetQuestionAction
   | ReorderRankAction
-  | AddOptionAction;
+  | AddOptionAction
+  | RemoveOptionAction;
 
 export type SetShortAnswerAction = {
   type: "SET_SHORT_ANSWER",
@@ -82,7 +83,7 @@ export type SetQuestionAction = {
 /** Check or uncheck the flag belonging to the string 'option' */
 export type SetCheckboxStatusAction = {
   type: "SET_CHECK_BOX_STATUS",
-  option: string,
+  index: number,
   status: boolean,
   formId: string,
 };
@@ -115,6 +116,13 @@ export type AddOptionAction = {
   formId: string,
   elem: any,
 };
+
+export type RemoveOptionAction = {
+  type: "REMOVE_OPTION",
+  formId: string,
+  index: number,
+};
+
 
 type ReducerType = (state: FormRepr[], action: FormAction) => FormRepr[];
 
@@ -153,12 +161,13 @@ const reducer: ReducerType = (state, action) => {
       return Object.assign([...state], { [i]: newRepr });
     }
 
+    /** Do it by index because there might be duplicate options */
     case "SET_CHECK_BOX_STATUS": {
-      const { option, status } = action;
+      const { index, status } = action;
       const newRepr: MultichoiceRepr = { ...repr as MultichoiceRepr };
       // Set all to false first if mutex
       if (newRepr.mutex) newRepr.options = newRepr.options.map(([q, _, id]) => [q, false, id]);
-      newRepr.options.find(x => x[0] === option)[1] = status; // Tuples are mutable in ts
+      newRepr.options[index][1] = status; // Tuples are mutable in ts
       return Object.assign([...state], { [i]: newRepr });
     }
 
@@ -183,7 +192,14 @@ const reducer: ReducerType = (state, action) => {
         repr.options = [...repr.options, [elem, false, uuid()]];
       else if (repr.kind === "RNKR")
         repr.options = [...repr.options, [elem, uuid()]];
-        
+
+      return Object.assign([...state], { [i]: repr });
+    }
+
+    case "REMOVE_OPTION": {
+      const { index } = action;
+      if (repr.kind != "MCR") return state;
+      repr.options.splice(index, 1);;
       return Object.assign([...state], { [i]: repr });
     }
 

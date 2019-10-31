@@ -220,17 +220,21 @@ function validateForm(label: string, form: FormRepr[]): string[] {
     errors.push("There must be at least one question"); 
     return errors;
   }
-  form.forEach(({question, kind}, i) => {
+  form.forEach(({question}, i) => {
     if (!question) errors.push(`Form ${i + 1} must have a non-empty question`);
   });
   return errors;
 };
 
-const QEditContainer = () => {
+type PropType = {
+  starterForm?: FormRepr[],
+};
+
+const QEditContainer: React.FC<PropType> = ({ starterForm }) => {
   // const [forms, setForms] = useState<FormRepr[]>([]);
   // const addForm = (form: FormRepr) => setForms([...forms, form]);
 
-  const [form, dispatch] = useReducer<ReducerType>(reducer, []);
+  const [form, dispatch] = useReducer<ReducerType>(reducer, starterForm || []);
   const [editable, setEditable] = useState<boolean>(true);
   const [formLabel, setFormLabel] = useState<string>("");
   const reduxDispatch = useDispatch();

@@ -1,6 +1,6 @@
-import { SaveFormAction, UpdateUserTypeAction } from ".";
+import { SaveQuestionnaireAction, UpdateUserTypeAction } from ".";
 import { FormRepr } from "../components/QEdit";
-import { AddFormAction, AddOptionAction, RemoveOptionAction, ReorderRankAction, SetCheckboxStatusAction, SetQuestionAction, SetShortAnswerAction, UpdateOptionAction, UpdateRatingAction } from "../containers/QEditContainer";
+import { AddFormAction, AddOptionAction, RemoveOptionAction, ReorderRankAction, SetCheckboxStatusAction, SetQuestionAction, SetShortAnswerAction, UpdateOptionAction, UpdateRatingAction, Questionnaire } from "../types/FormTypes";
 import { UserType } from "../types";
 
 /** Redux action creators */
@@ -9,10 +9,9 @@ export const updateUserType: (userType: UserType) => UpdateUserTypeAction = user
     userType,
 });
 
-export const saveForm: (label: string, form: FormRepr[]) => SaveFormAction = (label, form) => ({
+export const saveForm: (questionnaire: Questionnaire) => SaveQuestionnaireAction = questionnaire => ({
     type: "SAVE_FORM",
-    label, 
-    form,
+    questionnaire,
 });
 
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Question } from '.';
 import { setShortAnswer } from '../actions/actionCreaters';
-import { FormAction } from '../containers/QEditContainer';
+import { FormAction } from "../types/FormTypes";
 import { ShortAnswerRepr } from './QEdit';
 
 type PropType = {

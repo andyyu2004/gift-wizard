@@ -7,21 +7,20 @@ import areaOfInterestIcon from '../images/hobby_icon.png';
 import template4icon from '../images/more_features_icon.png';
 import moreIcon from '../images/more_options_icon.png';
 import openFromExistingIcon from '../images/open_icon.png';
+import settingsIcon from '../images/settings_icon.svg';
 import template1icon from '../images/template1.png';
 import template2icon from '../images/template2.png';
 import template3icon from '../images/template4.png';
 import wishListIcon from '../images/wishlist_icon2.png';
-import settingsIcon from '../images/settings_icon.svg';
 import { qtemplateone } from '../mockdata/templates';
-import { FormRepr } from '../components/QEdit';
+import { Questionnaire } from "../types/FormTypes";
 
 const Home: React.FC<RouteComponentProps> = props => {
 
-  const navigateWithDefaultTemplate = (formLabel: string, starterForm: FormRepr[]) => 
+  const navigateWithDefaultTemplate = (questionnaire: Questionnaire) => 
     navigate("create", { 
       state: { 
-        formLabel, 
-        starterForm 
+        questionnaire
       }
     });
 
@@ -32,7 +31,7 @@ const Home: React.FC<RouteComponentProps> = props => {
         subtitle="By sending him/her an anonymous questionnaire, get the best 'hints'!">
         <Cell image={createNewIcon} text="Create New" onClick={() => navigate("/create")} />
         <Cell image={openFromExistingIcon} text="Open Existing" onClick={() => navigate("/open")} />
-        <Cell image={template1icon} text="template 1" onClick={() => navigateWithDefaultTemplate("Template 1", qtemplateone)} />
+        <Cell image={template1icon} text="template 1" onClick={() => navigateWithDefaultTemplate(qtemplateone)} />
         <Cell image={template2icon} text="template xxx" />
         <Cell image={template3icon} text="template xxx" />
         <Cell image={template4icon} text="Browse more..." />

@@ -3,17 +3,18 @@ import { RouteComponentProps } from '@reach/router';
 import { useSelector } from 'react-redux';
 import { AppState } from '../reducers';
 import QEdit, { FormRepr } from '../components/QEdit';
+import { Questionnaire } from '../types/FormTypes';
 
 const SavedTemplates: React.FC<RouteComponentProps> = () => {
-  const forms = useSelector<AppState, { [key: string]: FormRepr[] }>(state => state.forms);
-  const [currentForm, setCurrentForm] = useState(null);
+  const questionnaires = useSelector<AppState, { [key: string]: Questionnaire }>(state => state.forms);
+  const [currentQ, setCurrentQ] = useState(null);
 
-  const toggleForm = (key: string) => currentForm !== key || currentForm === null ? setCurrentForm(key) : setCurrentForm(null) ;
+  const toggleForm = (key: string) => currentQ !== key || currentQ === null ? setCurrentQ(key) : setCurrentQ(null) ;
 
   return (
     <div>
       <h6>Saved Templates (Click to peek)</h6>
-      {Object.keys(forms).map(key => 
+      {Object.keys(questionnaires).map(key => 
         <div key={key}>
           <button 
             className="generic-button"
@@ -23,10 +24,10 @@ const SavedTemplates: React.FC<RouteComponentProps> = () => {
         </div>
         )
       }
-      {currentForm && 
+      {currentQ && 
         <div>
-          <h6>{currentForm}</h6>
-          <QEdit forms={forms[currentForm]} editable={false} />
+          <h6>{currentQ}</h6>
+          <QEdit questionnaire={questionnaires[currentQ]} editable={false} />
         </div>
       }
     </div>

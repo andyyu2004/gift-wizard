@@ -1,6 +1,6 @@
 import React from 'react';
 import StarRating from 'react-star-ratings';
-import { FormAction } from '../containers/QEditContainer';
+import { FormAction } from "../types/FormTypes";
 import { RateFormRepr } from './QEdit';
 import Question from './Question';
 import { updateRating } from '../actions/actionCreaters';

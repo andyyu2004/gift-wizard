@@ -7,16 +7,21 @@ import { ThemeSelection } from '../components';
 import { QEditContainer } from '../containers';
 import { FormRepr } from '../components/QEdit';
 
-type PropType = RouteComponentProps & {
-  starterForm?: FormRepr[],
+type RouteProps = {
+  starterForm?: FormRepr[]
 };
 
-const QCreate: React.FC<PropType> = ({ starterForm }) => (
-  <div>
-    <h3>Questionnaire Creation View</h3>
-    {/* <ThemeSelection /> */}
-    <QEditContainer starterForm={starterForm} />
-  </div>
-);
+type PropType = RouteComponentProps<RouteProps>;
+
+const QCreate: React.FC<PropType> = props => {
+  const { formLabel, starterForm }: { formLabel: string, starterForm: FormRepr[] } = props.location.state;
+  return (
+    <div>
+      <h3>Questionnaire Creation View</h3>
+      <ThemeSelection />
+      <QEditContainer defaultFormLabel={formLabel} starterForm={starterForm} />
+    </div>
+  );
+};
 
 export default QCreate;

@@ -26,7 +26,7 @@ const SavedTemplates: React.FC<RouteComponentProps> = () => {
       {currentForm && 
         <div>
           <h6>{currentForm}</h6>
-          <QEdit forms={forms[currentForm]} editable={false} />}
+          <QEdit forms={forms[currentForm]} editable={false} />
         </div>
       }
     </div>

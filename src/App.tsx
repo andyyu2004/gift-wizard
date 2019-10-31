@@ -27,7 +27,6 @@ const App: React.SFC = props => {
         <Dashboard path="admin" />
         <QCreate path="create" />
         <LoginView path="login" />
-        {/* <ProfileView path="profile/:subview" /> */}
         <ProfileView path="profile/*" />
         <PeopleView path="people/:userid" />
         <SavedTemplates path="open" />
@@ -35,6 +34,6 @@ const App: React.SFC = props => {
       </Router>
     </div>
   );
-}
+};
 
 export default App;

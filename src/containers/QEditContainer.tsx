@@ -228,15 +228,15 @@ function validateForm(label: string, form: FormRepr[]): string[] {
 
 type PropType = {
   starterForm?: FormRepr[],
+  defaultFormLabel?: string,
 };
 
-const QEditContainer: React.FC<PropType> = ({ starterForm }) => {
+const QEditContainer: React.FC<PropType> = ({ defaultFormLabel, starterForm }) => {
   // const [forms, setForms] = useState<FormRepr[]>([]);
   // const addForm = (form: FormRepr) => setForms([...forms, form]);
-
   const [form, dispatch] = useReducer<ReducerType>(reducer, starterForm || []);
   const [editable, setEditable] = useState<boolean>(true);
-  const [formLabel, setFormLabel] = useState<string>("");
+  const [formLabel, setFormLabel] = useState<string>(defaultFormLabel || "");
   const reduxDispatch = useDispatch();
 
   const saveFormToStore = () => {

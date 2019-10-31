@@ -21,26 +21,27 @@ const RankQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
     dispatch(reorderRank(source.index, destination.index, source.droppableId));
   };
 
-  // TODO Beautiful pyramid of death! Refactor?
+  const DragComp = ({ id, i, option }) => (
+    <Draggable key={id} draggableId={id} index={i} isDragDisabled={dispatch === undefined}>
+      {provided => 
+        <div {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
+          {editable 
+            ? <input value={option} onChange={e => dispatch(updateOption(e.target.value, i, formRepr.id))}/>
+            : (<><span>{option}</span><br/></>) // Lags horrendously if block element is rendered here instead
+          }
+          {provided.placeholder}
+        </div>
+      }
+    </Draggable>
+  );
+
   return (
-    <DragDropContext onDragEnd={onDragEnd} >
+    <DragDropContext onDragEnd={onDragEnd}>
       <Question formRepr={formRepr} dispatch={dispatch} editable={editable} />
-        <Droppable droppableId={formRepr.id}>
-          {provided => 
-            <div {...provided.droppableProps} ref={provided.innerRef}>
-              {options.map(([option, id], i) => (
-                <Draggable key={id} draggableId={id} index={i}>
-                  {provided => 
-                    <div {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
-                      {editable 
-                        ? <input value={option} onChange={e => dispatch(updateOption(e.target.value, i, formRepr.id))}/>
-                        : (<><span>{option}</span><br/></>) // Lags horrendously if block element is rendered here instead
-                      }
-                      {provided.placeholder}
-                    </div>
-                  }
-                </Draggable>
-              ))}
+      <Droppable droppableId={formRepr.id}>
+        {provided => 
+          <div {...provided.droppableProps} ref={provided.innerRef}>
+            {options.map(([option, id], i) => <DragComp key={id} id={id} i={i} option={option} />)}
             {provided.placeholder}
           </div>
         }

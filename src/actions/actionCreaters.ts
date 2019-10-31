@@ -1,14 +1,19 @@
-import { UserType } from "../types";
-import { UpdateUserTypeAction } from ".";
+import { SaveFormAction, UpdateUserTypeAction } from ".";
 import { FormRepr } from "../components/QEdit";
-import { AddFormAction, SetShortAnswerAction, SetQuestionAction, SetCheckboxStatusAction, UpdateOptionAction, UpdateRatingAction, ReorderRankAction, AddOptionAction, RemoveOptionAction } from "../containers/QEditContainer";
+import { AddFormAction, AddOptionAction, RemoveOptionAction, ReorderRankAction, SetCheckboxStatusAction, SetQuestionAction, SetShortAnswerAction, UpdateOptionAction, UpdateRatingAction } from "../containers/QEditContainer";
+import { UserType } from "../types";
 
 /** Redux action creators */
 export const updateUserType: (userType: UserType) => UpdateUserTypeAction = userType => ({
     type: "UPDATE_USER_TYPE",
-    payload: { userType }
+    userType,
 });
 
+export const saveForm: (label: string, form: FormRepr[]) => SaveFormAction = (label, form) => ({
+    type: "SAVE_FORM",
+    label, 
+    form,
+});
 
 
 /** Form Action Creaters */

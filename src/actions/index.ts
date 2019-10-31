@@ -1,16 +1,18 @@
 import { UserType } from "../types";
+import { FormRepr } from "../components/QEdit";
 
 // Use a discriminated union type
-export type Action =
-    UpdateUserTypeAction
-    | SomeOtherActionTest;
-
-export interface SomeOtherActionTest { 
-    type: "BAD_ACTION";
-    payload: {};
- }
+export type Action
+    = UpdateUserTypeAction
+    | SaveFormAction;
 
 export interface UpdateUserTypeAction {
     type: "UPDATE_USER_TYPE";
-    payload: { userType: UserType };
+    userType: UserType;
+}
+
+export interface SaveFormAction {
+    type: "SAVE_FORM",
+    label: string,
+    form: FormRepr[],
 }

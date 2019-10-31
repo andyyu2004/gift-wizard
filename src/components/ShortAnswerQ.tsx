@@ -11,11 +11,13 @@ type PropType = {
 };
 
 const ShortAnswerQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
-  const { answer, defaultQuestion } = formRepr;
+  const { answer } = formRepr;
+  const disabled = dispatch === undefined;
+
   return (
     <>
       <Question formRepr={formRepr} dispatch={dispatch} editable={editable} /><br/>
-      <textarea onChange={e => dispatch(setShortAnswer(e.target.value, formRepr.id))} placeholder="Write your answer here" value={answer} />
+      <textarea disabled={disabled} onChange={e => dispatch(setShortAnswer(e.target.value, formRepr.id))} placeholder="Write your answer here" value={answer} />
       <br />
     </>
   );

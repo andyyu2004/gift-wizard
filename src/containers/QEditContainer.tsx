@@ -8,6 +8,8 @@ import checkboxicon from '../images/multiple_select_icon.png';
 import staricon from '../images/star_icon.png';
 import rankicon from '../images/up_and_down.png';
 import shortanswericon from '../images/written_type_icon.png';
+import { useDispatch } from 'react-redux';
+import { saveForm } from '../actions/actionCreaters';
 
 /** Array of tuples of (QType, icon, defaultFormRepr) 
  * Wrap the FormRepr in a thunk so the uuid() is unique each time
@@ -213,18 +215,25 @@ const QEditContainer = props => {
   // const addForm = (form: FormRepr) => setForms([...forms, form]);
 
   const [forms, dispatch] = useReducer<ReducerType>(reducer, []);
-
   const [editable, setEditable] = useState<boolean>(true);
+  const [formLabel, setFormLabel] = useState<string>("");
+  const reduxDispatch = useDispatch();
+
 
   return (
     <>
       <Button onClick={() => console.log(forms)}>Print (console.log) Form State (Debug)</Button>
       <Button onClick={() => setEditable(!editable)}>Toggle Editable (Testing Purpose Only)</Button>
       <h6>Editable? (for debug): {editable.toString()}</h6>
+      <input placeholder="Form label" value={formLabel} onChange={e => setFormLabel(e.target.value)} />
       <div className="flex-container">
         <QuestionSelection dispatch={dispatch} questionData={questionData} />
         <QEdit editable={editable} dispatch={dispatch} forms={forms} />
       </div>
+      
+      {/** Temporarily save to redux store for now */}
+      <Button onClick={() => reduxDispatch(saveForm(formLabel, forms))}>Save</Button>
+      <Button>Send To</Button>
     </>
   );
 };

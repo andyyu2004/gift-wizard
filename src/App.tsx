@@ -5,7 +5,7 @@ import './App.css';
 import { Header } from './components';
 import { AppState } from './reducers';
 import { UserType } from './types';
-import { Dashboard, ErrorsView, Home, LoginView, QCreate, ProfileView } from './views';
+import { Dashboard, ErrorsView, Home, LoginView, QCreate, ProfileView, PeopleView, SavedTemplates } from './views';
 
 /**
  * Putting Header in the top level as the header should be the same throughout all views?
@@ -28,6 +28,8 @@ const App: React.SFC = props => {
         <QCreate path="create" />
         <LoginView path="login" />
         <ProfileView path="profile" />
+        <PeopleView path="people/:userid" />
+        <SavedTemplates path="open" />
         <ErrorsView path="*" errorCode={404}/>
       </Router>
     </div>

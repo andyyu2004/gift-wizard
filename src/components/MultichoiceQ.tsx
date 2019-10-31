@@ -19,6 +19,9 @@ type PropType = {
 const MultichoiceQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
   const { options } = formRepr;
 
+  /** If dispatch is not passed, completely freeze everything to be disabled (not just readonly) */
+  const frozen = dispatch === undefined;
+
   const handleAddOption = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     dispatch(addOption("New Option", formRepr.id));
@@ -36,11 +39,11 @@ const MultichoiceQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
       <br />
       {options.map(([choice, isChecked, id], i) => (
         <div key={id}>
-          <input type="checkbox" id={id} checked={isChecked} onChange={e => dispatch(setCheckboxStatus(i, e.target.checked, formRepr.id))} /> 
+          <input disabled={frozen} type="checkbox" id={id} checked={isChecked} onChange={e => dispatch(setCheckboxStatus(i, e.target.checked, formRepr.id))} /> 
           {editable 
             ? <input type="text" value={choice} onChange={e => dispatch(updateOption(e.target.value, i, formRepr.id))}/>
             : <label htmlFor={id}>{choice}</label>}
-        <button onClick={e => handleDeleteOption(e, i)} className="generic-button">del</button> {/* Replace this with an image or something when you style it */}
+        {editable && <button onClick={e => handleDeleteOption(e, i)} className="generic-button">del</button>} {/* Replace this with an image or something when you style it */}
         </div>
       ))} 
     </>

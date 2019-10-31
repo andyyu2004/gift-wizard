@@ -19,7 +19,7 @@ const Home: React.FC<RouteComponentProps> = props => {
         title="Looking for a gift for him/her?"
         subtitle="By sending him/her an anonymous questionnaire, get the best 'hints'!">
         <Cell image={createNewIcon} text="Create New" onClick={() => navigate("/create")}/>
-        <Cell image={openFromExistingIcon} text="Open Existing"/>
+        <Cell image={openFromExistingIcon} text="Open Existing" onClick={() => navigate("/open")}/>
         <Cell image={template1} text="template xxx"/>
         <Cell image={template2} text="template xxx"/>
         <Cell image={template3} text="template xxx"/>

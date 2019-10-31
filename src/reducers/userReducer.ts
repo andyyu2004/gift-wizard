@@ -12,7 +12,7 @@ export const initialUserState: UserState = {
 const userReducer = (state: UserState = initialUserState, action: Action) => {
     switch (action.type) {
         case "UPDATE_USER_TYPE": {
-            const { userType } = action.payload;
+            const { userType } = action;
             return {
                 ...state,
                 userType: userType,

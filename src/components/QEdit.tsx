@@ -79,7 +79,7 @@ export interface RateFormRepr extends IForm {
 
 type PropType = {
   forms: FormRepr[],  
-  dispatch: React.Dispatch<FormAction>,
+  dispatch?: React.Dispatch<FormAction>,
   editable: boolean,
 };
 
@@ -98,8 +98,7 @@ const QEdit: React.FC<PropType> = ({ forms, dispatch, editable }) => {
   };
 
   return (
-    <div className= "edit" >
-      Questionnaire Edit
+    <div className= "edit">
       <form>{forms.map(render)}</form>
     </div>
   );

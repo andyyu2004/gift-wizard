@@ -22,7 +22,7 @@ const RateQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
         rating={rating}
         // starRatedColor="#FFD700"
         // You can style the StarRating in here: refer to https://www.npmjs.com/package/react-star-ratings
-        changeRating={(r: number) => dispatch(updateRating(r, formRepr.id))} />
+        changeRating={(r: number) => dispatch && dispatch(updateRating(r, formRepr.id))} />
     </div>
   );
 };

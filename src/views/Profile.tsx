@@ -5,6 +5,8 @@ import Connections from './Connections';
 import Settings from './Settings';
 import PersonalProfile from './PersonalProfile';
 import { Friend } from '../types';
+import { getRandom } from '../util/array';
+import { fakeusers } from '../mockdata/mockpeople';
 
 /** Enumeration of the subviews of the page */ 
 enum Subview {
@@ -15,19 +17,23 @@ enum Subview {
   Settings        = "Settings",
 }
 
+/** Random selection of people from fakeusers */
 const fakeFriends: Friend[] = [
   {
-    name: "Bob",
+    userid: getRandom(fakeusers).userid,
     relationship: "Dad",
-    picture: usericon
   }, 
   {
-    name: "Mary",
+    userid: getRandom(fakeusers).userid,
     relationship: "Mom",
-    picture: usericon
+  },
+  {
+    userid: getRandom(fakeusers).userid,
+    relationship: "Friend",
   },
 ];
 
+/** View for editing one's own profile */
 const Profile = props => {
   
   /** Map from Subview => Component; Used for conditional rendering */

@@ -4,16 +4,26 @@ import { Cell, CellRow } from '../components';
 import connectionsIcon from '../images/connections_btn1.png';
 import createNewIcon from '../images/create_new_icon.png';
 import areaOfInterestIcon from '../images/hobby_icon.png';
-import template4 from '../images/more_features_icon.png';
+import template4icon from '../images/more_features_icon.png';
 import moreIcon from '../images/more_options_icon.png';
 import openFromExistingIcon from '../images/open_icon.png';
-import template1 from '../images/template1.png';
-import template2 from '../images/template2.png';
-import template3 from '../images/template4.png';
-import wishListIcon from '../images/wishlist_icon2.png';
 import settingsIcon from '../images/settings_icon.svg';
+import template1icon from '../images/template1.png';
+import template2icon from '../images/template2.png';
+import template3icon from '../images/template4.png';
+import wishListIcon from '../images/wishlist_icon2.png';
+import { qtemplateone } from '../mockdata/templates';
+import { Questionnaire } from "../types/FormTypes";
 
 const Home: React.FC<RouteComponentProps> = props => {
+
+  const navigateWithDefaultTemplate = (questionnaire: Questionnaire) => 
+    navigate("create", { 
+      state: { 
+        questionnaire
+      }
+    });
+
   return (
     <main>
       <CellRow 
@@ -21,10 +31,10 @@ const Home: React.FC<RouteComponentProps> = props => {
         subtitle="By sending him/her an anonymous questionnaire, get the best 'hints'!">
         <Cell image={createNewIcon} text="Create New" onClick={() => navigate("/create")} />
         <Cell image={openFromExistingIcon} text="Open Existing" onClick={() => navigate("/open")} />
-        <Cell image={template1} text="template xxx" />
-        <Cell image={template2} text="template xxx" />
-        <Cell image={template3} text="template xxx" />
-        <Cell image={template4} text="Browse more..." />
+        <Cell image={template1icon} text="template 1" onClick={() => navigateWithDefaultTemplate(qtemplateone)} />
+        <Cell image={template2icon} text="template xxx" />
+        <Cell image={template3icon} text="template xxx" />
+        <Cell image={template4icon} text="Browse more..." />
       </CellRow>
       <CellRow 
         title="Build up your profile"

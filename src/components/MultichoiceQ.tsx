@@ -1,9 +1,9 @@
 import React from 'react';
 import { setCheckboxStatus, updateOption, addOption, removeOption } from '../actions/actionCreaters';
-import { FormAction } from '../containers/QEditContainer';
 import { MultichoiceRepr } from './QEdit';
 import Question from './Question';
 import cancel_icon from '../images/cancel_icon.png';
+import { FormAction } from "../types/FormTypes";;
 
 type PropType = {
   formRepr: MultichoiceRepr,

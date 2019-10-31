@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import './QuestionSelection.css';
 import { QuestionType, FormRepr } from './QEdit';
-import { FormAction } from '../containers/QEditContainer';
+import { FormAction } from "../types/FormTypes";
 import uuid from 'uuid/v4';
 import { addForm } from '../actions/actionCreaters';
 

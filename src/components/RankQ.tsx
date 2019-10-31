@@ -1,6 +1,6 @@
 import React from 'react'
 import { RankFormRepr } from './QEdit';
-import { FormAction } from '../containers/QEditContainer';
+import { FormAction } from "../types/FormTypes";
 import Question from './Question';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import { updateOption, reorderRank } from '../actions/actionCreaters';

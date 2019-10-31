@@ -254,6 +254,7 @@ const QEditContainer: React.FC<PropType> = ({ starterForm }) => {
       <Button onClick={() => console.log(form)}>Print (console.log) Form State (Debug)</Button>
       <Button onClick={() => setEditable(!editable)}>Toggle Editable (Testing Purpose Only)</Button>
       <h6>Editable? (for debug): {editable.toString()}</h6>
+      <h6>Step2: Design your own questions</h6>
       <input placeholder="Form label" value={formLabel} onChange={e => setFormLabel(e.target.value)} />
       <ToastContainer position={toast.POSITION.TOP_LEFT} />
       <div className="flex-container">

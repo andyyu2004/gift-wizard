@@ -90,10 +90,10 @@ const QEdit: React.FC<PropType> = ({ forms, dispatch, editable }) => {
   
   const render = (repr: FormRepr) => {
     switch (repr.kind) {
-      case "MCR":  return <MultichoiceQ dispatch={dispatch} key={repr.id} formRepr={repr} editable={editable} />
-      case "SAR":  return <ShortAnswerQ dispatch={dispatch} key={repr.id} formRepr={repr} editable={editable} />
-      case "RTR":  return <RateQ key={repr.id} dispatch={dispatch} formRepr={repr} editable={editable} />
-      case "RNKR": return <RankQ key={repr.id} dispatch={dispatch} formRepr={repr} editable={editable} />
+      case "MCR":  return <div className="q"><MultichoiceQ dispatch={dispatch} key={repr.id} formRepr={repr} editable={editable} /></div>
+      case "SAR":  return <div className="q"><ShortAnswerQ dispatch={dispatch} key={repr.id} formRepr={repr} editable={editable} /></div>
+      case "RTR":  return <div className="q"><RateQ key={repr.id} dispatch={dispatch} formRepr={repr} editable={editable} /></div>
+      case "RNKR": return <div className="q"><RankQ key={repr.id} dispatch={dispatch} formRepr={repr} editable={editable} /></div>
     }
   };
 

@@ -14,7 +14,7 @@ const QuestionSelection: React.FC<PropType> = ({ questionData, dispatch }) => (
   <div className="questions">
     {questionData.map(([qtype, img, form]) => (id =>
       <div className="question" key={id} onClick={() => dispatch(addForm(form(id)))}>
-        <img src={img} style={{width:"20px"}} alt="question icon"/>
+        <img src={img} className="qimg" /*style={{width:"20px"}}*/ alt="question icon"/>
         <span className="qText">{qtype}</span>
       </div>)(uuid()) // IIFE with an id to apply to the form
     )}

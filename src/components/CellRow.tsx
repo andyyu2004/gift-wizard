@@ -21,6 +21,9 @@ const RowContainer = ({ title, subtitle, children }) => {
       padding: "30px",
       margin: "2px",
       minHeight: "300px",
+    },
+    cellContainer: {
+      textAlign:"center" as const
     }
   };
 
@@ -28,7 +31,7 @@ const RowContainer = ({ title, subtitle, children }) => {
     <div style={styles.cellRow}>
       <h5 style={styles.title} >{title}</h5>
       <h6>{subtitle}</h6>
-      {children}
+      <div style={styles.cellContainer}>{children}</div>
     </div>
   );
 };

@@ -9,7 +9,7 @@ import { QEditContainer } from '../containers';
 const QCreate: React.FC<RouteComponentProps> = () => (
   <div>
     <h3>Questionnaire Creation View</h3>
-    <ThemeSelection />
+    {/* <ThemeSelection /> */}
     <QEditContainer />
   </div>
 );

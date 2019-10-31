@@ -10,6 +10,8 @@ import rankicon from '../images/up_and_down.png';
 import shortanswericon from '../images/written_type_icon.png';
 import { useDispatch } from 'react-redux';
 import { saveForm } from '../actions/actionCreaters';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 /** Array of tuples of (QType, icon, defaultFormRepr) 
  * Wrap the FormRepr in a thunk so the uuid() is unique each time
@@ -210,30 +212,54 @@ const reducer: ReducerType = (state, action) => {
 
 };
 
-const QEditContainer = props => {
+/** Returns array of errors in string format */
+function validateForm(label: string, form: FormRepr[]): string[] {
+  const errors = [];
+  if (!label) errors.push("Questionnaire must have a non-empty label");
+  if (!form.length) {
+    errors.push("There must be at least one question"); 
+    return errors;
+  }
+  form.forEach(({question, kind}, i) => {
+    if (!question) errors.push(`Form ${i + 1} must have a non-empty question`);
+  });
+  return errors;
+};
+
+const QEditContainer = () => {
   // const [forms, setForms] = useState<FormRepr[]>([]);
   // const addForm = (form: FormRepr) => setForms([...forms, form]);
 
-  const [forms, dispatch] = useReducer<ReducerType>(reducer, []);
+  const [form, dispatch] = useReducer<ReducerType>(reducer, []);
   const [editable, setEditable] = useState<boolean>(true);
   const [formLabel, setFormLabel] = useState<string>("");
   const reduxDispatch = useDispatch();
 
+  const saveFormToStore = () => {
+    const errors = validateForm(formLabel, form);
+    if (errors.length) {
+      errors.forEach(err => toast.error(err));
+      return;
+    }
+    reduxDispatch(saveForm(formLabel, form));
+    toast.success("Saved form!");
+  };
 
   return (
     <>
-      <Button onClick={() => console.log(forms)}>Print (console.log) Form State (Debug)</Button>
+      <Button onClick={() => console.log(form)}>Print (console.log) Form State (Debug)</Button>
       <Button onClick={() => setEditable(!editable)}>Toggle Editable (Testing Purpose Only)</Button>
       <h6>Editable? (for debug): {editable.toString()}</h6>
       <input placeholder="Form label" value={formLabel} onChange={e => setFormLabel(e.target.value)} />
+      <ToastContainer position={toast.POSITION.TOP_LEFT} />
       <div className="flex-container">
         <QuestionSelection dispatch={dispatch} questionData={questionData} />
-        <QEdit editable={editable} dispatch={dispatch} forms={forms} />
+        <QEdit editable={editable} dispatch={dispatch} forms={form} />
       </div>
       
-      {/** Temporarily save to redux store for now */}
-      <Button onClick={() => reduxDispatch(saveForm(formLabel, forms))}>Save</Button>
-      <Button>Send To</Button>
+      {/** Temporarily save form to redux store for now */}
+      <Button onClick={() => saveFormToStore()}>Save</Button>
+      <Button onClick={() => alert("Bit hard to even partially implement this without some form of backend")}>Send To</Button>
     </>
   );
 };

@@ -27,7 +27,8 @@ const App: React.SFC = props => {
         <Dashboard path="admin" />
         <QCreate path="create" />
         <LoginView path="login" />
-        <ProfileView path="profile" />
+        {/* <ProfileView path="profile/:subview" /> */}
+        <ProfileView path="profile/*" />
         <PeopleView path="people/:userid" />
         <SavedTemplates path="open" />
         <ErrorsView path="*" errorCode={404}/>

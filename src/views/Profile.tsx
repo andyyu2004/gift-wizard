@@ -7,6 +7,7 @@ import PersonalProfile from './PersonalProfile';
 import { Friend } from '../types';
 import { getRandom } from '../util/array';
 import { fakeusers } from '../mockdata/mockpeople';
+import { RouteComponentProps } from '@reach/router';
 
 /** Enumeration of the subviews of the page */ 
 enum Subview {
@@ -33,19 +34,25 @@ const fakeFriends: Friend[] = [
   },
 ];
 
+type PropType = RouteComponentProps;
+
 /** View for editing one's own profile */
-const Profile = props => {
-  
+const Profile: React.FC<PropType> = props => {
+
+  /** Takes the wildcard parameter of the url (otherwise empty ) */
+  const subview: string = props["*"]; 
+
   /** Map from Subview => Component; Used for conditional rendering */
   const viewMap = {
     [Subview.PersonalProfile]: <PersonalProfile />,
-    [Subview.Interest]: null,
+    [Subview.Interest]: <h5>Area of interest</h5>,
     [Subview.Connections]: <Connections friends={fakeFriends} />,
-    [Subview.Wishlist]: null,
+    [Subview.Wishlist]: <h5>Wish list</h5>,
     [Subview.Settings]: <Settings />,
   };
 
-  const [view, setView] = useState(Subview.PersonalProfile);
+  const [view, setView] = useState(subview || Subview.PersonalProfile);
+
   const entries: [string, () => void][] = Object.values(Subview).map(subview => [subview, () => setView(subview)]);
   
   return (

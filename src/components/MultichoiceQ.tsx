@@ -33,7 +33,7 @@ const MultichoiceQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
   };
 
   return (
-    <>
+    <div className="q">
       <Question formRepr={formRepr} dispatch={dispatch} editable={editable} />
       {editable && <button className='generic-button' onClick={handleAddOption}>Add Option</button>}
       <br />
@@ -46,7 +46,7 @@ const MultichoiceQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
         {editable && <button onClick={e => handleDeleteOption(e, i)} className="generic-button">del</button>} {/* Replace this with an image or something when you style it */}
         </div>
       ))} 
-    </>
+    </div>
   );
 };
 

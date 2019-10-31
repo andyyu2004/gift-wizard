@@ -142,7 +142,7 @@ const QCreate: React.FC<PropType> = props => {
     <div className="questionnaire">
       <h3 className="header">Customize your questionnaire</h3>
       <Button onClick={() => console.log({ label, forms })}>Print (console.log) Form State (Debug)</Button>
-      <div className="themeContainer"><ThemeSelection setBackground={setBackground} /></div>
+      <ThemeSelection setBackground={setBackground} />
       <input placeholder="Form label" value={label} onChange={e => setLabel(e.target.value)} />
       <QEditContainer dispatch={dispatch} questionnaire={{ label, forms, background }} />
 

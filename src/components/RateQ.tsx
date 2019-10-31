@@ -14,7 +14,7 @@ type PropType = {
 const RateQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
   const { rating } = formRepr;
   return (
-    <div>
+    <div className="q">
       <Question formRepr={formRepr} dispatch={dispatch} editable={editable} />
       <StarRating 
         starDimension="30px"

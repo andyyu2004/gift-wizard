@@ -15,11 +15,11 @@ const ShortAnswerQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
   const disabled = dispatch === undefined;
 
   return (
-    <>
+    <div className="q">
       <Question formRepr={formRepr} dispatch={dispatch} editable={editable} /><br/>
       <textarea disabled={disabled} onChange={e => dispatch(setShortAnswer(e.target.value, formRepr.id))} placeholder="Write your answer here" value={answer} />
       <br />
-    </>
+    </div>
   );
 };
 

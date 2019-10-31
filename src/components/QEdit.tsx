@@ -90,15 +90,17 @@ const QEdit: React.FC<PropType> = ({ questionnaire: { forms, background }, dispa
   
   const render = (repr: FormRepr) => {
     switch (repr.kind) {
-      case "MCR":  return <div className="q"><MultichoiceQ dispatch={dispatch} key={repr.id} formRepr={repr} editable={editable} /></div>
-      case "SAR":  return <div className="q"><ShortAnswerQ dispatch={dispatch} key={repr.id} formRepr={repr} editable={editable} /></div>
-      case "RTR":  return <div className="q"><RateQ key={repr.id} dispatch={dispatch} formRepr={repr} editable={editable} /></div>
-      case "RNKR": return <div className="q"><RankQ key={repr.id} dispatch={dispatch} formRepr={repr} editable={editable} /></div>
+      case "MCR":  return <MultichoiceQ dispatch={dispatch} key={repr.id} formRepr={repr} editable={editable} />
+      case "SAR":  return <ShortAnswerQ dispatch={dispatch} key={repr.id} formRepr={repr} editable={editable} />
+      case "RTR":  return <RateQ key={repr.id} dispatch={dispatch} formRepr={repr} editable={editable} />
+      case "RNKR": return <RankQ key={repr.id} dispatch={dispatch} formRepr={repr} editable={editable} />
     }
   };
 
+  console.log(background);
+  
   return (
-    <div className= "edit" style={{ backgroundColor: background }}>
+    <div className= "edit" style={{ backgroundImage: `url(${background})`, backgroundRepeat: "repeat",  backgroundSize: "80px" }}>
       <form>{forms.map(render)}</form>
     </div>
   );

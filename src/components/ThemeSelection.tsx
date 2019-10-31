@@ -1,7 +1,11 @@
 import React from 'react'
+import christmas_pattern from '../images/pattern1.jpg';
+import pink_pattern from '../images/pink_triangle_pattern.webp';
 
-
-const colours = ["black", "grey", "blue", "green", "red", "yellow"];
+const backgrounds = [
+  christmas_pattern,
+  pink_pattern,
+];
 
 type PropType = {
     setBackground: React.Dispatch<string>,
@@ -9,9 +13,9 @@ type PropType = {
 
 const ThemeSelection: React.FC<PropType> = ({ setBackground }) => {
   return (
-    <div className="flex-container">
+    <div className="themeContainer">
       <h6>Step1: Choose your theme</h6>
-      {colours.map(c => <button key={c} style={{backgroundColor: c, width: "80px", height: "80px" }} onClick={() => setBackground(c)}/>)}
+      {backgrounds.map(c => <img key={c} src={c} style={{backgroundImage: c, width: "80px", height: "80px" }} onClick={() => setBackground(c)}/>)}
     </div>
   );
 };

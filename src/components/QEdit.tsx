@@ -86,7 +86,7 @@ type PropType = {
 /** Questionnaire edit component 
  *  Probably need to pass a mode flag or something to this component and all the subcomponents indicating whether to allow editing or not
 */
-const QEdit: React.FC<PropType> = ({ questionnaire: { forms, label, background, backgroundColor }, dispatch, editable }) => {
+const QEdit: React.FC<PropType> = ({ questionnaire: { forms, background }, dispatch, editable }) => {
   
   const render = (repr: FormRepr) => {
     switch (repr.kind) {
@@ -98,7 +98,7 @@ const QEdit: React.FC<PropType> = ({ questionnaire: { forms, label, background, 
   };
 
   return (
-    <div className= "edit">
+    <div className= "edit" style={{ backgroundColor: background }}>
       <form>{forms.map(render)}</form>
     </div>
   );

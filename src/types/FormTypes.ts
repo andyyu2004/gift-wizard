@@ -4,7 +4,6 @@ export type Questionnaire = {
     label: string,
     forms: FormRepr[],
     background?: string,
-    backgroundColor?: string,
   };
   
   /** Non Optional Fields for Form Actions are:

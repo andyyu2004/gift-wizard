@@ -123,6 +123,7 @@ const QCreate: React.FC<PropType> = props => {
 
   const [forms, dispatch] = useReducer<ReducerType>(reducer, starterForms || []);
   const [label, setLabel] = useState<string>(starterLabel || "");
+  const [background, setBackground] = useState<string>("grey");
   const reduxDispatch = useDispatch();
 
   const saveFormToStore = () => {
@@ -131,7 +132,7 @@ const QCreate: React.FC<PropType> = props => {
       errors.forEach(err => toast.error(err));
       return;
     }
-    reduxDispatch(saveForm({ label, forms, background: null }));
+    reduxDispatch(saveForm({ label, forms, background }));
     toast.success("Saved form!");
   };
 
@@ -139,9 +140,9 @@ const QCreate: React.FC<PropType> = props => {
     <div>
       <h3>Questionnaire Creation View</h3>
       <Button onClick={() => console.log({ label, forms })}>Print (console.log) Form State (Debug)</Button>
-      <ThemeSelection />
+      <ThemeSelection setBackground={setBackground} />
       <input placeholder="Form label" value={label} onChange={e => setLabel(e.target.value)} />
-      <QEditContainer dispatch={dispatch} questionnaire={{ label, forms }} />
+      <QEditContainer dispatch={dispatch} questionnaire={{ label, forms, background }} />
 
       {/** Temporarily save form to redux store for now */}
       <Button onClick={() => saveFormToStore()}>Save</Button>

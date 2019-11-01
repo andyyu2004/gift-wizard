@@ -108,7 +108,7 @@ const QEdit: React.FC<PropType> = ({ questionnaire: { forms, background }, dispa
       <form>{forms.map(form => (
         <div key={form.id} className="q">
           {renderForm(form)}
-          {editable && <button className="generic-button" onClick={e => handleRemoveForm(e, form.id)}>Remove form</button>}
+          {editable && <button className="generic-button" onClick={e => handleRemoveForm(e, form.id)}>Remove question</button>}
         </div>))}
       </form>
     </div>

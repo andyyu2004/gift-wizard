@@ -7,9 +7,10 @@ type PropType = RouteComponentProps & {
   templates: { [key: string]: Questionnaire },
 };
 
-const SavedTemplates: React.FC<PropType> = ({ templates }) => {
+const SavedTemplates: React.FC<PropType> = props => {
   const [currentQ, setCurrentQ] = useState(null);
-
+  const templates = props.location.state.templates || {};
+  
   const toggleForm = (key: string) => currentQ !== key || currentQ === null ? setCurrentQ(key) : setCurrentQ(null) ;
 
   return (

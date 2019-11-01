@@ -18,14 +18,24 @@ import { AppState } from '../reducers';
 
 const Home: React.FC<RouteComponentProps> = props => {
 
-  const navigateWithDefaultTemplate = (questionnaire: Questionnaire) => 
+  /** Navigate to the questionnaire edit page with the questionnaire set to the parameter of this function */
+  const navigateWithDefaultLoadedQuestionnaire = (questionnaire: Questionnaire) => 
     navigate("create", { 
       state: { 
         questionnaire
       },
     });
   
+  /** Navigate to the SavedTemplates page with the templates set to this parameter */
+  const navigateWithTemplateSet = (templates: { [key: string]: Questionnaire }) =>
+     navigate("open", {
+       state: {
+         templates
+       }
+     });
+
   const templates = useSelector<AppState, { [key: string]: Questionnaire }>(state => state.forms.templates);
+  const userforms = useSelector<AppState, { [key: string]: Questionnaire }>(state => state.forms.user);
 
   return (
     <main>
@@ -33,10 +43,10 @@ const Home: React.FC<RouteComponentProps> = props => {
         title="Looking for a gift for him/her?"
         subtitle="By sending him/her an anonymous questionnaire, get the best 'hints'!">
         <Cell image={createNewIcon} text="Create New" onClick={() => navigate("/create")} />
-        <Cell image={openFromExistingIcon} text="Open Existing" onClick={() => navigate("/open")} />
-        <Cell image={template1icon} text="Template 1" onClick={() => navigateWithDefaultTemplate(templates["template 1"])} />
-        <Cell image={template2icon} text="Template 2" onClick={() => navigateWithDefaultTemplate(templates["template 2"])}/>
-        <Cell image={template3icon} text="All Templates" />
+        <Cell image={openFromExistingIcon} text="Open Existing" onClick={() => navigateWithTemplateSet(userforms)} />
+        <Cell image={template1icon} text="Template 1" onClick={() => navigateWithDefaultLoadedQuestionnaire(templates["template 1"])} />
+        <Cell image={template2icon} text="Template 2" onClick={() => navigateWithDefaultLoadedQuestionnaire(templates["template 2"])} />
+        <Cell image={template3icon} text="All Templates" onClick={() => navigateWithTemplateSet(templates)} />
         <Cell image={template4icon} text="Browse more..." />
       </CellRow>
       <CellRow 

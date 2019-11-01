@@ -34,7 +34,7 @@ const MultichoiceQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
   };
 
   return (
-    <div className="q">
+    <div>
       <Question formRepr={formRepr} dispatch={dispatch} editable={editable} />
       {editable && <button className='generic-button' onClick={handleAddOption}>Add Option</button>}
       <br />

@@ -16,7 +16,7 @@ const ShortAnswerQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
   const disabled = dispatch === undefined;
 
   return (
-    <div className="q">
+    <div>
       <Question formRepr={formRepr} dispatch={dispatch} editable={editable} /><br/>
       <textarea className="shortanswertext" disabled={disabled} onChange={e => dispatch(setShortAnswer(e.target.value, formRepr.id))} placeholder="Write your answer here" value={answer} />
       <br />

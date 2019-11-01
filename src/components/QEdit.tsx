@@ -106,9 +106,9 @@ const QEdit: React.FC<PropType> = ({ questionnaire: { forms, background }, dispa
   return (
     <div className= "edit" style={{ backgroundImage: `url(${background})`, backgroundRepeat: "repeat",  backgroundSize: "250px" }}>
       <form>{forms.map(form => (
-        <div key={form.id}>
+        <div key={form.id} className="q">
           {renderForm(form)}
-          <button className="generic-button" onClick={e => handleRemoveForm(e, form.id)}>Remove form</button>
+          {editable && <button className="generic-button" onClick={e => handleRemoveForm(e, form.id)}>Remove form</button>}
         </div>))}
       </form>
     </div>

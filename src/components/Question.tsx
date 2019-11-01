@@ -16,7 +16,7 @@ const Question: React.FC<PropType> = ({ editable, formRepr, dispatch }) => {
     <>
       {editable  
         ? <input className="questionbox" type="text" onChange={e => dispatch(setQuestion(e.target.value, id))} value={question} placeholder={defaultQuestion} />
-        : <span>{question}</span>}
+        : <span className="ques">{question}</span>}
     </>
   );
 };

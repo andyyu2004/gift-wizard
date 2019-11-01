@@ -62,7 +62,8 @@ const QEditContainer: React.FC<PropType> = ({ dispatch, questionnaire }) => {
 
   return (
     <>
-      <Button onClick={() => setEditable(!editable)}>Toggle Editable (Testing Purpose Only)</Button>
+      <Button style={{marginTop: "0px",marginBottom: "0px", marginLeft: "20px",backgroundColor:"#66B3FF", borderColor:"#66B3FF", display: "inline-block"}}
+      className="preview" onClick={() => setEditable(!editable)}>Preview</Button>
       {/* <h6>Editable? (for debug): {editable.toString()}</h6> */}
       <ToastContainer position={toast.POSITION.TOP_LEFT} />
       <div className="flex-container">

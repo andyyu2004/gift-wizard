@@ -17,6 +17,12 @@
 }
 
 .formlabel{
-    width: 30%;
+    width: 60%;
     margin-left: 10px;
+}
+
+.title{
+    display: inline-block;
+    text-align:right;
+    width: 80%;
 }

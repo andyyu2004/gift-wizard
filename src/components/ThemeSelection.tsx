@@ -1,11 +1,11 @@
 import React from 'react';
-import icecream_pattern from '../images/icecream_pattern.png';
-import orange_pattern from '../images/orange_pattern.png';
+//import icecream_pattern from '../images/icecream_pattern.png';
+//import orange_pattern from '../images/orange_pattern.png';
 import christmas_pattern from '../images/pattern1.jpg';
 import pattern2 from '../images/pattern2.jpg';
 import pattern3 from '../images/pattern3.jpg';
 import pattern4 from '../images/pattern4.jpg';
-import red_heart_pattern from '../images/red_heart_pattern.png';
+//import red_heart_pattern from '../images/red_heart_pattern.png';
 import "./ThemeSelection.css";
 
 const backgrounds = [
@@ -13,9 +13,9 @@ const backgrounds = [
   pattern3,
   pattern4,
   christmas_pattern,
-  icecream_pattern,
-  red_heart_pattern,
-  orange_pattern
+  //icecream_pattern,
+  //red_heart_pattern,
+  //orange_pattern
 ];
 
 type PropType = {

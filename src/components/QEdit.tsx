@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import { RankQ, RateQ, ShortAnswerQ } from '.';
 import { FormAction, Questionnaire } from "../types/FormTypes";
 import MultichoiceQ from './MultichoiceQ';
 import './QEdit.css';
+import { removeForm } from '../actions/actionCreaters';
 
 /**
  * QEdit takes some representation of a form and renders from there instead of accepting children prop directly
@@ -88,7 +89,7 @@ type PropType = {
 */
 const QEdit: React.FC<PropType> = ({ questionnaire: { forms, background }, dispatch, editable }) => {
   
-  const render = (repr: FormRepr) => {
+  const renderForm = (repr: FormRepr) => {
     switch (repr.kind) {
       case "MCR":  return <MultichoiceQ dispatch={dispatch} key={repr.id} formRepr={repr} editable={editable} />
       case "SAR":  return <ShortAnswerQ dispatch={dispatch} key={repr.id} formRepr={repr} editable={editable} />
@@ -96,12 +97,20 @@ const QEdit: React.FC<PropType> = ({ questionnaire: { forms, background }, dispa
       case "RNKR": return <RankQ key={repr.id} dispatch={dispatch} formRepr={repr} editable={editable} />
     }
   };
-
-  console.log(background);
   
+  const handleRemoveForm = (e: MouseEvent<HTMLElement>, formId: string) => {
+    e.preventDefault();
+    dispatch(removeForm(formId))
+  };
+
   return (
     <div className= "edit" style={{ backgroundImage: `url(${background})`, backgroundRepeat: "repeat",  backgroundSize: "250px" }}>
-      <form>{forms.map(render)}</form>
+      <form>{forms.map(form => (
+        <div key={form.id}>
+          {renderForm(form)}
+          <button className="generic-button" onClick={e => handleRemoveForm(e, form.id)}>Remove form</button>
+        </div>))}
+      </form>
     </div>
   );
 }

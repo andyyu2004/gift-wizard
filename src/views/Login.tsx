@@ -1,5 +1,5 @@
 import { RouteComponentProps } from '@reach/router';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useRef, useEffect } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { updateUserType } from '../actions/actionCreaters';
@@ -15,6 +15,9 @@ const LoginView: React.FC<RouteComponentProps> = ({ navigate }) => {
 
   const dispatch = useDispatch();
 
+  const inputRef = useRef(null);
+
+  useEffect(() => inputRef.current.focus(), []); // Focus text input on load
 
   const handleLoginSubmission = e => {
     e.preventDefault();
@@ -49,6 +52,7 @@ const LoginView: React.FC<RouteComponentProps> = ({ navigate }) => {
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control 
+              ref={inputRef}
               type="text" 
               placeholder="email/username" 
               value={email}

@@ -7,7 +7,7 @@ import { Button } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import uuid from 'uuid/v4';
-import { saveForm } from '../actions/actionCreaters';
+import { saveQuestionnaire } from '../actions/actionCreaters';
 import { ThemeSelection } from '../components';
 import { FormRepr, MultichoiceRepr, RankFormRepr, RateFormRepr, ShortAnswerRepr } from '../components/QEdit';
 import { QEditContainer } from '../containers';
@@ -41,6 +41,12 @@ const reducer: ReducerType = (state, action) => {
     }
 
     case "ADD_FORM": return [...state, action.form];
+
+    case "REMOVE_FORM": {
+      const newState = [...state];
+      newState.splice(i, 1);
+      return newState;
+    }
 
     case "UPDATE_RATING": {
       const { rating } = action;
@@ -120,12 +126,13 @@ type RouteProps = {
 type PropType = RouteComponentProps<RouteProps>;
 
 const QCreate: React.FC<PropType> = props => {
-  const starterQuestionnaire: Questionnaire = props.location.state;
-  const { forms: starterForms, label: starterLabel } = starterQuestionnaire;
+  const starterQuestionnaire: Questionnaire = props.location.state.questionnaire;
+  /** Workaround to destructuring undefined */
+  const { forms: starterForms, label: starterLabel, background: starterBackground } = starterQuestionnaire || {};
 
   const [forms, dispatch] = useReducer<ReducerType>(reducer, starterForms || []);
   const [label, setLabel] = useState<string>(starterLabel || "");
-  const [background, setBackground] = useState<string>("grey");
+  const [background, setBackground] = useState<string>(starterBackground || "grey");
   const reduxDispatch = useDispatch();
 
   const saveFormToStore = () => {
@@ -134,13 +141,14 @@ const QCreate: React.FC<PropType> = props => {
       errors.forEach(err => toast.error(err));
       return;
     }
-    reduxDispatch(saveForm({ label, forms, background }));
+    reduxDispatch(saveQuestionnaire({ label, forms, background }));
     toast.success("Saved form!");
   };
 
   return (
     <div className="questionnaire">
       <h3 className="header">Customize your questionnaire</h3>
+
       <Button onClick={() => console.log({ label, forms, background })}>Print (console.log) Form State (Debug)</Button>
       <ThemeSelection setBackground={setBackground} />
       <div className="step2">
@@ -152,7 +160,7 @@ const QCreate: React.FC<PropType> = props => {
         <QEditContainer dispatch={dispatch} questionnaire={{ label, forms, background }} />
       </div>
       {/** Temporarily save form to redux store for now */}
-      <Button style={{backgroundColor: "#FFFFFF", color: "#808080", borderColor: "#808080", display: "inline-block"}} onClick={() => saveFormToStore()}>Save</Button>
+      <Button style={{ backgroundColor: "#FFFFFF", color: "#808080", borderColor: "#808080", display: "inline-block" }} onClick={() => saveFormToStore()}>Save</Button>
     </div>
   );
 };

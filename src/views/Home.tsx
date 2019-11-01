@@ -12,8 +12,9 @@ import template1icon from '../images/template1.png';
 import template2icon from '../images/template2.png';
 import template3icon from '../images/template4.png';
 import wishListIcon from '../images/wishlist_icon2.png';
-import { qtemplateone } from '../mockdata/templates';
 import { Questionnaire } from "../types/FormTypes";
+import { useSelector } from 'react-redux';
+import { AppState } from '../reducers';
 
 const Home: React.FC<RouteComponentProps> = props => {
 
@@ -21,8 +22,10 @@ const Home: React.FC<RouteComponentProps> = props => {
     navigate("create", { 
       state: { 
         questionnaire
-      }
+      },
     });
+  
+  const templates = useSelector<AppState, { [key: string]: Questionnaire }>(state => state.forms.templates);
 
   return (
     <main>
@@ -31,9 +34,9 @@ const Home: React.FC<RouteComponentProps> = props => {
         subtitle="By sending him/her an anonymous questionnaire, get the best 'hints'!">
         <Cell image={createNewIcon} text="Create New" onClick={() => navigate("/create")} />
         <Cell image={openFromExistingIcon} text="Open Existing" onClick={() => navigate("/open")} />
-        <Cell image={template1icon} text="template 1" onClick={() => navigateWithDefaultTemplate(qtemplateone)} />
-        <Cell image={template2icon} text="template xxx" />
-        <Cell image={template3icon} text="template xxx" />
+        <Cell image={template1icon} text="Template 1" onClick={() => navigateWithDefaultTemplate(templates["template 1"])} />
+        <Cell image={template2icon} text="Template 2" onClick={() => navigateWithDefaultTemplate(templates["template 2"])}/>
+        <Cell image={template3icon} text="All Templates" />
         <Cell image={template4icon} text="Browse more..." />
       </CellRow>
       <CellRow 

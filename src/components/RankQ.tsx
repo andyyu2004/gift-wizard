@@ -22,34 +22,47 @@ const RankQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
     dispatch(reorderRank(source.index, destination.index, source.droppableId));
   };
 
-  const DragComp = ({ id, i, option }) => (
-    <Draggable key={id} draggableId={id} index={i} isDragDisabled={dispatch === undefined}>
-      {provided => 
-        <div {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
-          {editable 
-            ? <input className="dragoptionbox" value={option} onChange={e => dispatch(updateOption(e.target.value, i, formRepr.id))}/>
-            : (<><span style={{marginBottom:"5px", marginTop:"5px", display:"inline-block"}}>{option}</span><br/></>) // Lags horrendously if block element is rendered here instead
-          }
-          {provided.placeholder}
-        </div>
-      }
-    </Draggable>
-  );
+  /** Factoring it out makes the input get deselected on change, not sure how to fix */
+  // const DragComp = ({ id, i, option }) => (
+  //   <Draggable key={id} draggableId={id} index={i} isDragDisabled={dispatch === undefined}>
+  //     {provided => 
+  //       <div {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
+  //         {editable 
+  //           ? <input key={id} className="dragoptionbox" value={option} onChange={e => dispatch(updateOption(e.target.value, i, formRepr.id))}/>
+  //           : (<><span style={{marginBottom:"5px", marginTop:"5px", display:"inline-block"}}>{option}</span><br/></>) // Lags horrendously if block element is rendered here instead
+  //         }
+  //         {provided.placeholder}
+  //       </div>
+  //     }
+  //   </Draggable>
+  // );
 
   return (
-    <div className="q">
+    // <div className="q">
       <DragDropContext onDragEnd={onDragEnd}>
         <Question formRepr={formRepr} dispatch={dispatch} editable={editable} />
         <Droppable droppableId={formRepr.id}>
           {provided => 
             <div {...provided.droppableProps} ref={provided.innerRef}>
-              {options.map(([option, id], i) => <DragComp key={id} id={id} i={i} option={option} />)}
+              {options.map(([option, id], i) => (
+                 <Draggable key={id} draggableId={id} index={i} isDragDisabled={dispatch === undefined}>
+                  {provided => 
+                    <div {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
+                      {editable 
+                        ? <input key={id} className="dragoptionbox" value={option} onChange={e => dispatch(updateOption(e.target.value, i, formRepr.id))}/>
+                        : (<><span style={{marginBottom:"5px", marginTop:"5px", display:"inline-block"}}>{option}</span><br/></>) // Lags horrendously if block element is rendered here instead
+                      }
+                      {provided.placeholder}
+                    </div>
+                  }
+                </Draggable>
+              ))}
               {provided.placeholder}
             </div>
           }
         </Droppable>
       </DragDropContext>
-    </div>
+    // </div>
   );
 };
 

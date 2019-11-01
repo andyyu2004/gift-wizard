@@ -96,8 +96,6 @@ const QEdit: React.FC<PropType> = ({ questionnaire: { forms, background }, dispa
       case "RNKR": return <RankQ key={repr.id} dispatch={dispatch} formRepr={repr} editable={editable} />
     }
   };
-
-  console.log(background);
   
   return (
     <div className= "edit" style={{ backgroundImage: `url(${background})`, backgroundRepeat: "repeat",  backgroundSize: "250px" }}>

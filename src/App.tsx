@@ -6,6 +6,7 @@ import { Header } from './components';
 import { AppState } from './reducers';
 import { UserType } from './types';
 import { Dashboard, ErrorsView, Home, LoginView, QCreate, ProfileView, PeopleView, SavedTemplates } from './views';
+import { Questionnaire } from './types/FormTypes';
 
 /**
  * Putting Header in the top level as the header should be the same throughout all views?
@@ -29,7 +30,8 @@ const App: React.SFC = props => {
         <LoginView path="login" />
         <ProfileView path="profile/*" />
         <PeopleView path="people/:userid" />
-        <SavedTemplates path="open" />
+        {/* Getting saved user forms from redux store for now */}
+        <SavedTemplates path="open" templates={useSelector<AppState, { [key: string]: Questionnaire }>(state => state.forms.user)} />
         <ErrorsView path="*" errorCode={404}/>
       </Router>
     </div>

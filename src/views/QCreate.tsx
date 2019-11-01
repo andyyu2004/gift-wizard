@@ -120,12 +120,13 @@ type RouteProps = {
 type PropType = RouteComponentProps<RouteProps>;
 
 const QCreate: React.FC<PropType> = props => {
-  const starterQuestionnaire: Questionnaire = props.location.state;
-  const { forms: starterForms, label: starterLabel } = starterQuestionnaire;
+  const starterQuestionnaire: Questionnaire = props.location.state.questionnaire;
+  /** Workaround to destructuring undefined */
+  const { forms: starterForms, label: starterLabel, background: starterBackground } = starterQuestionnaire || {};
 
   const [forms, dispatch] = useReducer<ReducerType>(reducer, starterForms || []);
   const [label, setLabel] = useState<string>(starterLabel || "");
-  const [background, setBackground] = useState<string>("grey");
+  const [background, setBackground] = useState<string>(starterBackground || "grey");
   const reduxDispatch = useDispatch();
 
   const saveFormToStore = () => {
@@ -141,7 +142,7 @@ const QCreate: React.FC<PropType> = props => {
   return (
     <div className="questionnaire">
       <h3 className="header">Customize your questionnaire</h3>
-      {/* <Button onClick={() => console.log({ label, forms })}>Print (console.log) Form State (Debug)</Button> */}
+      {/* <Button onClick={() => console.log({ label, forms, background })}>Print (console.log) Form State (Debug)</Button> */}
       <ThemeSelection setBackground={setBackground} />
       <div className="step2">
         <h6>Step2: Design your own questions</h6>
@@ -150,7 +151,7 @@ const QCreate: React.FC<PropType> = props => {
         <QEditContainer dispatch={dispatch} questionnaire={{ label, forms, background }} />
       </div>
       {/** Temporarily save form to redux store for now */}
-      <Button style={{backgroundColor: "#FFFFFF", color: "#808080", borderColor: "#808080", display: "inline-block"}} onClick={() => saveFormToStore()}>Save</Button>
+      <Button style={{ backgroundColor: "#FFFFFF", color: "#808080", borderColor: "#808080", display: "inline-block" }} onClick={() => saveFormToStore()}>Save</Button>
     </div>
   );
 };

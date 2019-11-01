@@ -7,7 +7,7 @@ import { Button } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import uuid from 'uuid/v4';
-import { saveForm } from '../actions/actionCreaters';
+import { saveQuestionnaire } from '../actions/actionCreaters';
 import { ThemeSelection } from '../components';
 import { FormRepr, MultichoiceRepr, RankFormRepr, RateFormRepr, ShortAnswerRepr } from '../components/QEdit';
 import { QEditContainer } from '../containers';
@@ -41,6 +41,12 @@ const reducer: ReducerType = (state, action) => {
     }
 
     case "ADD_FORM": return [...state, action.form];
+
+    case "REMOVE_FORM": {
+      const newState = [...state];
+      newState.splice(i, 1);
+      return newState;
+    }
 
     case "UPDATE_RATING": {
       const { rating } = action;
@@ -135,7 +141,7 @@ const QCreate: React.FC<PropType> = props => {
       errors.forEach(err => toast.error(err));
       return;
     }
-    reduxDispatch(saveForm({ label, forms, background }));
+    reduxDispatch(saveQuestionnaire({ label, forms, background }));
     toast.success("Saved form!");
   };
 

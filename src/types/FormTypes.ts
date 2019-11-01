@@ -13,6 +13,7 @@ export type Questionnaire = {
   export type FormAction
     = SetShortAnswerAction
     | AddFormAction
+    | RemoveFormAction
     | SetCheckboxStatusAction
     | UpdateOptionAction
     | UpdateRatingAction
@@ -31,7 +32,12 @@ export type Questionnaire = {
     type: "ADD_FORM",
     formId: string,
     form: FormRepr,
-  }
+  };
+
+  export type RemoveFormAction = {
+    type: "REMOVE_FORM",
+    formId: string,
+  };
   
   export type SetQuestionAction = {
     type: "SET_QUESTION",

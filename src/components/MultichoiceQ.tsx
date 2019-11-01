@@ -43,7 +43,7 @@ const MultichoiceQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
           <input className="checkbox" disabled={frozen} type="checkbox" id={id} checked={isChecked} onChange={e => dispatch(setCheckboxStatus(i, e.target.checked, formRepr.id))} /> 
           {editable 
             ? <input className="optionbox" type="text" value={choice} onChange={e => dispatch(updateOption(e.target.value, i, formRepr.id))}/>
-            : <label htmlFor={id}>{choice}</label>}
+            : <label className="options" htmlFor={id}>{choice}</label>}
         {editable && <button onClick={e => handleDeleteOption(e, i)} className="generic-button">del</button>} {/* Replace this with an image or something when you style it */}
         </div>
       ))} 

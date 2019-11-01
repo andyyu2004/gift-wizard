@@ -28,7 +28,7 @@ const RankQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
         <div {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
           {editable 
             ? <input className="dragoptionbox" value={option} onChange={e => dispatch(updateOption(e.target.value, i, formRepr.id))}/>
-            : (<><span>{option}</span><br/></>) // Lags horrendously if block element is rendered here instead
+            : (<><span style={{marginBottom:"5px", marginTop:"5px", display:"inline-block"}}>{option}</span><br/></>) // Lags horrendously if block element is rendered here instead
           }
           {provided.placeholder}
         </div>

@@ -3,7 +3,8 @@ import { setCheckboxStatus, updateOption, addOption, removeOption } from '../act
 import { MultichoiceRepr } from './QEdit';
 import Question from './Question';
 import cancel_icon from '../images/cancel_icon.png';
-import { FormAction } from "../types/FormTypes";;
+import { FormAction } from "../types/FormTypes";
+import "./MultichoiceQ.css";
 
 type PropType = {
   formRepr: MultichoiceRepr,
@@ -39,9 +40,9 @@ const MultichoiceQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
       <br />
       {options.map(([choice, isChecked, id], i) => (
         <div key={id}>
-          <input disabled={frozen} type="checkbox" id={id} checked={isChecked} onChange={e => dispatch(setCheckboxStatus(i, e.target.checked, formRepr.id))} /> 
+          <input className="checkbox" disabled={frozen} type="checkbox" id={id} checked={isChecked} onChange={e => dispatch(setCheckboxStatus(i, e.target.checked, formRepr.id))} /> 
           {editable 
-            ? <input type="text" value={choice} onChange={e => dispatch(updateOption(e.target.value, i, formRepr.id))}/>
+            ? <input className="optionbox" type="text" value={choice} onChange={e => dispatch(updateOption(e.target.value, i, formRepr.id))}/>
             : <label htmlFor={id}>{choice}</label>}
         {editable && <button onClick={e => handleDeleteOption(e, i)} className="generic-button">del</button>} {/* Replace this with an image or something when you style it */}
         </div>

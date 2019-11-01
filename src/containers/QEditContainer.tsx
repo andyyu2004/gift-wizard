@@ -62,16 +62,15 @@ const QEditContainer: React.FC<PropType> = ({ dispatch, questionnaire }) => {
 
   return (
     <>
-      <Button onClick={() => setEditable(!editable)}>Toggle Editable (Testing Purpose Only)</Button>
-      <h6>Editable? (for debug): {editable.toString()}</h6>
-      <h6>Step2: Design your own questions</h6>    
+      {/* <Button onClick={() => setEditable(!editable)}>Toggle Editable (Testing Purpose Only)</Button>
+      <h6>Editable? (for debug): {editable.toString()}</h6> */}    
       <ToastContainer position={toast.POSITION.TOP_LEFT} />
       <div className="flex-container">
         <QuestionSelection dispatch={dispatch} questionData={questionData} />
         <QEdit editable={editable} dispatch={dispatch} questionnaire={questionnaire} />
       </div>
     
-      <Button onClick={() => alert("Bit hard to even partially implement this without some form of backend")}>Send To</Button>
+      <Button style={{backgroundColor:"#66B3FF", borderColor:"#66B3FF", display: "inline-block"}} onClick={() => alert("Bit hard to even partially implement this without some form of backend")}>Send To</Button>
     </>
   );
 };

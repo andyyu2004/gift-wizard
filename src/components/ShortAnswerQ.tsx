@@ -3,6 +3,7 @@ import { Question } from '.';
 import { setShortAnswer } from '../actions/actionCreaters';
 import { FormAction } from "../types/FormTypes";
 import { ShortAnswerRepr } from './QEdit';
+import "./ShortAnswerQ.css";
 
 type PropType = {
   formRepr: ShortAnswerRepr,
@@ -17,7 +18,7 @@ const ShortAnswerQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
   return (
     <div className="q">
       <Question formRepr={formRepr} dispatch={dispatch} editable={editable} /><br/>
-      <textarea disabled={disabled} onChange={e => dispatch(setShortAnswer(e.target.value, formRepr.id))} placeholder="Write your answer here" value={answer} />
+      <textarea className="shortanswertext" disabled={disabled} onChange={e => dispatch(setShortAnswer(e.target.value, formRepr.id))} placeholder="Write your answer here" value={answer} />
       <br />
     </div>
   );

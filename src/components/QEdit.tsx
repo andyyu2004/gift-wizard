@@ -100,7 +100,7 @@ const QEdit: React.FC<PropType> = ({ questionnaire: { forms, background }, dispa
   console.log(background);
   
   return (
-    <div className= "edit" style={{ backgroundImage: `url(${background})`, backgroundRepeat: "repeat",  backgroundSize: "80px" }}>
+    <div className= "edit" style={{ backgroundImage: `url(${background})`, backgroundRepeat: "repeat",  backgroundSize: "250px" }}>
       <form>{forms.map(render)}</form>
     </div>
   );

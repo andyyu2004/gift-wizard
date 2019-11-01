@@ -4,6 +4,7 @@ import { FormAction } from "../types/FormTypes";
 import Question from './Question';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import { updateOption, reorderRank } from '../actions/actionCreaters';
+import "./RankQ.css";
 
 type PropType = {
   formRepr: RankFormRepr,
@@ -26,7 +27,7 @@ const RankQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
       {provided => 
         <div {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
           {editable 
-            ? <input value={option} onChange={e => dispatch(updateOption(e.target.value, i, formRepr.id))}/>
+            ? <input className="dragoptionbox" value={option} onChange={e => dispatch(updateOption(e.target.value, i, formRepr.id))}/>
             : (<><span>{option}</span><br/></>) // Lags horrendously if block element is rendered here instead
           }
           {provided.placeholder}
@@ -36,17 +37,19 @@ const RankQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
   );
 
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
-      <Question formRepr={formRepr} dispatch={dispatch} editable={editable} />
-      <Droppable droppableId={formRepr.id}>
-        {provided => 
-          <div {...provided.droppableProps} ref={provided.innerRef}>
-            {options.map(([option, id], i) => <DragComp key={id} id={id} i={i} option={option} />)}
-            {provided.placeholder}
-          </div>
-        }
-      </Droppable>
-    </DragDropContext>
+    <div className="q">
+      <DragDropContext onDragEnd={onDragEnd}>
+        <Question formRepr={formRepr} dispatch={dispatch} editable={editable} />
+        <Droppable droppableId={formRepr.id}>
+          {provided => 
+            <div {...provided.droppableProps} ref={provided.innerRef}>
+              {options.map(([option, id], i) => <DragComp key={id} id={id} i={i} option={option} />)}
+              {provided.placeholder}
+            </div>
+          }
+        </Droppable>
+      </DragDropContext>
+    </div>
   );
 };
 

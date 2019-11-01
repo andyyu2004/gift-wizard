@@ -1,5 +1,5 @@
-import { navigate, RouteComponentProps } from '@reach/router';
-import React, { useEffect, useState } from 'react';
+import { RouteComponentProps } from '@reach/router';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Sidebar } from '../components';
 import adminicon from '../images/user_profile_placeholder.png';

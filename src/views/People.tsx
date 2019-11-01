@@ -6,7 +6,7 @@ const PeopleView: any = ({ userid, navigate }) => {
   return (
     <div>
       <h5>{name}</h5>
-      <img src={picture} />
+      <img src={picture} alt="profilepic" />
       <p>{bio}</p>
       {wishlist.length !== 0 && 
         <div>

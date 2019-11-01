@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
 import { RouteComponentProps } from '@reach/router';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import QEdit from '../components/QEdit';
 import { AppState } from '../reducers';
-import QEdit, { FormRepr } from '../components/QEdit';
 import { Questionnaire } from '../types/FormTypes';
 
 const SavedTemplates: React.FC<RouteComponentProps> = () => {

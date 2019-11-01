@@ -88,7 +88,7 @@ const reducer: ReducerType = (state, action) => {
 
     case "REMOVE_OPTION": {
       const { index } = action;
-      if (repr.kind != "MCR") return state;
+      if (repr.kind !== "MCR") return state;
       repr.options.splice(index, 1);;
       return Object.assign([...state], { [i]: repr });
     }

@@ -2,7 +2,7 @@ import React from 'react';
 import { setCheckboxStatus, updateOption, addOption, removeOption } from '../actions/actionCreaters';
 import { MultichoiceRepr } from './QEdit';
 import Question from './Question';
-import cancel_icon from '../images/cancel_icon.png';
+// import cancel_icon from '../images/cancel_icon.png';
 import { FormAction } from "../types/FormTypes";
 import "./MultichoiceQ.css";
 

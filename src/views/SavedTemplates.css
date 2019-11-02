@@ -1,0 +1,29 @@
+.page{
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: 9px;
+    margin-right: 9px;
+}
+.header{
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    color: #66B3FF;
+}
+
+.step{
+    border-top: solid 2px #DCDCDC;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.templateContainer{
+    border-top:solid 2px #DCDCDC;
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+.qtitle{
+    position: relative;
+    left:30%;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-weight: bold;
+    font-size: 20px;
+    color: #66B3FF;
+}

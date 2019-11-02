@@ -149,7 +149,7 @@ const QCreate: React.FC<PropType> = props => {
     <div className="questionnaire">
       <h3 className="header">Customize your questionnaire</h3>
 
-      <Button onClick={() => console.log({ label, forms, background })}>Print (console.log) Form State (Debug)</Button>
+      {/* <Button onClick={() => console.log({ label, forms, background })}>Print (console.log) Form State (Debug)</Button> */}
       <ThemeSelection setBackground={setBackground} />
       <div className="step2">
         <h6>Step2: Design your own questions</h6>

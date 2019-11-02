@@ -1,14 +1,13 @@
 import { RouteComponentProps } from '@reach/router';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Sidebar, QRepo } from '../components';
+import { SavedTemplates } from '.';
+import { QRepo, Sidebar } from '../components';
 import adminicon from '../images/user_profile_placeholder.png';
 import { AppState } from '../reducers';
-import { UserType } from '../types';
-import UserManagement from './UserManagement';
-import { SavedTemplates } from '.';
 import { Questionnaire } from '../types/FormTypes';
 import "./Dashboard.css";
+import UserManagement from './UserManagement';
 
 type PropType = RouteComponentProps;
 
@@ -22,7 +21,7 @@ enum Subview {
 }
 
 const Dashboard: React.FC<PropType> = props => {
-  const userType = useSelector<AppState, UserType>(state => state.user.userType);
+  // const userType = useSelector<AppState, UserType>(state => state.user.userType);
 
   const viewMap = {
     [Subview.UserManagement]: <UserManagement />,

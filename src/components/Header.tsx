@@ -1,7 +1,7 @@
 import { Link, navigate } from '@reach/router';
 import React, { MouseEvent } from 'react';
 import { Button, Nav, Navbar } from 'react-bootstrap';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import usericon from '../images/user_icon.svg';
 import { AppState } from '../reducers';
 import { UserState } from '../reducers/userReducer';
@@ -34,10 +34,10 @@ const Header: React.FC<PropTypes> = ({ title, subtitle }) => {
       {/* <Nav.Link href="#home">Home</Nav.Link>*/}
     </Nav>
     
-    {userType != UserType.None
+    {userType !== UserType.None
       /** If logged in, then take user to dashboard if admin else take to profile, else redirect to login screen */
       ? (<div>
-          <img src={usericon} className="small-icon" onClick={() => navigate(`/${userType == UserType.Admin ? 'admin' : 'profile'}`)} alt="profilepic" /> 
+          <img src={usericon} className="small-icon" onClick={() => navigate(`/${userType === UserType.Admin ? 'admin' : 'profile'}`)} alt="profilepic" /> 
           <Button onClick={handleLogout}>Logout</Button>
         </div>)
       : <Link to="/login">Log In/Sign Up</Link>} 

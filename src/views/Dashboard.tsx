@@ -8,13 +8,14 @@ import { UserType } from '../types';
 import UserManagement from './UserManagement';
 import { SavedTemplates } from '.';
 import { Questionnaire } from '../types/FormTypes';
+import "./Dashboard.css";
 
 type PropType = RouteComponentProps;
 
 /** Enumeration of the subviews of the page */ 
 enum Subview {
   UserManagement   = "User Management",
-  QuestionnaireLib = "Questionnaire Library",
+  QuestionnaireLib = "Questionnaires",
   // UserData         = "User Data",
   // AccountHistory   = "Account History",
   AdminSettings    = "Settings",
@@ -57,7 +58,7 @@ function QuestionnaireLib() {
   /** Fetch site wide templates */
   const templates = useSelector<AppState, { [key: string]: Questionnaire }>(state => state.forms.templates)
   return (
-    <div>
+    <div className= "adminview">
       <QRepo />
       <SavedTemplates templates={templates} />
     </div>

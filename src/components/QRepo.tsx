@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { AppState } from '../reducers';
 import { Questionnaire } from '../types/FormTypes';
 import { deleteTemplate } from '../actions/actionCreaters';
+import "./QRepo.css";
 
 /** Component for modifying the questionnaire template repository */
 const QRepo = () => {
@@ -12,14 +13,17 @@ const QRepo = () => {
 	const dispatch = useDispatch();
 
 	return (
-		<div>
-			<button onClick={() => setShowDelete(!showDelete)}>Show Template Deletion</button>
-			{showDelete && Object.values(templates).map(q => 
-				<div key={q.label}>
-					{q.label}
-					<button onClick={() => dispatch(deleteTemplate(q.label))}>DEL</button>
-				</div>)
-			}
+		<div className="templateDelete">
+			<h3 className="header">Delete Templates</h3>
+			<div className="templateContainer">
+				<button className= "showdel" onClick={() => setShowDelete(!showDelete)}>Show Template Deletion</button>
+				{showDelete && Object.values(templates).map(q => 
+					<div className= "temp" key={q.label}>
+						{q.label}
+						<button className="del" onClick={() => dispatch(deleteTemplate(q.label))}>del</button>
+					</div>)
+				}
+			</div>
 		</div>
 	);
 

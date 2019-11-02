@@ -103,7 +103,7 @@ const QEdit: React.FC<PropType> = ({ questionnaire, dispatch, editable }) => {
   
   const handleRemoveForm = (e: MouseEvent<HTMLElement>, formId: string) => {
     e.preventDefault();
-    dispatch(removeForm(formId))
+    dispatch && dispatch(removeForm(formId))
   };
 
   return (

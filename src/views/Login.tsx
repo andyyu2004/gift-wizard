@@ -1,25 +1,24 @@
-import { RouteComponentProps } from '@reach/router';
-import React, { useCallback, useState, useRef, useEffect } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { RouteComponentProps, navigate } from '@reach/router';
+import React, { useCallback, useState, useRef, useEffect, MouseEvent } from 'react';
+import { Button, Form, FormControl } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { updateUserType } from '../actions/actionCreaters';
 import { UserType } from '../types';
 import './Login.css';
 
 
-const LoginView: React.FC<RouteComponentProps> = ({ navigate }) => {  
+const LoginView: React.FC<RouteComponentProps> = () => {  
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const dispatch = useDispatch();
-
-  const inputRef = useRef(null);
-
+  
+  const inputRef: any = useRef(null);
   useEffect(() => inputRef.current.focus(), []); // Focus text input on load
 
-  const handleLoginSubmission = e => {
+  const handleLoginSubmission = (e: MouseEvent<HTMLElement>) => {
     e.preventDefault();
     console.log('submitted credentials', email, password);
     // Make some mock username password called admin admin for now

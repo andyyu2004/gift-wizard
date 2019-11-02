@@ -8,18 +8,18 @@ import "./RankQ.css";
 
 type PropType = {
   formRepr: RankFormRepr,
-  dispatch: React.Dispatch<FormAction>,
+  dispatch?: React.Dispatch<FormAction>,
   editable: boolean,
 };
 
 const RankQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
   const { options } = formRepr;
 
-  const onDragEnd = res => {
+  const onDragEnd = (res: any) => {
     const { destination, source } = res;
     if (!destination || (source.droppableId === destination.droppableId && source.index === destination.index)) return;
     // The droppableId is the formid, so make sure that matches
-    dispatch(reorderRank(source.index, destination.index, source.droppableId));
+    dispatch && dispatch(reorderRank(source.index, destination.index, source.droppableId));
   };
 
 
@@ -49,7 +49,7 @@ const RankQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
                 {provided => 
                   <div {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
                     {editable 
-                      ? <input key={id} className="dragoptionbox" value={option} onChange={e => dispatch(updateOption(e.target.value, i, formRepr.id))}/>
+                      ? <input key={id} className="dragoptionbox" value={option} onChange={e => dispatch && dispatch(updateOption(e.target.value, i, formRepr.id))}/>
                       : (<><span style={{marginBottom:"5px", marginTop:"5px", display:"inline-block", fontFamily:"Lucida Console, Monaco, monospace"}}>{option}</span><br/></>) // Lags horrendously if block element is rendered here instead
                     }
                     {provided.placeholder}

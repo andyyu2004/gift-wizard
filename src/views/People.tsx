@@ -1,14 +1,19 @@
 import React from 'react'
 import { fakeusers } from '../mockdata/mockpeople';
+import { RouteComponentProps } from '@reach/router';
 
-const PeopleView: any = ({ userid }) => {
-  const { name, picture, wishlist, bio } = fakeusers.find(x => x.userid === userid);
+type PropType = RouteComponentProps & {
+  userid?: string,
+};
+
+const PeopleView: React.FC<PropType> = ({ userid }) => {
+  const { name, picture, wishlist, bio } = fakeusers.find(x => x.userid === userid) || {};
   return (
     <div>
       <h5>{name}</h5>
       <img src={picture} alt="profilepic" />
       <p>{bio}</p>
-      {wishlist.length !== 0 && 
+      {wishlist && wishlist.length !== 0 && 
         <div>
           <h6>Wishlist</h6>
           <ul>
@@ -17,7 +22,6 @@ const PeopleView: any = ({ userid }) => {
         </div>
       }
     </div>
-
   );
 };
 

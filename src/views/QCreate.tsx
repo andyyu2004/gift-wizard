@@ -126,7 +126,7 @@ type RouteProps = {
 type PropType = RouteComponentProps<RouteProps>;
 
 const QCreate: React.FC<PropType> = props => {
-  const starterQuestionnaire: Questionnaire = props.location.state.questionnaire;
+  const starterQuestionnaire: Questionnaire = props.location && props.location.state.questionnaire;
   /** Workaround to destructuring undefined */
   const { forms: starterForms, label: starterLabel, background: starterBackground } = starterQuestionnaire || {};
 

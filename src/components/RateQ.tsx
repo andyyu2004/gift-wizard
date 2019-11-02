@@ -7,7 +7,7 @@ import { updateRating } from '../actions/actionCreaters';
 
 type PropType = {
   formRepr: RateFormRepr,
-  dispatch: React.Dispatch<FormAction>,
+  dispatch?: React.Dispatch<FormAction>,
   editable: boolean,
 };
 

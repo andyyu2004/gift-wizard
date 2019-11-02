@@ -9,12 +9,12 @@ type PropType = RouteComponentProps & {
 };
 
 const SavedTemplates: React.FC<PropType> = props => {
-  const [currentQ, setCurrentQ] = useState(null);
-  console.log(props)
+  const [currentQ, setCurrentQ] = useState<string>();
+  // console.log(props)
   /** If templates are passed directly use that, else use the ones passed from router */
-  const templates = props.templates || props.location.state.templates;
+  const templates = props.templates || props.location && props.location.state.templates || {};
   
-  const toggleForm = (key: string) => currentQ !== key || currentQ === null ? setCurrentQ(key) : setCurrentQ(null) ;
+  const toggleForm = (key: string) => currentQ !== key || currentQ === null ? setCurrentQ(key) : setCurrentQ("") ;
 
   return (
     <div className="page">

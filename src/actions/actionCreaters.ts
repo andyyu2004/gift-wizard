@@ -1,4 +1,4 @@
-import { SaveQuestionnaireAction, UpdateUserTypeAction, DeleteQTemplateAction } from ".";
+import { SaveQuestionnaireAction, UpdateUserTypeAction, DeleteQTemplateAction, LogoutAction } from ".";
 import { FormRepr } from "../components/QEdit";
 import { AddFormAction, AddOptionAction, RemoveOptionAction, ReorderRankAction, SetCheckboxStatusAction, SetQuestionAction, SetShortAnswerAction, UpdateOptionAction, UpdateRatingAction, Questionnaire, RemoveFormAction } from "../types/FormTypes";
 import { UserType } from "../types";

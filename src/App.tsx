@@ -21,8 +21,7 @@ const App: React.SFC = props => {
     <div className="App">
       <Header 
         title={mainTitle}
-        subtitle={mainSubtitle}
-        isLoggedIn={userType !== UserType.None} />
+        subtitle={mainSubtitle} />
       <Router>
         <Home path="/" />
         <Dashboard path="admin" />

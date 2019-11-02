@@ -18,6 +18,12 @@ const userReducer = (state: UserState = initialUserState, action: Action) => {
                 userType: userType,
             };
         }
+        case "LOGOUT": {
+            return {
+                ...state,
+                userType: UserType.None,
+            };
+        }
         default: return state;
     }
 }

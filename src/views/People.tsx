@@ -1,7 +1,7 @@
 import React from 'react'
 import { fakeusers } from '../mockdata/mockpeople';
 
-const PeopleView: any = ({ userid, navigate }) => {
+const PeopleView: any = ({ userid }) => {
   const { name, picture, wishlist, bio } = fakeusers.find(x => x.userid === userid);
   return (
     <div>

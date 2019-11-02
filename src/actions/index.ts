@@ -5,6 +5,7 @@ import { Questionnaire } from "../types/FormTypes";
 export type Action
     = UpdateUserTypeAction
     | SaveQuestionnaireAction
+    | LogoutAction
     | DeleteQTemplateAction;
 
 export interface UpdateUserTypeAction {
@@ -20,4 +21,8 @@ export interface SaveQuestionnaireAction {
 export interface DeleteQTemplateAction {
     type: "DELETE_TEMPLATE",
     templateLabel: string,
+}
+
+export interface LogoutAction {
+    type: "LOGOUT",
 }

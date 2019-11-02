@@ -21,25 +21,6 @@ const Sidebar: React.FC<PropTypes> = ({ img, text, entries }) => {
         </div>
       ))}
     </div>
-    /*
-    <div className="sidebar">
-      <img src={img} alt="sidebarimage"/>
-      <h6>{text}</h6>
-
-      <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-        {entries && entries.map(([text, cb]) => 
-          <Row id="sidebar">
-            <Nav variant="pills" className="flex-column">
-              <Nav.Item>
-                <Nav.Link eventKey="first" onClick={cb}>{text}</Nav.Link>
-              </Nav.Item>
-            
-            </Nav>
-          </Row>)}
-    
-      </Tab.Container>
-    </div>
-    */
   );
 };
 

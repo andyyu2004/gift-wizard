@@ -53,7 +53,7 @@ const Dashboard: React.FC<PropType> = props => {
   );
 };
 
-function QuestionnaireLib(props) {
+function QuestionnaireLib() {
   /** Fetch site wide templates */
   const templates = useSelector<AppState, { [key: string]: Questionnaire }>(state => state.forms.templates)
   return (

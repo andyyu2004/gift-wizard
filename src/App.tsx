@@ -31,7 +31,7 @@ const App: React.SFC = props => {
         <ProfileView path="profile/*" />
         <PeopleView path="people/:userid" />
         {/* Getting saved user forms from redux store for now */}
-        <SavedTemplates path="open" templates={useSelector<AppState, { [key: string]: Questionnaire }>(state => state.forms.user)} />
+        <SavedTemplates path="open" />
         <ErrorsView path="*" errorCode={404}/>
       </Router>
     </div>

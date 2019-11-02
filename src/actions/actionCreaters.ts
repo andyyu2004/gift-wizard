@@ -1,4 +1,4 @@
-import { SaveQuestionnaireAction, UpdateUserTypeAction } from ".";
+import { SaveQuestionnaireAction, UpdateUserTypeAction, DeleteQTemplateAction } from ".";
 import { FormRepr } from "../components/QEdit";
 import { AddFormAction, AddOptionAction, RemoveOptionAction, ReorderRankAction, SetCheckboxStatusAction, SetQuestionAction, SetShortAnswerAction, UpdateOptionAction, UpdateRatingAction, Questionnaire, RemoveFormAction } from "../types/FormTypes";
 import { UserType } from "../types";
@@ -14,6 +14,10 @@ export const saveQuestionnaire: (questionnaire: Questionnaire) => SaveQuestionna
     questionnaire,
 });
 
+export const deleteTemplate: (templateLabel: string) => DeleteQTemplateAction = templateLabel => ({
+    type: "DELETE_TEMPLATE",
+    templateLabel,
+});
 
 /** Form Action Creaters */
 export const addForm: (form: FormRepr) => AddFormAction = form => ({

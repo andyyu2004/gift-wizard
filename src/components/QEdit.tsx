@@ -87,8 +87,11 @@ type PropType = {
 /** Questionnaire edit component 
  *  Probably need to pass a mode flag or something to this component and all the subcomponents indicating whether to allow editing or not
 */
-const QEdit: React.FC<PropType> = ({ questionnaire: { forms, background }, dispatch, editable }) => {
-  
+const QEdit: React.FC<PropType> = ({ questionnaire, dispatch, editable }) => {
+  /** Safe guard when the questionnaire is deleted while it is open */
+  if (!questionnaire) return null;
+  const { forms, background } = questionnaire;
+
   const renderForm = (repr: FormRepr) => {
     switch (repr.kind) {
       case "MCR":  return <MultichoiceQ dispatch={dispatch} key={repr.id} formRepr={repr} editable={editable} />
@@ -105,11 +108,13 @@ const QEdit: React.FC<PropType> = ({ questionnaire: { forms, background }, dispa
 
   return (
     <div className= "edit" style={{ backgroundImage: `url(${background})`, backgroundRepeat: "repeat",  backgroundSize: "250px" }}>
-      <form>{forms.map(form => (
-        <div key={form.id} className="q">
-          {renderForm(form)}
-          {editable && <button className="generic-button" onClick={e => handleRemoveForm(e, form.id)}>Remove question</button>}
-        </div>))}
+      <form>
+        {forms.map(form => (
+          <div key={form.id} className="q">
+            {renderForm(form)}
+            {editable && <button className="generic-button" onClick={e => handleRemoveForm(e, form.id)}>Remove question</button>}
+          </div>))
+        }
       </form>
     </div>
   );

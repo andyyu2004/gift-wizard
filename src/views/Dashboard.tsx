@@ -1,7 +1,7 @@
 import { RouteComponentProps } from '@reach/router';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Sidebar } from '../components';
+import { Sidebar, QRepo } from '../components';
 import adminicon from '../images/user_profile_placeholder.png';
 import { AppState } from '../reducers';
 import { UserType } from '../types';
@@ -31,7 +31,7 @@ const Dashboard: React.FC<PropType> = props => {
     [Subview.AdminSettings]: <h6>Admin Settings</h6>,
   };
 
-  const [view, setView] = useState(Subview.UserManagement);
+  const [view, setView] = useState(Subview.QuestionnaireLib);
   const entries: [string, () => void][] = Object.values(Subview).map(subview => [subview, () => setView(subview)]);
 
   /** Temporarily comment below to not kick out unauthorized users during dev */
@@ -56,7 +56,12 @@ const Dashboard: React.FC<PropType> = props => {
 function QuestionnaireLib(props) {
   /** Fetch site wide templates */
   const templates = useSelector<AppState, { [key: string]: Questionnaire }>(state => state.forms.templates)
-  return <SavedTemplates templates={templates} />
+  return (
+    <div>
+      <QRepo />
+      <SavedTemplates templates={templates} />
+    </div>
+  );
 }
 
 export default Dashboard;

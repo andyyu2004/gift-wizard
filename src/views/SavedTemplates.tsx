@@ -23,7 +23,7 @@ const SavedTemplates: React.FC<PropType> = props => {
         {Object.keys(templates).map(key => 
           <div key={key}>
             <button 
-              style={{marginTop:"5px", marginBottom: "5px", border: "solid 2px #C4E1FF"}}
+              style={{marginTop:"5px", marginBottom: "5px", border: "solid 2px #C4E1FF", backgroundColor:"#FFFFFF"}}
               className="generic-button"
               onClick={() => toggleForm(key)}
               >{key}

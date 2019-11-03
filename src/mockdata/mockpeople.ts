@@ -14,7 +14,7 @@ export const eilish: User = {
     firstname: "Billy",
     surname: "Eilish",
     username: "Eilish_1031",
-    bio: "Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit dapibus lobortis. Vestibulum tincidunt lacinia felis at fermentum. Proin id vulputate sapien.",
+    bio: "Music | Friend & Family | Life | 17 | Rolling Stone",
     phonenumber: "6476029798",
     email: "bil_eilish1031@gmail.com",
     date: "25/12/2000",

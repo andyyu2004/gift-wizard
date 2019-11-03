@@ -16,7 +16,7 @@ const PeopleView: React.FC<PropType> = ({ userid }) => {
       <p>{bio}</p>
       {wishlist && wishlist.length !== 0 && 
         <div>
-          <h6>Wishlist</h6>
+          <h6> ~~~ Wishlist ~~~</h6>
           <ul>
             {wishlist.map(x => <li key={x}>{x}</li>)}
           </ul>

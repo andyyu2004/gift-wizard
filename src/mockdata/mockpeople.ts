@@ -36,71 +36,71 @@ export const fakeusers: User[] = [
         surname: "Lu",
         picture: friendicon1,
         userid: "43534535",
-        wishlist: ["Scooter", "Tekken 7"],
-        bio: "Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit dapibus lobortis. Vestibulum tincidunt lacinia felis at fermentum. Proin id vulputate sapien."
+        wishlist: ["Scooter", "Tekken 7", "Naruto"],
+        bio: "Bio: Captivated from life, showing it here."
     },
     {
         firstname: "Frank",
         surname: "Chen",
         picture: friendicon2,
         userid: "637373454",
-        wishlist: ["House", "Girlfriend"],
-        bio: "Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit dapibus lobortis. Vestibulum tincidunt lacinia felis at fermentum. Proin id vulputate sapien."
+        wishlist: ["Unicorn", "Wand", "Invitation letter to Hogwarts"],
+        bio: "Bio: Making the every day magical."
     },
     {
         firstname: "Johnny",
         surname: " Tinko",
         picture: friendicon3,
         userid: "3453845903",
-        wishlist: ["Laptop"],
-        bio: "Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit dapibus lobortis. Vestibulum tincidunt lacinia felis at fermentum. Proin id vulputate sapien."
+        wishlist: ["Camera", "Flight tickets to Tokyo", "GoPro"],
+        bio: "Bio: Travel | Friend & Family | Life"
     },
     {
         firstname: "Travales",
         surname: "Isoran",
         picture: friendicon4,
         userid: "348509345",
-        wishlist: ["Laptop", "A brain"],
-        bio: "Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit dapibus lobortis. Vestibulum tincidunt lacinia felis at fermentum. Proin id vulputate sapien.",
+        wishlist: ["Laptop", "wireless keyboard", "A monitor"],
+        bio: "Bio: Be strong....! I whisper to my WiFi signal."
     },
     {
         firstname: "Tinoro",
         surname: "Lopez",
         picture: friendicon5,
         userid: "23080986",
-        wishlist: ["HDMI Cable", "A nice pencil"],
-        bio: "Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit dapibus lobortis. Vestibulum tincidunt lacinia felis at fermentum. Proin id vulputate sapien."
+        wishlist: ["HDMI Cable", "A pencil case", "Casio Calculator"],
+        bio: "Bio: Stay humble. Be kind. Work hard."
     },
     {
         firstname: "Tamara",
         surname: "Vusa",
         picture: friendicon11,
         userid: "0984308346",
-        wishlist: [],
-        bio: "Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit dapibus lobortis. Vestibulum tincidunt lacinia felis at fermentum. Proin id vulputate sapien."
+        wishlist: ["Chocolate", "Sweets", "Godiva Giftcards"],
+        bio: "Bio: Life is short…smile while you still have teeth."
     },
     {
         firstname: "Angelina",
         surname: "Bukop",
         picture: friendicon12,
         userid: "2039092834",
-        wishlist: [],
-        bio: "Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit dapibus lobortis. Vestibulum tincidunt lacinia felis at fermentum. Proin id vulputate sapien."
+        wishlist: ["Airpods", "Bose headphones", "Apple music Membership"],
+        bio: "Bio: Being myself – Everyone else is taken."
     },
     {
         firstname: "Lisa",
         surname: "Tyrone",
         picture: friendicon13,
         userid: "34095830846",
-        wishlist: [],
-        bio: "Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit dapibus lobortis. Vestibulum tincidunt lacinia felis at fermentum. Proin id vulputate sapien."
+        wishlist: ["Nice coat", "Winter boots", "A scarf"],
+        bio: "Bio: Your life does not get better by chance. It gets better by a change."
     },
     {
         firstname: "Dave",
         surname: "Clave",
         picture: friendicon6,
         userid: "50698409586",
-        wishlist: [],
-        bio: "Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit dapibus lobortis. Vestibulum tincidunt lacinia felis at fermentum. Proin id vulputate sapien."
+        wishlist: ["A dog", "A cat", "A goldfish"],
+        bio: "Do you know what I like about people? Their dogs."
     },
 ];

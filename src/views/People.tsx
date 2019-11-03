@@ -1,6 +1,7 @@
 import React from 'react'
 import { fakeusers } from '../mockdata/mockpeople';
 import { RouteComponentProps } from '@reach/router';
+import './People.css';
 
 type PropType = RouteComponentProps & {
   userid?: string,
@@ -9,7 +10,7 @@ type PropType = RouteComponentProps & {
 const PeopleView: React.FC<PropType> = ({ userid }) => {
   const { name, picture, wishlist, bio } = fakeusers.find(x => x.userid === userid) || {};
   return (
-    <div>
+    <div className="peopleView">
       <h5>{name}</h5>
       <img src={picture} alt="profilepic" />
       <p>{bio}</p>

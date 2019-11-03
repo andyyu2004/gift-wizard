@@ -42,7 +42,7 @@ const Profile: React.FC<PropType> = props => {
   /** Takes the wildcard parameter of the url (otherwise empty) */
   const subview: string = props["*"] || Subview.PersonalProfile; 
 
-  /** Map from Subview => Component; Used for conditional rendering */
+  /** Map from Subview -> Component; Used for conditional rendering */
   const viewMap: { [key: string]: ReactElement } = {
     [Subview.PersonalProfile]: <PersonalProfile />,
     [Subview.Interest]: <h5>Area of interest</h5>,

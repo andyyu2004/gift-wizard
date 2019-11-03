@@ -24,9 +24,13 @@ const formReducer = (state: FormState = initialFormState, action: Action) => {
     switch (action.type) {
         case "SAVE_FORM": {
             const { questionnaire: { label }, questionnaire } = action;
+            const newUserFormState = {
+                ...state.user,
+                [label]: questionnaire, /** Using questionnare label as the key */
+            };
             return {
                 ...state,
-                [label]: questionnaire, /** Using questionnare label as the key */
+                user: newUserFormState
             };
         }
 

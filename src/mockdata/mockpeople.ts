@@ -21,7 +21,7 @@ export const eilish: User = {
     country: "Canada",
     province: "Ontario",
     city: "Toronto",
-    wishlist: [],
+    wishlist: ["A Good Voice"],
     picture: eilishicon,
     userid: "345987345",
 };

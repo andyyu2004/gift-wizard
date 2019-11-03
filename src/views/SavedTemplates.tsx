@@ -5,6 +5,7 @@ import { Questionnaire } from '../types/FormTypes';
 import "./SavedTemplates.css";
 
 type PropType = RouteComponentProps & {
+  title?: string,
   templates?: { [key: string]: Questionnaire },
 };
 
@@ -13,12 +14,13 @@ const SavedTemplates: React.FC<PropType> = props => {
   // console.log(props)
   /** If templates are passed directly use that, else use the ones passed from router */
   const templates = props.templates || props.location && props.location.state.templates || {};
-  
+  const title = props.title || props.location && props.location.state.title;
+
   const toggleForm = (key: string) => currentQ !== key || currentQ === null ? setCurrentQ(key) : setCurrentQ("") ;
 
   return (
     <div className="page">
-      <h3 className="header">Saved Templates</h3>
+      <h3 className="header">{title}</h3>
       <div className="templateContainer">
         {Object.keys(templates).map(key => 
           <div key={key}>

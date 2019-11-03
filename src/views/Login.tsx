@@ -42,39 +42,36 @@ const LoginView: React.FC<RouteComponentProps> = () => {
   }
 
   return (
-    <>
+    <div className='loginForm'>
       <span style={{color: "red"}}>{error}</span>
-      
-      <div className='loginForm'>
-        <p>Login Details: user/user or admin/admin for now</p>
-        <Form>
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control 
-              ref={inputRef}
-              type="text" 
-              placeholder="email/username" 
-              value={email}
-              onChange={(e: any) => setEmail(e.target.value)}/>
-          </Form.Group>
+      <p>Login Details: user/user or admin/admin for now</p>
+      <Form>
+        <Form.Group controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control 
+            ref={inputRef}
+            type="text" 
+            placeholder="email/username" 
+            value={email}
+            onChange={(e: any) => setEmail(e.target.value)}/>
+        </Form.Group>
 
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control 
-              type="password" 
-              placeholder="password" 
-              value={password}
-              onChange={(e: any) => setPassword(e.target.value)}/>
-          </Form.Group>
-          <Button 
-            variant="primary" 
-            type="submit"
-            onClick={handleLoginSubmission}>
-            Submit
-          </Button>
-        </Form>
-      </div>
-    </>
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control 
+            type="password" 
+            placeholder="password" 
+            value={password}
+            onChange={(e: any) => setPassword(e.target.value)}/>
+        </Form.Group>
+        <Button 
+          variant="primary" 
+          type="submit"
+          onClick={handleLoginSubmission}>
+          Submit
+        </Button>
+      </Form>
+    </div>
   );
 }
 

@@ -3,7 +3,7 @@ import React from 'react'
 const UserManagement = () => {
   return (
     <div>
-      User Management    
+      <h4>User Management</h4>
     </div>
   );
 };

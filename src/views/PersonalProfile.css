@@ -30,7 +30,7 @@
 
 #changeProfile:focus {outline:0;}
 
-label {
+/* label {
     margin: 20px 60px 20px 10px;
     font-size: 16px;
     float: left;
@@ -42,7 +42,7 @@ input[type=text],[type=date], select, textarea {
     border-radius: 4px;
     margin-left: 20px;
     display: inline-block;
-}
+} */
 
 #bio {
 	margin-left: 20px;

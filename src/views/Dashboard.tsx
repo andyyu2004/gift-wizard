@@ -59,7 +59,7 @@ function QuestionnaireLib() {
   return (
     <div className= "adminview">
       <QRepo />
-      <SavedTemplates templates={templates} />
+      <SavedTemplates title="Questionnaire Repository" templates={templates} />
     </div>
   );
 }

@@ -3,7 +3,7 @@
 }
 
 .peopleView h5 {
-	color: #72aefc;
+	color: #6b8ffa;
 	font-size: 30px;
 	margin-top: 50px;
 }
@@ -21,7 +21,7 @@
 .peopleView ul {
 	list-style-type: circle;
 	list-style-position: inside;
-	background: #72aefc;
+	background: #fc7783;
   	padding: 20px;
   	width: 380px;
   	margin: auto;
@@ -30,7 +30,7 @@
 }
 
 .peopleView ul li {
-    background: #cce5ff;
+    background: #ffbac0;
   	padding: 5px;
   	text-align: left;
   	font-style: oblique;

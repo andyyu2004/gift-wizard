@@ -5,6 +5,8 @@ import christmas_pattern from '../images/pattern1.jpg';
 import pattern2 from '../images/pattern2.jpg';
 import pattern3 from '../images/pattern3.jpg';
 import pattern4 from '../images/pattern4.jpg';
+import greybackground from '../images/grey_background.jpg';
+
 //import red_heart_pattern from '../images/red_heart_pattern.png';
 import "./ThemeSelection.css";
 
@@ -13,6 +15,7 @@ const backgrounds = [
   pattern3,
   pattern4,
   christmas_pattern,
+  greybackground,
   //icecream_pattern,
   //red_heart_pattern,
   //orange_pattern

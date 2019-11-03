@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { fakeusers } from '../mockdata/mockpeople';
 import { User } from '../types';
+import PersonalProfile from './PersonalProfile';
 
 const UserManagement = () => {
   const users = fakeusers;
@@ -14,8 +15,8 @@ const UserManagement = () => {
   return (
     <div>
       <h4>User Management</h4>
-      {users.map(user => <button className="generic-button" key={user.userid} onClick={() => handleViewUser(user)}>{user.name}</button>)}
-      {currentUser && <div>{currentUser.name}</div>}
+      {users.map(user => <button className="generic-button" key={user.userid} onClick={() => handleViewUser(user)}>{user.firstname} {user.surname}</button>)}
+      {currentUser && <PersonalProfile user={currentUser} />}
     </div>
   );
 };

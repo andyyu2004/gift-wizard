@@ -13,8 +13,8 @@ const SavedTemplates: React.FC<PropType> = props => {
   const [currentQ, setCurrentQ] = useState<string>();
   // console.log(props)
   /** If templates are passed directly use that, else use the ones passed from router */
-  const templates = props.templates || props.location && props.location.state.templates || {};
-  const title = props.title || props.location && props.location.state.title;
+  const templates = props.templates || (props.location && props.location.state.templates) || {};
+  const title = props.title || (props.location && props.location.state.title);
 
   const toggleForm = (key: string) => currentQ !== key || currentQ === null ? setCurrentQ(key) : setCurrentQ("") ;
 

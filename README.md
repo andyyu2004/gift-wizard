@@ -1,46 +1,87 @@
-# team03
+# Gift Wizard - Team 03
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Getting Started
 
-## Available Scripts
+Simply `npm install` in the root directory, and then `npm start` to run this application.
 
-In the project directory, you can run:
+## Home View (/)
 
-### `npm start`
+This page provides links to the most of the main views including the following:
+- Create new questionnaire (from scratch)
+- Creating questionnaire based on the most popular provided templates
+- Link to all offered templates
+- Links to profile, connection, settings.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Questionnaire Creation View (/create)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+This is the heart of the site and where you can design your own questionnaires
+though a simple two step process.
 
-### `npm test`
+1. Theme selection - Click to choose from a given selection of themes
+2. Question Creation
+ 
+We provide a selection of five types of questions.
+- Multiple Choice (Mutually exclusive options)
+- Checkbox (Allows multiple selection)
+- Rate (1..10 stars)
+- Rank (Drag and drop UI to order options)
+- Short Answer (Answerer can write their thoughts)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+(This creation stuff is all implemented btw!)
 
-### `npm run build`
+The creator can freely add questions by simply clicking on the bar on the left.
+The author can edit the questions and options, 
+this includes adding more and deleting options for 
+ranking and multichoice-like questions.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+We also offer a preview toggle button so you can see what the answerer will see when
+they answer your questionnaire.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+You can also save the questionnaire locally until refresh in the 'open existing page'.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Open existing view (/open)
 
-### `npm run eject`
+In this view you can view the templates you have saved from the `/create` view 
+(as well as two mock templates which we have placed for demonstration).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+On this page you can view the template, but it is locked for editing. 
+You can edit it by clicking the respective edit which takes you back to the `/create` page.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## All Templates 
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+There are two spaces on the home screen which we will reserve for the most popular 
+templates, which you can click to take you directly to the create screen where the
+template will be preloaded for you to begin editing.
+The two templates are currently simply named Template 1 and Template 2.  
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The All Templates page is very similar to the /open page in which you can view but not 
+edit templates. The difference is in which templates show up, the open shows personal templates,
+while the All Templates page shows site wide templates set by an administrator.
 
-## Learn More
+## Profile Shortcuts
+The bottom few icons are shortcuts to the profile section which can also be accessed through 
+the icon in the header after logging in.
+Currently, you can also access profile without logging in for your convenience.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Login
+Access this page through the Log In/Sign Up button in the top right.
+
+The default credentials are user/user and admin/admin for regular user and admin respectively.
+
+## Profile
+Once logged in as a user, the header changes and you can access the profile through the icon in the top right.
+The profile has five subviews.
+The personal profile is where you can edit your personal information (edit is not currently enabled)
+The connections page lists your connections and you can check out their profile by clicking on their icon.
+
+
+
+  
+
+
+ 
+
+
+ 
+

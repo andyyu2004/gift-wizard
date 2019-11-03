@@ -8,10 +8,10 @@ type PropType = RouteComponentProps & {
 };
 
 const PeopleView: React.FC<PropType> = ({ userid }) => {
-  const { name, picture, wishlist, bio } = fakeusers.find(x => x.userid === userid) || {};
+  const { firstname, surname, picture, wishlist, bio } = fakeusers.find(x => x.userid === userid) || {};
   return (
     <div className="peopleView">
-      <h5>{name}</h5>
+      <h5><strong>{firstname} {surname}</strong></h5>
       <img src={picture} alt="profilepic" />
       <p>{bio}</p>
       {wishlist && wishlist.length !== 0 && 

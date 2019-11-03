@@ -15,25 +15,9 @@ import wishListIcon from '../images/wishlist_icon2.png';
 import { Questionnaire } from "../types/FormTypes";
 import { useSelector } from 'react-redux';
 import { AppState } from '../reducers';
+import { navigateWithTemplateSet, navigateWithDefaultLoadedQuestionnaire } from '../actions/navigation';
 
 const Home: React.FC<RouteComponentProps> = props => {
-
-  /** Navigate to the questionnaire edit page with the questionnaire set to the parameter of this function */
-  const navigateWithDefaultLoadedQuestionnaire = (questionnaire: Questionnaire) => 
-    navigate("create", { 
-      state: { 
-        questionnaire
-      },
-    });
-  
-  /** Navigate to the SavedTemplates page with the templates set to this parameter */
-  const navigateWithTemplateSet = (title: string, templates: { [key: string]: Questionnaire }) =>
-     navigate("open", {
-       state: {
-         templates,
-         title,
-       }
-     });
 
   const templates = useSelector<AppState, { [key: string]: Questionnaire }>(state => state.forms.templates);
   const userforms = useSelector<AppState, { [key: string]: Questionnaire }>(state => state.forms.user);

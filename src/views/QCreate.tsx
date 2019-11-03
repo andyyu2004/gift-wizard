@@ -79,7 +79,7 @@ const reducer: ReducerType = (state, action) => {
       const newRepr = { ...repr as RankFormRepr };
       const tmp = newRepr.options.splice(sourceIndex, 1);
       newRepr.options.splice(destIndex, 0, tmp[0]);
-      return Object.assign([...state, { [i]: newRepr }])
+      return Object.assign([...state], { [i]: newRepr })
     } 
 
     case "ADD_OPTION": {
@@ -94,7 +94,7 @@ const reducer: ReducerType = (state, action) => {
 
     case "REMOVE_OPTION": {
       const { index } = action;
-      if (repr.kind !== "MCR") return state;
+      if (repr.kind !== "MCR" && repr.kind !== "RNKR") return state;
       repr.options.splice(index, 1);;
       return Object.assign([...state], { [i]: repr });
     }
@@ -126,7 +126,7 @@ type RouteProps = {
 type PropType = RouteComponentProps<RouteProps>;
 
 const QCreate: React.FC<PropType> = props => {
-  const starterQuestionnaire: Questionnaire = props.location && props.location.state.questionnaire;
+  const starterQuestionnaire: Questionnaire = props.location && props.location.state && props.location.state.questionnaire;
   /** Workaround to destructuring undefined */
   const { forms: starterForms, label: starterLabel, background: starterBackground } = starterQuestionnaire || {};
 
@@ -149,7 +149,7 @@ const QCreate: React.FC<PropType> = props => {
     <div className="questionnaire">
       <h3 className="header">Customize your questionnaire</h3>
 
-      {/* <Button onClick={() => console.log({ label, forms, background })}>Print (console.log) Form State (Debug)</Button> */}
+      <Button onClick={() => console.log({ label, forms, background })}>Print (console.log) Form State (Debug)</Button>
       <ThemeSelection setBackground={setBackground} />
       <div className="step2">
         <h6>Step2: Design your own questions</h6>

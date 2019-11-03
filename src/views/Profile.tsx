@@ -6,7 +6,7 @@ import Settings from './Settings';
 import PersonalProfile from './PersonalProfile';
 import { Friend } from '../types';
 import { getRandom } from '../util/array';
-import { fakeusers } from '../mockdata/mockpeople';
+import { fakeusers, eilish } from '../mockdata/mockpeople';
 import { RouteComponentProps } from '@reach/router';
 
 /** Enumeration of the subviews of the page */ 
@@ -22,11 +22,11 @@ enum Subview {
 const fakeFriends: Friend[] = [
   {
     userid: getRandom(fakeusers).userid,
-    relationship: "Dad",
+    relationship: "Cousin",
   }, 
   {
     userid: getRandom(fakeusers).userid,
-    relationship: "Mom",
+    relationship: "Classmate",
   },
   {
     userid: getRandom(fakeusers).userid,
@@ -42,9 +42,9 @@ const Profile: React.FC<PropType> = props => {
   /** Takes the wildcard parameter of the url (otherwise empty) */
   const subview: string = props["*"] || Subview.PersonalProfile; 
 
-  /** Map from Subview => Component; Used for conditional rendering */
+  /** Map from Subview -> Component; Used for conditional rendering */
   const viewMap: { [key: string]: ReactElement } = {
-    [Subview.PersonalProfile]: <PersonalProfile />,
+    [Subview.PersonalProfile]: <PersonalProfile user={eilish} />,
     [Subview.Interest]: <h5>Area of interest</h5>,
     [Subview.Connections]: <Connections friends={fakeFriends} />,
     [Subview.Wishlist]: <h5>Wish list</h5>,

@@ -48,3 +48,28 @@
 	height: 160px;
 	margin: 30px 0px 40px 0px;
 }
+
+#show-wishlist {
+	display: block;
+	margin-left: 80px;
+	margin-top: 50px;
+}
+
+#show-wishlist ul {
+  	width: 500px;
+}
+
+#show-wishlist h6 {
+	color: #f52f50;
+	font-weight: bold;
+	margin-top: 30px;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 35px;
+	margin-bottom: 30px;
+}
+
+
+
+
+
+

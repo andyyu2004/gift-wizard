@@ -27,10 +27,11 @@ const Home: React.FC<RouteComponentProps> = props => {
     });
   
   /** Navigate to the SavedTemplates page with the templates set to this parameter */
-  const navigateWithTemplateSet = (templates: { [key: string]: Questionnaire }) =>
+  const navigateWithTemplateSet = (title: string, templates: { [key: string]: Questionnaire }) =>
      navigate("open", {
        state: {
-         templates
+         templates,
+         title,
        }
      });
 
@@ -43,10 +44,10 @@ const Home: React.FC<RouteComponentProps> = props => {
         title="Looking for a gift for him/her?"
         subtitle="By sending him/her an anonymous questionnaire, get the best 'hints'!">
         <Cell image={createNewIcon} text="Create New" onClick={() => navigate("/create")} />
-        <Cell image={openFromExistingIcon} text="Open Existing" onClick={() => navigateWithTemplateSet(userforms)} />
+        <Cell image={openFromExistingIcon} text="Open Existing" onClick={() => navigateWithTemplateSet("Saved", userforms)} />
         <Cell image={template1icon} text="Template 1" onClick={() => navigateWithDefaultLoadedQuestionnaire(templates["Lipstick Template"])} />
         <Cell image={template2icon} text="Template 2" onClick={() => navigateWithDefaultLoadedQuestionnaire(templates["Template Questionnaire"])} />
-        <Cell image={template3icon} text="All Templates" onClick={() => navigateWithTemplateSet(templates)} />
+        <Cell image={template3icon} text="All Templates" onClick={() => navigateWithTemplateSet("Templates", templates)} />
         <Cell image={template4icon} text="Browse more..." />
       </CellRow>
       <CellRow 

@@ -1,5 +1,5 @@
 .profileInfo {
-	width: 130vmin;
+	width: 140vmin;
 	text-align: center;
 	margin: 30px 35px 0px 35px;
   	border: 1px solid #e8e6e6;
@@ -30,7 +30,7 @@
 #changeProfile:focus {outline:0;}
 
 .forms label {
-    margin: 15px 35px 15px 10px;
+    margin: 11px 40px 10px 10px;
     font-size: 16px;
     float: left;
 }
@@ -41,7 +41,7 @@
     border-radius: 4px;
     margin-left: 20px;
     display: inline-block;
-}
+} 
 
 #bio {
 	margin-left: 20px;

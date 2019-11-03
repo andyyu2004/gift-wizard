@@ -1,8 +1,9 @@
-import { RouteComponentProps } from '@reach/router';
+import { RouteComponentProps, navigate } from '@reach/router';
 import React, { useState } from 'react';
 import QEdit from '../components/QEdit';
 import { Questionnaire } from '../types/FormTypes';
 import "./SavedTemplates.css";
+import { navigateWithDefaultLoadedQuestionnaire } from '../actions/navigation';
 
 type PropType = RouteComponentProps & {
   title?: string,
@@ -24,12 +25,17 @@ const SavedTemplates: React.FC<PropType> = props => {
       <div className="templateContainer">
         {Object.keys(templates).map(key => 
           <div key={key}>
-            <button 
+            <button
               style={{marginTop:"5px", marginBottom: "5px", border: "solid 2px #C4E1FF", backgroundColor:"#FFFFFF"}}
               className="generic-button"
               onClick={() => toggleForm(key)}
               >{key}
             </button>
+            <button 
+              style={{marginTop:"5px", marginBottom: "5px", backgroundColor:"#FFF"}}
+              className="generic-button"
+              onClick={() => navigateWithDefaultLoadedQuestionnaire(templates[key])}
+              >Edit</button>
           </div>
           )
         }

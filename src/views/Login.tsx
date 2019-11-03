@@ -44,7 +44,6 @@ const LoginView: React.FC<RouteComponentProps> = () => {
   return (
     <div className='loginForm'>
       <span style={{color: "red"}}>{error}</span>
-      <p>Login Details: user/user or admin/admin for now</p>
       <Form>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>

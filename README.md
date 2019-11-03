@@ -45,6 +45,7 @@ In this view you can view the templates you have saved from the `/create` view
 (as well as two mock templates which we have placed for demonstration).
 
 On this page you can view the template, but it is locked for editing. 
+You can edit it by clicking the respective edit which takes you back to the `/create` page.
 
 ## All Templates 
 

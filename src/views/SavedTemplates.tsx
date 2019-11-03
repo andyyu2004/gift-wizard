@@ -1,34 +1,45 @@
-import React, { useState } from 'react'
 import { RouteComponentProps } from '@reach/router';
-import { useSelector } from 'react-redux';
-import { AppState } from '../reducers';
-import QEdit, { FormRepr } from '../components/QEdit';
+import React, { useState } from 'react';
+import QEdit from '../components/QEdit';
+import { Questionnaire } from '../types/FormTypes';
+import "./SavedTemplates.css";
 
-const SavedTemplates: React.FC<RouteComponentProps> = () => {
-  const forms = useSelector<AppState, { [key: string]: FormRepr[] }>(state => state.forms);
-  const [currentForm, setCurrentForm] = useState(null);
+type PropType = RouteComponentProps & {
+  templates?: { [key: string]: Questionnaire },
+};
 
-  const toggleForm = (key: string) => currentForm !== key || currentForm === null ? setCurrentForm(key) : setCurrentForm(null) ;
+const SavedTemplates: React.FC<PropType> = props => {
+  const [currentQ, setCurrentQ] = useState<string>();
+  // console.log(props)
+  /** If templates are passed directly use that, else use the ones passed from router */
+  const templates = props.templates || props.location && props.location.state.templates || {};
+  
+  const toggleForm = (key: string) => currentQ !== key || currentQ === null ? setCurrentQ(key) : setCurrentQ("") ;
 
   return (
-    <div>
-      <h6>Saved Templates (Click to peek)</h6>
-      {Object.keys(forms).map(key => 
-        <div key={key}>
-          <button 
-            className="generic-button"
-            onClick={() => toggleForm(key)}
-            >{key}
-          </button>
-        </div>
-        )
-      }
-      {currentForm && 
-        <div>
-          <h6>{currentForm}</h6>
-          <QEdit forms={forms[currentForm]} editable={false} />}
-        </div>
-      }
+    <div className="page">
+      <h3 className="header">Saved Templates</h3>
+      <div className="templateContainer">
+        {Object.keys(templates).map(key => 
+          <div key={key}>
+            <button 
+              style={{marginTop:"5px", marginBottom: "5px", border: "solid 2px #C4E1FF", backgroundColor:"#FFFFFF"}}
+              className="generic-button"
+              onClick={() => toggleForm(key)}
+              >{key}
+            </button>
+          </div>
+          )
+        }
+      </div>
+      <div className="step">
+        {currentQ && 
+          <div>
+            <h6 className="qtitle">{currentQ}</h6>
+            <QEdit questionnaire={templates[currentQ]} editable={false} />
+          </div>
+        }
+      </div>
     </div>
   );
 };

@@ -1,18 +1,28 @@
 import { UserType } from "../types";
-import { FormRepr } from "../components/QEdit";
+import { Questionnaire } from "../types/FormTypes";
 
 // Use a discriminated union type
 export type Action
     = UpdateUserTypeAction
-    | SaveFormAction;
+    | SaveQuestionnaireAction
+    | LogoutAction
+    | DeleteQTemplateAction;
 
 export interface UpdateUserTypeAction {
     type: "UPDATE_USER_TYPE";
     userType: UserType;
 }
 
-export interface SaveFormAction {
+export interface SaveQuestionnaireAction {
     type: "SAVE_FORM",
-    label: string,
-    form: FormRepr[],
+    questionnaire: Questionnaire,
+}
+
+export interface DeleteQTemplateAction {
+    type: "DELETE_TEMPLATE",
+    templateLabel: string,
+}
+
+export interface LogoutAction {
+    type: "LOGOUT",
 }

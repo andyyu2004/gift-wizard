@@ -1,7 +1,7 @@
-import { SaveFormAction, UpdateUserTypeAction } from ".";
+import { DeleteQTemplateAction, SaveQuestionnaireAction, UpdateUserTypeAction } from ".";
 import { FormRepr } from "../components/QEdit";
-import { AddFormAction, AddOptionAction, RemoveOptionAction, ReorderRankAction, SetCheckboxStatusAction, SetQuestionAction, SetShortAnswerAction, UpdateOptionAction, UpdateRatingAction } from "../containers/QEditContainer";
 import { UserType } from "../types";
+import { AddFormAction, AddOptionAction, Questionnaire, RemoveFormAction, RemoveOptionAction, ReorderRankAction, SetCheckboxStatusAction, SetQuestionAction, SetShortAnswerAction, UpdateOptionAction, UpdateRatingAction } from "../types/FormTypes";
 
 /** Redux action creators */
 export const updateUserType: (userType: UserType) => UpdateUserTypeAction = userType => ({
@@ -9,19 +9,27 @@ export const updateUserType: (userType: UserType) => UpdateUserTypeAction = user
     userType,
 });
 
-export const saveForm: (label: string, form: FormRepr[]) => SaveFormAction = (label, form) => ({
+export const saveQuestionnaire: (questionnaire: Questionnaire) => SaveQuestionnaireAction = questionnaire => ({
     type: "SAVE_FORM",
-    label, 
-    form,
+    questionnaire,
 });
 
+export const deleteTemplate: (templateLabel: string) => DeleteQTemplateAction = templateLabel => ({
+    type: "DELETE_TEMPLATE",
+    templateLabel,
+});
 
 /** Form Action Creaters */
 export const addForm: (form: FormRepr) => AddFormAction = form => ({
     type: "ADD_FORM", 
     form,
     formId: form.id,
-})
+});
+
+export const removeForm: (formId: string) => RemoveFormAction = formId => ({
+    type: "REMOVE_FORM",
+    formId,
+});
 
 export const setShortAnswer: (answer: string, form: string) => SetShortAnswerAction = (answer, formId) => ({
     type: "SET_SHORT_ANSWER",
@@ -75,3 +83,4 @@ export const removeOption: (index: number, formId: string) => RemoveOptionAction
     index,
     formId,
 });
+

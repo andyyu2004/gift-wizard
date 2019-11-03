@@ -1,14 +1,13 @@
-import { User } from "../types";
 import friendicon1 from "../images/friend_placeholder1.png";
+import friendicon11 from "../images/friend_placeholder11.png";
+import friendicon12 from "../images/friend_placeholder12.png";
+import friendicon13 from "../images/friend_placeholder13.png";
 import friendicon2 from "../images/friend_placeholder2.png";
 import friendicon3 from "../images/friend_placeholder3.png";
 import friendicon4 from "../images/friend_placeholder4.png";
 import friendicon5 from "../images/friend_placeholder5.png";
 import friendicon6 from "../images/friend_placeholder6.png";
-import friendicon11 from "../images/friend_placeholder11.png";
-import friendicon12 from "../images/friend_placeholder12.png";
-import friendicon13 from "../images/friend_placeholder13.png";
-import uuid from "uuid/v4";
+import { User } from "../types";
 
 /** Hardcoding random ids for now, stops it from becoming annoying on refresh */
 export const fakeusers: User[] = [

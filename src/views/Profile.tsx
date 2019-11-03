@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, ReactElement } from 'react'
 import { Sidebar } from '../components';
 import usericon from '../images/fake_user_profile.jpeg';
 import Connections from './Connections';
@@ -34,16 +34,16 @@ const fakeFriends: Friend[] = [
   },
 ];
 
-type PropType = RouteComponentProps;
+type PropType = RouteComponentProps & { "*"?: string };
 
 /** View for editing one's own profile */
 const Profile: React.FC<PropType> = props => {
 
-  /** Takes the wildcard parameter of the url (otherwise empty ) */
-  const subview: string = props["*"]; 
+  /** Takes the wildcard parameter of the url (otherwise empty) */
+  const subview: string = props["*"] || Subview.PersonalProfile; 
 
   /** Map from Subview => Component; Used for conditional rendering */
-  const viewMap = {
+  const viewMap: { [key: string]: ReactElement } = {
     [Subview.PersonalProfile]: <PersonalProfile />,
     [Subview.Interest]: <h5>Area of interest</h5>,
     [Subview.Connections]: <Connections friends={fakeFriends} />,
@@ -51,7 +51,7 @@ const Profile: React.FC<PropType> = props => {
     [Subview.Settings]: <Settings />,
   };
 
-  const [view, setView] = useState(subview || Subview.PersonalProfile);
+  const [view, setView] = useState(subview);
 
   const entries: [string, () => void][] = Object.values(Subview).map(subview => [subview, () => setView(subview)]);
   

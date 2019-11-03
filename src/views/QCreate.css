@@ -1,0 +1,28 @@
+.questionnaire{
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: 9px;
+    margin-right: 9px;
+}
+
+.header{
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    color: #66B3FF;
+}
+
+.step2{
+    border-top: solid 2px #DCDCDC;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.formlabel{
+    width: 60%;
+    margin-left: 10px;
+}
+
+.title{
+    display: inline-block;
+    text-align:right;
+    width: 80%;
+}

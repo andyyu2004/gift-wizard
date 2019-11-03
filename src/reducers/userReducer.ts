@@ -7,7 +7,7 @@ export interface UserState {
 
 export const initialUserState: UserState = {
     userType: UserType.None,
-}
+};
 
 const userReducer = (state: UserState = initialUserState, action: Action) => {
     switch (action.type) {
@@ -16,6 +16,13 @@ const userReducer = (state: UserState = initialUserState, action: Action) => {
             return {
                 ...state,
                 userType: userType,
+            };
+        }
+
+        case "LOGOUT": {
+            return {
+                ...state,
+                userType: UserType.None,
             };
         }
         default: return state;

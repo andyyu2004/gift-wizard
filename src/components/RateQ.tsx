@@ -1,13 +1,13 @@
 import React from 'react';
 import StarRating from 'react-star-ratings';
-import { FormAction } from '../containers/QEditContainer';
+import { FormAction } from "../types/FormTypes";
 import { RateFormRepr } from './QEdit';
 import Question from './Question';
 import { updateRating } from '../actions/actionCreaters';
 
 type PropType = {
   formRepr: RateFormRepr,
-  dispatch: React.Dispatch<FormAction>,
+  dispatch?: React.Dispatch<FormAction>,
   editable: boolean,
 };
 
@@ -20,7 +20,8 @@ const RateQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
         starDimension="30px"
         numberOfStars={10} 
         rating={rating}
-        // starRatedColor="#FFD700"
+        starRatedColor="#66B3FF"
+        starHoverColor="#C4E1FF"
         // You can style the StarRating in here: refer to https://www.npmjs.com/package/react-star-ratings
         changeRating={(r: number) => dispatch && dispatch(updateRating(r, formRepr.id))} />
     </div>

@@ -17,7 +17,6 @@
 #changeProfile {
 	margin: 15px;
     border: none;
-    color: black;
     padding: 3px 12px;
     text-align: center;
     color: #72aefc;
@@ -30,19 +29,19 @@
 
 #changeProfile:focus {outline:0;}
 
-/* label {
-    margin: 20px 60px 20px 10px;
+.forms label {
+    margin: 11px 40px 10px 10px;
     font-size: 16px;
     float: left;
 }
 
-input[type=text],[type=date], select, textarea {
+.forms input[type=text],[type=date], select, textarea {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-left: 20px;
     display: inline-block;
-} */
+} 
 
 #bio {
 	margin-left: 20px;
@@ -66,7 +65,7 @@ input[type=text],[type=date], select, textarea {
 }
 
 #saveForm {
-	margin: 40px 0px 20px 0px;
+	margin: 30px 0px 20px 0px;
 	background-color: #F0F0F0;
 	padding: 5px 10px;
 	border-radius: 5px;

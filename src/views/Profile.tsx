@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Sidebar } from '../components';
-import usericon from '../images/user_icon.svg';
+import usericon from '../images/fake_user_profile.jpeg';
 import Connections from './Connections';
 import Settings from './Settings';
 import PersonalProfile from './PersonalProfile';
@@ -56,10 +56,10 @@ const Profile: React.FC<PropType> = props => {
   const entries: [string, () => void][] = Object.values(Subview).map(subview => [subview, () => setView(subview)]);
   
   return (
-    <div className="flex-container">
-      <Sidebar 
+    <div className="flex-container" style={{ backgroundColor: 'white' }}>
+      <Sidebar
         img={usericon}
-        text="username"
+        text="Eilish_1031"
         entries={entries} />
         <main>
           {viewMap[view]}

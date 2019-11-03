@@ -4,6 +4,7 @@
     text-align: center;
     height: 100%;
 }
+
 .tabs { 
     text-align: center;
     height: 50px;
@@ -17,14 +18,25 @@
     margin-top:20px;
 }
 
+.sidebar img {
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+}
+
 .tabText {
+    color: #2e3136;
+    font-size: 18px;
+    display: center;
     font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .userText {
-    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    margin-top: 10px;
+    font-weight: bold;
+    font-family: Monospace, Serif, sans-serif;
 }
 
 .tabs:hover {
-    background-color: lightblue;
+    background-color: #deebfc;
 }

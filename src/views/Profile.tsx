@@ -1,5 +1,5 @@
 import React, { useState, ReactElement } from 'react'
-import { Sidebar } from '../components';
+import { Sidebar, Wishlist } from '../components';
 import usericon from '../images/fake_user_profile.jpeg';
 import Connections from './Connections';
 import Settings from './Settings';
@@ -39,7 +39,7 @@ type PropType = RouteComponentProps & { "*"?: string };
 /** View for editing one's own profile */
 const Profile: React.FC<PropType> = props => {
 
-  /** Takes the wildcard parameter of the url (otherwise empty) */
+  /** Takes the wildcard parameter of the url as default view (otherwise empty) */
   const subview: string = props["*"] || Subview.PersonalProfile; 
 
   /** Map from Subview -> Component; Used for conditional rendering */
@@ -47,7 +47,7 @@ const Profile: React.FC<PropType> = props => {
     [Subview.PersonalProfile]: <PersonalProfile user={eilish} />,
     [Subview.Interest]: <h5>Area of interest</h5>,
     [Subview.Connections]: <Connections friends={fakeFriends} />,
-    [Subview.Wishlist]: <h5>Wish list</h5>,
+    [Subview.Wishlist]: <Wishlist user={eilish} />,
     [Subview.Settings]: <Settings />,
   };
 

@@ -149,7 +149,7 @@ const QCreate: React.FC<PropType> = props => {
     <div className="questionnaire">
       <h3 className="header">Customize your questionnaire</h3>
 
-      <Button onClick={() => console.log({ label, forms, background })}>Print (console.log) Form State (Debug)</Button>
+      {/* <Button onClick={() => console.log({ label, forms, background })}>Print (console.log) Form State (Debug)</Button> */}
       <ThemeSelection setBackground={setBackground} />
       <div className="step2">
         <h6>Step2: Design your own questions</h6>
@@ -161,6 +161,7 @@ const QCreate: React.FC<PropType> = props => {
       </div>
       {/** Temporarily save form to redux store for now */}
       <Button style={{ backgroundColor: "#FFFFFF", color: "#808080", borderColor: "#808080", display: "inline-block" }} onClick={() => saveFormToStore()}>Save</Button>
+      <Button style={{backgroundColor:"#66B3FF", borderColor:"#66B3FF", display: "inline-block"}} onClick={() => alert("Bit hard to even partially implement this without some form of backend")}>Send To</Button>
     </div>
   );
 };

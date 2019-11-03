@@ -70,8 +70,7 @@ const QEditContainer: React.FC<PropType> = ({ dispatch, questionnaire }) => {
         <QuestionSelection dispatch={dispatch} questionData={questionData} />
         <QEdit editable={editable} dispatch={dispatch} questionnaire={questionnaire} />
       </div>
-    
-      <Button style={{backgroundColor:"#66B3FF", borderColor:"#66B3FF", display: "inline-block"}} onClick={() => alert("Bit hard to even partially implement this without some form of backend")}>Send To</Button>
+  
     </>
   );
 };

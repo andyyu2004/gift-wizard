@@ -1,7 +1,7 @@
 .profileInfo {
-	width: 140vmin;
+	width: 130vmin;
 	text-align: center;
-	margin: 30px 35px 0px 35px;
+	margin: 30px 40px 0px 40px;
   	border: 1px solid #e8e6e6;
 }
 
@@ -30,7 +30,7 @@
 #changeProfile:focus {outline:0;}
 
 .forms label {
-    margin: 11px 40px 10px 10px;
+    margin: 20px 35px 11px 10px;
     font-size: 16px;
     float: left;
 }

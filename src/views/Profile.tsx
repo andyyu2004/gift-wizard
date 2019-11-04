@@ -4,6 +4,7 @@ import usericon from '../images/fake_user_profile.jpeg';
 import Connections from './Connections';
 import Settings from './Settings';
 import PersonalProfile from './PersonalProfile';
+import WishList from './WishList'
 import { Friend } from '../types';
 import { getRandom } from '../util/array';
 import { fakeusers, eilish } from '../mockdata/mockpeople';
@@ -47,7 +48,7 @@ const Profile: React.FC<PropType> = props => {
     [Subview.PersonalProfile]: <PersonalProfile user={eilish} />,
     [Subview.Interest]: <h5>Area of interest</h5>,
     [Subview.Connections]: <Connections friends={fakeFriends} />,
-    [Subview.Wishlist]: <Wishlist user={eilish} />,
+    [Subview.Wishlist]: <WishList user={eilish} />,
     [Subview.Settings]: <Settings />,
   };
 

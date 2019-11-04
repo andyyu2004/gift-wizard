@@ -9,8 +9,9 @@ const Wishlist: React.FC<PropType> = ({ user: { wishlist }}) => {
   return (
     <div>
       <h5>Wish List</h5>
-      {wishlist.map((item, i) =>
+      {wishlist.map((item, i) => <>
         <input key={i} value={item} onChange={() => {}} />
+        <br /></>
       )}
     </div>
   );

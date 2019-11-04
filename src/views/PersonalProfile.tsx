@@ -19,26 +19,26 @@ const PersonalProfile: React.FC<PropType> = ({ user: { userid, bio, firstname, s
 				<form className="forms">
 					<fieldset className="groupFields">
 						<label><strong>First Name:</strong>
-							<input type="text" id="fname" name="name" value={firstname} />
+							<input type="text" id="fname" name="name" defaultValue={firstname} />
 						</label>
 						<label><strong>Last Name:</strong>
-							<input type="text" id="lname" name="name" value={surname} />
+							<input type="text" id="lname" name="name" defaultValue={surname} />
 						</label>
 						<label><strong>Username:</strong>
-							<input type="text" id="username" name="username" value={userid} />
+							<input type="text" id="username" name="username" defaultValue={userid} />
 						</label>
 					</fieldset>
 					<fieldset className="groupFields">
 						<label><strong>Bio:</strong>
-							<textarea id ="bio" value={bio} placeholder="Tell them a little about yourself!" rows={2} cols={70}></textarea>
+							<textarea id ="bio" defaultValue={bio} placeholder="Tell them a little about yourself!" rows={2} cols={70}></textarea>
 						</label>
 					</fieldset>
 					<fieldset className="groupFields">
 						<label><strong>Email:</strong>
-							<input type="text" id="email" name="email" value={email} />
+							<input type="text" id="email" name="email" defaultValue={email} />
 						</label>
 						<label><strong>Phone Number:</strong>
-							<input type="text" id="phone" name="phone" value={phonenumber} />
+							<input type="text" id="phone" name="phone" defaultValue={phonenumber} />
 						</label>
 					</fieldset>
 					<fieldset className="groupFields">
@@ -48,13 +48,13 @@ const PersonalProfile: React.FC<PropType> = ({ user: { userid, bio, firstname, s
 					</fieldset>
 					<fieldset className="groupFields">
 						<label><strong>Country:</strong>
-							<input type="text" id="country" name="country" value={country} />
+							<input type="text" id="country" name="country" defaultValue={country} />
 						</label>
 						<label><strong>Province/State:</strong>
-							<input type="text" id="state" name="state" value={province} />
+							<input type="text" id="state" name="state" defaultValue={province} />
 						</label>
 						<label><strong>City:</strong>
-							<input type="text" id="city" name="city" value={city} />
+							<input type="text" id="city" name="city" defaultValue={city} />
 						</label>
 					</fieldset>
 					<button type="button" id="saveForm">Save Profile</button>

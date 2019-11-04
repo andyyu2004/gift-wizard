@@ -1,5 +1,6 @@
 import React from 'react'
 import { User } from '../types';
+import '../views/People.css';
 
 type PropType = {
   user: User,
@@ -7,12 +8,11 @@ type PropType = {
 
 const Wishlist: React.FC<PropType> = ({ user: { wishlist }}) => {
   return (
-    <div>
-      <h5>Wish List</h5>
-      {wishlist.map((item, i) => <>
-        <input key={i} value={item} onChange={() => {}} />
-        <br /></>
-      )}
+    <div id="show-wishlist" className="peopleView">
+      <h6> Personal Wish List </h6>
+      <ul>
+        {wishlist.map(x => <li key={x}>{x}</li>)}
+      </ul>
     </div>
   );
 };

@@ -36,6 +36,7 @@ export const fakeusers: User[] = [
         surname: "Lu",
         picture: friendicon1,
         userid: "43534535",
+        interests: ["er"],
         wishlist: ["Scooter", "Tekken 7", "Naruto"],
         bio: "Bio: Captivated from life, showing it here."
     },

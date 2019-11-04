@@ -1,21 +1,19 @@
 import { navigate, RouteComponentProps } from '@reach/router';
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { navigateWithDefaultLoadedQuestionnaire, navigateWithTemplateSet } from '../actions/navigation';
 import { Cell, CellRow } from '../components';
 import connectionsIcon from '../images/connections_btn1.png';
 import createNewIcon from '../images/create_new_icon.png';
 import areaOfInterestIcon from '../images/hobby_icon.png';
-import template4icon from '../images/more_features_icon.png';
-import moreIcon from '../images/more_options_icon.png';
 import openFromExistingIcon from '../images/open_icon.png';
 import settingsIcon from '../images/settings_icon.svg';
 import template1icon from '../images/template1.png';
 import template2icon from '../images/template2.png';
 import template3icon from '../images/template4.png';
 import wishListIcon from '../images/wishlist_icon2.png';
-import { Questionnaire } from "../types/FormTypes";
-import { useSelector } from 'react-redux';
 import { AppState } from '../reducers';
-import { navigateWithTemplateSet, navigateWithDefaultLoadedQuestionnaire } from '../actions/navigation';
+import { Questionnaire } from "../types/FormTypes";
 
 const Home: React.FC<RouteComponentProps> = props => {
 
@@ -32,7 +30,6 @@ const Home: React.FC<RouteComponentProps> = props => {
         <Cell image={template1icon} text="Template 1" onClick={() => navigateWithDefaultLoadedQuestionnaire(templates["Lipstick Template"])} />
         <Cell image={template2icon} text="Template 2" onClick={() => navigateWithDefaultLoadedQuestionnaire(templates["Template Questionnaire"])} />
         <Cell image={template3icon} text="All Templates" onClick={() => navigateWithTemplateSet("Templates", templates)} />
-        <Cell image={template4icon} text="Browse more..." />
       </CellRow>
       <CellRow 
         title="Build up your profile"
@@ -40,8 +37,7 @@ const Home: React.FC<RouteComponentProps> = props => {
         <Cell icon="areaOfInterest" image={areaOfInterestIcon} text="Area of Interest" onClick={() => navigate("/profile/Areas of Interest")} />
         <Cell icon="wishlist" image={wishListIcon} text="Wish List" onClick={() => navigate("/profile/Wish List")} />
         <Cell icon="connection" image={connectionsIcon} text="Connections" onClick={() => navigate("/profile/Connections")} />
-        <Cell text="Settings" image={settingsIcon} icon="settings" onClick={() => navigate("profile/Settings")} />
-        <Cell icon="moreOption" image={moreIcon} text="more" />
+        <Cell text="Settings" image={settingsIcon} icon="settings" onClick={() => navigate("profile/Settings")} />        
       </CellRow>
     </main>
   )

@@ -9,6 +9,7 @@ export type User = {
     userid: string,
     bio: string,
     wishlist: string[],
+    interests?: string[],
     firstname: string,
     surname: string,
     picture: string,

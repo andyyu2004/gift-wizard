@@ -1,8 +1,7 @@
 import React from 'react'
-import '../views/AreaOfInterest.css';
+import './AreaOfInterest.css';
 
 const AreaOfInterest = () => {
-
   return (
     <div id="interests">
       <h1>Personal Area of Interests</h1>

@@ -21,6 +21,7 @@ export const eilish: User = {
     country: "Canada",
     province: "Ontario",
     city: "Toronto",
+    interests: ["Singing", "Dancing", "Performing", "Dogs", "Clubbing", "Yoga", "Fashion"],
     wishlist: ["Airpods", "Bose headphones", "Apple music Membership", "Chocolate", "Sweets", "Godiva Giftcards", "Flight tickets to Tokyo", "A goldfish"],
     picture: eilishicon,
     userid: "345987345",
@@ -36,7 +37,7 @@ export const fakeusers: User[] = [
         surname: "Lu",
         picture: friendicon1,
         userid: "43534535",
-        interests: ["er"],
+        interests: ["Games"],
         wishlist: ["Scooter", "Tekken 7", "Naruto"],
         bio: "Bio: Captivated from life, showing it here."
     },

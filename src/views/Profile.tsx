@@ -45,7 +45,7 @@ const Profile: React.FC<PropType> = props => {
   /** Map from Subview -> Component; Used for conditional rendering */
   const viewMap: { [key: string]: ReactElement } = {
     [Subview.PersonalProfile]: <PersonalProfile user={eilish} />,
-    [Subview.Interest]: <AreaOfInterest />,
+    [Subview.Interest]: <AreaOfInterest interests={eilish.interests || []} />,
     [Subview.Connections]: <Connections friends={fakeFriends} />,
     [Subview.Wishlist]: <Wishlist user={eilish} />,
     [Subview.Settings]: <Settings />,

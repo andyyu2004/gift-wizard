@@ -17,7 +17,7 @@ This page provides links to the most of the main views including the following:
 This is the heart of the site and where you can design your own questionnaires
 though a simple two step process.
 
-1. Theme selection - Click to choose from a given selection of themes
+1. Theme selection - Click to choose from pre-made themes (fancy patterned backgrounds!)
 2. Question Creation
  
 We provide a selection of five types of questions.
@@ -70,10 +70,11 @@ Access this page through the Log In/Sign Up button in the top right.
 The default credentials are user/user and admin/admin for regular user and admin respectively.
 
 ## Profile
-Once logged in as a user, the header changes and you can access the profile through the icon in the top right.
-The profile has five subviews.
-The personal profile is where you can edit your personal information (edit is not currently enabled)
-The connections page lists your connections and you can check out their profile by clicking on their icon.
+Once logged in as a user, the header changes and you can access the profile through the user icon in the top right of the homepage.
+The profile has five subviews: Personal Profile, Area of Interests, Wishlist, Connections and Settings.
+The Personal Profile is where you can edit your personal information (edit is not currently enabled)
+The Area of Interests and Wishlist sections currently only display the user's "area of interests" and "wishlist" attributes, the user will be allowed to change those fields later. 
+The Connections view lists your connections and you can check out their profile information by clicking on their icon.
 
 
 

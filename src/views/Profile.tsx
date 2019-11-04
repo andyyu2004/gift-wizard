@@ -1,5 +1,5 @@
 import React, { useState, ReactElement } from 'react'
-import { Sidebar, Wishlist } from '../components';
+import { Sidebar, Wishlist, AreaOfInterest } from '../components';
 import usericon from '../images/fake_user_profile.jpeg';
 import Connections from './Connections';
 import Settings from './Settings';
@@ -45,7 +45,7 @@ const Profile: React.FC<PropType> = props => {
   /** Map from Subview -> Component; Used for conditional rendering */
   const viewMap: { [key: string]: ReactElement } = {
     [Subview.PersonalProfile]: <PersonalProfile user={eilish} />,
-    [Subview.Interest]: <h5>Area of interest</h5>,
+    [Subview.Interest]: <AreaOfInterest />,
     [Subview.Connections]: <Connections friends={fakeFriends} />,
     [Subview.Wishlist]: <Wishlist user={eilish} />,
     [Subview.Settings]: <Settings />,

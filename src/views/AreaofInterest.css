@@ -1,7 +1,42 @@
-.interest-section {
-  width: 100%;
-  padding: 25px;
-  background-color: coral;
-  color: white;
-  font-size: 25px;
+#interests {
+	margin-left: 80px;
 }
+
+#interests .label {
+  color: white;
+  padding: 8px;
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 2px;
+  border-radius: 5%;
+}
+
+#interests h1 {
+  font-size: 35px;
+  margin: 60px 40px 50px 0px;
+}
+
+#interests .music {
+	background-color: #f5899b;
+} 
+
+#interests .travel {
+	background-color: #2196F3;
+} 
+
+#interests .yoga {
+	background-color: #e59cf7;
+} 
+
+#interests .web {
+	background-color: #ff9800;
+} 
+#interests .dog {
+	background-color: #72aefc;
+} 
+
+#interests .fashion {
+	background-color: #e7e7e7; 
+	color: black;
+} 

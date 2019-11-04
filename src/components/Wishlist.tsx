@@ -10,7 +10,7 @@ const Wishlist: React.FC<PropType> = ({ user: { wishlist }}) => {
     <div>
       <h5>Wish List</h5>
       {wishlist.map((item, i) =>
-        <input key={i} value={item} />
+        <input key={i} value={item} onChange={() => {}} />
       )}
     </div>
   );

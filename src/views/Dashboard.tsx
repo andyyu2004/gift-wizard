@@ -2,7 +2,7 @@ import { RouteComponentProps } from '@reach/router';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { SavedTemplates } from '.';
-import { QRepo, Sidebar } from '../components';
+import { QRepo, Sidebar, AdminSettings } from '../components';
 import adminicon from '../images/user_profile_placeholder.png';
 import { AppState } from '../reducers';
 import { Questionnaire } from '../types/FormTypes';
@@ -28,7 +28,7 @@ const Dashboard: React.FC<PropType> = props => {
     [Subview.QuestionnaireLib]: <QuestionnaireLib />,
     // [Subview.UserData]: <h6>User Data</h6>,
     // [Subview.AccountHistory]: <h6>Account history</h6>,
-    [Subview.AdminSettings]: <h6>Admin Settings</h6>,
+    [Subview.AdminSettings]: <AdminSettings />,
   };
 
   const [view, setView] = useState(Subview.QuestionnaireLib);

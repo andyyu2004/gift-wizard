@@ -19,42 +19,42 @@ const PersonalProfile: React.FC<PropType> = ({ user: { userid, bio, firstname, s
 				<form className="forms">
 					<fieldset className="groupFields">
 						<label><strong>First Name:</strong>
-							<input type="text" id="fname" name="name" value={firstname} />
+							<input type="text" id="fname" name="name" value={firstname} onChange={() => {}} />
 						</label>
 						<label><strong>Last Name:</strong>
-							<input type="text" id="lname" name="name" value={surname} />
+							<input type="text" id="lname" name="name" value={surname} onChange={() => {}} />
 						</label>
 						<label><strong>Username:</strong>
-							<input type="text" id="username" name="username" value={userid} />
+							<input type="text" id="username" name="username" value={userid} onChange={() => {}} />
 						</label>
 					</fieldset>
 					<fieldset className="groupFields">
 						<label><strong>Bio:</strong>
-							<textarea id ="bio" value={bio} placeholder="Tell them a little about yourself!" rows={2} cols={70}></textarea>
+							<textarea id ="bio" value={bio} placeholder="Tell them a little about yourself!" rows={2} cols={70} onChange={() => {}} />
 						</label>
 					</fieldset>
 					<fieldset className="groupFields">
 						<label><strong>Email:</strong>
-							<input type="text" id="email" name="email" value={email} />
+							<input type="text" id="email" name="email" value={email} onChange={() => {}} />
 						</label>
 						<label><strong>Phone Number:</strong>
-							<input type="text" id="phone" name="phone" value={phonenumber} />
+							<input type="text" id="phone" name="phone" value={phonenumber} onChange={() => {}} />
 						</label>
 					</fieldset>
 					<fieldset className="groupFields">
 						<label><strong>DOB:</strong>
-							<input type="date" id="dob" name="bday" />
+							<input type="date" id="dob" name="bday" onChange={() => {}} />
 						</label>
 					</fieldset>
 					<fieldset className="groupFields">
 						<label><strong>Country:</strong>
-							<input type="text" id="country" name="country" value={country} />
+							<input type="text" id="country" name="country" value={country} onChange={() => {}} />
 						</label>
 						<label><strong>Province/State:</strong>
-							<input type="text" id="state" name="state" value={province} />
+							<input type="text" id="state" name="state" value={province} onChange={() => {}} />
 						</label>
 						<label><strong>City:</strong>
-							<input type="text" id="city" name="city" value={city} />
+							<input type="text" id="city" name="city" value={city} onChange={() => {}}/>
 						</label>
 					</fieldset>
 					<button type="button" id="saveForm">Save Profile</button>

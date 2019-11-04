@@ -12,3 +12,5 @@ export { default as Question } from "./Question";
 export { default as RankQ } from "./RankQ";
 export { default as QRepo } from './QRepo';
 export { default as Wishlist } from './Wishlist';
+export { default as ChangePassword } from './ChangePassword';
+export { default as AdminSettings } from './AdminSettings';

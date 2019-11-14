@@ -1,0 +1,71 @@
+import React, { useState, useRef, useEffect, MouseEvent } from 'react';
+import { RouteComponentProps } from '@reach/router';
+import { Form, Button } from 'react-bootstrap';
+import API from '../api';
+import { toast, ToastContainer } from 'react-toastify';
+
+const Signup: React.FC<RouteComponentProps> = () => {
+  
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+
+  const inputRef: any = useRef(null);
+  useEffect(() => inputRef.current.focus(), []); // Focus text input on load
+
+  const handleCreateUser = async (e: MouseEvent<HTMLElement>) => {
+    e.preventDefault();
+    const res = await API.createUser(username, email, password);
+    console.log('res', res);
+    res.match(
+      toast.error,
+      ({ username }) => toast.success(`created user ${username}`)
+    );
+  };
+
+  return (
+    <div>
+      <ToastContainer />
+       <Form>
+        <Form.Group controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control 
+            ref={inputRef}
+            type="text" 
+            placeholder="email" 
+            value={email}
+            onChange={(e: any) => setEmail(e.target.value)}/>
+        </Form.Group>
+
+        <Form.Group controlId="formBasicUsername">
+          <Form.Label>Username</Form.Label>
+          <Form.Control 
+            type="text" 
+            placeholder="username" 
+            value={username}
+            onChange={(e: any) => setUsername(e.target.value)}/>
+        </Form.Group>
+
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control 
+            type="password" 
+            placeholder="password" 
+            value={password}
+            onChange={(e: any) => setPassword(e.target.value)}/>
+        </Form.Group>
+
+        <Button
+          variant="primary" 
+          type="submit"
+          onClick={handleCreateUser}>
+          Submit
+        </Button>
+      </Form>
+    </div>
+  );
+};
+
+export default Signup;
+
+

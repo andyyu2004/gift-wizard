@@ -7,6 +7,9 @@ import { AppState } from '../reducers';
 import { UserState } from '../reducers/userReducer';
 import { UserType } from 'shared/types';
 import './Header.css';
+import API from '../api';
+import { toast, ToastContainer } from 'react-toastify';
+import { toastErr } from '../util/toast';
 
 type PropTypes = {
   title: string,
@@ -18,22 +21,25 @@ const Header: React.FC<PropTypes> = ({ title, subtitle }) => {
   const { user } = useSelector<AppState, UserState>(state => state.user)
   const dispatch = useDispatch();
 
-  const handleLogout = (e: MouseEvent<HTMLElement>) => {
+  const handleLogout = async (e: MouseEvent<HTMLElement>) => {
       e.preventDefault();
-      navigate('/');
-      dispatch({ type: "LOGOUT" });
+      (await API.logout()).match(toastErr, msg => {
+        toast.success(msg);
+        navigate('/login');
+        dispatch({ type: "LOGOUT" });
+      });
   };
 
   return (
     <Navbar bg="light" variant="light">
     <Navbar.Brand id="navbar-brand" onClick={() => navigate("/")}><b>{title}</b></Navbar.Brand>
     <Navbar.Text>{subtitle}</Navbar.Text>
-
+    
     {/* This creates the spacing, don't remove */}
     <Nav className="mr-auto">
       {/* <Nav.Link href="#home">Home</Nav.Link>*/}
     </Nav>
-    
+    <ToastContainer />
     {user && user.type !== UserType.None
       /** If logged in, then take user to dashboard if admin else take to profile, else redirect to login screen */
       ? (<div>

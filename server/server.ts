@@ -6,6 +6,7 @@ import bodyparser from 'body-parser';
 import { MongoError } from 'mongodb';
 
 const app = express();
+
 app.use('/api', apirouter);
 app.use(bodyparser.json());
 app.use(express.static(path.join(__dirname, "../../client/build")));

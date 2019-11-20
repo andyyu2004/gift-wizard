@@ -20,8 +20,7 @@ const userReducer = (state: UserState = initialUserState, action: Action) => {
 
         case "LOGOUT": {
             return {
-                ...state,
-                userType: UserType.None,
+                user: undefined,
             };
         }
 

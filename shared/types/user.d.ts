@@ -16,6 +16,7 @@ export declare type User = {
     password?: string;
     type: UserType;
 };
+
 export declare enum UserType {
     Admin = "ADMIN",
     Regular = "REGULAR",

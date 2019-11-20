@@ -13,7 +13,6 @@ const LoginView: React.FC<RouteComponentProps> = () => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
 
   const dispatch = useDispatch();
 
@@ -55,7 +54,6 @@ const LoginView: React.FC<RouteComponentProps> = () => {
 
   return (
     <div className='loginForm'>
-      <span style={{color: "red"}}>{error}</span>
       <ToastContainer />
       <Form>
         <Form.Group controlId="formBasicEmail">

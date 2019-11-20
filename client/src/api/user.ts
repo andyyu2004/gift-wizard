@@ -6,7 +6,6 @@ export async function createUser(username: string, email: string, password: stri
     const { data } = await axios.post('/api/user/create', {
         username, email, password
     });
-    console.log(data);
     return data.error ? new Left(data.error) : new Right(data.newuser);
 }
 
@@ -14,6 +13,10 @@ export async function login(username: string, password: string): Promise<Either<
     const { data } = await axios.post('/api/user/login', {
         username, password,
     });
-    // console.log(data);
     return data.error ? new Left(data.error) : new Right(data.user);
+}
+
+export async function logout(): Promise<Either<string, string>> {
+    const { data } = await axios.post('/api/user/logout');
+    return data.error ? new Left(data.error) : new Right("Successfully logged out");
 }

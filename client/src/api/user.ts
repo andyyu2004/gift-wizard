@@ -14,5 +14,6 @@ export async function login(username: string, password: string): Promise<Either<
     const { data } = await axios.post('/api/user/login', {
         username, password,
     });
+    // console.log(data);
     return data.error ? new Left(data.error) : new Right(data.user);
 }

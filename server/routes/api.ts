@@ -35,7 +35,7 @@ router.post('/user/login', async (req, res) => {
         if (typeof user === "string") return res.status(422).json({ error: user });
         return res.json({ user });
     } catch (error) {
-        console.log(`Error: error.message (at api/user/login)`);
+        console.log(`Error: ${error.message} (at api/user/login)`);
         return res.status(500).json({ error });
     }
 });

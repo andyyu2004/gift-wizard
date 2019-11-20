@@ -1,5 +1,5 @@
-import { DeleteQTemplateAction, SaveQuestionnaireAction, UpdateUserTypeAction } from ".";
-import { FormRepr, Questionnaire } from "shared/types";
+import { DeleteQTemplateAction, SaveQuestionnaireAction, UpdateUserTypeAction, SetUserAction } from ".";
+import { FormRepr, Questionnaire, User } from "shared/types";
 import { UserType } from "shared/types";
 import { AddFormAction, AddOptionAction, RemoveFormAction, RemoveOptionAction, ReorderRankAction, SetCheckboxStatusAction, SetQuestionAction, SetShortAnswerAction, UpdateOptionAction, UpdateRatingAction } from "../types/FormActions";
 
@@ -7,6 +7,11 @@ import { AddFormAction, AddOptionAction, RemoveFormAction, RemoveOptionAction, R
 export const updateUserType: (userType: UserType) => UpdateUserTypeAction = userType => ({
     type: "UPDATE_USER_TYPE",
     userType,
+});
+
+export const setUser: (user: User) => SetUserAction = user => ({
+    type: "SET_USER",
+    user,
 });
 
 export const saveQuestionnaire: (questionnaire: Questionnaire) => SaveQuestionnaireAction = questionnaire => ({

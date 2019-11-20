@@ -15,7 +15,7 @@ type PropTypes = {
 
 const Header: React.FC<PropTypes> = ({ title, subtitle }) => {
   
-  const { userType } = useSelector<AppState, UserState>(state => state.user)
+  const { user } = useSelector<AppState, UserState>(state => state.user)
   const dispatch = useDispatch();
 
   const handleLogout = (e: MouseEvent<HTMLElement>) => {
@@ -34,10 +34,10 @@ const Header: React.FC<PropTypes> = ({ title, subtitle }) => {
       {/* <Nav.Link href="#home">Home</Nav.Link>*/}
     </Nav>
     
-    {userType !== UserType.None
+    {user && user.type !== UserType.None
       /** If logged in, then take user to dashboard if admin else take to profile, else redirect to login screen */
       ? (<div>
-          <img src={usericon} className="small-icon" onClick={() => navigate(`/${userType === UserType.Admin ? 'admin' : 'profile'}`)} alt="profilepic" /> 
+          <img src={usericon} className="small-icon" onClick={() => navigate(`/${user.type === UserType.Admin ? 'admin' : 'profile'}`)} alt="profilepic" /> 
           <Button id="logoutButton" type="button" onClick={handleLogout}>Logout</Button>
         </div>)
       : <Link to="/login">Log In/Sign Up</Link>} 

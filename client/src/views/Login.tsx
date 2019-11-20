@@ -2,11 +2,11 @@ import { RouteComponentProps, navigate } from '@reach/router';
 import React, { useCallback, useState, useRef, useEffect, MouseEvent } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
-import { updateUserType } from '../actions/actionCreaters';
+import { updateUserType, setUser } from '../actions/actionCreaters';
 import { UserType } from 'shared/types';
 import './Login.css';
 import API from '../api';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 
 
 const LoginView: React.FC<RouteComponentProps> = () => {
@@ -23,15 +23,20 @@ const LoginView: React.FC<RouteComponentProps> = () => {
   const handleLoginSubmission = async (e: MouseEvent<HTMLElement>) => {
     e.preventDefault();
     (await API.login(username, password)).match(
-      error => { toast.error(error) },
-      user => {}
+      err => { toast.error(err); },
+      user => {
+        console.log(user);
+        dispatch(setUser(user));
+        navigate('/');
+      }
+
     );
 
-    console.log('submitted credentials', username, password);
+    // console.log('submitted credentials', username, password);
     // Make some mock username password called admin admin for now
-    if (username === "admin" && password === "admin") login(UserType.Admin);
-    else if (username === "user" && password === "user") login(UserType.Regular);
-    else setError("Invalid credentials");
+    // if (username === "admin" && password === "admin") login(UserType.Admin);
+    // else if (username === "user" && password === "user") login(UserType.Regular);
+    // else setError("Invalid credentials");
   }
 
   const setUserType = useCallback((userType: UserType) => dispatch(updateUserType(userType)), [dispatch]);
@@ -51,6 +56,7 @@ const LoginView: React.FC<RouteComponentProps> = () => {
   return (
     <div className='loginForm'>
       <span style={{color: "red"}}>{error}</span>
+      <ToastContainer />
       <Form>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>

@@ -1,16 +1,21 @@
-import { UserType } from "shared/types";
-import { Questionnaire } from "shared/types";
+import { UserType, User, Questionnaire } from "shared/types";
 
-// Use a discriminated union type
+/* Use a discriminated union type */
 export type Action
     = UpdateUserTypeAction
     | SaveQuestionnaireAction
     | LogoutAction
-    | DeleteQTemplateAction;
+    | DeleteQTemplateAction
+    | SetUserAction;
 
 export interface UpdateUserTypeAction {
     type: "UPDATE_USER_TYPE";
     userType: UserType;
+}
+
+export interface SetUserAction {
+    type: "SET_USER",
+    user: User,
 }
 
 export interface SaveQuestionnaireAction {

@@ -28,8 +28,21 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../../client/build/index.html'));
 });
 
+/** Temporary convenience for clearing database
+ *  Just make it a get so its accessible from browser directly */
+app.get('/drop', async (req, res) => {
+    try {
+        await mongoose.connection.dropDatabase();
+        res.send("ok");
+    } catch (err) {
+        res.status(500).send(err);
+    }
+
+});
+
 app.get('*', (req, res) => {
     res.status(404).send("404");
 });
+
 
 

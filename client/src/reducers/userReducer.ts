@@ -1,21 +1,20 @@
 import { Action } from "../actions"
-import { UserType } from "shared/types";
+import { UserType, User } from "shared/types";
 
 export interface UserState {
-    userType: UserType,
+    user?: User;
 }
 
-export const initialUserState: UserState = {
-    userType: UserType.None,
-};
+export const initialUserState: UserState = {};
 
 const userReducer = (state: UserState = initialUserState, action: Action) => {
     switch (action.type) {
-        case "UPDATE_USER_TYPE": {
-            const { userType } = action;
+        case "SET_USER": {
+            const { user } = action;
+            console.log('user', user);
             return {
                 ...state,
-                userType: userType,
+                user,
             };
         }
 
@@ -25,6 +24,7 @@ const userReducer = (state: UserState = initialUserState, action: Action) => {
                 userType: UserType.None,
             };
         }
+
         default: return state;
     }
 }

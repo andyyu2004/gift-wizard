@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, MouseEvent } from 'react';
-import { RouteComponentProps } from '@reach/router';
+import { RouteComponentProps, navigate } from '@reach/router';
 import { Form, Button } from 'react-bootstrap';
 import API from '../api';
 import { toast, ToastContainer } from 'react-toastify';
@@ -18,8 +18,8 @@ const Signup: React.FC<RouteComponentProps> = () => {
     const res = await API.createUser(username, email, password);
     console.log('res', res);
     res.match(
-      toast.error,
-      ({ username }) => toast.success(`created user ${username}`)
+      err => { toast.error(err); },
+      _ => navigate('/login')
     );
   };
 

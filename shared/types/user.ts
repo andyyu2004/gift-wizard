@@ -3,10 +3,10 @@ export type User = {
     userid: string,
     bio: string,
     wishlist: string[],
-    interests?: string[],
-    firstname: string,
-    surname: string,
-    picture: string,
+    interests: string[],
+    firstname?: string,
+    surname?: string,
+    picture?: string,
     email?: string,
     phonenumber?: string,
     date?: string,
@@ -14,7 +14,7 @@ export type User = {
     country?: string,
     province?: string,
     city?: string,
-    password?: string,
+    password: string,
     type: UserType,
 };
 

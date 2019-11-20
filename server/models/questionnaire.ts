@@ -1,3 +1,9 @@
-import { model } from 'mongoose';
+import { model, Schema } from 'mongoose';
 
-// const Questionnaire = model()
+const Questionnaire = model("Questionnaire", new Schema({
+
+}));
+
+const Form = model("Form", new Schema({
+
+}));

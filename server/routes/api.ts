@@ -40,6 +40,19 @@ router.post('/user/login', async (req, res) => {
     }
 });
 
+router.post('/questionnaires/save', async (req, res) => {
+    try {
+        const { questionnaire } = req.body;
+        if (!questionnaire) return res.status(400).json({
+            error: "Require questionnaire",
+        });
+        
+    } catch (error) {
+        console.log(`Error ${error.message} (in api/questionnaires)`);
+        return res.status(500).json({ error });
+    }
+});
+
 router.get('/dbtest', (req, res) => {
 
 });

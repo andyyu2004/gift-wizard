@@ -1,5 +1,5 @@
 import { UserModel, TUserModel } from "../models";
-import { UserType } from "shared/types";
+import { UserType, Either, Left, Right } from "shared/types";
 import bcrypt from "bcrypt";
 
 export async function createUser(username: string, email: string, password: string): Promise<TUserModel | string> {
@@ -19,7 +19,7 @@ export async function createUser(username: string, email: string, password: stri
         type: UserType.Regular,
     });
 
-    await newuser.save();
+    newuser.save();
     delete newuser.password;
     return newuser;
 }
@@ -31,5 +31,15 @@ export async function login(username: string, password: string): Promise<TUserMo
     if (!(await bcrypt.compare(password, user.password))) return "Incorrect Password";
     delete user.password;
     return user;
+}
+
+export async function mlogin(username: string, password: string): Promise<Either<string, TUserModel>> {
+    const user = await UserModel.findOne({ username });
+    if (!user?.password) return new Left("User does not exist");
+
+    const comp = await bcrypt.compare(password, user.password);
+    if (!comp) return new Left("Incorrect Password");
+    delete user.password;
+    return new Right(user);
 }
 

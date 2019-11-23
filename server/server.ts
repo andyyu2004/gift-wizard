@@ -4,12 +4,17 @@ import path from 'path';
 import mongoose from 'mongoose';
 import bodyparser from 'body-parser';
 import { MongoError } from 'mongodb';
+import cors from 'cors';
 
 const app = express();
 
 app.use('/api', apirouter);
 app.use(bodyparser.json());
 app.use(express.static(path.join(__dirname, "../../client/build")));
+app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true,
+}));
 
 const PORT = process.env.PORT || 3001;
 

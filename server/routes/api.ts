@@ -52,6 +52,10 @@ router.post('/user/login', async (req, res) => {
 
 });
 
+router.all('*', (req, res) => {
+    res.status(404).send({ error: `API route not found: ${req.originalUrl}` });
+});
+
 
 
 export default router;

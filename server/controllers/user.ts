@@ -1,5 +1,5 @@
 import { UserModel, TUserModel } from "../models";
-import { UserType, Either, Left, Right } from "shared/types";
+import { UserType, Either, Left, Right, User } from "shared/types";
 import bcrypt from "bcrypt";
 
 export async function createUser(username: string, email: string, password: string, picture: string): Promise<Either<string, TUserModel>> {
@@ -18,6 +18,8 @@ export async function createUser(username: string, email: string, password: stri
         wishlist: [],
         interests: [],
         friends: [],
+        firstname: "",
+        surname: "",
         type: UserType.Regular,
     });
 
@@ -30,6 +32,12 @@ export async function getUser(userid: string): Promise<Either<string, TUserModel
     const user = await UserModel.findById(userid);
     if (!user) return new Left("User does not exist");
     return new Right(user);
+}
+
+export async function patchUser(user: User): Promise<Either<string, TUserModel>> {
+    const updatedUser = await UserModel.findOneAndUpdate({ _id: user._id }, user, { new: true });
+    if (!updatedUser) return new Left("Update failed");
+    return new Right(await updatedUser.save());
 }
 
 export async function mlogin(username: string, password: string): Promise<Either<string, TUserModel>> {

@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 import { saveQuestionnaire, getQuestionnaires } from "../controllers/questionnaire";
-import { getUser } from '../controllers/user';
+import { getUser, patchUser } from '../controllers/user';
 
 const router = Router();
 
@@ -24,8 +24,8 @@ router.get('/user/:userid', async (req, res) => {
             .map(user => res.send({ user }))
             .mapLeft(error => res.status(400).send({ error }));
     } catch (error) {
-        console.log(`Error: ${error.message} (in /protected/user/:useid)`);
-        return res.status(500).json({ error });
+        console.log(`Error: ${error.message} (in GET /protected/user/:userid)`);
+        return res.status(500).json({ error: error.message });
     }
 });
 
@@ -39,6 +39,20 @@ router.post('/user/logout', async (req, res) => {
     });
 });
 
+router.patch('/user/:userid', async (req, res) => {
+    try {
+        const { userid } = req.params;
+        const { user } = req.body;
+        if (userid != req.session!.userid) return res.status(403).send({ error: "Unauthorized to patch other users profiles "});
+        (await patchUser(user))
+            .map(user => res.send({ user }))
+            .mapLeft(error => res.status(400).send({ error }));
+    } catch (error) {
+        console.log(`Error: ${error.message} (in PATCH /protected/user/:userid)`);
+        return res.status(500).json({ error: error.message });
+    }
+});
+
 router.post('/questionnaires/save', async (req, res) => {
     try {
         const { questionnaire } = req.body;
@@ -47,7 +61,7 @@ router.post('/questionnaires/save', async (req, res) => {
         return res.json({ questionnaire: q });
     } catch (error) {
         console.log(`Error ${error.message} (in api/questionnaires)`);
-        return res.status(500).json({ error });
+        return res.status(500).json({ error: error.message });
     }
 });
 
@@ -58,9 +72,10 @@ router.get('/questionnaires/:userid', async (req, res) => {
         return res.json({ questionnaires });
     } catch (error) {
         console.log(`Error ${error.message} (in api/questionnaires/:userid)`);
-        return res.status(500).json({ error });
+        return res.status(500).json({ error: error.message });
     }
 });
+
 
 export default router;
 

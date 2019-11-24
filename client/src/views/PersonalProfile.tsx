@@ -1,13 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, MouseEvent } from 'react'
 import './PersonalProfile.css';
 import { User } from 'shared/types';
+import API from '../api';
+import { toast } from 'react-toastify';
+import { setUser } from '../actions/actionCreaters';
 
 type PropType = {
 	user: User,
 };
 
 /** Subview of Profile */
-const PersonalProfile: React.FC<PropType> = ({ user: { username, bio, firstname, surname, picture, email, phonenumber, date, country, province, city }}) => {
+const PersonalProfile: React.FC<PropType> = ({ user }) => {
+	const { username, bio, firstname, surname, picture, email, phonenumber, date, country, province, city } = user;
+	
 	const [username_, setUsername] = useState(username);
 	const [bio_, setBio] = useState(bio);
 	const [firstname_, setFirstname] = useState(firstname);
@@ -17,6 +22,28 @@ const PersonalProfile: React.FC<PropType> = ({ user: { username, bio, firstname,
 	const [country_, setCountry] = useState(country);
 	const [province_, setProvince] = useState(province);
 	const [city_, setCity] = useState(city);
+
+	const handlePatchUser = async (e: MouseEvent<HTMLElement>) => {
+		e.preventDefault();
+		const ret = await API.patchUser({
+			...user,
+			username: username_,
+			bio: bio_,
+			firstname: firstname_,
+			surname: surname_,
+			email: email_,
+			phonenumber: phonenumber_,
+			country: country_,
+			province: province_,
+			city: city,
+		});
+
+		ret.map(user => {
+			setUser(user);
+			toast.success("Successfullly updated user profile") 
+			console.log(user)
+		}).mapLeft(toast.error);
+	};
 
 	return (
 		<div>
@@ -40,7 +67,7 @@ const PersonalProfile: React.FC<PropType> = ({ user: { username, bio, firstname,
 					</fieldset>
 					<fieldset className="groupFields">
 						<label><strong>Bio:</strong>
-							<textarea id ="bio" value={bio} placeholder="Tell them a little about yourself!" rows={2} cols={70} onChange={e => setBio(e.target.value)} />
+							<textarea id ="bio" value={bio_} placeholder="Tell them a little about yourself!" rows={2} cols={70} onChange={e => setBio(e.target.value)} />
 						</label>
 					</fieldset>
 					<fieldset className="groupFields">
@@ -67,7 +94,7 @@ const PersonalProfile: React.FC<PropType> = ({ user: { username, bio, firstname,
 							<input type="text" id="city" name="city" value={city_} onChange={e => setCity(e.target.value)} />
 						</label>
 					</fieldset>
-					<button type="button" className="saveForm">Save Profile</button>
+					<button type="button" className="saveForm" onClick={handlePatchUser}>Save Profile</button>
 				</form>
 			</div>
 		</div>

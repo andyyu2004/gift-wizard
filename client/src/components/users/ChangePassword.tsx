@@ -1,18 +1,19 @@
-import React from 'react'
+import React from 'react';
+import './ChangePassword.css';
 
 const ChangePassword = () => {
   return (
     <form onSubmit={e => e.preventDefault()}>
-      <label>Current</label>
-      <input id="currentInput" />  
+      <label className="currentText">Current</label>
+      <input className="currentBox" id="currentInput" />  
       <br />
-      <label>New</label>
-      <input />
+      <label className="newText">New</label>
+      <input className="newBox"/>
       <br />
-      <label>Confirm</label>
-      <input />
+      <label className="confirmText">Confirm</label>
+      <input className="confirmBox"/>
       <br />
-      <input type="submit" />
+      <button type="submit">Submit</button>
     </form>
   );
 };

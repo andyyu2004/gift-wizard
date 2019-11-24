@@ -3,19 +3,24 @@ import Switch from 'react-switch';
 // import Toggle from 'react-toggle';
 // import "react-toggle/style.css";
 import { ChangePassword } from '../../components/users';
+import './Settings.css';
 
 const Settings = () => {
   const [isPublic, setIsPublic] = useState(true);
   const [showChangePassword, setShowChangePassword] = useState(false);
 
   return (
-    <div>
+    <div className="settingsContainer">
       <h5>Settings</h5>
-      <h6>Public Profile?</h6>
-      <Switch onChange={() => setIsPublic(!isPublic)} checked={isPublic} />
-      {/* <Toggle onChange={() => setIsPublic(!isPublic)} checked={isPublic} /> */}
+      <div className = "public">
+        <h6 className="publicText">Show your profile to the public</h6>
+        <div className= "switch">
+          <Switch onChange={() => setIsPublic(!isPublic)} checked={isPublic}/>
+        </div>
+        {/* <Toggle onChange={() => setIsPublic(!isPublic)} checked={isPublic} /> */}
+      </div>
       <div>
-        <button onClick={() => setShowChangePassword(!showChangePassword)}>Change Password</button>
+        <button className="passwordButton" onClick={() => setShowChangePassword(!showChangePassword)}>Change Password</button>
         {showChangePassword && <ChangePassword />}
       </div>      
     </div>
@@ -23,4 +28,3 @@ const Settings = () => {
 };
 
 export default Settings;
-

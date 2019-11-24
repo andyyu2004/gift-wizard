@@ -2,7 +2,8 @@ import { Router } from '@reach/router';
 import * as React from 'react';
 import './App.css';
 import { Header } from './components';
-import { Dashboard, ErrorsView, Home, LoginView, PeopleView, ProfileView, QCreate, SavedTemplates, Signup } from './views';
+import { ErrorsView, Home, LoginView, QCreate, SavedTemplates, Signup } from './views';
+import { Dashboard, PeopleView, ProfileView } from './views/userprofile';
 
 /**
  * Putting Header in the top level as the header should be the same throughout all views?

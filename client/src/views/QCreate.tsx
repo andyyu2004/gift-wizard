@@ -14,7 +14,6 @@ import { QEditContainer } from '../containers';
 import { FormAction } from '../types/FormActions';
 import './QCreate.css';
 import API from '../api';
-import './PersonalProfile.css';
 
 
 type ReducerType = (state: FormRepr[], action: FormAction) => FormRepr[];

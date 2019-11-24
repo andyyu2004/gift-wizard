@@ -26,7 +26,7 @@
   	width: 380px;
   	margin: auto;
   	margin-top: 20px;
-  	list-style-image: url('../images/wishes_icon.png');
+  	list-style-image: url('../../images/wishes_icon.png');
 }
 
 .peopleView ul li {

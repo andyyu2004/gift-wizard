@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ChangePassword } from '.';
+import { ChangePassword } from './users';
 
 const AdminSettings = () => {
 

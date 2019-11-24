@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import 'react-toastify/dist/ReactToastify.css';
 import { FormRepr, Questionnaire, QuestionType } from 'shared/types';
 import uuid from 'uuid/v4';
-import { QEdit, QuestionSelection } from '../components';
+import { QEdit, QuestionSelection } from '../components/questions';
 import multichoiceicon from '../images/multiple_choice_icon1.png';
 import checkboxicon from '../images/multiple_select_icon.png';
 import staricon from '../images/star_icon.png';

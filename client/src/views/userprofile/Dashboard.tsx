@@ -1,7 +1,7 @@
 import { RouteComponentProps } from '@reach/router';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { SavedTemplates } from '.';
+import { SavedTemplates } from '../';
 import { QRepo } from '../../components/questions';
 import { Sidebar, AdminSettings } from '../../components';
 import adminicon from '../../images/user_profile_placeholder.png';

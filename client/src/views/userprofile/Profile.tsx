@@ -1,14 +1,14 @@
-import React, { useState, ReactElement } from 'react'
-import { Sidebar } from '../../components';
-import { Wishlist, AreaOfInterest } from '../../components/users';
-import usericon from '../../images/fake_user_profile.jpeg';
-import Connections from './Connections';
-import Settings from './Settings';
-import PersonalProfile from './PersonalProfile';
-import { Friend } from 'shared/types';
-import { getRandom } from '../../util/array';
-import { fakeusers, eilish } from '../../mockdata/mockpeople';
 import { RouteComponentProps } from '@reach/router';
+import React, { ReactElement, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { User } from 'shared/types';
+import { Sidebar } from '../../components';
+import { AreaOfInterest, Wishlist } from '../../components/users';
+import { withProtection } from '../../components/hoc';
+import { AppState } from '../../reducers';
+import Connections from './Connections';
+import PersonalProfile from './PersonalProfile';
+import Settings from './Settings';
 
 /** Enumeration of the subviews of the page */ 
 enum Subview {
@@ -19,48 +19,33 @@ enum Subview {
   Settings        = "Settings",
 }
 
-/** Random selection of people from fakeusers */
-const fakeFriends: Friend[] = [
-  {
-    userid: getRandom(fakeusers)._id,
-    relationship: "Cousin",
-  }, 
-  {
-    userid: getRandom(fakeusers)._id,
-    relationship: "Classmate",
-  },
-  {
-    userid: getRandom(fakeusers)._id,
-    relationship: "Friend",
-  },
-];
-
 type PropType = RouteComponentProps & { "*"?: string };
 
 /** View for editing one's own profile */
 const Profile: React.FC<PropType> = props => {
 
+  const user = useSelector<AppState, User>(state => state.user.user!);
+
   /** Takes the wildcard parameter of the url as default view (otherwise empty) */
   const subview: string = props["*"] || Subview.PersonalProfile; 
+  const [view, setView] = useState(subview);
 
   /** Map from Subview -> Component; Used for conditional rendering */
   const viewMap: { [key: string]: ReactElement } = {
-    [Subview.PersonalProfile]: <PersonalProfile user={eilish} />,
-    [Subview.Interest]: <AreaOfInterest interests={eilish.interests || []} />,
-    [Subview.Connections]: <Connections friends={fakeFriends} />,
-    [Subview.Wishlist]: <Wishlist user={eilish} />,
+    [Subview.PersonalProfile]: <PersonalProfile user={user} />,
+    [Subview.Interest]: <AreaOfInterest interests={user.interests || []} />,
+    [Subview.Connections]: <Connections friendIds={user.friends} />,
+    [Subview.Wishlist]: <Wishlist user={user} />,
     [Subview.Settings]: <Settings />,
   };
-
-  const [view, setView] = useState(subview);
 
   const entries: [string, () => void][] = Object.values(Subview).map(subview => [subview, () => setView(subview)]);
   
   return (
     <div className="flex-container" style={{ backgroundColor: 'white' }}>
       <Sidebar
-        img={usericon}
-        text="Eilish_1031"
+        img={user.picture}
+        text={user.username}
         entries={entries} />
         <main>
           {viewMap[view]}
@@ -69,6 +54,6 @@ const Profile: React.FC<PropType> = props => {
   );
 };
 
-export default Profile;
+export default withProtection(Profile);
 
 

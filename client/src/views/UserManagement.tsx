@@ -15,7 +15,7 @@ const UserManagement = () => {
   return (
     <div>
       <h4>User Management</h4>
-      {users.map(user => <button className="generic-button" key={user.userid} onClick={() => handleViewUser(user)}>{user.firstname} {user.surname}</button>)}
+      {users.map(user => <button className="generic-button" key={user._id} onClick={() => handleViewUser(user)}>{user.firstname} {user.surname}</button>)}
       {currentUser && <PersonalProfile user={currentUser} />}
     </div>
   );

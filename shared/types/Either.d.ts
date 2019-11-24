@@ -4,7 +4,7 @@ export interface IEither<L, R> {
     /** If left, then no change; if right, then apply f to the contained value */
     map<T>(f: (x: R) => T): IEither<L, T>;
     /** Similar to map, but applies on left instead of right */
-    map_left<T>(f: (x: L) => T): IEither<T, R>;
+    mapLeft<T>(f: (x: L) => T): IEither<T, R>;
     bind<T>(f: (x: R) => IEither<L, T>): IEither<L, T>;
     match<T>(f: (l: L) => T, g: (r: R) => T): T;
     isLeft(): boolean;
@@ -20,7 +20,7 @@ export declare class Right<L, R> implements IEither<L, R> {
     constructor(rval: R);
     tag: string;
     map<T>(f: (x: R) => T): IEither<L, T>;
-    map_left<T>(f: (x: L) => T): IEither<T, R>;
+    mapLeft<T>(f: (x: L) => T): IEither<T, R>;
     bind<T>(f: (x: R) => IEither<L, T>): IEither<L, T>;
     match<T>(f: (l: L) => T, g: (r: R) => T): T;
     isLeft(): boolean;
@@ -34,7 +34,7 @@ export declare class Left<L, R> implements IEither<L, R> {
     constructor(lval: L);
     tag: string;
     map<T>(f: (x: R) => T): IEither<L, T>;
-    map_left<T>(f: (x: L) => T): IEither<T, R>;
+    mapLeft<T>(f: (x: L) => T): IEither<T, R>;
     bind<T>(f: (x: R) => IEither<L, T>): IEither<L, T>;
     match<T>(f: (l: L) => T, g: (r: R) => T): T;
     isLeft(): boolean;

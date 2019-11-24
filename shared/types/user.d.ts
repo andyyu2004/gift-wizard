@@ -1,11 +1,11 @@
 export declare type User = {
-    userid: string;
+    _id: string;
     bio: string;
     wishlist: string[];
-    interests?: string[];
-    firstname: string;
-    surname: string;
-    picture: string;
+    interests: string[];
+    firstname?: string;
+    surname?: string;
+    picture?: string;
     email?: string;
     phonenumber?: string;
     date?: string;
@@ -16,7 +16,6 @@ export declare type User = {
     password?: string;
     type: UserType;
 };
-
 export declare enum UserType {
     Admin = "ADMIN",
     Regular = "REGULAR",

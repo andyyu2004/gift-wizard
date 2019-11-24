@@ -8,7 +8,7 @@ var Right = /** @class */ (function () {
     Right.prototype.map = function (f) {
         return new Right(f(this.rval));
     };
-    Right.prototype.map_left = function (f) {
+    Right.prototype.mapLeft = function (f) {
         return new Right(this.rval);
     };
     Right.prototype.bind = function (f) {
@@ -43,7 +43,7 @@ var Left = /** @class */ (function () {
     Left.prototype.map = function (f) {
         return new Left(this.lval);
     };
-    Left.prototype.map_left = function (f) {
+    Left.prototype.mapLeft = function (f) {
         return new Left(f(this.lval));
     };
     Left.prototype.bind = function (f) {

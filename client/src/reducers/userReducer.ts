@@ -11,7 +11,6 @@ const userReducer = (state: UserState = initialUserState, action: Action) => {
     switch (action.type) {
         case "SET_USER": {
             const { user } = action;
-            console.log('user', user);
             return {
                 ...state,
                 user,

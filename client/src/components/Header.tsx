@@ -9,7 +9,6 @@ import { UserType } from 'shared/types';
 import './Header.css';
 import API from '../api';
 import { toast, ToastContainer } from 'react-toastify';
-import { toastErr } from '../util/toast';
 
 type PropTypes = {
   title: string,
@@ -23,11 +22,12 @@ const Header: React.FC<PropTypes> = ({ title, subtitle }) => {
 
   const handleLogout = async (e: MouseEvent<HTMLElement>) => {
       e.preventDefault();
-      (await API.logout()).match(toastErr, msg => {
+      /** Destroy session and reset redux store */
+      (await API.logout()).map(msg => {
         toast.success(msg);
         navigate('/login');
         dispatch({ type: "LOGOUT" });
-      });
+      }).mapLeft(toast.error);
   };
 
   return (

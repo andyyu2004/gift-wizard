@@ -12,7 +12,7 @@ const Connections: React.FC<PropType> = ({ friends }) => {
   return (
     <div className="flex-container">
       {friends.map(({relationship, userid}) => {
-        const { picture, firstname, surname } = fakeusers.find(x => x.userid === userid) || {};
+        const { picture, firstname, surname } = fakeusers.find(x => x._id === userid) || {};
         return <Cell key={userid} text={`${firstname} ${surname}`} subtext={relationship} image={picture} onClick={() => navigate(`/people/${userid}`)} />
       })}
     </div>

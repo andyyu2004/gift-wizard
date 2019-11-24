@@ -18,6 +18,7 @@ export type Questionnaire = {
     label: string,
     forms: FormRepr[],
     background?: string,
+    _id?: string,
 };
 
 export type FormRepr 

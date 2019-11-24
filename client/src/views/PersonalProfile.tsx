@@ -7,7 +7,7 @@ type PropType = {
 };
 
 /** Subview of Profile */
-const PersonalProfile: React.FC<PropType> = ({ user: { userid, bio, firstname, surname, picture, email, phonenumber, date, country, province, city }}) => {
+const PersonalProfile: React.FC<PropType> = ({ user: { _id, bio, firstname, surname, picture, email, phonenumber, date, country, province, city }}) => {
 	return (
 		<div>
 			<div className="profileInfo">
@@ -25,7 +25,7 @@ const PersonalProfile: React.FC<PropType> = ({ user: { userid, bio, firstname, s
 							<input type="text" id="lname" name="name" value={surname} onChange={() => {}} />
 						</label>
 						<label><strong>Username:</strong>
-							<input type="text" id="username" name="username" value={userid} onChange={() => {}} />
+							<input type="text" id="username" name="username" value={_id} onChange={() => {}} />
 						</label>
 					</fieldset>
 					<fieldset className="groupFields">

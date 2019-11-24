@@ -13,23 +13,35 @@ import template2icon from '../images/template2.png';
 import template3icon from '../images/template4.png';
 import wishListIcon from '../images/wishlist_icon2.png';
 import { AppState } from '../reducers';
-import { Questionnaire } from "shared/types";
+import { Questionnaire, User } from "shared/types";
+import API from '../api';
+import { toast } from 'react-toastify';
 
 const Home: React.FC<RouteComponentProps> = props => {
 
   const templates = useSelector<AppState, { [key: string]: Questionnaire }>(state => state.forms.templates);
   const userforms = useSelector<AppState, { [key: string]: Questionnaire }>(state => state.forms.user);
+  /** Can assert non-null as you cannot visit this page without being logged in */
+  const user = useSelector<AppState, User>(state => state.user.user!);
+
+  /** Event handler for the 'open existing' icon; Opens user's personal saved templates */
+  const handleOpenUserTemplates = async () => {
+    if (!user) return navigate('/login');
+    (await API.loadUserQuestionnaires(user._id))
+      .map(qs => navigateWithTemplateSet("Saved", qs))
+      .mapLeft(toast.error);
+  };
 
   return (
     <main>
-      <CellRow 
+      <CellRow
         title="Looking for a gift for him/her?"
         subtitle="By sending him/her an anonymous questionnaire, get the best 'hints'!">
         <Cell image={createNewIcon} text="Create New" onClick={() => navigate("/create")} />
-        <Cell image={openFromExistingIcon} text="Open Existing" onClick={() => navigateWithTemplateSet("Saved", userforms)} />
+        <Cell image={openFromExistingIcon} text="Open Existing" onClick={handleOpenUserTemplates} />
         <Cell image={template1icon} text="Template 1" onClick={() => navigateWithDefaultLoadedQuestionnaire(templates["Lipstick Template"])} />
         <Cell image={template2icon} text="Template 2" onClick={() => navigateWithDefaultLoadedQuestionnaire(templates["Template Questionnaire"])} />
-        <Cell image={template3icon} text="All Templates" onClick={() => navigateWithTemplateSet("Templates", templates)} />
+        <Cell image={template3icon} text="All Templates" onClick={() => navigateWithTemplateSet("Templates", [])} />
       </CellRow>
       <CellRow 
         title="Build up your profile"

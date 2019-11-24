@@ -10,9 +10,11 @@ export async function createUser(username: string, email: string, password: stri
 }
 
 export async function login(username: string, password: string): Promise<Either<string, User>> {
-    const { data } = await axios.post('/api/user/login', {
+    const res = await axios.post('/api/user/login', {
         username, password,
     });
+    console.log(res);
+    const data = res.data;
     return data.error ? new Left(data.error) : new Right(data.user);
 }
 

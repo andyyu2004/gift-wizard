@@ -7,35 +7,37 @@ import { navigateWithDefaultLoadedQuestionnaire } from '../actions/navigation';
 
 type PropType = RouteComponentProps & {
   title?: string,
-  templates?: { [key: string]: Questionnaire },
+  templates?: Questionnaire[],
 };
 
 const SavedTemplates: React.FC<PropType> = props => {
-  const [currentQ, setCurrentQ] = useState<string>();
+  const [currentQ, setCurrentQ] = useState<Questionnaire>();
   // console.log(props)
   /** If templates are passed directly use that, else use the ones passed from router */
-  const templates = props.templates || (props.location && props.location.state.templates) || {};
+  const templates: Questionnaire[] = props.templates || (props.location && props.location.state.templates) || [];
   const title = props.title || (props.location && props.location.state.title);
 
-  const toggleForm = (key: string) => currentQ !== key || currentQ === null ? setCurrentQ(key) : setCurrentQ("") ;
+  /** If currently selected questionnaire is not q, or q is currently undefined, then set currentQ to q, else toggle back to undefined*/
+  const toggleForm = (q: Questionnaire) => currentQ !== q || currentQ === undefined ? setCurrentQ(q) : setCurrentQ(undefined) ;
 
   return (
     <div className="page">
       <h3 className="header">{title}</h3>
       <div className="templateContainer">
-        {Object.keys(templates).map(key => 
-          <div key={key}>
+        {templates.map(t => 
+          <div key={t._id}>
             <button
               style={{marginTop:"5px", marginBottom: "5px", border: "solid 2px #C4E1FF", backgroundColor:"#FFFFFF"}}
               className="generic-button"
-              onClick={() => toggleForm(key)}
-              >{key}
+              onClick={() => toggleForm(t)}
+            >{t.label}
             </button>
             <button 
               style={{marginTop:"5px", marginBottom: "5px", backgroundColor:"#FFF"}}
               className="generic-button"
-              onClick={() => navigateWithDefaultLoadedQuestionnaire(templates[key])}
-              >Edit</button>
+              onClick={() => navigateWithDefaultLoadedQuestionnaire(t)}
+              >Edit
+            </button>
           </div>
           )
         }
@@ -43,8 +45,8 @@ const SavedTemplates: React.FC<PropType> = props => {
       <div className="step">
         {currentQ && 
           <div>
-            <h6 className="qtitle">{currentQ}</h6>
-            <QEdit questionnaire={templates[currentQ]} editable={false} />
+            <h6 className="qtitle">{currentQ.label}</h6>
+            <QEdit questionnaire={currentQ} editable={false} />
           </div>
         }
       </div>
@@ -52,4 +54,4 @@ const SavedTemplates: React.FC<PropType> = props => {
   );
 };
 
-export default SavedTemplates
+export default SavedTemplates;

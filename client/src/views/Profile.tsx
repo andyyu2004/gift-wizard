@@ -21,15 +21,15 @@ enum Subview {
 /** Random selection of people from fakeusers */
 const fakeFriends: Friend[] = [
   {
-    userid: getRandom(fakeusers).userid,
+    userid: getRandom(fakeusers)._id,
     relationship: "Cousin",
   }, 
   {
-    userid: getRandom(fakeusers).userid,
+    userid: getRandom(fakeusers)._id,
     relationship: "Classmate",
   },
   {
-    userid: getRandom(fakeusers).userid,
+    userid: getRandom(fakeusers)._id,
     relationship: "Friend",
   },
 ];

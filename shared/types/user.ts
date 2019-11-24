@@ -1,6 +1,6 @@
 
 export type User = {
-    userid: string,
+    _id: string,
     bio: string,
     wishlist: string[],
     interests: string[],
@@ -14,7 +14,7 @@ export type User = {
     country?: string,
     province?: string,
     city?: string,
-    password: string,
+    password?: string,
     type: UserType,
 };
 

@@ -15,6 +15,7 @@ export declare type Questionnaire = {
     label: string;
     forms: FormRepr[];
     background?: string;
+    _id?: string;
 };
 export declare type FormRepr = MultichoiceRepr | ShortAnswerRepr | RankFormRepr | RateFormRepr;
 export interface ShortAnswerRepr extends IForm {

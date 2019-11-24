@@ -24,11 +24,12 @@ export const eilish: User = {
     interests: ["Singing", "Dancing", "Performing", "Dogs", "Clubbing", "Yoga", "Fashion"],
     wishlist: ["Airpods", "Bose headphones", "Apple music Membership", "Chocolate", "Sweets", "Godiva Giftcards", "Flight tickets to Tokyo", "A goldfish"],
     picture: eilishicon,
-    userid: "345987345",
+    _id: "345987345",
     type: UserType.Regular,
 };
 
 /** Hardcoding random ids for now, stops it from becoming annoying on refresh */
+
 export const fakeusers: User[] = [
     // {
         // name: 'Eilish'
@@ -37,12 +38,13 @@ export const fakeusers: User[] = [
         firstname: "Bob",
         surname: "Lu",
         picture: friendicon1,
-        userid: "43534535",
+        _id: "43534535",
         interests: ["Games"],
         type: UserType.Regular,
         wishlist: ["Scooter", "Tekken 7", "Naruto"],
         bio: "Bio: Captivated from life, showing it here."
     },
+    /*
     {
         firstname: "Frank",
         surname: "Chen",
@@ -115,4 +117,5 @@ export const fakeusers: User[] = [
         type: UserType.Regular,
         bio: "Do you know what I like about people? Their dogs."
     },
+    */
 ];

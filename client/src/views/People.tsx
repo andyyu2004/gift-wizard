@@ -9,7 +9,7 @@ type PropType = RouteComponentProps & {
 };
 
 const PeopleView: React.FC<PropType> = ({ userid }) => {
-  const { firstname, surname, picture, wishlist, bio, interests } = fakeusers.find(x => x.userid === userid) || {};
+  const { firstname, surname, picture, wishlist, bio, interests } = fakeusers.find(x => x._id === userid) || {};
 
   return (
     <div className="peopleView">

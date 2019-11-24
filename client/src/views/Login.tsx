@@ -1,12 +1,12 @@
-import { RouteComponentProps, navigate } from '@reach/router';
-import React, { useCallback, useState, useRef, useEffect, MouseEvent } from 'react';
+import { navigate, RouteComponentProps } from '@reach/router';
+import React, { MouseEvent, useCallback, useEffect, useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
-import { updateUserType, setUser } from '../actions/actionCreaters';
+import { toast } from 'react-toastify';
 import { UserType } from 'shared/types';
-import './Login.css';
+import { setUser, updateUserType } from '../actions/actionCreaters';
 import API from '../api';
-import { toast, ToastContainer } from 'react-toastify';
+import './Login.css';
 
 
 const LoginView: React.FC<RouteComponentProps> = () => {
@@ -21,15 +21,11 @@ const LoginView: React.FC<RouteComponentProps> = () => {
 
   const handleLoginSubmission = async (e: MouseEvent<HTMLElement>) => {
     e.preventDefault();
-    (await API.login(username, password)).match(
-      err => { toast.error(err); },
-      user => {
-        console.log(user);
-        dispatch(setUser(user));
-        navigate('/');
-      }
+    (await API.login(username, password)).map(user => {
+      dispatch(setUser(user));
+      navigate('/');
+    }).mapLeft(toast.error);
 
-    );
 
     // console.log('submitted credentials', username, password);
     // Make some mock username password called admin admin for now
@@ -54,7 +50,6 @@ const LoginView: React.FC<RouteComponentProps> = () => {
 
   return (
     <div className='loginForm'>
-      <ToastContainer />
       <Form>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>

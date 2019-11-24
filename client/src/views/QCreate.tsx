@@ -6,13 +6,14 @@ import React, { useReducer, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
+import { FormRepr, MultichoiceRepr, Questionnaire, RankFormRepr, RateFormRepr, ShortAnswerRepr } from 'shared/types';
 import uuid from 'uuid/v4';
 import { saveQuestionnaire } from '../actions/actionCreaters';
 import { ThemeSelection } from '../components';
-import { FormRepr, MultichoiceRepr, RankFormRepr, RateFormRepr, ShortAnswerRepr, Questionnaire } from 'shared/types';
 import { QEditContainer } from '../containers';
-import './QCreate.css';
 import { FormAction } from '../types/FormActions';
+import './QCreate.css';
+import API from '../api';
 
 type ReducerType = (state: FormRepr[], action: FormAction) => FormRepr[];
 
@@ -112,12 +113,11 @@ function validateForm(label: string, form: FormRepr[]): string[] {
     errors.push("There must be at least one question"); 
     return errors;
   }
-  form.forEach(({question}, i) => {
+  form.forEach(({ question }, i) => {
     if (!question) errors.push(`Form ${i + 1} must have a non-empty question`);
   });
   return errors;
 };
-
 
 type RouteProps = {
   starterForm?: FormRepr[]
@@ -135,20 +135,18 @@ const QCreate: React.FC<PropType> = props => {
   const [background, setBackground] = useState<string>(starterBackground || "grey");
   const reduxDispatch = useDispatch();
 
-  const saveFormToStore = () => {
+  const saveFormToStore = async () => {
     const errors = validateForm(label, forms);
-    if (errors.length) {
-      errors.forEach(err => toast.error(err));
-      return;
-    }
-    reduxDispatch(saveQuestionnaire({ label, forms, background }));
-    toast.success("Saved form!");
+    if (errors.length) return errors.forEach(err => toast.error(err));
+
+    (await API.saveQuestionnaire({ label, forms, background }))
+      .map(_ => toast.success("Saved form!"))
+      .mapLeft(toast.error);
   };
 
   return (
     <div className="questionnaire">
       <h3 className="header">Customize your questionnaire</h3>
-
       {/* <Button onClick={() => console.log({ label, forms, background })}>Print (console.log) Form State (Debug)</Button> */}
       <ThemeSelection setBackground={setBackground} />
       <div className="step2">

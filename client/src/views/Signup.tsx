@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect, MouseEvent } from 'react';
-import { RouteComponentProps, navigate } from '@reach/router';
-import { Form, Button } from 'react-bootstrap';
+import { navigate, RouteComponentProps } from '@reach/router';
+import React, { MouseEvent, useEffect, useRef, useState } from 'react';
+import { Button, Form } from 'react-bootstrap';
+import { toast } from 'react-toastify';
 import API from '../api';
-import { toast, ToastContainer } from 'react-toastify';
 
 const Signup: React.FC<RouteComponentProps> = () => {
   
@@ -15,17 +15,13 @@ const Signup: React.FC<RouteComponentProps> = () => {
 
   const handleCreateUser = async (e: MouseEvent<HTMLElement>) => {
     e.preventDefault();
-    const res = await API.createUser(username, email, password);
-    console.log('res', res);
-    res.match(
-      err => { toast.error(err); },
-      _ => navigate('/login')
-    );
+    (await API.createUser(username, email, password))
+      .map(_ => navigate('/login'))
+      .mapLeft(toast.error);
   };
 
   return (
     <div>
-      <ToastContainer />
        <Form>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>

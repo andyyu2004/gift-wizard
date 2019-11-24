@@ -1,0 +1,84 @@
+.profileInfo {
+	width: 130vmin;
+	text-align: center;
+	margin: 30px 40px 0px 40px;
+  	border: 1px solid #e8e6e6;
+}
+
+.profilePicture {
+	width: 120px;
+	height: 120px;
+	display: block;
+	margin: auto;
+	margin-top: 20px;
+  	border-radius: 50%;
+}
+
+#changeProfile {
+	margin: 15px;
+    border: none;
+    padding: 3px 12px;
+    text-align: center;
+    color: #72aefc;
+    font-size: 15px;
+}
+
+#changeProfile:hover {
+    color: #94bff7;
+}
+
+#changeProfile:focus {outline:0;}
+
+.forms label {
+    margin: 20px 35px 11px 10px;
+    font-size: 16px;
+    float: left;
+}
+
+.forms input[type=text],[type=date], select, textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: 20px;
+    display: inline-block;
+} 
+
+#bio {
+	margin-left: 20px;
+	vertical-align: top;
+}
+
+.forms {
+  margin: 20px;
+}
+
+.groupFields {
+	display: block;
+}
+
+.sectionTitle {
+	text-align: center;
+	font-family: Serif;
+	font-style: oblique;
+	font-size: 20px;
+	margin-top: 20px;
+}
+
+.saveForm {
+	margin: 30px 0px 20px 0px;
+	background-color: #F0F0F0;
+	padding: 5px 10px;
+	border-radius: 5px;
+	border: none;
+}
+
+.saveForm:hover{
+	box-shadow: 0 3px 6px 0 #F0F0F0, 0 3px 6px 0 #F0F0F0;
+	background-color: #deebfc;
+}
+
+.saveForm:focus {outline:0;}
+
+.questionnaire button {
+	margin: 10px 10px 0px 0px;
+}

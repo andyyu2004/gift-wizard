@@ -1,6 +1,6 @@
 import { RouteComponentProps, navigate } from '@reach/router';
 import React, { useState } from 'react';
-import QEdit from '../components/QEdit';
+import QEdit from '../components/questions/QEdit';
 import { Questionnaire } from 'shared/types';
 import "./SavedTemplates.css";
 import { navigateWithDefaultLoadedQuestionnaire } from '../actions/navigation';

@@ -7,6 +7,7 @@
 .small-icon:hover{
     cursor: pointer;
     border-color: #87CEFA;
+    box-shadow: 0 5px 10px 0 #F0F0F0, 0 5px 10px 0 #F0F0F0;
 }
 
 #navbar-brand {
@@ -29,7 +30,7 @@
 }
 
 #logoutButton:hover {
-    box-shadow: 0 3px 6px 0 #F0F0F0, 0 3px 6px 0 #F0F0F0;
+    box-shadow: 0 3px 6px 0 #D0D0D0, 0 3px 6px 0 #D0D0D0;
     background-color: #deebfc;
 }
 
@@ -45,7 +46,7 @@
 }
 
 .loginBtn:hover{
-    box-shadow: 0 3px 6px 0 #F0F0F0, 0 3px 6px 0 #F0F0F0;
+    box-shadow: 0 5px 10px 0 #D0D0D0, 0 5px 10px 0 #D0D0D0;
     background-color: #deebfc;
 }
 

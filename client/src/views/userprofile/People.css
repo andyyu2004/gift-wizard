@@ -1,0 +1,75 @@
+.peopleView {
+	text-align: center;
+}
+
+.peopleView h5 {
+	color: #6b8ffa;
+	font-size: 30px;
+	margin-top: 50px;
+}
+
+.peopleView p {
+	font-weight: bold;
+}
+
+.peopleView h6 {
+	margin-top: 30px;
+	font-style: oblique;
+	font-size: 18px;
+}
+
+.peopleView ul {
+	list-style-type: circle;
+	list-style-position: inside;
+	background: #fc7783;
+  	padding: 20px;
+  	width: 380px;
+  	margin: auto;
+  	margin-top: 20px;
+  	list-style-image: url('../images/wishes_icon.png');
+}
+
+.peopleView ul li {
+    background: #ffbac0;
+  	padding: 5px;
+  	text-align: left;
+  	font-style: oblique;
+  	font-size: 16px;
+}
+
+.peopleView ul li key {
+  	text-align: bottom;
+  	display: inline;
+  	color: red;
+}
+
+.peopleView img {
+	width: 160px;
+	height: 160px;
+	margin: 30px 0px 40px 0px;
+}
+
+#show-wishlist {
+	display: block;
+	margin-left: 80px;
+	margin-top: 50px;
+}
+
+#show-wishlist ul {
+  	width: 500px;
+}
+
+#show-wishlist h6 {
+	color: #f52f50;
+	font-weight: bold;
+	margin-top: 30px;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 35px;
+	margin-bottom: 30px;
+}
+
+
+
+
+
+

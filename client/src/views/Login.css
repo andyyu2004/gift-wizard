@@ -5,3 +5,25 @@
     width: 400px;
     height: 200px;
 }
+
+.buttonContainer{
+    text-align: center;
+}
+.loginButton{
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-top: 10px;
+    width: 77.75px;
+	background-color: #F0F0F0;
+	padding: 5px 10px;
+	border-radius: 5px;
+	border: none;
+}
+
+.loginButton:hover{
+	box-shadow: 0 3px 6px 0 #F0F0F0, 0 3px 6px 0 #F0F0F0;
+	background-color: #deebfc;
+}
+
+.loginButton:focus {outline:0;}
+

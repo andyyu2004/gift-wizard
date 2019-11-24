@@ -57,7 +57,7 @@ const PersonalProfile: React.FC<PropType> = ({ user: { _id, bio, firstname, surn
 							<input type="text" id="city" name="city" value={city} onChange={() => {}}/>
 						</label>
 					</fieldset>
-					<button type="button" id="saveForm">Save Profile</button>
+					<button type="button" className="saveForm">Save Profile</button>
 				</form>
 			</div>
 		</div>

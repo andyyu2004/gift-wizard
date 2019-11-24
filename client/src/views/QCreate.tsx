@@ -14,6 +14,8 @@ import { QEditContainer } from '../containers';
 import { FormAction } from '../types/FormActions';
 import './QCreate.css';
 import API from '../api';
+import './PersonalProfile.css';
+
 
 type ReducerType = (state: FormRepr[], action: FormAction) => FormRepr[];
 
@@ -147,19 +149,20 @@ const QCreate: React.FC<PropType> = props => {
   return (
     <div className="questionnaire">
       <h3 className="header">Customize your questionnaire</h3>
-      {/* <Button onClick={() => console.log({ label, forms, background })}>Print (console.log) Form State (Debug)</Button> */}
+      {/* <button type="button" className="saveForm" onClick={() => console.log({ label, forms, background })}>Print (console.log) Form State (Debug)</button> */}
+
       <ThemeSelection setBackground={setBackground} />
       <div className="step2">
         <h6>Step2: Design your own questions</h6>
         <div className= "title">
         <span>Title: </span>
-        <input className="formlabel" placeholder="My Questionnaire" value={label} onChange={e => setLabel(e.target.value)} />
+        <input className="formlabel" placeholder=" New Questionnaire" value={label} onChange={e => setLabel(e.target.value)} />
         </div>
         <QEditContainer dispatch={dispatch} questionnaire={{ label, forms, background }} />
       </div>
       {/** Temporarily save form to redux store for now */}
-      <Button style={{ backgroundColor: "#FFFFFF", color: "#808080", borderColor: "#808080", display: "inline-block" }} onClick={() => saveFormToStore()}>Save</Button>
-      <Button style={{backgroundColor:"#66B3FF", borderColor:"#66B3FF", display: "inline-block"}} onClick={() => alert("Bit hard to even partially implement this without some form of backend")}>Send To</Button>
+      <button type="button" className="saveForm" onClick={() => saveFormToStore()}>Save</button>
+      <button type="button" className="saveForm" onClick={() => alert("Bit hard to even partially implement this without some form of backend")}>Send To</button>
     </div>
   );
 };

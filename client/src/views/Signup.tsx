@@ -3,6 +3,7 @@ import React, { MouseEvent, useEffect, useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import API from '../api';
+import './Signup.css';
 
 const Signup: React.FC<RouteComponentProps> = () => {
   
@@ -21,7 +22,7 @@ const Signup: React.FC<RouteComponentProps> = () => {
   };
 
   return (
-    <div>
+    <div className='signUpForm'>
        <Form>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>

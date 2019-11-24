@@ -69,14 +69,14 @@ const LoginView: React.FC<RouteComponentProps> = () => {
             value={password}
             onChange={(e: any) => setPassword(e.target.value)}/>
         </Form.Group>
-        <Button 
+        <Button style = {{marginRight: "20px", width: "77.75px"}}
           variant="primary" 
           type="submit"
           onClick={handleLoginSubmission}>
-          Submit
+          Login
         </Button>
         <Button onClick={() => navigate('/signup')}>
-            create
+            Sign up
         </Button>
       </Form>
     </div>

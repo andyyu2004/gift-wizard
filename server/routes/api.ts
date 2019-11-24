@@ -65,7 +65,7 @@ router.post('/user/login', async (req, res) => {
         const user = await login(username, password).catch(e => { throw e });
         if (typeof user === "string") return res.status(422).json({ error: user });
 
-        req.session!.userid = user.userid;
+        req.session!.userid = user._id;
 
         return res.json({ user });
     } catch (error) {

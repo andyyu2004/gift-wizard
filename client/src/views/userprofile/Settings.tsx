@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Switch from 'react-switch';
 // import Toggle from 'react-toggle';
 // import "react-toggle/style.css";
-import { ChangePassword } from '../../components';
+import { ChangePassword } from '../../components/users';
 
 const Settings = () => {
   const [isPublic, setIsPublic] = useState(true);

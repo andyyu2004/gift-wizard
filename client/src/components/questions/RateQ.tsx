@@ -1,9 +1,9 @@
 import React from 'react';
 import StarRating from 'react-star-ratings';
-import { FormAction } from "../types/FormActions";
+import { FormAction } from "../../types/FormActions";
 import { RateFormRepr } from 'shared/types';
 import Question from './Question';
-import { updateRating } from '../actions/actionCreaters';
+import { updateRating } from '../../actions/actionCreaters';
 
 type PropType = {
   formRepr: RateFormRepr,

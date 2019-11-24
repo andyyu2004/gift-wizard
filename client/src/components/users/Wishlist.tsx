@@ -1,6 +1,6 @@
 import React from 'react'
 import { User } from 'shared/types';
-import '../../views/People.css';
+import '../../views/userprofile/People.css';
 
 type PropType = {
   user: User,

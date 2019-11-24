@@ -16,9 +16,11 @@ type PropType = {
 const Cell: React.FC<PropType> = ({ icon, image, text, subtext, onClick }) => {
   return (
     <div className="cell" id={icon} onClick={onClick}>
-      <img src={image} alt="img" />
-      <h6 className="cell-text"><b>{text}</b></h6>
-      <h6 className="cell-text">{subtext}</h6>
+      <div className = "cell-inner">
+        <img src={image} alt="img" />
+        <h6 className="cell-text"><b>{text}</b></h6>
+        <h6 className="cell-text">{subtext}</h6>
+      </div>
     </div>
   );
 }

@@ -51,13 +51,13 @@ const Signup: React.FC<RouteComponentProps> = () => {
             value={password}
             onChange={(e: any) => setPassword(e.target.value)}/>
         </Form.Group>
-
-        <Button
-          variant="primary" 
-          type="submit"
-          onClick={handleCreateUser}>
-          Submit
-        </Button>
+        <div className = "buttonContainer">
+          <button className = "submitButton"
+            type="submit"
+            onClick={handleCreateUser}>
+            Submit
+          </button>
+        </div>
       </Form>
     </div>
   );

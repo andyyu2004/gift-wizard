@@ -32,7 +32,7 @@ const Header: React.FC<PropTypes> = ({ title, subtitle }) => {
 
   return (
     <Navbar bg="light" variant="light">
-    <Navbar.Brand id="navbar-brand" onClick={() => navigate("/")}><b>{title}</b></Navbar.Brand>
+    <Navbar.Brand id="navbar-brand" style={{cursor:"pointer"}} onClick={() => navigate("/")}><b>{title}</b></Navbar.Brand>
     <Navbar.Text>{subtitle}</Navbar.Text>
     
     {/* This creates the spacing, don't remove */}
@@ -44,7 +44,7 @@ const Header: React.FC<PropTypes> = ({ title, subtitle }) => {
       /** If logged in, then take user to dashboard if admin else take to profile, else redirect to login screen */
       ? (<div>
           <img src={usericon} className="small-icon" onClick={() => navigate(`/${user.type === UserType.Admin ? 'admin' : 'profile'}`)} alt="profilepic" /> 
-          <Button id="logoutButton" type="button" onClick={handleLogout}>Logout</Button>
+          <button id="logoutButton" type="button" onClick={handleLogout}>Logout</button>
         </div>)
       : <button type="button" className="loginBtn" onClick={() => navigate(`/login`)}>Log In / Sign Up</button>} 
   </Navbar>

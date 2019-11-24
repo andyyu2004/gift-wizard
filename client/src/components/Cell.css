@@ -43,6 +43,7 @@
 }
 
 .cell:hover {
+	cursor: pointer;
 	border-color: #87CEFA;
   	border-radius: 2px;
 }
@@ -50,3 +51,8 @@
 #moreOption:hover{
 	border-color: transparent;
 }
+
+.cell-inner{
+	margin-top: 25px;
+}
+

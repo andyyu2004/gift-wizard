@@ -45,7 +45,8 @@
 .cell:hover {
 	cursor: pointer;
 	border-color: #87CEFA;
-  	border-radius: 2px;
+	border-radius: 2px;
+	box-shadow: 0 10px 15px 0 #E0E0E0, 0 10px 15px 0 #E0E0E0;
 }
 
 #moreOption:hover{

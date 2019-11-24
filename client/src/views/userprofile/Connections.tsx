@@ -1,5 +1,5 @@
 import React from 'react'
-import { Friend } from '../../types';
+import { Friend } from 'shared/types';
 import { Cell } from '../../components';
 import { fakeusers } from '../../mockdata/mockpeople';
 import { navigate } from '@reach/router';

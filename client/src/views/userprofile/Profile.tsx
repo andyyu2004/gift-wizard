@@ -5,7 +5,7 @@ import usericon from '../../images/fake_user_profile.jpeg';
 import Connections from './Connections';
 import Settings from './Settings';
 import PersonalProfile from './PersonalProfile';
-import { Friend } from '../../types';
+import { Friend } from 'shared/types';
 import { getRandom } from '../../util/array';
 import { fakeusers, eilish } from '../../mockdata/mockpeople';
 import { RouteComponentProps } from '@reach/router';

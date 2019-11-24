@@ -14,6 +14,7 @@ const UserModel = model<TUserModel>("User", new Schema({
     bio: String,
     wishlist: [String],
     interests: [String],
+    friends: [String],
     firstname: String,
     surname: String,
     picture: String,

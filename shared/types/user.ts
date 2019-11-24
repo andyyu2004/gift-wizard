@@ -16,8 +16,13 @@ export type User = {
     city?: string,
     password?: string,
     type: UserType,
+    friends: string[],
 };
 
+export type Friend = {
+    userid: string,
+    relationship: string,
+};
 
 export enum UserType {
     Admin = "ADMIN",

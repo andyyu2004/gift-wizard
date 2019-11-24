@@ -1,4 +1,4 @@
-import { login, createUser, logout } from './user';
+import { login, createUser, logout, getUser } from './user';
 import { saveQuestionnaire, loadUserQuestionnaires } from './questionnaire';
 import axios from 'axios';
 
@@ -12,6 +12,7 @@ const API = {
     logout,
     saveQuestionnaire,
     loadUserQuestionnaires,
+    getUser,
 };
 
 export default API;

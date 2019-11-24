@@ -1,5 +1,6 @@
 import { Router, Request, Response } from "express";
 import { saveQuestionnaire, getQuestionnaires } from "../controllers/questionnaire";
+import { getUser } from '../controllers/user';
 
 const router = Router();
 
@@ -16,6 +17,18 @@ function sessionChecker(req: Request, res: Response, next: Function) {
     next();
 };
 
+router.get('/user/:userid', async (req, res) => {
+    try {
+        const { userid } = req.params;
+        (await getUser(userid).catch(err => { throw err }))
+            .map(user => res.send({ user }))
+            .mapLeft(error => res.status(400).send({ error }));
+    } catch (error) {
+        console.log(`Error: ${error.message} (in /protected/user/:useid)`);
+        return res.status(500).json({ error });
+    }
+});
+
 router.post('/user/logout', async (req, res) => {
     req.session?.destroy(error => {
         if (error) {
@@ -30,7 +43,7 @@ router.post('/questionnaires/save', async (req, res) => {
     try {
         const { questionnaire } = req.body;
         if (!questionnaire) return res.status(400).json({ error: "Require questionnaire" });
-        const q = await saveQuestionnaire(req.session!.userid, questionnaire);
+        const q = await saveQuestionnaire(req.session!.userid, questionnaire).catch(err => { throw err });
         return res.json({ questionnaire: q });
     } catch (error) {
         console.log(`Error ${error.message} (in api/questionnaires)`);

@@ -30,8 +30,8 @@
         "signature": "f340a2330760e3940f79892e4c7475eaf629010a5ce795ba26b673db74e5923e"
       },
       "./types/user.ts": {
-        "version": "9515db67393bf38f4d4f5da26b1395467ec76fcb062e972c7f4250a4439d6ae3",
-        "signature": "54e40052554a48f516ce590316f12c34c3da0bc2bedb2a1563e0dec7bdeb8c41"
+        "version": "cd5b0a61708c377beaa524bc6d19a17494c50692eb6956c02f2e6a7a6d46bf1f",
+        "signature": "51edea37dc9ac8da932c370a08a2cfaa09a5830fb53888f747ef3ca90218025a"
       },
       "./types/index.ts": {
         "version": "6edd048395a30aa7ced20cc9b6f93158d6890d4c85024dea96a15e75df914bda",

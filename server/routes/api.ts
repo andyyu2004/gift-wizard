@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createUser, login, mlogin } from '../controllers/user';
+import { createUser, mlogin } from '../controllers/user';
 import bodyParser from 'body-parser';
 import session from 'express-session';
 import protectedRouter from './protected';
@@ -23,13 +23,14 @@ router.get('/', (req, res) => {
 });
 
 router.post('/user/create', async (req, res) => {
-    const { username, email, password } = req.body;
+    const { username, email, password, picture } = req.body;
     try {
-        const newuser = await createUser(username, email, password);
-        if (typeof newuser === "string") return res.status(422).json({ error: newuser });
-        res.json({ newuser });
-    } catch (err) {
-        console.log(err);
+        (await createUser(username, email, password, picture))
+            .map(user => res.json({ user }))
+            .mapLeft(error => res.status(500).json({ error }));
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ error });
     }
 
 });
@@ -43,37 +44,13 @@ router.post('/user/login', async (req, res) => {
             req.session!.userid = user._id;
             req.session?.save(err => { if (err) console.log(`Failed to save session ${err}`); });
             res.json({ user });
-        }).mapLeft(error => {
-            res.status(200).json({ error })
-        });
-
+        }).mapLeft(error => res.status(200).json({ error }));
     } catch (error) {
         console.log(`Error: ${error.message} (at api/user/login)`);
         return res.status(500).json({ error });
     }
 
 });
-
-// Implementation with try/catch + error codes instead of Either<L, R>
-router.post('/user/login', async (req, res) => {
-    try {
-        const { username, password } = req.body;
-        if (!username || !password) return res.status(400).json({
-            error: "Require username and password",
-        });
-
-        const user = await login(username, password).catch(e => { throw e });
-        if (typeof user === "string") return res.status(422).json({ error: user });
-
-        req.session!.userid = user._id;
-
-        return res.json({ user });
-    } catch (error) {
-        console.log(`Error: ${error.message} (at api/user/login)`);
-        return res.status(500).json({ error });
-    }
-});
-
 
 
 

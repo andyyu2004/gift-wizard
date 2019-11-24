@@ -2,9 +2,9 @@ import { UserModel, TUserModel } from "../models";
 import { UserType, Either, Left, Right } from "shared/types";
 import bcrypt from "bcrypt";
 
-export async function createUser(username: string, email: string, password: string): Promise<TUserModel | string> {
+export async function createUser(username: string, email: string, password: string, picture: string): Promise<Either<string, TUserModel>> {
     const user = await UserModel.findOne({ username });
-    if (user) return "User already exists";
+    if (user) return new Left("User already exists");
 
     const salt = await bcrypt.genSalt();
     const hash = await bcrypt.hash(password, salt);
@@ -12,25 +12,24 @@ export async function createUser(username: string, email: string, password: stri
     const newuser = new UserModel({
         username,
         email,
+        picture,
         password: hash,
         bio: "Default Biography",
         wishlist: [],
         interests: [],
+        friends: [],
         type: UserType.Regular,
     });
 
     newuser.save();
     delete newuser.password;
-    return newuser;
+    return new Right(newuser);
 }
 
-export async function login(username: string, password: string): Promise<TUserModel | string> {
-    const user = await UserModel.findOne({ username });
-    if (!user?.password) return "User does not exist";
-    // Added hashing etc later
-    if (!(await bcrypt.compare(password, user.password))) return "Incorrect Password";
-    delete user.password;
-    return user;
+export async function getUser(userid: string): Promise<Either<string, TUserModel>> {
+    const user = await UserModel.findById(userid);
+    if (!user) return new Left("User does not exist");
+    return new Right(user);
 }
 
 export async function mlogin(username: string, password: string): Promise<Either<string, TUserModel>> {

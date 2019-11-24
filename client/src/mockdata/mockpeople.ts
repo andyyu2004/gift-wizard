@@ -25,6 +25,7 @@ export const eilish: User = {
     wishlist: ["Airpods", "Bose headphones", "Apple music Membership", "Chocolate", "Sweets", "Godiva Giftcards", "Flight tickets to Tokyo", "A goldfish"],
     picture: eilishicon,
     _id: "345987345",
+    friends: [],
     type: UserType.Regular,
 };
 
@@ -42,7 +43,8 @@ export const fakeusers: User[] = [
         interests: ["Games"],
         type: UserType.Regular,
         wishlist: ["Scooter", "Tekken 7", "Naruto"],
-        bio: "Bio: Captivated from life, showing it here."
+        bio: "Bio: Captivated from life, showing it here.",
+        friends: [],
     },
     /*
     {

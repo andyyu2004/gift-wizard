@@ -38,7 +38,7 @@ const PersonalProfile: React.FC<PropType> = ({ user }) => {
 			phonenumber: phonenumber_,
 			country: country_,
 			province: province_,
-			city: city,
+			city: city_,
 		});
 
 		ret.map(user => {

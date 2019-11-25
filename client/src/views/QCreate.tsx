@@ -14,6 +14,7 @@ import { QEditContainer } from '../containers';
 import { FormAction } from '../types/FormActions';
 import './QCreate.css';
 import API from '../api';
+import { withProtection } from '../components/hoc';
 
 
 type ReducerType = (state: FormRepr[], action: FormAction) => FormRepr[];
@@ -167,4 +168,4 @@ const QCreate: React.FC<PropType> = props => {
 };
 
 
-export default QCreate;
+export default withProtection(QCreate);

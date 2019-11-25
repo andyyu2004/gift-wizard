@@ -28,11 +28,11 @@ type PropType = {
 const ThemeSelection: React.FC<PropType> = ({ setBackground }) => {
   const imgStyle = (backgroundImage: string) => ({
     backgroundImage, 
-    width: "60px", 
+    /* width: "60px", 
     height: "60px", 
     borderRadius: "10px", 
     marginLeft: "10px", 
-    marginRight: "10px"
+    marginRight: "10px" */
   });
 
   return (
@@ -41,6 +41,7 @@ const ThemeSelection: React.FC<PropType> = ({ setBackground }) => {
       {backgrounds.map(c => 
         <img 
           key={c} src={c} 
+          className="themeimg"
           style={imgStyle(c)}
           alt="themeoption"
       onClick={() => setBackground(c)}/>)}

@@ -4,6 +4,7 @@ import QEdit from '../components/questions/QEdit';
 import { Questionnaire } from 'shared/types';
 import "./SavedTemplates.css";
 import { navigateWithDefaultLoadedQuestionnaire } from '../actions/navigation';
+import { withProtection } from '../components/hoc';
 
 type PropType = RouteComponentProps & {
   title?: string,
@@ -54,4 +55,4 @@ const SavedTemplates: React.FC<PropType> = props => {
   );
 };
 
-export default SavedTemplates;
+export default withProtection(SavedTemplates);

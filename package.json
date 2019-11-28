@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"cd client && npm start\" \"cd server && npm start\"",
+    "start": "cd server && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/csc309-fall-2019/team03/issues"
   },
-  "homepage": "https://github.com/csc309-fall-2019/team03#readme",
-  "dependencies": {
-    "concurrently": "^5.0.0"
-  }
+  "homepage": "https://github.com/csc309-fall-2019/team03#readme"
 }

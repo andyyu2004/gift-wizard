@@ -3,3 +3,4 @@ export { default as ProfileView } from './Profile';
 export { default as Connections } from './Connections';
 export { default as Settings } from './Settings';
 export { default as PeopleView } from './People';
+export { default as BrowsePeople } from './BrowsePeople';

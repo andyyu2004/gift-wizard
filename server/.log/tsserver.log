@@ -1,11 +1,11 @@
-Info 0    [20:44:9.76] Starting TS Server
-Info 1    [20:44:9.77] Version: 3.7.2
-Info 2    [20:44:9.77] Arguments: /usr/bin/node /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/.bin/tsserver --logFile /home/andyyu2004/programming/javascript/gift-wizard/server/.log/tsserver.log --logVerbosity info --cancellationPipeName /tmp/da12aa6aa1181dc4b39558f55423977e/tscancellation*
-Info 3    [20:44:9.77] Platform: linux NodeVersion: 12 CaseSensitive: true
-Info 4    [20:44:10.203] Search path: /home/andyyu2004/programming/javascript/gift-wizard/server
-Info 5    [20:44:10.203] For info: /home/andyyu2004/programming/javascript/gift-wizard/server/server.ts :: Config file name: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
-Info 6    [20:44:10.203] Opened configuration file /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
-Info 7    [20:44:10.219] Config: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json : {
+Info 0    [22:15:20.510] Starting TS Server
+Info 1    [22:15:20.510] Version: 3.7.2
+Info 2    [22:15:20.510] Arguments: /usr/bin/node /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/.bin/tsserver --logFile /home/andyyu2004/programming/javascript/gift-wizard/server/.log/tsserver.log --logVerbosity info --cancellationPipeName /tmp/151c4bfbef68ae077420bdb9ef39bee6/tscancellation*
+Info 3    [22:15:20.510] Platform: linux NodeVersion: 12 CaseSensitive: true
+Info 4    [22:15:20.518] Search path: /home/andyyu2004/programming/javascript/gift-wizard/server/routes
+Info 5    [22:15:20.519] For info: /home/andyyu2004/programming/javascript/gift-wizard/server/routes/api.ts :: Config file name: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 6    [22:15:20.519] Opened configuration file /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 7    [22:15:20.532] Config: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json : {
  "rootNames": [
   "/home/andyyu2004/programming/javascript/gift-wizard/server/server.ts",
   "/home/andyyu2004/programming/javascript/gift-wizard/server/controllers/questionnaire.ts",
@@ -24,8 +24,7 @@ Info 7    [20:44:10.219] Config: /home/andyyu2004/programming/javascript/gift-wi
   "sourceMap": true,
   "outDir": "/home/andyyu2004/programming/javascript/gift-wizard/server/dist",
   "composite": true,
-  "strict": true,
-  "strictNullChecks": true,
+  "strict": false,
   "alwaysStrict": true,
   "esModuleInterop": true,
   "forceConsistentCasingInFileNames": true,
@@ -38,83 +37,34 @@ Info 7    [20:44:10.219] Config: /home/andyyu2004/programming/javascript/gift-wi
   }
  ]
 }
-Info 8    [20:44:10.517] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
-Info 9    [20:44:11.439] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 1 structureChanged: true Elapsed: 921ms
-Info 10   [20:44:11.439] Project '/home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json' (Configured) 
-Info 11   [20:44:11.439] 	Files (102)
+Info 8    [22:15:20.838] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 9    [22:15:21.891] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 1 structureChanged: true Elapsed: 1053ms
+Info 10   [22:15:21.891] Project '/home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json' (Configured) 
+Info 11   [22:15:21.891] 	Files (102)
 
-Info 12   [20:44:11.439] -----------------------------------------------
-Err 13    [20:44:13.602] Exception on executing command {"command":"getCodeFixes","seq":15,"type":"request","arguments":{"file":"/home/andyyu2004/programming/javascript/gift-wizard/server/server.ts","startLine":33,"startOffset":1,"endLine":33,"endOffset":1,"errorCodes":[6133]}}:
-
-    Debug Failure.
-
-    Error: Debug Failure.
-        at Object.assertDefined (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:2004:24)
-        at deleteNodeInList (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120301:43)
-        at Object.deleteDeclaration (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120220:29)
-        at _loop_9 (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:119770:47)
-        at ChangeTracker.finishDeleteDeclarations (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:119777:21)
-        at ChangeTracker.getChanges (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:119797:22)
-        at Function.ChangeTracker.with (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:119321:32)
-        at Object.getCodeActions (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:124820:69)
-        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120361:121
-        at Object.flatMap (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:468:25)
-        at Object.getFixes (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120361:23)
-        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:131044:35
-        at Object.flatMap (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:468:25)
-        at Object.getCodeFixesAtPosition (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:131042:23)
-        at IOSession.Session.getCodeFixes (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140677:64)
-        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:139462:61)
-        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:88
-        at IOSession.Session.executeWithRequestId (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140861:28)
-        at IOSession.Session.executeCommand (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:33)
-        at IOSession.Session.onMessage (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140893:35)
-        at Interface.<anonymous> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:142208:27)
-        at Interface.emit (events.js:210:5)
-        at Interface._onLine (readline.js:316:10)
-        at Interface._normalWrite (readline.js:461:12)
-        at Socket.ondata (readline.js:172:10)
-        at Socket.emit (events.js:210:5)
-        at addChunk (_stream_readable.js:309:12)
-        at readableAddChunk (_stream_readable.js:290:11)
-        at Socket.Readable.push (_stream_readable.js:224:10)
-        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
-Err 14    [20:44:14.856] Exception on executing command {"command":"getCodeFixes","seq":40,"type":"request","arguments":{"file":"/home/andyyu2004/programming/javascript/gift-wizard/server/server.ts","startLine":33,"startOffset":2,"endLine":33,"endOffset":2,"errorCodes":[6133]}}:
-
-    Debug Failure.
-
-    Error: Debug Failure.
-        at Object.assertDefined (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:2004:24)
-        at deleteNodeInList (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120301:43)
-        at Object.deleteDeclaration (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120220:29)
-        at _loop_9 (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:119770:47)
-        at ChangeTracker.finishDeleteDeclarations (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:119777:21)
-        at ChangeTracker.getChanges (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:119797:22)
-        at Function.ChangeTracker.with (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:119321:32)
-        at Object.getCodeActions (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:124820:69)
-        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120361:121
-        at Object.flatMap (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:468:25)
-        at Object.getFixes (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120361:23)
-        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:131044:35
-        at Object.flatMap (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:468:25)
-        at Object.getCodeFixesAtPosition (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:131042:23)
-        at IOSession.Session.getCodeFixes (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140677:64)
-        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:139462:61)
-        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:88
-        at IOSession.Session.executeWithRequestId (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140861:28)
-        at IOSession.Session.executeCommand (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:33)
-        at IOSession.Session.onMessage (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140893:35)
-        at Interface.<anonymous> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:142208:27)
-        at Interface.emit (events.js:210:5)
-        at Interface._onLine (readline.js:316:10)
-        at Interface._normalWrite (readline.js:461:12)
-        at Socket.ondata (readline.js:172:10)
-        at Socket.emit (events.js:210:5)
-        at addChunk (_stream_readable.js:309:12)
-        at readableAddChunk (_stream_readable.js:290:11)
-        at Socket.Readable.push (_stream_readable.js:224:10)
-        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
-Err 15    [20:44:16.663] Exception on executing command {"command":"signatureHelp","seq":50,"type":"request","arguments":{"file":"/home/andyyu2004/programming/javascript/gift-wizard/server/server.ts","line":33,"offset":16}}:
+Info 12   [22:15:21.891] -----------------------------------------------
+Info 13   [22:15:21.940] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/.log/ti-13687.log :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
+Info 14   [22:15:21.940] Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Detected file add/remove of non supported extension: /home/andyyu2004/programming/javascript/gift-wizard/server/.log/ti-13687.log
+Info 15   [22:15:21.940] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/.log/ti-13687.log :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
+Info 16   [22:15:31.4] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 17   [22:15:31.21] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 2 structureChanged: false Elapsed: 16ms
+Info 18   [22:15:31.21] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 19   [22:15:31.862] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 20   [22:15:31.875] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 3 structureChanged: false Elapsed: 13ms
+Info 21   [22:15:31.875] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 22   [22:15:31.920] getCompletionData: Get current token: 0
+Info 23   [22:15:31.920] getCompletionData: Is inside comment: 0
+Info 24   [22:15:31.920] getCompletionData: Get previous token 1: 0
+Info 25   [22:15:31.921] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 26   [22:15:31.925] getSymbolsFromOtherSourceFileExports: Recomputing list
+Info 27   [22:15:31.931] forEachExternalModuleToImportFrom: filtered out 45 modules by package.json contents
+Info 28   [22:15:31.931] getSymbolsFromOtherSourceFileExports: 6
+Info 29   [22:15:31.933] getCompletionData: Semantic work: 12
+Info 30   [22:15:31.960] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 11
+Info 31   [22:15:34.385] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 32   [22:15:34.395] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 4 structureChanged: false Elapsed: 10ms
+Info 33   [22:15:34.395] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Err 34    [22:27:57.417] Exception on executing command {"command":"signatureHelp","seq":169,"type":"request","arguments":{"file":"/home/andyyu2004/programming/javascript/gift-wizard/server/routes/api.ts","line":25,"offset":26}}:
 
     Cannot read property 'emitNode' of undefined
 
@@ -150,121 +100,674 @@ Err 15    [20:44:16.663] Exception on executing command {"command":"signatureHel
         at readableAddChunk (_stream_readable.js:290:11)
         at Socket.Readable.push (_stream_readable.js:224:10)
         at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
-Info 16   [21:12:55.211] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/AUTHORS.md :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 17   [21:12:55.211] Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Detected file add/remove of non supported extension: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/AUTHORS.md
-Info 18   [21:12:55.211] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/AUTHORS.md :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 19   [21:12:55.211] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/AUTHORS.md :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 20   [21:12:55.212] Elapsed:: 1ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/AUTHORS.md :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 21   [21:12:55.212] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/AUTHORS.md :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 22   [21:12:55.212] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/AUTHORS.md :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 23   [21:12:55.212] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/CODE_OF_CONDUCT.md :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 24   [21:12:55.212] Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Detected file add/remove of non supported extension: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/CODE_OF_CONDUCT.md
-Info 25   [21:12:55.212] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/CODE_OF_CONDUCT.md :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 26   [21:12:55.212] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/CODE_OF_CONDUCT.md :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 27   [21:12:55.212] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/CODE_OF_CONDUCT.md :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 28   [21:12:55.212] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/CODE_OF_CONDUCT.md :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 29   [21:12:55.212] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/CODE_OF_CONDUCT.md :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 30   [21:12:55.213] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/CopyrightNotice.txt :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 31   [21:12:55.213] Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Detected file add/remove of non supported extension: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/CopyrightNotice.txt
-Info 32   [21:12:55.213] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/CopyrightNotice.txt :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 33   [21:12:55.213] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/CopyrightNotice.txt :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 34   [21:12:55.213] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/CopyrightNotice.txt :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 35   [21:12:55.213] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/CopyrightNotice.txt :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 36   [21:12:55.213] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/CopyrightNotice.txt :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 37   [21:12:55.213] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/README.md :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 38   [21:12:55.214] Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Detected file add/remove of non supported extension: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/README.md
-Info 39   [21:12:55.214] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/README.md :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 40   [21:12:55.214] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/README.md :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 41   [21:12:55.214] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/README.md :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 42   [21:12:55.214] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/README.md :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 43   [21:12:55.214] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/README.md :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 44   [21:12:55.214] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/LICENSE.txt :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 45   [21:12:55.214] Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Detected file add/remove of non supported extension: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/LICENSE.txt
-Info 46   [21:12:55.214] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/LICENSE.txt :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 47   [21:12:55.214] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/LICENSE.txt :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 48   [21:12:55.214] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/LICENSE.txt :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 49   [21:12:55.214] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/LICENSE.txt :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 50   [21:12:55.214] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/LICENSE.txt :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 51   [21:12:55.215] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/ThirdPartyNoticeText.txt :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 52   [21:12:55.215] Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Detected file add/remove of non supported extension: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/ThirdPartyNoticeText.txt
-Info 53   [21:12:55.215] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/ThirdPartyNoticeText.txt :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 54   [21:12:55.215] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/ThirdPartyNoticeText.txt :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 55   [21:12:55.215] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/ThirdPartyNoticeText.txt :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 56   [21:12:55.215] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/ThirdPartyNoticeText.txt :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 57   [21:12:55.215] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/ThirdPartyNoticeText.txt :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 58   [21:12:55.215] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/package.json :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 59   [21:12:55.215] Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Detected file add/remove of non supported extension: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/package.json
-Info 60   [21:12:55.215] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/package.json :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 61   [21:12:55.215] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/package.json :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 62   [21:12:55.215] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/package.json :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 63   [21:12:55.215] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/package.json :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 64   [21:12:55.239] Elapsed:: 24ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/package.json :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 65   [21:12:55.240] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/bin :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 66   [21:12:55.241] Elapsed:: 1ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/bin :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 67   [21:12:55.241] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/bin :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 68   [21:12:55.241] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/bin :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 69   [21:12:55.241] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/bin :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 70   [21:12:55.241] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/bin :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 71   [21:12:55.241] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 72   [21:12:55.241] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 73   [21:12:55.241] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 74   [21:12:55.264] Elapsed:: 23ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 75   [21:12:55.264] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 76   [21:12:55.265] Elapsed:: 1ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 77   [21:12:55.265] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/loc :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 78   [21:12:55.265] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/loc :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 79   [21:12:55.265] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/loc :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 80   [21:12:55.265] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/loc :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 81   [21:12:55.265] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/loc :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 82   [21:12:55.265] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/loc :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 83   [21:12:55.265] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 84   [21:12:55.265] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 85   [21:12:55.265] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 86   [21:12:55.265] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 87   [21:12:55.265] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 88   [21:12:55.294] Elapsed:: 29ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 89   [21:12:55.302] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 90   [21:12:55.302] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 91   [21:12:55.302] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 92   [21:12:55.302] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 93   [21:12:55.302] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 94   [21:12:55.328] Elapsed:: 26ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 95   [21:12:55.354] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 96   [21:12:55.354] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 97   [21:12:55.354] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 98   [21:12:55.354] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 99   [21:12:55.354] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 100  [21:12:55.371] Elapsed:: 17ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 101  [21:12:55.382] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 102  [21:12:55.383] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 103  [21:12:55.383] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 104  [21:12:55.383] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 105  [21:12:55.383] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 106  [21:12:55.401] Elapsed:: 18ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 107  [21:12:55.413] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 108  [21:12:55.413] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 109  [21:12:55.413] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 110  [21:12:55.413] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 111  [21:12:55.413] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 112  [21:12:55.437] Elapsed:: 24ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 113  [21:12:55.447] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 114  [21:12:55.448] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 115  [21:12:55.448] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 116  [21:12:55.448] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 117  [21:12:55.448] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 118  [21:12:55.464] Elapsed:: 16ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 119  [21:12:55.475] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 120  [21:12:55.476] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Wild card directory
-Info 121  [21:12:55.476] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 122  [21:12:55.476] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project:  WatchType: node_modules for closed script infos in them
-Info 123  [21:12:55.476] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 124  [21:12:55.493] Elapsed:: 17ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/fsevents :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules 1 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
-Info 125  [21:12:55.728] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
-Info 126  [21:12:56.53] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 2 structureChanged: false Elapsed: 325ms
-Info 127  [21:12:56.53] Project '/home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json' (Configured) 
-Info 128  [21:12:56.53] 	Files (102)
+Info 35   [22:27:57.754] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 36   [22:27:57.788] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 5 structureChanged: false Elapsed: 33ms
+Info 37   [22:27:57.789] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 38   [22:28:0.113] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 39   [22:28:0.146] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 6 structureChanged: false Elapsed: 33ms
+Info 40   [22:28:0.146] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 41   [22:28:0.546] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 42   [22:28:0.576] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 7 structureChanged: false Elapsed: 30ms
+Info 43   [22:28:0.576] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 44   [22:28:0.578] getCompletionData: Get current token: 0
+Info 45   [22:28:0.579] getCompletionData: Is inside comment: 1
+Info 46   [22:28:0.579] Returning an empty list because completion was inside a regular comment or plain text part of a JsDoc comment.
+Info 47   [22:28:1.112] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 48   [22:28:1.120] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 8 structureChanged: false Elapsed: 8ms
+Info 49   [22:28:1.120] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 50   [22:28:1.120] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 51   [22:28:1.133] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 9 structureChanged: false Elapsed: 13ms
+Info 52   [22:28:1.133] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 53   [22:28:1.623] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 54   [22:28:1.648] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 10 structureChanged: false Elapsed: 24ms
+Info 55   [22:28:1.648] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 56   [22:28:2.420] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 57   [22:28:2.440] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 11 structureChanged: false Elapsed: 20ms
+Info 58   [22:28:2.440] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 59   [22:28:2.441] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 60   [22:28:2.448] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 12 structureChanged: false Elapsed: 7ms
+Info 61   [22:28:2.448] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 62   [22:28:3.236] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 63   [22:28:3.248] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 13 structureChanged: false Elapsed: 12ms
+Info 64   [22:28:3.248] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 65   [22:28:3.631] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 66   [22:28:3.668] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 14 structureChanged: false Elapsed: 37ms
+Info 67   [22:28:3.668] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 68   [22:28:4.89] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 69   [22:28:4.109] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 15 structureChanged: false Elapsed: 19ms
+Info 70   [22:28:4.109] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 71   [22:28:5.558] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 72   [22:28:5.588] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 16 structureChanged: false Elapsed: 30ms
+Info 73   [22:28:5.588] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 74   [22:28:5.589] getCompletionData: Get current token: 0
+Info 75   [22:28:5.589] getCompletionData: Is inside comment: 0
+Info 76   [22:28:5.590] Returning an empty list because completion was inside a regular comment or plain text part of a JsDoc comment.
+Info 77   [22:28:5.842] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 78   [22:28:5.850] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 17 structureChanged: false Elapsed: 8ms
+Info 79   [22:28:5.850] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 80   [22:28:6.507] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 81   [22:28:6.529] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 18 structureChanged: false Elapsed: 22ms
+Info 82   [22:28:6.529] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 83   [22:28:6.530] getCompletionData: Get current token: 0
+Info 84   [22:28:6.530] getCompletionData: Is inside comment: 0
+Info 85   [22:28:6.530] getCompletionData: Get previous token 1: 0
+Info 86   [22:28:6.534] getSymbolsFromOtherSourceFileExports: Using cached list
+Info 87   [22:28:6.536] getCompletionData: Semantic work: 6
+Info 88   [22:28:6.546] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 9
+Info 89   [22:28:36.386] Search path: /home/andyyu2004/programming/javascript/gift-wizard/server/routes
+Info 90   [22:28:36.386] For info: /home/andyyu2004/programming/javascript/gift-wizard/server/routes/protected.ts :: Config file name: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Err 91    [22:28:44.298] Exception on executing command {"command":"signatureHelp","seq":398,"type":"request","arguments":{"file":"/home/andyyu2004/programming/javascript/gift-wizard/server/routes/protected.ts","line":56,"offset":22}}:
 
-Info 129  [21:12:56.53] -----------------------------------------------
-Info 130  [21:12:56.53] Structure before ensureProjectForOpenFiles:
-Info 131  [21:12:56.53] Structure after ensureProjectForOpenFiles:
-Info 132  [21:12:56.53] got projects updated in background, updating diagnostics for /home/andyyu2004/programming/javascript/gift-wizard/server/server.ts
+    Cannot read property 'emitNode' of undefined
+
+    TypeError: Cannot read property 'emitNode' of undefined
+        at Object.getCommentRange (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:68997:29)
+        at emitNodeList (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:92843:51)
+        at emitList (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:92722:13)
+        at Object.writeList (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:90146:13)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:115282:29
+        at Object.mapToDisplayParts (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:103836:13)
+        at itemInfoForParameters (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:115279:41)
+        at getSignatureHelpItem (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:115245:95)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:115218:79
+        at Array.map (<anonymous>)
+        at createSignatureHelpItems (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:115218:36)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:114810:23
+        at Object.runWithCancellationToken (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:33373:28)
+        at Object.getSignatureHelpItems (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:114808:32)
+        at Object.getSignatureHelpItems (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:130887:37)
+        at IOSession.Session.getSignatureHelpItems (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140430:62)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:139356:61)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:88
+        at IOSession.Session.executeWithRequestId (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140861:28)
+        at IOSession.Session.executeCommand (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:33)
+        at IOSession.Session.onMessage (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140893:35)
+        at Interface.<anonymous> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:142208:27)
+        at Interface.emit (events.js:210:5)
+        at Interface._onLine (readline.js:316:10)
+        at Interface._normalWrite (readline.js:461:12)
+        at Socket.ondata (readline.js:172:10)
+        at Socket.emit (events.js:210:5)
+        at addChunk (_stream_readable.js:309:12)
+        at readableAddChunk (_stream_readable.js:290:11)
+        at Socket.Readable.push (_stream_readable.js:224:10)
+        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
+Err 92    [22:28:45.810] Exception on executing command {"command":"signatureHelp","seq":405,"type":"request","arguments":{"file":"/home/andyyu2004/programming/javascript/gift-wizard/server/routes/protected.ts","line":56,"offset":22}}:
+
+    Cannot read property 'emitNode' of undefined
+
+    TypeError: Cannot read property 'emitNode' of undefined
+        at Object.getCommentRange (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:68997:29)
+        at emitNodeList (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:92843:51)
+        at emitList (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:92722:13)
+        at Object.writeList (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:90146:13)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:115282:29
+        at Object.mapToDisplayParts (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:103836:13)
+        at itemInfoForParameters (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:115279:41)
+        at getSignatureHelpItem (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:115245:95)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:115218:79
+        at Array.map (<anonymous>)
+        at createSignatureHelpItems (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:115218:36)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:114810:23
+        at Object.runWithCancellationToken (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:33373:28)
+        at Object.getSignatureHelpItems (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:114808:32)
+        at Object.getSignatureHelpItems (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:130887:37)
+        at IOSession.Session.getSignatureHelpItems (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140430:62)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:139356:61)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:88
+        at IOSession.Session.executeWithRequestId (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140861:28)
+        at IOSession.Session.executeCommand (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:33)
+        at IOSession.Session.onMessage (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140893:35)
+        at Interface.<anonymous> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:142208:27)
+        at Interface.emit (events.js:210:5)
+        at Interface._onLine (readline.js:316:10)
+        at Interface._normalWrite (readline.js:461:12)
+        at Socket.ondata (readline.js:172:10)
+        at Socket.emit (events.js:210:5)
+        at addChunk (_stream_readable.js:309:12)
+        at readableAddChunk (_stream_readable.js:290:11)
+        at Socket.Readable.push (_stream_readable.js:224:10)
+        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
+Info 93   [22:29:44.161] Search path: /home/andyyu2004/programming/javascript/gift-wizard/server/controllers
+Info 94   [22:29:44.162] For info: /home/andyyu2004/programming/javascript/gift-wizard/server/controllers/questionnaire.ts :: Config file name: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 95   [22:29:52.739] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 96   [22:29:52.758] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 19 structureChanged: false Elapsed: 19ms
+Info 97   [22:29:52.758] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 98   [22:29:54.495] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 99   [22:29:54.505] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 20 structureChanged: false Elapsed: 10ms
+Info 100  [22:29:54.505] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 101  [22:29:54.586] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 102  [22:29:54.595] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 21 structureChanged: false Elapsed: 9ms
+Info 103  [22:29:54.595] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 104  [22:29:54.848] getCompletionData: Get current token: 0
+Info 105  [22:29:54.849] getCompletionData: Is inside comment: 0
+Info 106  [22:29:54.849] getCompletionData: Get previous token 1: 0
+Info 107  [22:29:54.849] getCompletionData: Get previous token 2: 0
+Info 108  [22:29:54.849] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 109  [22:29:54.852] getSymbolsFromOtherSourceFileExports: Recomputing list
+Info 110  [22:29:54.858] forEachExternalModuleToImportFrom: filtered out 45 modules by package.json contents
+Info 111  [22:29:54.858] getSymbolsFromOtherSourceFileExports: 6
+Info 112  [22:29:54.866] getCompletionData: Semantic work: 17
+Info 113  [22:29:54.874] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 8
+Info 114  [22:29:55.437] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 115  [22:29:55.446] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 22 structureChanged: false Elapsed: 9ms
+Info 116  [22:29:55.446] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 117  [22:29:55.446] getCompletionData: Get current token: 0
+Info 118  [22:29:55.446] getCompletionData: Is inside comment: 0
+Info 119  [22:29:55.446] getCompletionData: Get previous token 1: 0
+Info 120  [22:29:55.447] getCompletionData: Get previous token 2: 1
+Info 121  [22:29:55.447] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 122  [22:29:55.450] getSymbolsFromOtherSourceFileExports: Using cached list
+Info 123  [22:29:55.459] getCompletionData: Semantic work: 12
+Info 124  [22:29:55.465] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 6
+Info 125  [22:29:55.731] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 126  [22:29:55.737] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 23 structureChanged: false Elapsed: 6ms
+Info 127  [22:29:55.738] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 128  [22:29:55.738] getCompletionData: Get current token: 0
+Info 129  [22:29:55.738] getCompletionData: Is inside comment: 0
+Info 130  [22:29:55.738] getCompletionData: Get previous token 1: 0
+Info 131  [22:29:55.738] getCompletionData: Get previous token 2: 0
+Info 132  [22:29:55.738] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 133  [22:29:55.741] getSymbolsFromOtherSourceFileExports: Recomputing list for details entry
+Info 134  [22:29:55.746] forEachExternalModuleToImportFrom: filtered out 0 modules by package.json contents
+Info 135  [22:29:55.746] getSymbolsFromOtherSourceFileExports: 5
+Info 136  [22:29:55.749] getCompletionData: Semantic work: 11
+Info 137  [22:29:56.110] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 138  [22:29:56.131] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 24 structureChanged: false Elapsed: 21ms
+Info 139  [22:29:56.131] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 140  [22:29:56.133] getCompletionData: Get current token: 0
+Info 141  [22:29:56.133] getCompletionData: Is inside comment: 0
+Info 142  [22:29:56.133] getCompletionData: Get previous token 1: 0
+Info 143  [22:29:56.133] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 144  [22:29:56.169] getCompletionData: Semantic work: 35
+Info 145  [22:29:56.172] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 3
+Info 146  [22:29:56.383] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 147  [22:29:56.390] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 25 structureChanged: false Elapsed: 7ms
+Info 148  [22:29:56.390] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 149  [22:29:56.390] getCompletionData: Get current token: 0
+Info 150  [22:29:56.390] getCompletionData: Is inside comment: 0
+Info 151  [22:29:56.390] getCompletionData: Get previous token 1: 0
+Info 152  [22:29:56.390] getCompletionData: Get previous token 2: 0
+Info 153  [22:29:56.390] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 154  [22:29:56.411] getCompletionData: Semantic work: 21
+Info 155  [22:29:56.426] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 15
+Info 156  [22:29:56.464] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 157  [22:29:56.469] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 26 structureChanged: false Elapsed: 5ms
+Info 158  [22:29:56.469] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 159  [22:29:56.469] getCompletionData: Get current token: 0
+Info 160  [22:29:56.469] getCompletionData: Is inside comment: 0
+Info 161  [22:29:56.469] getCompletionData: Get previous token 1: 0
+Info 162  [22:29:56.469] getCompletionData: Get previous token 2: 0
+Info 163  [22:29:56.469] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 164  [22:29:56.485] getCompletionData: Semantic work: 16
+Info 165  [22:29:56.500] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 15
+Info 166  [22:29:56.549] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 167  [22:29:56.554] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 27 structureChanged: false Elapsed: 5ms
+Info 168  [22:29:56.554] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 169  [22:29:56.554] getCompletionData: Get current token: 0
+Info 170  [22:29:56.554] getCompletionData: Is inside comment: 0
+Info 171  [22:29:56.554] getCompletionData: Get previous token 1: 0
+Info 172  [22:29:56.554] getCompletionData: Get previous token 2: 0
+Info 173  [22:29:56.554] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 174  [22:29:56.570] getCompletionData: Semantic work: 16
+Info 175  [22:29:56.582] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 12
+Info 176  [22:29:56.706] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 177  [22:29:56.720] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 28 structureChanged: false Elapsed: 14ms
+Info 178  [22:29:56.721] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 179  [22:29:56.721] getCompletionData: Get current token: 0
+Info 180  [22:29:56.721] getCompletionData: Is inside comment: 0
+Info 181  [22:29:56.721] getCompletionData: Get previous token 1: 0
+Info 182  [22:29:56.721] getCompletionData: Get previous token 2: 0
+Info 183  [22:29:56.721] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 184  [22:29:56.747] getCompletionData: Semantic work: 25
+Info 185  [22:29:56.751] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 4
+Info 186  [22:29:56.894] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 187  [22:29:56.904] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 29 structureChanged: false Elapsed: 10ms
+Info 188  [22:29:56.904] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 189  [22:29:56.905] getCompletionData: Get current token: 0
+Info 190  [22:29:56.905] getCompletionData: Is inside comment: 0
+Info 191  [22:29:56.905] getCompletionData: Get previous token 1: 0
+Info 192  [22:29:56.905] getCompletionData: Get previous token 2: 0
+Info 193  [22:29:56.905] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 194  [22:29:56.927] getCompletionData: Semantic work: 22
+Info 195  [22:29:56.946] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 19
+Info 196  [22:29:57.189] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 197  [22:29:57.198] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 30 structureChanged: false Elapsed: 9ms
+Info 198  [22:29:57.198] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 199  [22:29:57.199] getCompletionData: Get current token: 1
+Info 200  [22:29:57.199] getCompletionData: Is inside comment: 0
+Info 201  [22:29:57.199] getCompletionData: Get previous token 1: 0
+Info 202  [22:29:57.199] getCompletionData: Get previous token 2: 0
+Info 203  [22:29:57.199] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 204  [22:29:57.214] getCompletionData: Semantic work: 15
+Info 205  [22:29:57.224] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 10
+Info 206  [22:29:57.777] getCompletionData: Get current token: 0
+Info 207  [22:29:57.777] getCompletionData: Is inside comment: 0
+Info 208  [22:29:57.778] getCompletionData: Get previous token 1: 0
+Info 209  [22:29:57.778] getCompletionData: Get previous token 2: 0
+Info 210  [22:29:57.778] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 211  [22:29:57.780] getCompletionData: Semantic work: 2
+Info 212  [22:29:58.684] getCompletionData: Get current token: 0
+Info 213  [22:29:58.684] getCompletionData: Is inside comment: 0
+Info 214  [22:29:58.684] getCompletionData: Get previous token 1: 0
+Info 215  [22:29:58.684] getCompletionData: Get previous token 2: 0
+Info 216  [22:29:58.684] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 217  [22:29:58.684] getCompletionData: Semantic work: 0
+Info 218  [22:29:59.872] getCompletionData: Get current token: 0
+Info 219  [22:29:59.872] getCompletionData: Is inside comment: 0
+Info 220  [22:29:59.872] getCompletionData: Get previous token 1: 0
+Info 221  [22:29:59.873] getCompletionData: Get previous token 2: 0
+Info 222  [22:29:59.873] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 223  [22:29:59.874] getCompletionData: Semantic work: 1
+Info 224  [22:30:3.34] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 225  [22:30:3.47] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 31 structureChanged: false Elapsed: 13ms
+Info 226  [22:30:3.47] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 227  [22:30:5.587] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 228  [22:30:5.609] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 32 structureChanged: false Elapsed: 22ms
+Info 229  [22:30:5.609] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 230  [22:30:9.919] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 231  [22:30:9.928] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 33 structureChanged: false Elapsed: 9ms
+Info 232  [22:30:9.928] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 233  [22:30:10.696] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 234  [22:30:10.708] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 34 structureChanged: false Elapsed: 12ms
+Info 235  [22:30:10.708] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 236  [22:30:11.552] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 237  [22:30:11.561] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 35 structureChanged: false Elapsed: 9ms
+Info 238  [22:30:11.561] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 239  [22:30:11.561] getCompletionData: Get current token: 0
+Info 240  [22:30:11.561] getCompletionData: Is inside comment: 0
+Info 241  [22:30:11.561] getCompletionData: Get previous token 1: 0
+Info 242  [22:30:11.561] getCompletionData: Get previous token 2: 0
+Info 243  [22:30:11.561] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 244  [22:30:11.578] getCompletionData: Semantic work: 17
+Info 245  [22:30:12.302] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 246  [22:30:12.312] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 36 structureChanged: false Elapsed: 10ms
+Info 247  [22:30:12.312] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 248  [22:30:12.335] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 249  [22:30:12.340] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 37 structureChanged: false Elapsed: 5ms
+Info 250  [22:30:12.340] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 251  [22:30:12.568] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 252  [22:30:12.585] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 38 structureChanged: false Elapsed: 17ms
+Info 253  [22:30:12.585] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 254  [22:30:12.587] getCompletionData: Get current token: 0
+Info 255  [22:30:12.587] getCompletionData: Is inside comment: 0
+Info 256  [22:30:12.587] getCompletionData: Get previous token 1: 0
+Info 257  [22:30:12.587] getCompletionData: Get previous token 2: 0
+Info 258  [22:30:12.587] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 259  [22:30:12.620] getCompletionData: Semantic work: 33
+Info 260  [22:30:13.16] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 261  [22:30:13.33] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 39 structureChanged: false Elapsed: 17ms
+Info 262  [22:30:13.33] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 263  [22:30:15.201] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 264  [22:30:15.211] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 40 structureChanged: false Elapsed: 9ms
+Info 265  [22:30:15.211] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 266  [22:30:15.211] getCompletionData: Get current token: 0
+Info 267  [22:30:15.211] getCompletionData: Is inside comment: 0
+Info 268  [22:30:15.211] getCompletionData: Get previous token 1: 0
+Info 269  [22:30:15.211] getCompletionData: Get previous token 2: 0
+Info 270  [22:30:15.211] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 271  [22:30:15.222] getCompletionData: Semantic work: 11
+Info 272  [22:30:17.593] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 273  [22:30:17.603] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 41 structureChanged: false Elapsed: 10ms
+Info 274  [22:30:17.603] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 275  [22:30:18.512] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 276  [22:30:18.520] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 42 structureChanged: false Elapsed: 8ms
+Info 277  [22:30:18.520] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 278  [22:30:39.613] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 279  [22:30:39.626] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 43 structureChanged: false Elapsed: 13ms
+Info 280  [22:30:39.626] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 281  [22:30:44.474] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 282  [22:30:44.483] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 44 structureChanged: false Elapsed: 9ms
+Info 283  [22:30:44.483] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 284  [22:30:45.482] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 285  [22:30:45.488] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 45 structureChanged: false Elapsed: 6ms
+Info 286  [22:30:45.488] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 287  [22:30:45.488] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 288  [22:30:45.493] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 46 structureChanged: false Elapsed: 5ms
+Info 289  [22:30:45.493] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 290  [22:30:46.52] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 291  [22:30:46.65] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 47 structureChanged: false Elapsed: 13ms
+Info 292  [22:30:46.65] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 293  [22:30:46.68] getCompletionData: Get current token: 0
+Info 294  [22:30:46.68] getCompletionData: Is inside comment: 0
+Info 295  [22:30:46.68] getCompletionData: Get previous token 1: 0
+Info 296  [22:30:46.68] getCompletionData: Get previous token 2: 0
+Info 297  [22:30:46.69] getCompletionsAtPosition: isCompletionListBlocker: 1
+Info 298  [22:30:46.86] getCompletionData: Semantic work: 17
+Info 299  [22:30:47.333] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 300  [22:30:47.343] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 48 structureChanged: false Elapsed: 10ms
+Info 301  [22:30:47.343] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 302  [22:30:47.344] getCompletionData: Get current token: 0
+Info 303  [22:30:47.344] getCompletionData: Is inside comment: 0
+Info 304  [22:30:47.344] getCompletionData: Get previous token 1: 0
+Info 305  [22:30:47.344] getCompletionData: Get previous token 2: 0
+Info 306  [22:30:47.344] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 307  [22:30:47.362] getCompletionData: Semantic work: 18
+Info 308  [22:30:47.584] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 309  [22:30:47.589] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 49 structureChanged: false Elapsed: 5ms
+Info 310  [22:30:47.589] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 311  [22:30:47.980] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 312  [22:30:47.997] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 50 structureChanged: false Elapsed: 17ms
+Info 313  [22:30:47.997] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 314  [22:30:48.8] getCompletionData: Get current token: 0
+Info 315  [22:30:48.8] getCompletionData: Is inside comment: 0
+Info 316  [22:30:48.8] getCompletionData: Get previous token 1: 0
+Info 317  [22:30:48.8] getCompletionData: Get previous token 2: 0
+Info 318  [22:30:48.8] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 319  [22:30:48.33] getCompletionData: Semantic work: 24
+Info 320  [22:30:48.291] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 321  [22:30:48.300] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 51 structureChanged: false Elapsed: 9ms
+Info 322  [22:30:48.301] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 323  [22:30:52.362] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 324  [22:30:52.372] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 52 structureChanged: false Elapsed: 10ms
+Info 325  [22:30:52.372] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 326  [22:30:52.372] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 327  [22:30:52.380] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 53 structureChanged: false Elapsed: 8ms
+Info 328  [22:30:52.380] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 329  [22:30:52.706] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 330  [22:30:52.727] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 54 structureChanged: false Elapsed: 20ms
+Info 331  [22:30:52.727] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 332  [22:30:52.729] getCompletionData: Get current token: 0
+Info 333  [22:30:52.729] getCompletionData: Is inside comment: 0
+Info 334  [22:30:52.729] getCompletionData: Get previous token 1: 0
+Info 335  [22:30:52.729] getCompletionData: Get previous token 2: 0
+Info 336  [22:30:52.730] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 337  [22:30:52.761] getCompletionData: Semantic work: 31
+Info 338  [22:30:52.762] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 1
+Info 339  [22:30:53.44] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 340  [22:30:53.53] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 55 structureChanged: false Elapsed: 9ms
+Info 341  [22:30:53.53] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 342  [22:30:53.53] getCompletionData: Get current token: 0
+Info 343  [22:30:53.53] getCompletionData: Is inside comment: 0
+Info 344  [22:30:53.53] getCompletionData: Get previous token 1: 0
+Info 345  [22:30:53.53] getCompletionData: Get previous token 2: 0
+Info 346  [22:30:53.53] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 347  [22:30:53.74] getCompletionData: Semantic work: 21
+Info 348  [22:30:53.74] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0
+Info 349  [22:30:53.407] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 350  [22:30:53.412] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 56 structureChanged: false Elapsed: 5ms
+Info 351  [22:30:53.412] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 352  [22:30:53.412] getCompletionData: Get current token: 0
+Info 353  [22:30:53.412] getCompletionData: Is inside comment: 0
+Info 354  [22:30:53.412] getCompletionData: Get previous token 1: 0
+Info 355  [22:30:53.412] getCompletionData: Get previous token 2: 0
+Info 356  [22:30:53.412] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 357  [22:30:53.429] getCompletionData: Semantic work: 17
+Info 358  [22:30:53.651] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 359  [22:30:53.672] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 57 structureChanged: false Elapsed: 20ms
+Info 360  [22:30:53.672] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 361  [22:30:55.152] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 362  [22:30:55.164] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 58 structureChanged: false Elapsed: 12ms
+Info 363  [22:30:55.164] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 364  [22:30:56.972] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 365  [22:30:56.981] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 59 structureChanged: false Elapsed: 8ms
+Info 366  [22:30:56.981] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 367  [22:31:9.401] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 368  [22:31:9.410] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 60 structureChanged: false Elapsed: 9ms
+Info 369  [22:31:9.410] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 370  [22:31:9.723] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 371  [22:31:9.741] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 61 structureChanged: false Elapsed: 18ms
+Info 372  [22:31:9.741] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 373  [22:31:11.39] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 374  [22:31:11.57] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 62 structureChanged: false Elapsed: 18ms
+Info 375  [22:31:11.57] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 376  [22:31:11.176] forEachExternalModuleToImportFrom: filtered out 45 modules by package.json contents
+Info 377  [22:31:11.423] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 378  [22:31:11.445] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 63 structureChanged: false Elapsed: 20ms
+Info 379  [22:31:11.445] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 380  [22:31:11.482] forEachExternalModuleToImportFrom: filtered out 45 modules by package.json contents
+Info 381  [22:31:12.589] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 382  [22:31:12.603] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 64 structureChanged: false Elapsed: 14ms
+Info 383  [22:31:12.603] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 384  [22:31:16.315] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 385  [22:31:16.347] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 65 structureChanged: false Elapsed: 32ms
+Info 386  [22:31:16.347] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 387  [22:31:46.326] Search path: /home/andyyu2004/programming/javascript/gift-wizard/server/models
+Info 388  [22:31:46.326] For info: /home/andyyu2004/programming/javascript/gift-wizard/server/models/questionnaire.ts :: Config file name: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 389  [22:31:54.608] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 390  [22:31:54.620] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 66 structureChanged: false Elapsed: 12ms
+Info 391  [22:31:54.620] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 392  [22:31:54.622] getCompletionData: Get current token: 0
+Info 393  [22:31:54.622] getCompletionData: Is inside comment: 0
+Info 394  [22:31:54.622] getCompletionData: Get previous token 1: 0
+Info 395  [22:31:54.622] getCompletionData: Get previous token 2: 0
+Info 396  [22:31:54.622] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 397  [22:31:54.640] getCompletionData: Semantic work: 18
+Info 398  [22:31:55.105] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 399  [22:31:55.127] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 67 structureChanged: false Elapsed: 21ms
+Info 400  [22:31:55.127] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 401  [22:32:0.354] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 402  [22:32:0.365] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 68 structureChanged: false Elapsed: 10ms
+Info 403  [22:32:0.365] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 404  [22:32:2.593] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 405  [22:32:2.602] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 69 structureChanged: false Elapsed: 9ms
+Info 406  [22:32:2.602] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 407  [22:32:39.683] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 408  [22:32:39.693] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 70 structureChanged: false Elapsed: 10ms
+Info 409  [22:32:39.694] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 410  [22:32:39.694] getCompletionData: Get current token: 0
+Info 411  [22:32:39.694] getCompletionData: Is inside comment: 0
+Info 412  [22:32:39.694] getCompletionData: Get previous token 1: 0
+Info 413  [22:32:39.694] getCompletionData: Get previous token 2: 0
+Info 414  [22:32:39.694] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 415  [22:32:39.716] getCompletionData: Semantic work: 22
+Info 416  [22:32:39.717] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 1
+Info 417  [22:32:40.345] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 418  [22:32:40.351] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 71 structureChanged: false Elapsed: 6ms
+Info 419  [22:32:40.351] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 420  [22:32:40.352] getCompletionData: Get current token: 0
+Info 421  [22:32:40.352] getCompletionData: Is inside comment: 0
+Info 422  [22:32:40.352] getCompletionData: Get previous token 1: 0
+Info 423  [22:32:40.352] getCompletionData: Get previous token 2: 0
+Info 424  [22:32:40.352] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 425  [22:32:40.366] getCompletionData: Semantic work: 14
+Info 426  [22:32:40.579] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 427  [22:32:40.600] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 72 structureChanged: false Elapsed: 21ms
+Info 428  [22:32:40.600] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 429  [22:32:41.528] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 430  [22:32:41.537] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 73 structureChanged: false Elapsed: 9ms
+Info 431  [22:32:41.537] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 432  [22:32:41.538] getCompletionData: Get current token: 0
+Info 433  [22:32:41.538] getCompletionData: Is inside comment: 0
+Info 434  [22:32:41.538] getCompletionData: Get previous token 1: 0
+Info 435  [22:32:41.538] getCompletionData: Get previous token 2: 0
+Info 436  [22:32:41.538] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 437  [22:32:41.543] getSymbolsFromOtherSourceFileExports: Using cached list
+Info 438  [22:32:41.545] getCompletionData: Semantic work: 7
+Info 439  [22:32:41.566] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 7
+Info 440  [22:33:23.459] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 441  [22:33:23.471] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 74 structureChanged: false Elapsed: 12ms
+Info 442  [22:33:23.471] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 443  [22:34:10.590] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 444  [22:34:10.603] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 75 structureChanged: false Elapsed: 12ms
+Info 445  [22:34:10.603] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 446  [22:34:10.603] getCompletionData: Get current token: 0
+Info 447  [22:34:10.603] getCompletionData: Is inside comment: 0
+Info 448  [22:34:10.603] getCompletionData: Get previous token 1: 0
+Info 449  [22:34:10.604] getCompletionData: Get previous token 2: 0
+Info 450  [22:34:10.604] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 451  [22:34:10.623] getCompletionData: Semantic work: 19
+Info 452  [22:34:10.623] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0
+Info 453  [22:34:11.57] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 454  [22:34:11.63] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 76 structureChanged: false Elapsed: 5ms
+Info 455  [22:34:11.63] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 456  [22:34:11.63] getCompletionData: Get current token: 0
+Info 457  [22:34:11.63] getCompletionData: Is inside comment: 0
+Info 458  [22:34:11.63] getCompletionData: Get previous token 1: 0
+Info 459  [22:34:11.63] getCompletionData: Get previous token 2: 0
+Info 460  [22:34:11.63] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 461  [22:34:11.82] getCompletionData: Semantic work: 19
+Info 462  [22:34:11.82] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0
+Info 463  [22:34:11.335] getCompletionData: Get current token: 0
+Info 464  [22:34:11.335] getCompletionData: Is inside comment: 0
+Info 465  [22:34:11.335] getCompletionData: Get previous token 1: 0
+Info 466  [22:34:11.335] getCompletionData: Get previous token 2: 0
+Info 467  [22:34:11.335] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 468  [22:34:11.335] getCompletionData: Semantic work: 0
+Info 469  [22:34:11.335] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0
+Info 470  [22:34:12.846] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 471  [22:34:12.864] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 77 structureChanged: false Elapsed: 17ms
+Info 472  [22:34:12.864] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 473  [22:34:13.180] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 474  [22:34:13.186] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 78 structureChanged: false Elapsed: 6ms
+Info 475  [22:34:13.187] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 476  [22:34:13.563] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 477  [22:34:13.568] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 79 structureChanged: false Elapsed: 5ms
+Info 478  [22:34:13.568] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 479  [22:34:14.28] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 480  [22:34:14.37] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 80 structureChanged: false Elapsed: 9ms
+Info 481  [22:34:14.37] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 482  [22:35:0.730] Search path: /home/andyyu2004/programming/javascript/gift-wizard/server
+Info 483  [22:35:0.731] For info: /home/andyyu2004/programming/javascript/gift-wizard/server/server.ts :: Config file name: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 484  [22:35:5.418] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/.#server.ts :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 0 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
+Info 485  [22:35:5.418] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/.#server.ts :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 0 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
+Info 486  [22:35:5.630] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 487  [22:35:5.645] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 81 structureChanged: false Elapsed: 14ms
+Info 488  [22:35:5.645] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 489  [22:35:6.235] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 490  [22:35:6.270] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 82 structureChanged: false Elapsed: 35ms
+Info 491  [22:35:6.271] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 492  [22:35:6.278] getCompletionData: Get current token: 0
+Info 493  [22:35:6.278] getCompletionData: Is inside comment: 0
+Info 494  [22:35:6.278] getCompletionData: Get previous token 1: 0
+Info 495  [22:35:6.279] getCompletionData: Get previous token 2: 1
+Info 496  [22:35:6.279] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 497  [22:35:6.291] getCompletionData: Semantic work: 12
+Info 498  [22:35:6.293] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 2
+Info 499  [22:35:6.651] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 500  [22:35:6.657] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 83 structureChanged: false Elapsed: 6ms
+Info 501  [22:35:6.657] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 502  [22:35:6.658] getCompletionData: Get current token: 0
+Info 503  [22:35:6.658] getCompletionData: Is inside comment: 0
+Info 504  [22:35:6.658] getCompletionData: Get previous token 1: 0
+Info 505  [22:35:6.658] getCompletionData: Get previous token 2: 0
+Info 506  [22:35:6.658] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 507  [22:35:6.661] getCompletionData: Semantic work: 3
+Info 508  [22:35:6.661] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0
+Info 509  [22:35:6.898] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 510  [22:35:6.905] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 84 structureChanged: false Elapsed: 7ms
+Info 511  [22:35:6.905] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 512  [22:35:6.906] getCompletionData: Get current token: 0
+Info 513  [22:35:6.906] getCompletionData: Is inside comment: 0
+Info 514  [22:35:6.906] getCompletionData: Get previous token 1: 0
+Info 515  [22:35:6.906] getCompletionData: Get previous token 2: 0
+Info 516  [22:35:6.906] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 517  [22:35:6.908] getCompletionData: Semantic work: 2
+Info 518  [22:35:6.909] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 1
+Info 519  [22:35:7.54] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 520  [22:35:7.64] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 85 structureChanged: false Elapsed: 10ms
+Info 521  [22:35:7.64] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 522  [22:35:7.65] getCompletionData: Get current token: 0
+Info 523  [22:35:7.65] getCompletionData: Is inside comment: 0
+Info 524  [22:35:7.65] getCompletionData: Get previous token 1: 0
+Info 525  [22:35:7.65] getCompletionData: Get previous token 2: 0
+Info 526  [22:35:7.65] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 527  [22:35:7.70] getCompletionData: Semantic work: 5
+Info 528  [22:35:7.71] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 1
+Info 529  [22:35:7.435] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 530  [22:35:7.442] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 86 structureChanged: false Elapsed: 7ms
+Info 531  [22:35:7.442] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 532  [22:35:7.443] getCompletionData: Get current token: 0
+Info 533  [22:35:7.443] getCompletionData: Is inside comment: 0
+Info 534  [22:35:7.443] getCompletionData: Get previous token 1: 0
+Info 535  [22:35:7.443] getCompletionData: Get previous token 2: 0
+Info 536  [22:35:7.443] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 537  [22:35:7.446] getCompletionData: Semantic work: 3
+Info 538  [22:35:7.666] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 539  [22:35:7.687] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 87 structureChanged: false Elapsed: 20ms
+Info 540  [22:35:7.687] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 541  [22:35:8.967] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 542  [22:35:8.980] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 88 structureChanged: false Elapsed: 12ms
+Info 543  [22:35:8.980] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 544  [22:35:9.593] DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/.#server.ts :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 0 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
+Info 545  [22:35:9.593] Elapsed:: 0ms DirectoryWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/server/.#server.ts :: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/server 0 Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json WatchType: Failed Lookup Locations
+Info 546  [22:36:8.996] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 547  [22:36:9.5] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 89 structureChanged: false Elapsed: 8ms
+Info 548  [22:36:9.5] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 549  [22:36:9.108] forEachExternalModuleToImportFrom: filtered out 45 modules by package.json contents
+Info 550  [22:36:10.17] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 551  [22:36:10.28] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 90 structureChanged: false Elapsed: 11ms
+Info 552  [22:36:10.28] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 553  [22:36:10.950] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 554  [22:36:10.959] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 91 structureChanged: false Elapsed: 9ms
+Info 555  [22:36:10.959] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 556  [22:36:10.983] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 557  [22:36:10.989] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 92 structureChanged: false Elapsed: 6ms
+Info 558  [22:36:10.989] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 559  [22:36:11.395] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 560  [22:36:11.415] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 93 structureChanged: false Elapsed: 19ms
+Info 561  [22:36:11.415] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 562  [22:36:14.779] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 563  [22:36:14.805] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 94 structureChanged: false Elapsed: 26ms
+Info 564  [22:36:14.805] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 565  [22:36:16.196] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 566  [22:36:16.216] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 95 structureChanged: false Elapsed: 20ms
+Info 567  [22:36:16.216] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 568  [22:36:16.216] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 569  [22:36:16.225] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 96 structureChanged: false Elapsed: 9ms
+Info 570  [22:36:16.225] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 571  [22:36:16.711] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 572  [22:36:16.730] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 97 structureChanged: false Elapsed: 19ms
+Info 573  [22:36:16.731] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 574  [22:36:16.731] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 575  [22:36:16.743] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 98 structureChanged: false Elapsed: 12ms
+Info 576  [22:36:16.743] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 577  [22:36:16.973] getCompletionData: Get current token: 0
+Info 578  [22:36:16.973] getCompletionData: Is inside comment: 0
+Info 579  [22:36:16.973] getCompletionData: Get previous token 1: 0
+Info 580  [22:36:16.973] getCompletionData: Get previous token 2: 0
+Info 581  [22:36:16.973] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 582  [22:36:16.979] getSymbolsFromOtherSourceFileExports: Using cached list
+Info 583  [22:36:16.981] getCompletionData: Semantic work: 8
+Info 584  [22:36:16.986] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 5
+Info 585  [22:36:17.486] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 586  [22:36:17.503] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 99 structureChanged: false Elapsed: 16ms
+Info 587  [22:36:17.503] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 588  [22:36:19.906] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 589  [22:36:19.915] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 100 structureChanged: false Elapsed: 8ms
+Info 590  [22:36:19.915] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 591  [22:36:19.934] getCompletionData: Get current token: 0
+Info 592  [22:36:19.934] getCompletionData: Is inside comment: 0
+Info 593  [22:36:19.934] getCompletionData: Get previous token 1: 0
+Info 594  [22:36:19.934] getCompletionData: Get previous token 2: 0
+Info 595  [22:36:19.935] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 596  [22:36:19.936] getCompletionData: Semantic work: 1
+Info 597  [22:36:19.936] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0
+Info 598  [22:36:20.221] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 599  [22:36:20.238] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 101 structureChanged: false Elapsed: 16ms
+Info 600  [22:36:20.238] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 601  [22:36:21.90] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 602  [22:36:21.106] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 102 structureChanged: false Elapsed: 16ms
+Info 603  [22:36:21.106] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 604  [22:36:21.116] getCompletionData: Get current token: 0
+Info 605  [22:36:21.116] getCompletionData: Is inside comment: 0
+Info 606  [22:36:21.116] getCompletionData: Get previous token 1: 0
+Info 607  [22:36:21.116] getCompletionData: Get previous token 2: 0
+Info 608  [22:36:21.117] getCompletionsAtPosition: isCompletionListBlocker: 1
+Info 609  [22:36:21.125] getSymbolsFromOtherSourceFileExports: Using cached list
+Info 610  [22:36:21.127] getCompletionData: Semantic work: 10
+Info 611  [22:36:21.136] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 8
+Info 612  [22:36:21.808] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 613  [22:36:21.818] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 103 structureChanged: false Elapsed: 9ms
+Info 614  [22:36:21.818] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 615  [22:37:0.770] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 616  [22:37:0.782] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 104 structureChanged: false Elapsed: 12ms
+Info 617  [22:37:0.782] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 618  [22:37:1.171] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 619  [22:37:1.181] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 105 structureChanged: false Elapsed: 9ms
+Info 620  [22:37:1.182] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 621  [22:37:3.578] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 622  [22:37:3.598] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 106 structureChanged: false Elapsed: 20ms
+Info 623  [22:37:3.598] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 624  [22:37:3.599] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 625  [22:37:3.608] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 107 structureChanged: false Elapsed: 9ms
+Info 626  [22:37:3.608] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 627  [22:37:3.804] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 628  [22:37:3.827] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 108 structureChanged: false Elapsed: 23ms
+Info 629  [22:37:3.827] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 630  [22:37:4.382] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 631  [22:37:4.397] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 109 structureChanged: false Elapsed: 15ms
+Info 632  [22:37:4.397] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 633  [22:37:4.643] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 634  [22:37:4.672] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 110 structureChanged: false Elapsed: 29ms
+Info 635  [22:37:4.672] Different program with same set of files:: oldProgram.structureIsReused:: 2

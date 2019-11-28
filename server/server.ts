@@ -25,13 +25,10 @@ const CONNECTION_STRING = `mongodb+srv://${dbuser}:${dbpassword}@gift-wizard-oqv
 mongoose.connect(CONNECTION_STRING, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
+    useFindAndModify: false,
 }, (err: MongoError) => {
     if (err) return console.log(`failed db connection ${err}`);
     app.listen(PORT, () => console.log(`server listening on port ${PORT}`));
-});
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../client/build/index.html'));
 });
 
 /** Temporary convenience for clearing database
@@ -47,7 +44,7 @@ app.get('/drop', async (req, res) => {
 });
 
 app.get('*', (req, res) => {
-    res.status(404).send("404");
+    res.sendFile(path.join(__dirname, '../../client/build/index.html'));
 });
 
 

@@ -3,7 +3,7 @@ import * as React from 'react';
 import './App.css';
 import { Header } from './components';
 import { ErrorsView, Home, LoginView, QCreate, SavedTemplates, Signup } from './views';
-import { Dashboard, PeopleView, ProfileView } from './views/userprofile';
+import { Dashboard, PeopleView, ProfileView, BrowsePeople } from './views/userprofile';
 
 /**
  * Putting Header in the top level as the header should be the same throughout all views?
@@ -26,6 +26,7 @@ const App: React.SFC = props => {
         <ProfileView path="profile/*" />
         <PeopleView path="people/:userid" />
         {/* Getting saved user forms from redux store for now */}
+        <BrowsePeople path="people" />
         <SavedTemplates path="open" />
         <Signup path="signup" />
         <ErrorsView path="*" errorCode={404}/>

@@ -1,0 +1,152 @@
+Info 0    [20:44:9.76] Starting TS Server
+Info 1    [20:44:9.77] Version: 3.7.2
+Info 2    [20:44:9.77] Arguments: /usr/bin/node /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/.bin/tsserver --logFile /home/andyyu2004/programming/javascript/gift-wizard/server/.log/tsserver.log --logVerbosity info --cancellationPipeName /tmp/da12aa6aa1181dc4b39558f55423977e/tscancellation*
+Info 3    [20:44:9.77] Platform: linux NodeVersion: 12 CaseSensitive: true
+Info 4    [20:44:10.203] Search path: /home/andyyu2004/programming/javascript/gift-wizard/server
+Info 5    [20:44:10.203] For info: /home/andyyu2004/programming/javascript/gift-wizard/server/server.ts :: Config file name: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 6    [20:44:10.203] Opened configuration file /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 7    [20:44:10.219] Config: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json : {
+ "rootNames": [
+  "/home/andyyu2004/programming/javascript/gift-wizard/server/server.ts",
+  "/home/andyyu2004/programming/javascript/gift-wizard/server/controllers/questionnaire.ts",
+  "/home/andyyu2004/programming/javascript/gift-wizard/server/controllers/user.ts",
+  "/home/andyyu2004/programming/javascript/gift-wizard/server/models/index.ts",
+  "/home/andyyu2004/programming/javascript/gift-wizard/server/models/questionnaire.ts",
+  "/home/andyyu2004/programming/javascript/gift-wizard/server/models/user.ts",
+  "/home/andyyu2004/programming/javascript/gift-wizard/server/routes/api.ts",
+  "/home/andyyu2004/programming/javascript/gift-wizard/server/routes/protected.ts"
+ ],
+ "options": {
+  "target": 1,
+  "module": 1,
+  "allowJs": true,
+  "checkJs": true,
+  "sourceMap": true,
+  "outDir": "/home/andyyu2004/programming/javascript/gift-wizard/server/dist",
+  "composite": true,
+  "strict": true,
+  "strictNullChecks": true,
+  "alwaysStrict": true,
+  "esModuleInterop": true,
+  "forceConsistentCasingInFileNames": true,
+  "configFilePath": "/home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json"
+ },
+ "projectReferences": [
+  {
+   "path": "/home/andyyu2004/programming/javascript/gift-wizard/shared",
+   "originalPath": "../shared"
+  }
+ ]
+}
+Info 8    [20:44:10.517] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 9    [20:44:11.439] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 1 structureChanged: true Elapsed: 921ms
+Info 10   [20:44:11.439] Project '/home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json' (Configured) 
+Info 11   [20:44:11.439] 	Files (102)
+
+Info 12   [20:44:11.439] -----------------------------------------------
+Err 13    [20:44:13.602] Exception on executing command {"command":"getCodeFixes","seq":15,"type":"request","arguments":{"file":"/home/andyyu2004/programming/javascript/gift-wizard/server/server.ts","startLine":33,"startOffset":1,"endLine":33,"endOffset":1,"errorCodes":[6133]}}:
+
+    Debug Failure.
+
+    Error: Debug Failure.
+        at Object.assertDefined (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:2004:24)
+        at deleteNodeInList (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120301:43)
+        at Object.deleteDeclaration (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120220:29)
+        at _loop_9 (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:119770:47)
+        at ChangeTracker.finishDeleteDeclarations (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:119777:21)
+        at ChangeTracker.getChanges (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:119797:22)
+        at Function.ChangeTracker.with (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:119321:32)
+        at Object.getCodeActions (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:124820:69)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120361:121
+        at Object.flatMap (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:468:25)
+        at Object.getFixes (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120361:23)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:131044:35
+        at Object.flatMap (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:468:25)
+        at Object.getCodeFixesAtPosition (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:131042:23)
+        at IOSession.Session.getCodeFixes (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140677:64)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:139462:61)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:88
+        at IOSession.Session.executeWithRequestId (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140861:28)
+        at IOSession.Session.executeCommand (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:33)
+        at IOSession.Session.onMessage (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140893:35)
+        at Interface.<anonymous> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:142208:27)
+        at Interface.emit (events.js:210:5)
+        at Interface._onLine (readline.js:316:10)
+        at Interface._normalWrite (readline.js:461:12)
+        at Socket.ondata (readline.js:172:10)
+        at Socket.emit (events.js:210:5)
+        at addChunk (_stream_readable.js:309:12)
+        at readableAddChunk (_stream_readable.js:290:11)
+        at Socket.Readable.push (_stream_readable.js:224:10)
+        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
+Err 14    [20:44:14.856] Exception on executing command {"command":"getCodeFixes","seq":40,"type":"request","arguments":{"file":"/home/andyyu2004/programming/javascript/gift-wizard/server/server.ts","startLine":33,"startOffset":2,"endLine":33,"endOffset":2,"errorCodes":[6133]}}:
+
+    Debug Failure.
+
+    Error: Debug Failure.
+        at Object.assertDefined (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:2004:24)
+        at deleteNodeInList (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120301:43)
+        at Object.deleteDeclaration (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120220:29)
+        at _loop_9 (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:119770:47)
+        at ChangeTracker.finishDeleteDeclarations (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:119777:21)
+        at ChangeTracker.getChanges (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:119797:22)
+        at Function.ChangeTracker.with (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:119321:32)
+        at Object.getCodeActions (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:124820:69)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120361:121
+        at Object.flatMap (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:468:25)
+        at Object.getFixes (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120361:23)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:131044:35
+        at Object.flatMap (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:468:25)
+        at Object.getCodeFixesAtPosition (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:131042:23)
+        at IOSession.Session.getCodeFixes (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140677:64)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:139462:61)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:88
+        at IOSession.Session.executeWithRequestId (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140861:28)
+        at IOSession.Session.executeCommand (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:33)
+        at IOSession.Session.onMessage (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140893:35)
+        at Interface.<anonymous> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:142208:27)
+        at Interface.emit (events.js:210:5)
+        at Interface._onLine (readline.js:316:10)
+        at Interface._normalWrite (readline.js:461:12)
+        at Socket.ondata (readline.js:172:10)
+        at Socket.emit (events.js:210:5)
+        at addChunk (_stream_readable.js:309:12)
+        at readableAddChunk (_stream_readable.js:290:11)
+        at Socket.Readable.push (_stream_readable.js:224:10)
+        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
+Err 15    [20:44:16.663] Exception on executing command {"command":"signatureHelp","seq":50,"type":"request","arguments":{"file":"/home/andyyu2004/programming/javascript/gift-wizard/server/server.ts","line":33,"offset":16}}:
+
+    Cannot read property 'emitNode' of undefined
+
+    TypeError: Cannot read property 'emitNode' of undefined
+        at Object.getCommentRange (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:68997:29)
+        at emitNodeList (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:92843:51)
+        at emitList (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:92722:13)
+        at Object.writeList (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:90146:13)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:115282:29
+        at Object.mapToDisplayParts (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:103836:13)
+        at itemInfoForParameters (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:115279:41)
+        at getSignatureHelpItem (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:115245:95)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:115218:79
+        at Array.map (<anonymous>)
+        at createSignatureHelpItems (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:115218:36)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:114810:23
+        at Object.runWithCancellationToken (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:33373:28)
+        at Object.getSignatureHelpItems (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:114808:32)
+        at Object.getSignatureHelpItems (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:130887:37)
+        at IOSession.Session.getSignatureHelpItems (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140430:62)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:139356:61)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:88
+        at IOSession.Session.executeWithRequestId (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140861:28)
+        at IOSession.Session.executeCommand (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:33)
+        at IOSession.Session.onMessage (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140893:35)
+        at Interface.<anonymous> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:142208:27)
+        at Interface.emit (events.js:210:5)
+        at Interface._onLine (readline.js:316:10)
+        at Interface._normalWrite (readline.js:461:12)
+        at Socket.ondata (readline.js:172:10)
+        at Socket.emit (events.js:210:5)
+        at addChunk (_stream_readable.js:309:12)
+        at readableAddChunk (_stream_readable.js:290:11)
+        at Socket.Readable.push (_stream_readable.js:224:10)
+        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)

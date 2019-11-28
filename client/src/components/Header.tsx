@@ -68,6 +68,7 @@ const Header: React.FC<PropTypes> = ({ title, subtitle }) => {
       {user && user.type !== UserType.None
         /** If logged in, then take user to dashboard if admin else take to profile, else redirect to login screen */
         ? (<>
+            <span>{user.username}</span>
             <Dropdown>
               <Dropdown.Toggle className='header-button header-notification' id="notification-toggle">
                 {/* <img src={notificationicon} alt="Notifications" className="small-generic-icon" /> */}

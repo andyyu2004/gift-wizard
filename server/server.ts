@@ -87,7 +87,7 @@ io.on('connection', socket => {
         // console.log(`user ${userid} accepts request from ${sid}`);
         (await acceptRequest(userid, sid)).map(async _ => {
             socket.emit('success', "Successfully added friend");
-            (await getUser(sid)).map(async user => {
+            (await getUser(userid)).map(async user => {
                 await addNotification(sid, `${user.username} accepted your friend request`, userid, NotificationType.General);
                 io.to(socketmap[sid]).emit('refresh-notifications');
             });

@@ -424,3 +424,19 @@ Info 386  [16:40:0.861] Different program with same set of files:: oldProgram.st
 Info 387  [16:40:0.861] Structure before ensureProjectForOpenFiles:
 Info 388  [16:40:0.861] Structure after ensureProjectForOpenFiles:
 Info 389  [16:40:0.861] got projects updated in background, updating diagnostics for /home/andyyu2004/programming/javascript/gift-wizard/shared/types/notifications.ts
+Info 390  [18:26:13.716] FileWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/shared/types/Either.ts 1:: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/shared/types/Either.ts 500 Project:  WatchType: Closed Script info
+Info 391  [18:26:13.716] Elapsed:: 0ms FileWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/shared/types/Either.ts 1:: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/shared/types/Either.ts 500 Project:  WatchType: Closed Script info
+Info 392  [18:26:13.966] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/shared/tsconfig.json
+Info 393  [18:26:13.970] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/shared/tsconfig.json Version: 62 structureChanged: false Elapsed: 4ms
+Info 394  [18:26:13.970] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 395  [18:26:13.970] Structure before ensureProjectForOpenFiles:
+Info 396  [18:26:13.970] Structure after ensureProjectForOpenFiles:
+Info 397  [18:26:13.970] got projects updated in background, updating diagnostics for /home/andyyu2004/programming/javascript/gift-wizard/shared/types/notifications.ts
+Info 398  [18:29:16.224] FileWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/shared/types/Either.ts 1:: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/shared/types/Either.ts 500 Project:  WatchType: Closed Script info
+Info 399  [18:29:16.224] Elapsed:: 0ms FileWatcher:: Triggered with /home/andyyu2004/programming/javascript/gift-wizard/shared/types/Either.ts 1:: WatchInfo: /home/andyyu2004/programming/javascript/gift-wizard/shared/types/Either.ts 500 Project:  WatchType: Closed Script info
+Info 400  [18:29:16.474] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/shared/tsconfig.json
+Info 401  [18:29:16.478] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/shared/tsconfig.json Version: 63 structureChanged: false Elapsed: 4ms
+Info 402  [18:29:16.478] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 403  [18:29:16.478] Structure before ensureProjectForOpenFiles:
+Info 404  [18:29:16.478] Structure after ensureProjectForOpenFiles:
+Info 405  [18:29:16.478] got projects updated in background, updating diagnostics for /home/andyyu2004/programming/javascript/gift-wizard/shared/types/notifications.ts

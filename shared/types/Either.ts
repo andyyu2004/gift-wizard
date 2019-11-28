@@ -7,6 +7,7 @@ export interface IEither<L, R> {
     /** Similar to map, but applies on left instead of right */
     mapLeft<T>(f: (x: L) => T): IEither<T, R>;
     bind<T>(f: (x: R) => IEither<L, T>): IEither<L, T>;
+    bindAsync<T>(f: (x: R) => Promise<IEither<L, T>>): Promise<IEither<L, T>>;
     match<T>(f: (l: L) => T, g: (r: R) => T): T;
     isLeft(): boolean;
     isRight(): boolean;
@@ -32,6 +33,10 @@ export class Right<L, R> implements IEither<L, R> {
     }
 
     bind<T>(f: (x: R) => IEither<L, T>): IEither<L, T> {
+        return f(this.rval);
+    }
+
+    bindAsync<T>(f: (x: R) => Promise<IEither<L, T>>): Promise<IEither<L, T>> {
         return f(this.rval);
     }
 
@@ -77,6 +82,10 @@ export class Left<L, R> implements IEither<L, R> {
 
     bind<T>(f: (x: R) => IEither<L, T>): IEither<L, T> {
         return new Left(this.lval);
+    }
+
+    bindAsync<T>(f: (x: R) => Promise<IEither<L, T>>): Promise<IEither<L, T>> {
+        return Promise.resolve(new Left(this.lval));
     }
 
     match<T>(f: (l: L) => T, g: (r: R) => T): T {

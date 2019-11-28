@@ -1,72 +1,76 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Right = /** @class */ (function () {
-    function Right(rval) {
+class Right {
+    constructor(rval) {
         this.rval = rval;
         this.tag = "right";
     }
-    Right.prototype.map = function (f) {
+    map(f) {
         return new Right(f(this.rval));
-    };
-    Right.prototype.mapLeft = function (f) {
+    }
+    mapLeft(f) {
         return new Right(this.rval);
-    };
-    Right.prototype.bind = function (f) {
+    }
+    bind(f) {
         return f(this.rval);
-    };
-    Right.prototype.match = function (f, g) {
+    }
+    bindAsync(f) {
+        return f(this.rval);
+    }
+    match(f, g) {
         return g(this.rval);
-    };
-    Right.prototype.isLeft = function () {
+    }
+    isLeft() {
         return false;
-    };
-    Right.prototype.isRight = function () {
+    }
+    isRight() {
         return true;
-    };
-    Right.prototype.unwrap = function () {
+    }
+    unwrap() {
         return this.rval;
-    };
-    Right.prototype.err = function () {
+    }
+    err() {
         throw new Error("Expected Left, found Right");
-    };
-    Right.prototype.unwrapOrElse = function (f) {
+    }
+    unwrapOrElse(f) {
         return this.rval;
-    };
-    return Right;
-}());
+    }
+}
 exports.Right = Right;
-var Left = /** @class */ (function () {
-    function Left(lval) {
+class Left {
+    constructor(lval) {
         this.lval = lval;
         this.tag = "left";
     }
-    Left.prototype.map = function (f) {
+    map(f) {
         return new Left(this.lval);
-    };
-    Left.prototype.mapLeft = function (f) {
+    }
+    mapLeft(f) {
         return new Left(f(this.lval));
-    };
-    Left.prototype.bind = function (f) {
+    }
+    bind(f) {
         return new Left(this.lval);
-    };
-    Left.prototype.match = function (f, g) {
+    }
+    bindAsync(f) {
+        return Promise.resolve(new Left(this.lval));
+    }
+    match(f, g) {
         return f(this.lval);
-    };
-    Left.prototype.isLeft = function () {
+    }
+    isLeft() {
         return true;
-    };
-    Left.prototype.isRight = function () {
+    }
+    isRight() {
         return false;
-    };
-    Left.prototype.unwrap = function () {
+    }
+    unwrap() {
         throw new Error("Unwrap of left either!");
-    };
-    Left.prototype.err = function () {
+    }
+    err() {
         return this.lval;
-    };
-    Left.prototype.unwrapOrElse = function (f) {
+    }
+    unwrapOrElse(f) {
         return f(this.lval);
-    };
-    return Left;
-}());
+    }
+}
 exports.Left = Left;

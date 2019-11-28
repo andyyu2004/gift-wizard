@@ -3,7 +3,7 @@ import axios from 'axios';
 import { apiErrorHandler } from "./util";
 
 export async function saveQuestionnaire(questionnaire: Questionnaire): Promise<Either<string, Questionnaire>> {
-    return axios.post('/api/protected/questionnaires/save', {
+    return axios.post('/api/protected/questionnaire', {
         questionnaire,
     })
     .then<any>(res => new Right(res.data.questionnaire))

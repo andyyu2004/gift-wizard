@@ -1,4 +1,4 @@
-import { UserType, User, Questionnaire } from "shared/types";
+import { UserType, User, Questionnaire, Notification } from "shared/types";
 
 /* Use a discriminated union type */
 export type Action
@@ -6,6 +6,7 @@ export type Action
     | SaveQuestionnaireAction
     | LogoutAction
     | DeleteQTemplateAction
+    | UpdateUserAction
     | SetUserAction;
 
 export interface UpdateUserTypeAction {
@@ -13,8 +14,15 @@ export interface UpdateUserTypeAction {
     userType: UserType;
 }
 
+/** Use for first time login */
 export interface SetUserAction {
     type: "SET_USER",
+    user: User,
+    socket: SocketIOClient.Socket,
+}
+
+export interface UpdateUserAction {
+    type: "UPDATE_USER",
     user: User,
 }
 

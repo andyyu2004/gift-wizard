@@ -14,9 +14,6 @@ export async function saveQuestionnaire(userid: string, questionnaire: Questionn
 
 
 export async function getQuestionnaires(userid: string) {
-    console.log(await QuestionnaireModel.find());
-    console.log(userid);
-    const qs = await QuestionnaireModel.find({ userid });
-    console.log("qs", qs);
-    return qs;
+    // console.log(await QuestionnaireModel.find());
+    return await QuestionnaireModel.find({ userid });
 }

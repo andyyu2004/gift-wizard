@@ -33,7 +33,6 @@ router.post('/user', async (req, res) => {
         console.log(error);
         res.status(500).json({ error });
     }
-
 });
 
 router.post('/user/login', async (req, res) => {

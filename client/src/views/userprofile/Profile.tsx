@@ -34,7 +34,7 @@ const Profile: React.FC<PropType> = props => {
   const viewMap: { [key: string]: ReactElement } = {
     [Subview.PersonalProfile]: <PersonalProfile user={user} />,
     [Subview.Interest]: <AreaOfInterest interests={user.interests || []} />,
-    [Subview.Connections]: <Connections friendIds={user.friends} />,
+    [Subview.Connections]: <Connections filterFriends={true} />,
     [Subview.Wishlist]: <Wishlist user={user} />,
     [Subview.Settings]: <Settings />,
   };

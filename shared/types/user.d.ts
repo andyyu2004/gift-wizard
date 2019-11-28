@@ -1,3 +1,4 @@
+import { Notification } from "./notifications";
 export declare type User = {
     _id: string;
     bio: string;
@@ -16,6 +17,7 @@ export declare type User = {
     password?: string;
     type: UserType;
     friends: string[];
+    notifications: Notification[];
 };
 export declare type Friend = {
     userid: string;

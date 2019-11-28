@@ -10,9 +10,11 @@ import { Dashboard, PeopleView, ProfileView, BrowsePeople } from './views/userpr
  * @param props 
  */
 
-const App: React.SFC = props => {
+const App: React.SFC = () => {
   const mainTitle = "GiftWizards";
   const mainSubtitle = "Struggling to find a gift for your loved ones? Congrats! You have found the place for that!";
+
+  
   return (
     <div className="App">
       <Header 

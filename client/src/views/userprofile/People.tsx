@@ -33,7 +33,7 @@ const PeopleView: React.FC<PropType> = ({ userid }) => {
     (async () => (await API.getUser(userid!))
       .map(setUser)
       .mapLeft(toast.error))()
-  }, []);
+  }, [userid]);
 
   return (
     <div className="peopleView">
@@ -42,7 +42,7 @@ const PeopleView: React.FC<PropType> = ({ userid }) => {
       <img src={picture} alt="profilepic" />
       <p>{bio}</p>
       {
-        isFriend || _id == me._id
+        isFriend || _id === me._id
           ? <h6>You are friends!</h6>
           : <button className="generic-button" onClick={sendFriendReq} disabled={disableRequest}>Send friend request</button>
       }

@@ -6534,3 +6534,356 @@ Info 4344 [13:20:26.277] forEachExternalModuleToImportFrom: filtered out 45 modu
 Info 4345 [13:20:26.277] getSymbolsFromOtherSourceFileExports: 4
 Info 4346 [13:20:26.278] getCompletionData: Semantic work: 10
 Info 4347 [13:20:26.292] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 4
+Info 4348 [15:27:51.182] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4349 [15:27:51.228] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 725 structureChanged: false Elapsed: 46ms
+Info 4350 [15:27:51.228] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4351 [15:27:51.306] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4352 [15:27:51.313] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 726 structureChanged: false Elapsed: 7ms
+Info 4353 [15:27:51.313] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4354 [15:27:52.680] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4355 [15:27:52.694] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 727 structureChanged: false Elapsed: 14ms
+Info 4356 [15:27:52.694] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4357 [15:27:53.533] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4358 [15:27:53.547] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 728 structureChanged: false Elapsed: 14ms
+Info 4359 [15:27:53.547] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4360 [15:27:53.792] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4361 [15:27:53.804] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 729 structureChanged: false Elapsed: 12ms
+Info 4362 [15:27:53.804] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4363 [15:27:54.920] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4364 [15:27:54.931] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 730 structureChanged: false Elapsed: 11ms
+Info 4365 [15:27:54.931] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4366 [15:27:55.418] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4367 [15:27:55.445] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 731 structureChanged: false Elapsed: 27ms
+Info 4368 [15:27:55.445] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4369 [15:28:19.880] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4370 [15:28:19.905] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 732 structureChanged: false Elapsed: 25ms
+Info 4371 [15:28:19.905] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4372 [15:28:19.995] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4373 [15:28:20.5] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 733 structureChanged: false Elapsed: 10ms
+Info 4374 [15:28:20.5] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4375 [15:28:20.202] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4376 [15:28:20.208] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 734 structureChanged: false Elapsed: 6ms
+Info 4377 [15:28:20.208] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4378 [15:28:22.50] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4379 [15:28:22.60] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 735 structureChanged: false Elapsed: 10ms
+Info 4380 [15:28:22.60] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4381 [15:28:36.724] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4382 [15:28:36.738] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 736 structureChanged: false Elapsed: 14ms
+Info 4383 [15:28:36.738] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4384 [15:28:36.779] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4385 [15:28:36.785] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 737 structureChanged: false Elapsed: 5ms
+Info 4386 [15:28:36.785] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4387 [15:28:37.922] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4388 [15:28:37.945] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 738 structureChanged: false Elapsed: 23ms
+Info 4389 [15:28:37.945] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4390 [15:28:38.273] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4391 [15:28:38.299] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 739 structureChanged: false Elapsed: 25ms
+Info 4392 [15:28:38.300] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4393 [15:28:49.564] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4394 [15:28:49.574] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 740 structureChanged: false Elapsed: 9ms
+Info 4395 [15:28:49.574] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4396 [15:28:49.771] forEachExternalModuleToImportFrom: filtered out 45 modules by package.json contents
+Err 4397  [15:28:49.773] Exception on executing command {"command":"getCodeFixes","seq":9036,"type":"request","arguments":{"file":"/home/andyyu2004/programming/javascript/gift-wizard/server/routes/protected.ts","startLine":47,"startOffset":33,"endLine":47,"endOffset":33,"errorCodes":[2304,7044]}}:
+
+    Debug Failure. Invalid cast. The supplied value [object Object] did not pass the test 'isParameter'.
+
+    Error: Debug Failure. Invalid cast. The supplied value [object Object] did not pass the test 'isParameter'.
+        at Object.cast (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:1349:25)
+        at doChange (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:121200:40)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:121102:109
+        at Function.ChangeTracker.with (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:119320:17)
+        at Object.getCodeActions (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:121102:64)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120361:121
+        at Object.flatMap (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:468:25)
+        at Object.getFixes (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120361:23)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:131044:35
+        at Object.flatMap (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:468:25)
+        at Object.getCodeFixesAtPosition (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:131042:23)
+        at IOSession.Session.getCodeFixes (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140677:64)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:139462:61)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:88
+        at IOSession.Session.executeWithRequestId (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140861:28)
+        at IOSession.Session.executeCommand (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:33)
+        at IOSession.Session.onMessage (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140893:35)
+        at Interface.<anonymous> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:142208:27)
+        at Interface.emit (events.js:210:5)
+        at Interface._onLine (readline.js:316:10)
+        at Interface._normalWrite (readline.js:461:12)
+        at Socket.ondata (readline.js:172:10)
+        at Socket.emit (events.js:210:5)
+        at addChunk (_stream_readable.js:309:12)
+        at readableAddChunk (_stream_readable.js:290:11)
+        at Socket.Readable.push (_stream_readable.js:224:10)
+        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
+Info 4398 [15:28:50.950] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4399 [15:28:50.965] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 741 structureChanged: false Elapsed: 15ms
+Info 4400 [15:28:50.965] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4401 [15:28:51.25] forEachExternalModuleToImportFrom: filtered out 45 modules by package.json contents
+Err 4402  [15:28:51.26] Exception on executing command {"command":"getCodeFixes","seq":9041,"type":"request","arguments":{"file":"/home/andyyu2004/programming/javascript/gift-wizard/server/routes/protected.ts","startLine":47,"startOffset":35,"endLine":47,"endOffset":35,"errorCodes":[2304,7044]}}:
+
+    Debug Failure. Invalid cast. The supplied value [object Object] did not pass the test 'isParameter'.
+
+    Error: Debug Failure. Invalid cast. The supplied value [object Object] did not pass the test 'isParameter'.
+        at Object.cast (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:1349:25)
+        at doChange (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:121200:40)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:121102:109
+        at Function.ChangeTracker.with (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:119320:17)
+        at Object.getCodeActions (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:121102:64)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120361:121
+        at Object.flatMap (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:468:25)
+        at Object.getFixes (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120361:23)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:131044:35
+        at Object.flatMap (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:468:25)
+        at Object.getCodeFixesAtPosition (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:131042:23)
+        at IOSession.Session.getCodeFixes (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140677:64)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:139462:61)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:88
+        at IOSession.Session.executeWithRequestId (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140861:28)
+        at IOSession.Session.executeCommand (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:33)
+        at IOSession.Session.onMessage (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140893:35)
+        at Interface.<anonymous> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:142208:27)
+        at Interface.emit (events.js:210:5)
+        at Interface._onLine (readline.js:316:10)
+        at Interface._normalWrite (readline.js:461:12)
+        at Socket.ondata (readline.js:172:10)
+        at Socket.emit (events.js:210:5)
+        at addChunk (_stream_readable.js:309:12)
+        at readableAddChunk (_stream_readable.js:290:11)
+        at Socket.Readable.push (_stream_readable.js:224:10)
+        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
+Info 4403 [15:28:51.122] forEachExternalModuleToImportFrom: filtered out 45 modules by package.json contents
+Err 4404  [15:28:51.122] Exception on executing command {"command":"getCodeFixes","seq":9046,"type":"request","arguments":{"file":"/home/andyyu2004/programming/javascript/gift-wizard/server/routes/protected.ts","startLine":47,"startOffset":35,"endLine":47,"endOffset":35,"errorCodes":[2304,7044]}}:
+
+    Debug Failure. Invalid cast. The supplied value [object Object] did not pass the test 'isParameter'.
+
+    Error: Debug Failure. Invalid cast. The supplied value [object Object] did not pass the test 'isParameter'.
+        at Object.cast (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:1349:25)
+        at doChange (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:121200:40)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:121102:109
+        at Function.ChangeTracker.with (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:119320:17)
+        at Object.getCodeActions (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:121102:64)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120361:121
+        at Object.flatMap (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:468:25)
+        at Object.getFixes (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120361:23)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:131044:35
+        at Object.flatMap (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:468:25)
+        at Object.getCodeFixesAtPosition (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:131042:23)
+        at IOSession.Session.getCodeFixes (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140677:64)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:139462:61)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:88
+        at IOSession.Session.executeWithRequestId (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140861:28)
+        at IOSession.Session.executeCommand (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:33)
+        at IOSession.Session.onMessage (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140893:35)
+        at Interface.<anonymous> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:142208:27)
+        at Interface.emit (events.js:210:5)
+        at Interface._onLine (readline.js:316:10)
+        at Interface._normalWrite (readline.js:461:12)
+        at Socket.ondata (readline.js:172:10)
+        at Socket.emit (events.js:210:5)
+        at addChunk (_stream_readable.js:309:12)
+        at readableAddChunk (_stream_readable.js:290:11)
+        at Socket.Readable.push (_stream_readable.js:224:10)
+        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
+Info 4405 [15:28:51.194] forEachExternalModuleToImportFrom: filtered out 45 modules by package.json contents
+Err 4406  [15:28:51.194] Exception on executing command {"command":"getCodeFixes","seq":9048,"type":"request","arguments":{"file":"/home/andyyu2004/programming/javascript/gift-wizard/server/routes/protected.ts","startLine":47,"startOffset":35,"endLine":47,"endOffset":35,"errorCodes":[2304,7044]}}:
+
+    Debug Failure. Invalid cast. The supplied value [object Object] did not pass the test 'isParameter'.
+
+    Error: Debug Failure. Invalid cast. The supplied value [object Object] did not pass the test 'isParameter'.
+        at Object.cast (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:1349:25)
+        at doChange (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:121200:40)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:121102:109
+        at Function.ChangeTracker.with (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:119320:17)
+        at Object.getCodeActions (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:121102:64)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120361:121
+        at Object.flatMap (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:468:25)
+        at Object.getFixes (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120361:23)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:131044:35
+        at Object.flatMap (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:468:25)
+        at Object.getCodeFixesAtPosition (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:131042:23)
+        at IOSession.Session.getCodeFixes (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140677:64)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:139462:61)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:88
+        at IOSession.Session.executeWithRequestId (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140861:28)
+        at IOSession.Session.executeCommand (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:33)
+        at IOSession.Session.onMessage (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140893:35)
+        at Interface.<anonymous> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:142208:27)
+        at Interface.emit (events.js:210:5)
+        at Interface._onLine (readline.js:316:10)
+        at Interface._normalWrite (readline.js:461:12)
+        at Socket.ondata (readline.js:172:10)
+        at Socket.emit (events.js:210:5)
+        at addChunk (_stream_readable.js:309:12)
+        at readableAddChunk (_stream_readable.js:290:11)
+        at Socket.Readable.push (_stream_readable.js:224:10)
+        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
+Info 4407 [15:28:51.691] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4408 [15:28:51.718] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 742 structureChanged: false Elapsed: 27ms
+Info 4409 [15:28:51.718] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4410 [15:28:51.752] forEachExternalModuleToImportFrom: filtered out 45 modules by package.json contents
+Err 4411  [15:28:51.752] Exception on executing command {"command":"getCodeFixes","seq":9054,"type":"request","arguments":{"file":"/home/andyyu2004/programming/javascript/gift-wizard/server/routes/protected.ts","startLine":47,"startOffset":33,"endLine":47,"endOffset":33,"errorCodes":[2304,7044]}}:
+
+    Debug Failure. Invalid cast. The supplied value [object Object] did not pass the test 'isParameter'.
+
+    Error: Debug Failure. Invalid cast. The supplied value [object Object] did not pass the test 'isParameter'.
+        at Object.cast (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:1349:25)
+        at doChange (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:121200:40)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:121102:109
+        at Function.ChangeTracker.with (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:119320:17)
+        at Object.getCodeActions (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:121102:64)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120361:121
+        at Object.flatMap (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:468:25)
+        at Object.getFixes (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120361:23)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:131044:35
+        at Object.flatMap (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:468:25)
+        at Object.getCodeFixesAtPosition (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:131042:23)
+        at IOSession.Session.getCodeFixes (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140677:64)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:139462:61)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:88
+        at IOSession.Session.executeWithRequestId (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140861:28)
+        at IOSession.Session.executeCommand (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:33)
+        at IOSession.Session.onMessage (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140893:35)
+        at Interface.<anonymous> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:142208:27)
+        at Interface.emit (events.js:210:5)
+        at Interface._onLine (readline.js:316:10)
+        at Interface._normalWrite (readline.js:461:12)
+        at Socket.ondata (readline.js:172:10)
+        at Socket.emit (events.js:210:5)
+        at addChunk (_stream_readable.js:309:12)
+        at readableAddChunk (_stream_readable.js:290:11)
+        at Socket.Readable.push (_stream_readable.js:224:10)
+        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
+Info 4412 [15:28:51.882] forEachExternalModuleToImportFrom: filtered out 45 modules by package.json contents
+Err 4413  [15:28:51.883] Exception on executing command {"command":"getCodeFixes","seq":9057,"type":"request","arguments":{"file":"/home/andyyu2004/programming/javascript/gift-wizard/server/routes/protected.ts","startLine":47,"startOffset":33,"endLine":47,"endOffset":33,"errorCodes":[2304,7044]}}:
+
+    Debug Failure. Invalid cast. The supplied value [object Object] did not pass the test 'isParameter'.
+
+    Error: Debug Failure. Invalid cast. The supplied value [object Object] did not pass the test 'isParameter'.
+        at Object.cast (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:1349:25)
+        at doChange (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:121200:40)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:121102:109
+        at Function.ChangeTracker.with (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:119320:17)
+        at Object.getCodeActions (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:121102:64)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120361:121
+        at Object.flatMap (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:468:25)
+        at Object.getFixes (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120361:23)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:131044:35
+        at Object.flatMap (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:468:25)
+        at Object.getCodeFixesAtPosition (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:131042:23)
+        at IOSession.Session.getCodeFixes (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140677:64)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:139462:61)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:88
+        at IOSession.Session.executeWithRequestId (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140861:28)
+        at IOSession.Session.executeCommand (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:33)
+        at IOSession.Session.onMessage (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140893:35)
+        at Interface.<anonymous> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:142208:27)
+        at Interface.emit (events.js:210:5)
+        at Interface._onLine (readline.js:316:10)
+        at Interface._normalWrite (readline.js:461:12)
+        at Socket.ondata (readline.js:172:10)
+        at Socket.emit (events.js:210:5)
+        at addChunk (_stream_readable.js:309:12)
+        at readableAddChunk (_stream_readable.js:290:11)
+        at Socket.Readable.push (_stream_readable.js:224:10)
+        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
+Info 4414 [15:28:52.114] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4415 [15:28:52.135] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 743 structureChanged: false Elapsed: 21ms
+Info 4416 [15:28:52.135] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4417 [15:28:52.188] forEachExternalModuleToImportFrom: filtered out 45 modules by package.json contents
+Err 4418  [15:28:52.193] Exception on executing command {"command":"getCodeFixes","seq":9061,"type":"request","arguments":{"file":"/home/andyyu2004/programming/javascript/gift-wizard/server/routes/protected.ts","startLine":47,"startOffset":31,"endLine":47,"endOffset":31,"errorCodes":[2304,7044]}}:
+
+    Debug Failure. Invalid cast. The supplied value [object Object] did not pass the test 'isParameter'.
+
+    Error: Debug Failure. Invalid cast. The supplied value [object Object] did not pass the test 'isParameter'.
+        at Object.cast (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:1349:25)
+        at doChange (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:121200:40)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:121102:109
+        at Function.ChangeTracker.with (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:119320:17)
+        at Object.getCodeActions (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:121102:64)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120361:121
+        at Object.flatMap (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:468:25)
+        at Object.getFixes (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:120361:23)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:131044:35
+        at Object.flatMap (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:468:25)
+        at Object.getCodeFixesAtPosition (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:131042:23)
+        at IOSession.Session.getCodeFixes (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140677:64)
+        at Session.handlers.ts.createMapFromTemplate._a.<computed> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:139462:61)
+        at /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:88
+        at IOSession.Session.executeWithRequestId (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140861:28)
+        at IOSession.Session.executeCommand (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140870:33)
+        at IOSession.Session.onMessage (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:140893:35)
+        at Interface.<anonymous> (/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/tsserver.js:142208:27)
+        at Interface.emit (events.js:210:5)
+        at Interface._onLine (readline.js:316:10)
+        at Interface._normalWrite (readline.js:461:12)
+        at Socket.ondata (readline.js:172:10)
+        at Socket.emit (events.js:210:5)
+        at addChunk (_stream_readable.js:309:12)
+        at readableAddChunk (_stream_readable.js:290:11)
+        at Socket.Readable.push (_stream_readable.js:224:10)
+        at Pipe.onStreamRead (internal/stream_base_commons.js:182:23)
+Info 4419 [15:29:10.501] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4420 [15:29:10.512] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 744 structureChanged: false Elapsed: 11ms
+Info 4421 [15:29:10.512] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4422 [15:29:12.576] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4423 [15:29:12.586] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 745 structureChanged: false Elapsed: 10ms
+Info 4424 [15:29:12.586] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4425 [15:29:14.36] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4426 [15:29:14.68] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 746 structureChanged: false Elapsed: 32ms
+Info 4427 [15:29:14.68] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4428 [15:29:16.354] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4429 [15:29:16.365] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 747 structureChanged: false Elapsed: 11ms
+Info 4430 [15:29:16.365] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4431 [15:29:16.712] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4432 [15:29:16.733] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 748 structureChanged: false Elapsed: 21ms
+Info 4433 [15:29:16.733] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4434 [15:29:17.920] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4435 [15:29:17.932] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 749 structureChanged: false Elapsed: 12ms
+Info 4436 [15:29:17.932] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4437 [15:29:20.745] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4438 [15:29:20.755] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 750 structureChanged: false Elapsed: 9ms
+Info 4439 [15:29:20.755] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4440 [15:29:21.857] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4441 [15:29:21.863] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 751 structureChanged: false Elapsed: 6ms
+Info 4442 [15:29:21.863] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4443 [15:29:51.846] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4444 [15:29:51.857] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 752 structureChanged: false Elapsed: 11ms
+Info 4445 [15:29:51.857] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4446 [15:29:51.937] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4447 [15:29:51.953] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 753 structureChanged: false Elapsed: 16ms
+Info 4448 [15:29:51.953] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4449 [15:29:52.686] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4450 [15:29:52.697] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 754 structureChanged: false Elapsed: 11ms
+Info 4451 [15:29:52.697] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4452 [15:29:53.809] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4453 [15:29:53.821] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 755 structureChanged: false Elapsed: 12ms
+Info 4454 [15:29:53.822] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4455 [15:31:58.686] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4456 [15:31:58.710] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 756 structureChanged: false Elapsed: 24ms
+Info 4457 [15:31:58.710] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4458 [15:31:58.781] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4459 [15:31:58.790] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 757 structureChanged: false Elapsed: 9ms
+Info 4460 [15:31:58.790] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4461 [15:31:59.949] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4462 [15:31:59.971] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 758 structureChanged: false Elapsed: 21ms
+Info 4463 [15:31:59.971] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4464 [15:31:59.971] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4465 [15:31:59.981] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 759 structureChanged: false Elapsed: 10ms
+Info 4466 [15:31:59.981] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4467 [15:32:0.990] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4468 [15:32:1.1] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 760 structureChanged: false Elapsed: 11ms
+Info 4469 [15:32:1.1] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4470 [15:32:2.120] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4471 [15:32:2.131] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 761 structureChanged: false Elapsed: 11ms
+Info 4472 [15:32:2.131] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4473 [15:32:2.322] forEachExternalModuleToImportFrom: filtered out 45 modules by package.json contents
+Info 4474 [15:32:3.322] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4475 [15:32:3.332] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 762 structureChanged: false Elapsed: 10ms
+Info 4476 [15:32:3.332] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4477 [15:32:3.373] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4478 [15:32:3.377] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 763 structureChanged: false Elapsed: 4ms
+Info 4479 [15:32:3.378] Different program with same set of files:: oldProgram.structureIsReused:: 2
+Info 4480 [15:32:3.734] forEachExternalModuleToImportFrom: filtered out 45 modules by package.json contents
+Info 4481 [15:32:4.958] Starting updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 4482 [15:32:4.993] Finishing updateGraphWorker: Project: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json Version: 764 structureChanged: false Elapsed: 34ms
+Info 4483 [15:32:4.993] Different program with same set of files:: oldProgram.structureIsReused:: 2

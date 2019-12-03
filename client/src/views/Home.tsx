@@ -46,8 +46,9 @@ const Home: React.FC<RouteComponentProps> = props => {
         subtitle="By sending him/her an anonymous questionnaire, get the best 'hints'!">
         <Cell image={createNewIcon} text="Create New" onClick={() => navigate("/create")} />
         <Cell image={openFromExistingIcon} text="Open Existing" onClick={handleOpenUserTemplates} />
-        <Cell image={template1icon} text="Template 1" onClick={() => navigateWithDefaultLoadedQuestionnaire(templates["Lipstick Template"])} />
-        <Cell image={template2icon} text="Template 2" onClick={() => navigateWithDefaultLoadedQuestionnaire(templates["Template Questionnaire"])} />
+        {/* <Cell image={template1icon} text="Template 1" onClick={() => navigateWithDefaultLoadedQuestionnaire(templates["Lipstick Template"])} /> */}
+        {/* <Cell image={template2icon} text="Template 2" onClick={() => navigateWithDefaultLoadedQuestionnaire(templates["Template Questionnaire"])} /> */}
+        <Cell image={connectionsIcon} text="People" onClick={() => navigate('/people')} />
         <Cell image={template3icon} text="All Templates" onClick={handleOpenAllTemplates} />
       </CellRow>
       <CellRow 

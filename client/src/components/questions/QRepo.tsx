@@ -26,7 +26,6 @@ const QRepo = () => {
 			</div>
 		</div>
 	);
-
 };
 
 export default QRepo;

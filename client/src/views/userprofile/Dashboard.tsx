@@ -1,5 +1,5 @@
 import { RouteComponentProps, navigate } from '@reach/router';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { SavedTemplates } from '../';
 import { QRepo } from '../../components/questions';
@@ -10,6 +10,8 @@ import { Questionnaire, UserType } from 'shared/types';
 import "./Dashboard.css";
 import UserManagement from './UserManagement';
 import { withProtection } from '../../components/hoc';
+import API from '../../api';
+import { toast } from 'react-toastify';
 
 type PropType = RouteComponentProps;
 
@@ -53,14 +55,37 @@ const Dashboard: React.FC<PropType> = props => {
 };
 
 function QuestionnaireLib() {
+  const [templates, setTemplates] = useState<Questionnaire[]>([]);
+
+  const fetchTemplates = useCallback(async () => {
+    (await API.loadAllQuestionnaires())
+      .map(setTemplates)
+      .mapLeft(toast.error)
+  }, []);
+
   /** Fetch site wide templates */
-  const templates = useSelector<AppState, { [key: string]: Questionnaire }>(state => state.forms.templates)
+  useEffect(() => {
+    fetchTemplates();
+  }, []);
+
   return (
     <div className= "adminview">
       <QRepo />
-      <SavedTemplates title="Questionnaire Repository" templates={[]} />
+      <SavedTemplates title="Questionnaire Repository" templates={templates} />
     </div>
   );
 }
 
 export default withProtection(Dashboard);
+
+
+
+
+
+
+
+
+
+
+
+

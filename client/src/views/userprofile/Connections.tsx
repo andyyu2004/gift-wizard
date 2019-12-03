@@ -23,7 +23,9 @@ const Connections: React.FC<PropType> = ({ filterFriends }) => {
     } else {
       // Fetch all users
       (async () => (await API.getAllUsers())
-        .map(setPeople)
+        .map(p => {
+          setPeople(p)
+        })
         .mapLeft(toast.error))();
     }
   }, [filterFriends, user._id]);

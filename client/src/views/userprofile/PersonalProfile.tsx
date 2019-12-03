@@ -55,6 +55,7 @@ const PersonalProfile: React.FC<PropType> = ({ user }) => {
 		(await API.patchUser({ picture: encoded }))
 			.map(user => {
 				dispatch(updateUser(user));
+				setShowUploadPhoto(false);
 				return toast.success("Successfully Updated Profile Picture")
 			})
 			.mapLeft(toast.error);
@@ -68,7 +69,6 @@ const PersonalProfile: React.FC<PropType> = ({ user }) => {
 				{showUploadPhoto && 
 					<div className="uploadPhoto"> 
 						<input type="file" accept="image/jpg,image/png,image/jpeg,image/gif" required  multiple={false} onChange={e => updatePicture(e.target.files)}/>
-						<button className="uploadPhotoButton" type="submit" onClick={e => setShowUploadPhoto(false)}>Upload</button>
 					</div>
 				}
 			</div>

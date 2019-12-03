@@ -7,27 +7,40 @@ type PropType = {
   interests: string[],
 };
 
+
+
 const cssclasses = ["label music", "label travels", "label web", "label yoga", "label dog"];
 
-const AreaOfInterest: React.FC<PropType> = props => {
-  const [interests, setInterests] = useState(props.interests);
-  const addInterest = (x: string) => setInterests([...interests, x]);
-  const removeInterest = (x: string) => setInterests(interests.filter(t => t !== x));
 
+const AreaOfInterest: React.FC<PropType> = ({ interests }) => {
+  const [myInterests, setMyInterests]= useState(interests)
+  const [newInterest, setnewInterest]= useState("")
+  
+  const addInterest = (e: MouseEvent<HTMLElement>, item: string) => {
+    e.preventDefault();
+    setMyInterests([...myInterests, item]);
+  };
+
+  const removeInterest = (item: string) => setMyInterests(myInterests.filter(x => x !== item ));
+  
   return (
     <div>
       <div id="interests">
-        {interests && interests.length !== 0 && <h5>Personal Area of Interests</h5>}
-        {interests && interests.map(interest => 
-        <span key={interest} className={getRandom(cssclasses)}>
+        {<h5>Personal Area of Interests</h5>}
+        {/* {myInterests && myInterests.length !== 0 && <h5>Personal Area of Interests</h5>} */}
+        {myInterests && myInterests.map((interest, i) => 
+        <span key={i} className={getRandom(cssclasses)}>
           {interest} 
-          <img onClick={()=>{}} className="deleteInterest" src={deleteimg}/>
+          <img onClick={e=>removeInterest(interest)} className="deleteInterest" src={deleteimg}/>
         </span>)}
       </div>
+      
       <div className="addInterest"> 
-        <input type="text" onChange={_ => addInterest}/>
-        <button className="addInterestButton" onClick={() =>{/* add an interest*/}}>Add Interest</button>
+        <input type="text" onChange={e => setnewInterest(e.target.value)}/>
+        <button className="addInterestButton" onClick={e =>addInterest(e, newInterest)}>Add Interest</button>
       </div>
+      
+
       <div className="interestButtons">
         <button className="saveInterestButton" onClick={() => {}}>Save</button>
       </div>

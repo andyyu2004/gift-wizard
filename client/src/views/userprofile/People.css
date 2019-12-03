@@ -34,7 +34,8 @@
   	padding: 5px;
   	text-align: left;
   	font-style: oblique;
-  	font-size: 16px;
+	font-size: 16px;
+	font-family:"Lucida Console", Monaco, monospace
 }
 
 .peopleView ul li key {

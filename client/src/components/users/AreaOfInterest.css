@@ -23,7 +23,7 @@
 } 
 
 #interests .travels {
-	background-color: rgb(11, 134, 235);
+	background-color: #afeb0b;
 } 
 
 #interests .yoga {
@@ -34,9 +34,69 @@
 	background-color: #ff9800;
 } 
 #interests .dog {
-	background-color: #72aefc;
+	background-color: rgb(243, 240, 35);
 } 
 
 #interests .fashion {
 	background-color: #17eff7; 
 } 
+
+.deleteInterest{
+  width: 20px;
+  height: 20px;
+  padding:0;
+}
+
+.deleteInterest:hover{
+  cursor: pointer;
+}
+
+.addInterest{
+  margin-Left: 40px;
+  margin-Top: 20px;
+}
+
+.addInterestButton{
+	background-color: #F0F0F0;
+	padding: 5px 10px;
+	border-radius: 5px;
+  border: none;
+  margin-left: 10px;
+}
+
+.addInterestButton:hover{
+  box-shadow: 0 3px 6px 0 #F0F0F0, 0 3px 6px 0 #F0F0F0;
+	background-color: #deebfc;
+}
+
+.editInterestButton{
+  background-color: #F0F0F0;
+	padding: 5px 10px;
+	border-radius: 5px;
+  border: none;
+  margin-left: 40px;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+.editInterestButton:hover{
+  box-shadow: 0 3px 6px 0 #F0F0F0, 0 3px 6px 0 #F0F0F0;
+	background-color: #deebfc;
+}
+
+.saveInterestButton{
+  background-color: #F0F0F0;
+	padding: 5px 10px;
+	border-radius: 5px;
+  border: none;
+  margin-left: 10px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.saveInterestButton:hover{
+  box-shadow: 0 3px 6px 0 #F0F0F0, 0 3px 6px 0 #F0F0F0;
+	background-color: #deebfc;
+}
+
+

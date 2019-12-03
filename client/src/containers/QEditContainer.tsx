@@ -10,6 +10,7 @@ import staricon from '../images/star_icon.png';
 import rankicon from '../images/up_and_down.png';
 import shortanswericon from '../images/written_type_icon.png';
 import { FormAction } from "../types/FormActions";
+import './QEditContainer.css';
 
 /** Array of tuples of (QType, icon, defaultFormRepr) 
  * Wrap the FormRepr in a thunk so the uuid() is unique each time
@@ -61,8 +62,7 @@ const QEditContainer: React.FC<PropType> = ({ dispatch, questionnaire }) => {
 
   return (
     <>
-      <Button style={{marginTop: "0px",marginBottom: "0px", marginLeft: "20px",backgroundColor:"#66B3FF", borderColor:"#66B3FF", display: "inline-block"}}
-      className="preview" onClick={() => setEditable(!editable)}>Toggle Preview</Button>
+      <button className="preview" onClick={() => setEditable(!editable)}>Toggle Preview</button>
       {/* <h6>Editable? (for debug): {editable.toString()}</h6> */}
       <div className="flex-container">
         <QuestionSelection dispatch={dispatch} questionData={questionData} />

@@ -21,6 +21,11 @@
     text-align: center;
     min-width: 155px;
 }
+.question:hover{
+    border-color: #87CEFA;
+    box-shadow: 0 3px 6px 0 #DFDFDF, 0 3px 6px 0 #DFDFDF;
+    cursor: pointer;
+}
 
 .qText{
     font-family: "Helvetica Neue", Helvetica, sans-serif;

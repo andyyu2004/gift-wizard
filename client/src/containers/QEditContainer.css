@@ -1,5 +1,15 @@
 .preview{
-    background-color:#66B3FF;
-    border-color:#66B3FF;
+    background-color: #F0F0F0;
+    padding: 5px 10px;
+    margin-Left: 30px;
     display: inline-block;
+    border-radius: 5px;
+	border: none;
+    /* style={{marginTop: "0px",marginBottom: "0px", marginLeft: "20px",backgroundColor:"#66B3FF", borderColor:"#66B3FF", display: "inline-block"}} */
 }
+
+.preview:hover{
+	box-shadow: 0 3px 6px 0 #F0F0F0, 0 3px 6px 0 #F0F0F0;
+	background-color: #deebfc;
+}
+

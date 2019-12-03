@@ -39,4 +39,5 @@
 
 .tabs:hover {
     background-color: #deebfc;
+    cursor: pointer;
 }

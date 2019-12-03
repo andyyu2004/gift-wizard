@@ -21,6 +21,7 @@ const UserModel = model<TUserModel>("User", new Schema({
         type: String,
         required: true,
     },
+    profilepicture: String, /* Path of background image */
     bio: String,
     wishlist: [String],
     interests: [String],

@@ -11,9 +11,9 @@ const Settings = () => {
 
   return (
     <div className="settingsContainer">
-      <h5>Settings</h5>
+      <h5>Personal Profile Settings:</h5>
       <div className = "public">
-        <h6 className="publicText">Show your profile to the public</h6>
+        <h6 className="publicText">Allow others to view your profile </h6>
         <div className= "switch">
           <Switch onChange={() => setIsPublic(!isPublic)} checked={isPublic}/>
         </div>

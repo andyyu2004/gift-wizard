@@ -42,7 +42,6 @@ const Home: React.FC<RouteComponentProps> = props => {
         <Cell image={template1icon} text="Template 1" onClick={() => navigateWithDefaultLoadedQuestionnaire(templates["Lipstick Template"])} />
         <Cell image={template2icon} text="Template 2" onClick={() => navigateWithDefaultLoadedQuestionnaire(templates["Template Questionnaire"])} />
         <Cell image={template3icon} text="All Templates" onClick={() => navigateWithTemplateSet("Templates", [])} />
-        <Cell image={connectionsIcon} text="People, temp!" onClick={() => navigate('/people')} />
       </CellRow>
       <CellRow 
         title="Build up your profile"

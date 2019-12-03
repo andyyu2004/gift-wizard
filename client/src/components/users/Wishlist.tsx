@@ -1,4 +1,4 @@
-import React,{MouseEvent} from 'react';
+import React,{MouseEvent, useState} from 'react';
 import { User } from 'shared/types';
 import '../../views/userprofile/People.css';
 
@@ -6,35 +6,39 @@ type PropType = {
   user: User,
 };
 
-const handleRemoveWishlist = (e: MouseEvent<HTMLElement>, x: string) => {
-  e.preventDefault();
-  /* TODO: remove the wishlist item */
-};
+
 const saveWishlist=()=>{
   // TODO: change editable=false; save the wishlist and call backend to save i guess
 }
-const handleAddWishlist = (e: MouseEvent<HTMLElement>/*, newItem: string*/)=>{
-  e.preventDefault();
-  //add a new wishlist item
-}
+
 
 const Wishlist: React.FC<PropType> = ({ user: { wishlist }}) => {
-  let editable = false;/*how to set the state?*/
+  const [myWishlist, setmyWishlist]=useState(wishlist)
+  const [editable, setEditable]=useState(false);
+  const [newItem, setNewItem]=useState("");
+  const addItem=(Item: string)=>{
+    myWishlist.push(Item)
+    setmyWishlist(myWishlist)
+  }
+  const removeItem=(Item: string)=>{
+    const newWishlist=myWishlist.filter((x)=>{return (x!=Item)})
+    setmyWishlist(newWishlist)
+  }
   return (
     <div>
       <div id="show-wishlist" className="peopleView">
         <h6> Personal Wish List </h6>
         <div>
-          {wishlist.map(x => 
+          {editable && <div><input type="text" onChange={e => setNewItem(e.target.value)}/> <button onClick={e => addItem(newItem)}>Add wish</button></div>}
+          {myWishlist.map(x =>
             <div key={x}>
               {x} 
-              {editable && <button className="generic-button" onClick={e => handleRemoveWishlist(e, x)}>Remove</button>}
+              {editable && <button className="generic-button" onClick={e => removeItem(x)}>Remove</button>}
             </div>)
           }
-          {editable && <div><input type="text"/> <button onClick={e => handleAddWishlist(e/*, newItem*/)}>Add wish</button></div>}
       </div>
       <div>
-        <button onClick={() => {editable=true /* seem that this not working*/}}>
+        <button onClick={() => setEditable(true)}>
           Edit
         </button>
         <button onClick={() => {saveWishlist()}}> 

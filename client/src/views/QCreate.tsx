@@ -3,18 +3,17 @@
  */
 import { RouteComponentProps } from '@reach/router';
 import React, { useReducer, useState } from 'react';
-import { Button } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
-import { FormRepr, MultichoiceRepr, Questionnaire, RankFormRepr, RateFormRepr, ShortAnswerRepr } from 'shared/types';
+import { FormRepr, MultichoiceRepr, Questionnaire, RankFormRepr, RateFormRepr, ShortAnswerRepr, User, UserType } from 'shared/types';
 import uuid from 'uuid/v4';
-import { saveQuestionnaire } from '../actions/actionCreaters';
+import API from '../api';
 import { ThemeSelection } from '../components';
+import { withProtection } from '../components/hoc';
 import { QEditContainer } from '../containers';
 import { FormAction } from '../types/FormActions';
 import './QCreate.css';
-import API from '../api';
-import { withProtection } from '../components/hoc';
+import { useSelector } from 'react-redux';
+import { AppState } from '../reducers';
 
 
 type ReducerType = (state: FormRepr[], action: FormAction) => FormRepr[];
@@ -132,12 +131,13 @@ const QCreate: React.FC<PropType> = props => {
   /** Workaround to destructuring undefined */
   const { forms: starterForms, label: starterLabel, background: starterBackground } = starterQuestionnaire || {};
 
+  const isAdmin = useSelector<AppState, UserType>(state => state.user.user!.type) === UserType.Admin;
+
   const [forms, dispatch] = useReducer<ReducerType>(reducer, starterForms || []);
   const [label, setLabel] = useState<string>(starterLabel || "");
   const [background, setBackground] = useState<string>(starterBackground || "grey");
-  const reduxDispatch = useDispatch();
 
-  const saveFormToStore = async () => {
+  const saveForm = async () => {
     const errors = validateForm(label, forms);
     if (errors.length) return errors.forEach(err => toast.error(err));
 
@@ -145,6 +145,16 @@ const QCreate: React.FC<PropType> = props => {
       .map(_ => toast.success("Saved form!"))
       .mapLeft(toast.error);
   };
+
+  /** Adds form to the site template repository */
+  const publishForm = async () => {
+    const errors = validateForm(label, forms);
+    if (errors.length) return errors.forEach(err => toast.error(err));
+    (await API.saveRepoQuestionnaire({ label, forms, background }))
+      .map(({ label }) => toast.success(`Successfully saved questionnaire ${label} to repository`))
+      .mapLeft(toast.error);
+  };
+
 
   return (
     <div className="questionnaire">
@@ -161,8 +171,9 @@ const QCreate: React.FC<PropType> = props => {
         <QEditContainer dispatch={dispatch} questionnaire={{ label, forms, background }} />
       </div>
       {/** Temporarily save form to redux store for now */}
-      <button type="button" className="saveForm" onClick={() => saveFormToStore()}>Save</button>
+      <button type="button" className="saveForm" onClick={saveForm}>Save</button>
       <button type="button" className="saveForm" onClick={() => alert("Bit hard to even partially implement this without some form of backend")}>Send To</button>
+      {isAdmin && <button type="submit" className="saveForm" onClick={publishForm}>Publish</button>}
     </div>
   );
 };

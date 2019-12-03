@@ -1,14 +1,15 @@
-import { RouteComponentProps } from '@reach/router';
-import React, { useState } from 'react';
+import { RouteComponentProps, navigate } from '@reach/router';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { SavedTemplates } from '../';
 import { QRepo } from '../../components/questions';
 import { Sidebar, AdminSettings } from '../../components';
 import adminicon from '../../images/user_profile_placeholder.png';
 import { AppState } from '../../reducers';
-import { Questionnaire } from 'shared/types';
+import { Questionnaire, UserType } from 'shared/types';
 import "./Dashboard.css";
 import UserManagement from './UserManagement';
+import { withProtection } from '../../components/hoc';
 
 type PropType = RouteComponentProps;
 
@@ -22,7 +23,7 @@ enum Subview {
 }
 
 const Dashboard: React.FC<PropType> = props => {
-  // const userType = useSelector<AppState, UserType>(state => state.user.userType);
+  const userType = useSelector<AppState, UserType>(state => state.user.user!.type);
 
   const viewMap = {
     [Subview.UserManagement]: <UserManagement />,
@@ -35,13 +36,10 @@ const Dashboard: React.FC<PropType> = props => {
   const [view, setView] = useState(Subview.QuestionnaireLib);
   const entries: [string, () => void][] = Object.values(Subview).map(subview => [subview, () => setView(subview)]);
 
-  /** Temporarily comment below to not kick out unauthorized users during dev */
-  // useEffect(() => {
-  //   // Just navigate to home if not authorized
-  //   console.log("User Type", userType);
-  //   if (userType === UserType.Regular) navigate('/'); 
-  //   else if (userType === UserType.None) navigate('login');
-  // }, [userType]);
+  useEffect(() => {
+    if (userType === UserType.Regular) navigate('/'); 
+    else if (userType === UserType.None) navigate('login');
+  }, [userType]);
 
   return (
     <div className="flex-container">
@@ -65,4 +63,4 @@ function QuestionnaireLib() {
   );
 }
 
-export default Dashboard;
+export default withProtection(Dashboard);

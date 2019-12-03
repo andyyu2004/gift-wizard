@@ -22,23 +22,10 @@ const LoginView: React.FC<RouteComponentProps> = () => {
     e.preventDefault();
     (await API.login(username, password)).map(user => {
       dispatch(setUser(user));
-      navigate('/');
+      if (user.type === UserType.Admin) navigate('/admin');
+      else navigate('/');
     }).mapLeft(toast.error);
   };
-
-  const setUserType = useCallback((userType: UserType) => dispatch(updateUserType(userType)), [dispatch]);
-
-  const login = (userType: UserType) => {
-    setUserType(userType);
-    switch (userType) {
-      case UserType.Admin:
-        navigate("/admin");
-        break;
-      case UserType.Regular:
-        navigate("/");
-        break;
-      }
-  }
 
   return (
     <div className='loginForm'>

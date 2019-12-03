@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { saveQuestionnaire, getQuestionnaires } from "../controllers/questionnaire";
+import { saveQuestionnaire, getQuestionnaires, getRepoQuestionnaires } from "../controllers/questionnaire";
 import { getUser, patchUser, getUsers, getFriends } from '../controllers/user';
 
 const router = Router();
@@ -17,6 +17,7 @@ function sessionChecker(req: Request, res: Response, next: Function) {
     next();
 };
 
+/** Get user by userid */
 router.get('/user/:userid', async (req, res) => {
     try {
         const { userid } = req.params;
@@ -61,6 +62,7 @@ router.post('/user/logout', async (req, res) => {
     });
 });
 
+/** Patch user by userid */
 router.patch('/user/:userid', async (req, res) => {
     try {
         const { userid } = req.params;
@@ -88,6 +90,18 @@ router.post('/questionnaire', async (req, res) => {
     }
 });
 
+/** Get all repository questionnaire templates */
+router.get('/questionnaires', async (req, res) => {
+    try {
+        const questionnaires = await getRepoQuestionnaires().catch(err => { throw err });
+        return res.json({ questionnaires });
+    } catch (error) {
+        console.log(`Error ${error.message} (in POST api/admin/repo)`);
+        return res.status(500).json({ error: error.message });
+    }
+});
+
+/** Get saved questionnaires for a user */
 router.get('/questionnaires/:userid', async (req, res) => {
     try {
         const { userid } = req.params;

@@ -17,8 +17,22 @@ export const QuestionnaireModel = model<TQuestionnaire>("Questionnaire", new Sch
     background: String, /* Path of background image */
     forms: {
         required: true,
-        type: Schema.Types.Mixed, /* List of forms, which each have different structure so represented as any Schema */   
+        type: Schema.Types.Mixed, /* List of forms, which each have different structure so represented as any Schema */
     },
 }));
 
+/** Differentiate between private user saved repo vs sitewide questionnaire repository */
+export type TRepo = Document & Questionnaire;
+
+export const QRepoModel = model<TQuestionnaire>("RepoQuestionnaire", new Schema({
+    label: {
+        type: String, /* Name of the questionnaire */
+        required: true,
+    },
+    background: String, /* Path of background image */
+    forms: {
+        required: true,
+        type: Schema.Types.Mixed, /* List of forms, which each have different structure so represented as any Schema */
+    },
+}));
 

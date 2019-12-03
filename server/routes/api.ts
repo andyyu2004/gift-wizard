@@ -3,7 +3,7 @@ import { createUser, mlogin } from '../controllers/user';
 import bodyParser from 'body-parser';
 import session from 'express-session';
 import protectedRouter from './protected';
-import cors from 'cors';
+import adminRouter from './admin';
 
 const router = Router();
 router.use(bodyParser.json());
@@ -16,6 +16,7 @@ router.use(session({
 
 
 router.use('/protected', protectedRouter);
+router.use('/admin', adminRouter);
 
 router.get('/', (req, res) => {
     console.log(req.session);
@@ -42,6 +43,7 @@ router.post('/user/login', async (req, res) => {
         const user = await mlogin(username, password);
         user.map(user => {
             req.session!.userid = user._id;
+            req.session!.usertype = user.type;
             req.session?.save(err => { if (err) console.log(`Failed to save session ${err}`); });
             res.json({ user });
         }).mapLeft(error => res.status(422).json({ error }));

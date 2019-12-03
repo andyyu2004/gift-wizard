@@ -12,7 +12,7 @@ type PropType = {
 };
 
 const Wishlist: React.FC<PropType> = ({ user: { wishlist }}) => {
-  const [myWishlist, setmyWishlist] = useState(wishlist)
+  const [myWishlist, setmyWishlist] = useState(wishlist);
   const [newItem, setNewItem] = useState("");
 
   const dispatch = useDispatch();
@@ -28,7 +28,8 @@ const Wishlist: React.FC<PropType> = ({ user: { wishlist }}) => {
 
   const addItem = (e: MouseEvent<HTMLElement>, item: string) => {
     e.preventDefault();
-    setmyWishlist([...myWishlist, item]);
+    if (myWishlist.find(x => x === item)) toast.error("Cannot have duplicate entries in wishlist");
+    else setmyWishlist([...myWishlist, item]);
   };
 
   const removeItem = (item: string) => setmyWishlist(myWishlist.filter(x => x !== item ));
@@ -41,10 +42,10 @@ const Wishlist: React.FC<PropType> = ({ user: { wishlist }}) => {
           <input type="text" onChange={e => setNewItem(e.target.value)}/> 
           <input type="submit" onClick={e => addItem(e, newItem)} value="Add Wish" />
         </form>
-        {myWishlist.map((x, i) =>
-          <div key={i}>
-            {x} 
-            <button className="generic-button" onClick={e => removeItem(x)}>Remove</button>
+        {myWishlist.map(wish =>
+          <div key={wish}>
+            {wish} 
+            <button className="generic-button" onClick={e => removeItem(wish)}>Remove</button>
           </div>)
         }
       </div>

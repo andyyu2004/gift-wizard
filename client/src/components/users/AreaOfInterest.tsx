@@ -9,32 +9,27 @@ type PropType = {
 
 const cssclasses = ["label music", "label travels", "label web", "label yoga", "label dog"];
 
-const AreaOfInterest: React.FC<PropType> = ({ interests }) => {
-  const [editable, setEditable]=useState(false);
+const AreaOfInterest: React.FC<PropType> = props => {
+  const [interests, setInterests] = useState(props.interests);
+  const addInterest = (x: string) => setInterests([...interests, x]);
+  const removeInterest = (x: string) => setInterests(interests.filter(t => t !== x));
+
   return (
     <div>
       <div id="interests">
         {interests && interests.length !== 0 && <h5>Personal Area of Interests</h5>}
-        {interests && interests.map((interest, i) => 
-        <span key={i} className={getRandom(cssclasses)}>
+        {interests && interests.map(interest => 
+        <span key={interest} className={getRandom(cssclasses)}>
           {interest} 
-          {editable && <img onClick={()=>{}} className="deleteInterest" src={deleteimg}/>}
+          <img onClick={()=>{}} className="deleteInterest" src={deleteimg}/>
         </span>)}
-        {/* <span className="label music">Music</span>
-        <span className="label travel">Travel</span>
-        <span className="label web">Web Programming</span>
-        <span className="label yoga">Yoga</span>
-        <span className="label dog">Dogs</span> */}
       </div>
-      {editable && 
-        <div className="addInterest"> 
-          <input type="text" onChange={e => {/*input a interest*/}}/>
-          <button className="addInterestButton" onClick={() =>{/* add an interest*/}}>Add Interest</button>
-        </div>
-      }
+      <div className="addInterest"> 
+        <input type="text" onChange={_ => addInterest}/>
+        <button className="addInterestButton" onClick={() =>{/* add an interest*/}}>Add Interest</button>
+      </div>
       <div className="interestButtons">
-        <button className="editInterestButton" onClick={() => setEditable(true)}>Edit</button>
-        <button className="saveInterestButton" onClick={() => setEditable(false)}>Save</button>
+        <button className="saveInterestButton" onClick={() => {}}>Save</button>
       </div>
     </div>
   );

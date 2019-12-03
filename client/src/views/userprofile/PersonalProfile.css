@@ -79,6 +79,37 @@
 
 .saveForm:focus {outline:0;}
 
-/* .questionnaire button {
-	margin: 10px 10px 0px 0px;
-} */
+
+.uploadPhoto{
+	margin-Top:10px;
+	margin-Bottom:10px;
+	border: solid 2px #94bff7;
+	border-radius: 10px;
+	width: 50%;
+	margin-left: 25%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.uploadPhoto input{
+	background-color:  #deebfc;
+}
+
+.uploadPhoto input:hover{
+	cursor: pointer;
+}
+
+
+.uploadPhotoButton{
+	background-color: #F0F0F0;
+	padding: 5px 10px;
+	border-radius: 5px;
+  	border: none;
+  	margin-left: 20px;
+  	margin-right: 20px;
+}
+
+.uploadPhototButton:hover{
+	box-shadow: 0 3px 6px 0 #F0F0F0, 0 3px 6px 0 #F0F0F0;
+	background-color: #deebfc;
+  }

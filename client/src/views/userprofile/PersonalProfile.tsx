@@ -14,6 +14,11 @@ type PropType = {
 const PersonalProfile: React.FC<PropType> = ({ user }) => {
 	const { username, bio, firstname, surname, picture, email, phonenumber, date, country, province, city } = user;
 	
+	//added these three
+	const [showUploadPhoto, setShowUploadPhoto]= useState(false);
+	const [myPicture, setMyPicture]=useState(picture);
+	const [newPicture, setNewPicture]=useState("");
+
 	const [username_, setUsername] = useState(username);
 	const [bio_, setBio] = useState(bio);
 	const [firstname_, setFirstname] = useState(firstname);
@@ -50,8 +55,16 @@ const PersonalProfile: React.FC<PropType> = ({ user }) => {
 	return (
 		<div>
 			<div className="profileInfo">
-				<img src={picture} className="profilePicture" alt="profilepicture" />
-				<button type="button" id="changeProfile"><strong>Change Profile Photo</strong></button>
+				<img src={myPicture} className="profilePicture" alt="profilepicture" />
+				<button type="button" id="changeProfile" onClick={e=>setShowUploadPhoto(true)}><strong>Change Profile Photo</strong></button>
+				{showUploadPhoto && 
+					<div className="uploadPhoto"> 
+						<input type="file" accept="image/jpg,image/png,image/jpeg,image/gif" required onChange={e => setNewPicture(e.target.value)/*TODO*/}/>
+						<button className="uploadPhotoButton" type="submit" onClick={(e)=>{setShowUploadPhoto(false); /*setMyPicture(newPicture); cannot do like this i guess*/}}>
+							Upload
+						</button>
+					</div>
+				}
 			</div>
 			<div className="profileInfo">
 				<h5 className="sectionTitle">Personal Information</h5>

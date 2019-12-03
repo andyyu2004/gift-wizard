@@ -41,12 +41,14 @@ const Wishlist: React.FC<PropType> = ({ user: { wishlist }}) => {
           <input type="text" onChange={e => setNewItem(e.target.value)}/> 
           <input type="submit" onClick={e => addItem(e, newItem)} value="Add Wish" />
         </form>
+        <ul>
         {myWishlist.map((x, i) =>
-          <div key={i}>
+          <li key={i}>
             {x} 
             <button className="generic-button" onClick={e => removeItem(x)}>Remove</button>
-          </div>)
+          </li>)
         }
+        </ul>
       </div>
       <div>
         <button onClick={() => {saveWishlist()}}>Save</button>

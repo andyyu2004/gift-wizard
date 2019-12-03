@@ -7,18 +7,30 @@ type PropType = {
   interests: string[],
 };
 
+
+
 const cssclasses = ["label music", "label travels", "label web", "label yoga", "label dog"];
 
 const AreaOfInterest: React.FC<PropType> = ({ interests }) => {
   const [editable, setEditable]=useState(false);
+  const [myInterests, setMyInterests]= useState(interests)
+  const [newInterest, setnewInterest]= useState("")
+  
+  const addInterest = (e: MouseEvent<HTMLElement>, item: string) => {
+    e.preventDefault();
+    setMyInterests([...myInterests, item]);
+  };
+
+  const removeInterest = (item: string) => setMyInterests(myInterests.filter(x => x !== item ));
+  
   return (
     <div>
       <div id="interests">
-        {interests && interests.length !== 0 && <h5>Personal Area of Interests</h5>}
-        {interests && interests.map((interest, i) => 
+        {myInterests && myInterests.length !== 0 && <h5>Personal Area of Interests</h5>}
+        {myInterests && myInterests.map((interest, i) => 
         <span key={i} className={getRandom(cssclasses)}>
           {interest} 
-          {editable && <img onClick={()=>{}} className="deleteInterest" src={deleteimg}/>}
+          {editable && <img onClick={e=>removeInterest(interest)} className="deleteInterest" src={deleteimg}/>}
         </span>)}
         {/* <span className="label music">Music</span>
         <span className="label travel">Travel</span>
@@ -28,8 +40,8 @@ const AreaOfInterest: React.FC<PropType> = ({ interests }) => {
       </div>
       {editable && 
         <div className="addInterest"> 
-          <input type="text" onChange={e => {/*input a interest*/}}/>
-          <button className="addInterestButton" onClick={() =>{/* add an interest*/}}>Add Interest</button>
+          <input type="text" onChange={e => setnewInterest(e.target.value)}/>
+          <button className="addInterestButton" onClick={e =>addInterest(e, newInterest)}>Add Interest</button>
         </div>
       }
       <div className="interestButtons">

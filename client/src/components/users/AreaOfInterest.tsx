@@ -26,7 +26,8 @@ const AreaOfInterest: React.FC<PropType> = ({ interests }) => {
   return (
     <div>
       <div id="interests">
-        {myInterests && myInterests.length !== 0 && <h5>Personal Area of Interests</h5>}
+        {<h5>Personal Area of Interests</h5>}
+        {/* {myInterests && myInterests.length !== 0 && <h5>Personal Area of Interests</h5>} */}
         {myInterests && myInterests.map((interest, i) => 
         <span key={i} className={getRandom(cssclasses)}>
           {interest} 

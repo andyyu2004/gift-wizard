@@ -3,9 +3,11 @@ import { toast } from 'react-toastify';
 import { User } from 'shared/types';
 import { updateUser } from '../../actions/actionCreaters';
 import API from '../../api';
-import '../../views/userprofile/People.css';
+// import '../../views/userprofile/People.css';
 import { compose } from '../../util/functional';
 import { useDispatch } from 'react-redux';
+import './Wishlist.css';
+import deleteimg from '../../images/cancel_icon.png';
 
 type PropType = {
   user: User,
@@ -36,23 +38,23 @@ const Wishlist: React.FC<PropType> = ({ user: { wishlist }}) => {
 
   return (
     <div>
-      <div id="show-wishlist" className="peopleView">
+      <div id="show-wishlist" className="wishView">
         <h6> Personal Wish List </h6>
         <form>
           <input type="text" onChange={e => setNewItem(e.target.value)}/> 
-          <input type="submit" onClick={e => addItem(e, newItem)} value="Add Wish" />
+          <button className="addWish" type="submit" onClick={e => addItem(e, newItem)}>Add Wish</button>
         </form>
         <ul>
         {myWishlist.map(wish =>
           <li key={wish}>
             {wish} 
-            <button className="generic-button" onClick={e => removeItem(wish)}>Remove</button>
+            <img className="wishlistRemove" onClick={e => removeItem(wish)} src={deleteimg}/>
           </li>)
         }
         </ul>
-      </div>
-      <div>
-        <button onClick={() => {saveWishlist()}}>Save</button>
+        <div>
+          <button className="saveWishlist" onClick={() => {saveWishlist()}}>Save</button>
+        </div>
       </div>
     </div>
   );

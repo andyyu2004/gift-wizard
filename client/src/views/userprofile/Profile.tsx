@@ -25,7 +25,7 @@ type PropType = RouteComponentProps & { "*"?: string };
 const Profile: React.FC<PropType> = props => {
 
   const user = useSelector<AppState, User>(state => state.user.user!);
-
+  
   /** Takes the wildcard parameter of the url as default view (otherwise empty) */
   const subview: string = props["*"] || Subview.PersonalProfile; 
   const [view, setView] = useState(subview);
@@ -33,9 +33,9 @@ const Profile: React.FC<PropType> = props => {
   /** Map from Subview -> Component; Used for conditional rendering */
   const viewMap: { [key: string]: ReactElement } = {
     [Subview.PersonalProfile]: <PersonalProfile user={user} />,
-    [Subview.Interest]: <AreaOfInterest interests={user.interests || []} />,
+    [Subview.Interest]: <AreaOfInterest interests={user.interests} />,
     [Subview.Connections]: <Connections filterFriends={true} />,
-    [Subview.Wishlist]: <Wishlist user={user} />,
+    [Subview.Wishlist]: <Wishlist wishlist={user.wishlist} />,
     [Subview.Settings]: <Settings />,
   };
 

@@ -47,15 +47,25 @@ const PeopleView: React.FC<PropType> = ({ userid }) => {
           : <button className="generic-button" onClick={sendFriendReq} disabled={disableRequest}>Send friend request</button>
       }
       
-      {wishlist && 
+      {wishlist && wishlist.length !== 0 &&
         <div>
           <h6> ~~~ Wishlist ~~~</h6>
           <ul>
-            {wishlist.map((x, i) => <li key={i}>{x}</li>)}
+            {wishlist.map(x => <li key={x}>{x}</li>)}
           </ul>
         </div>
       }
-      <AreaOfInterest interests={interests || []} />
+
+
+      {interests && interests.length !== 0 &&
+        <div>
+          <h6> ~~~ Interests ~~~</h6>
+          <ul>
+            {interests.map(x => <li key={x}>{x}</li>)}
+          </ul>
+        </div>
+      }
+
     </div>
   );
 };

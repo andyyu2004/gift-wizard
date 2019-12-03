@@ -6,7 +6,6 @@ import protectedRouter from './protected';
 import adminRouter from './admin';
 
 const router = Router();
-router.use(bodyParser.json());
 router.use(session({
     secret: "temporary-secret",
     cookie: { httpOnly: true, maxAge: 600000000 },

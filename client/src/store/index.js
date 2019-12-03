@@ -20,7 +20,7 @@ export const store = createStore(
     applyMiddleware(logger)
 );
 
-export const persistor = persistStore(store, () => {
+export const persistor = persistStore(store, {}, () => {
     const state = store.getState();
     /* Refresh socket */
     state.user.socket = socketio('/', { query: `username=${state.user.username}` });

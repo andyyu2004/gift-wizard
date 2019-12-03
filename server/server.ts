@@ -13,8 +13,11 @@ import { NotificationType } from 'shared/types';
 const app = express();
 const server = http.createServer(app);
 
+app.use(bodyparser.json({
+    limit: "50mb",
+}));
+
 app.use('/api', apirouter);
-app.use(bodyparser.json());
 app.use(express.static(path.join(__dirname, "../../client/build")));
 
 // app.use(cors({

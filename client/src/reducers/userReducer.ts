@@ -23,7 +23,7 @@ const userReducer = (state: UserState = initialUserState, action: Action) => {
             const { user } = action;
             return {
                 ...state,
-                user, 
+                user: Object.assign({}, user),
             };
         }
 

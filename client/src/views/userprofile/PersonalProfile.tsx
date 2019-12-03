@@ -3,8 +3,9 @@ import './PersonalProfile.css';
 import { User } from 'shared/types';
 import API from '../../api';
 import { toast } from 'react-toastify';
-import { setUser } from '../../actions/actionCreaters';
+import { setUser, updateUser } from '../../actions/actionCreaters';
 import { useDispatch } from 'react-redux';
+import { toBase64 } from '../../util/encoding';
 
 type PropType = {
 	user: User,
@@ -12,12 +13,10 @@ type PropType = {
 
 /** Subview of Profile */
 const PersonalProfile: React.FC<PropType> = ({ user }) => {
-	const { username, bio, firstname, surname, picture, email, phonenumber, date, country, province, city } = user;
+	const { username, bio, firstname, surname, picture, email, phonenumber, country, province, city } = user;
 	
 	//added these three
 	const [showUploadPhoto, setShowUploadPhoto]= useState(false);
-	const [myPicture, setMyPicture]=useState(picture);
-	const [newPicture, setNewPicture]=useState("");
 
 	const [username_, setUsername] = useState(username);
 	const [bio_, setBio] = useState(bio);
@@ -33,7 +32,7 @@ const PersonalProfile: React.FC<PropType> = ({ user }) => {
 	
 	const handlePatchUser = async (e: MouseEvent<HTMLElement>) => {
 		e.preventDefault();
-		const ret = await API.patchUser({
+		(await API.patchUser({
 			...user,
 			username: username_,
 			bio: bio_,
@@ -44,25 +43,32 @@ const PersonalProfile: React.FC<PropType> = ({ user }) => {
 			country: country_,
 			province: province_,
 			city: city_,
-		});
-
-		ret.map(user => {
-			dispatch(setUser(user));
-			toast.success("Successfullly updated user profile");
+		})).map(user => {
+			dispatch(updateUser(user));
+			return toast.success("Successfullly updated user profile");
 		}).mapLeft(toast.error);
+	};
+
+	const updatePicture = async (files: any) => {
+		const picture = files[0];
+		const encoded = await toBase64(picture);
+		(await API.patchUser({ picture: encoded }))
+			.map(user => {
+				dispatch(updateUser(user));
+				return toast.success("Successfully Updated Profile Picture")
+			})
+			.mapLeft(toast.error);
 	};
 
 	return (
 		<div>
 			<div className="profileInfo">
-				<img src={myPicture} className="profilePicture" alt="profilepicture" />
+				<img src={picture} className="profilePicture" alt="profilepicture" />
 				<button type="button" id="changeProfile" onClick={e=>setShowUploadPhoto(true)}><strong>Change Profile Photo</strong></button>
 				{showUploadPhoto && 
 					<div className="uploadPhoto"> 
-						<input type="file" accept="image/jpg,image/png,image/jpeg,image/gif" required onChange={e => setNewPicture(e.target.value)/*TODO*/}/>
-						<button className="uploadPhotoButton" type="submit" onClick={(e)=>{setShowUploadPhoto(false); /*setMyPicture(newPicture); cannot do like this i guess*/}}>
-							Upload
-						</button>
+						<input type="file" accept="image/jpg,image/png,image/jpeg,image/gif" required  multiple={false} onChange={e => updatePicture(e.target.files)}/>
+						<button className="uploadPhotoButton" type="submit" onClick={e => setShowUploadPhoto(false)}>Upload</button>
 					</div>
 				}
 			</div>

@@ -42,8 +42,9 @@ export async function logout(): Promise<Either<string, string>> {
         .catch(apiErrorHandler);
 }
 
-export async function patchUser(user: User): Promise<Either<string, User>> {
-    return axios.patch(`/api/protected/user/${user._id}`, { user })
+/** Update part of a user, can pass any partial properties of user */
+export async function patchUser(user: Partial<User>): Promise<Either<string, User>> {
+    return axios.patch(`/api/protected/user`, { user })
         .then<any>(res => new Right(res.data.user))
         .catch(apiErrorHandler);
 }

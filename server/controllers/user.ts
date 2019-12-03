@@ -43,8 +43,8 @@ export async function getUsers(): Promise<TUserModel[]> {
     return await UserModel.find();
 }
 
-export async function patchUser(user: User): Promise<Either<string, TUserModel>> {
-    const updatedUser = await UserModel.findOneAndUpdate({ _id: user._id }, user, { new: true });
+export async function patchUser(userid: string, user: User): Promise<Either<string, TUserModel>> {
+    const updatedUser = await UserModel.findByIdAndUpdate(userid, user, { new: true });
     if (!updatedUser) return new Left("Update failed");
     return new Right(await updatedUser.save());
 }

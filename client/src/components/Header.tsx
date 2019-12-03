@@ -21,7 +21,7 @@ type PropTypes = {
 
 const Header: React.FC<PropTypes> = ({ title, subtitle }) => {
   const { user } = useSelector<AppState, UserState>(state => state.user)
-  const notifications = user && user.notifications || [];
+  const notifications = (user && user.notifications) || [];
   const dispatch = useDispatch();
   const socket = useSocket();
 
@@ -40,7 +40,7 @@ const Header: React.FC<PropTypes> = ({ title, subtitle }) => {
     (await API.getUser(user!._id))
       .map(compose(dispatch, updateUser))
       .mapLeft(() => toast.error("Failed to update notifications"));
-  }, [user]);
+  }, [user, dispatch]);
 
   /** Initialize socket listeners on connection */
   useEffect(() => {

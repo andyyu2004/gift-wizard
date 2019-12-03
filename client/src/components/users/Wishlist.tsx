@@ -1,52 +1,57 @@
-import React,{MouseEvent, useState} from 'react';
+import React, { useState, MouseEvent } from 'react';
+import { toast } from 'react-toastify';
 import { User } from 'shared/types';
+import { updateUser } from '../../actions/actionCreaters';
+import API from '../../api';
 import '../../views/userprofile/People.css';
+import { compose } from '../../util/functional';
+import { useDispatch } from 'react-redux';
 
 type PropType = {
   user: User,
 };
 
-
-const saveWishlist=()=>{
-  // TODO: change editable=false; save the wishlist and call backend to save i guess
-}
-
-
 const Wishlist: React.FC<PropType> = ({ user: { wishlist }}) => {
-  const [myWishlist, setmyWishlist]=useState(wishlist)
-  const [editable, setEditable]=useState(false);
-  const [newItem, setNewItem]=useState("");
-  const addItem=(Item: string)=>{
-    myWishlist.push(Item)
-    setmyWishlist(myWishlist)
-  }
-  const removeItem=(Item: string)=>{
-    const newWishlist=myWishlist.filter((x)=>{return (x!=Item)})
-    setmyWishlist(newWishlist)
-  }
+  const [myWishlist, setmyWishlist] = useState(wishlist)
+  const [newItem, setNewItem] = useState("");
+
+  const dispatch = useDispatch();
+
+  const saveWishlist = async () => {
+    (await API.patchUser({ wishlist: myWishlist }))
+      .map(user => {
+        compose(dispatch, updateUser)(user);
+        return toast.success("Successfully updated wishlist")
+      })
+      .mapLeft(toast.error);
+  };
+
+  const addItem = (e: MouseEvent<HTMLElement>, item: string) => {
+    e.preventDefault();
+    setmyWishlist([...myWishlist, item]);
+  };
+
+  const removeItem = (item: string) => setmyWishlist(myWishlist.filter(x => x !== item ));
+
   return (
     <div>
       <div id="show-wishlist" className="peopleView">
         <h6> Personal Wish List </h6>
-        <div>
-          {editable && <div><input type="text" onChange={e => setNewItem(e.target.value)}/> <button onClick={e => addItem(newItem)}>Add wish</button></div>}
-          {myWishlist.map(x =>
-            <div key={x}>
-              {x} 
-              {editable && <button className="generic-button" onClick={e => removeItem(x)}>Remove</button>}
-            </div>)
-          }
+        <form>
+          <input type="text" onChange={e => setNewItem(e.target.value)}/> 
+          <input type="submit" onClick={e => addItem(e, newItem)} value="Add Wish" />
+        </form>
+        {myWishlist.map((x, i) =>
+          <div key={i}>
+            {x} 
+            <button className="generic-button" onClick={e => removeItem(x)}>Remove</button>
+          </div>)
+        }
       </div>
       <div>
-        <button onClick={() => setEditable(true)}>
-          Edit
-        </button>
-        <button onClick={() => {saveWishlist()}}> 
-          Save
-        </button>
+        <button onClick={() => {saveWishlist()}}>Save</button>
       </div>
     </div>
-  </div>
   );
 };
 

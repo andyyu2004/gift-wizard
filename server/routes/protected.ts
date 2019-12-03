@@ -63,12 +63,10 @@ router.post('/user/logout', async (req, res) => {
 });
 
 /** Patch user by userid */
-router.patch('/user/:userid', async (req, res) => {
+router.patch('/user', async (req, res) => {
     try {
-        const { userid } = req.params;
         const { user } = req.body;
-        if (userid != req.session!.userid) return res.status(403).send({ error: "Unauthorized to patch other users profiles "});
-        (await patchUser(user))
+        (await patchUser(req.session.userid, user))
             .map(user => res.send({ user }))
             .mapLeft(error => res.status(400).send({ error }));
     } catch (error) {

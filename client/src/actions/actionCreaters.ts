@@ -18,7 +18,7 @@ export const setUser: (user: User) => SetUserAction = user => {
     };
 };
 
-export const updateUser: (iser: User) => UpdateUserAction = user => ({
+export const updateUser: (user: User) => UpdateUserAction = user => ({
     type: "UPDATE_USER",
     user,
 });

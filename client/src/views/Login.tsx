@@ -22,8 +22,8 @@ const LoginView: React.FC<RouteComponentProps> = () => {
     e.preventDefault();
     (await API.login(username, password)).map(user => {
       dispatch(setUser(user));
-      if (user.type === UserType.Admin) navigate('/admin');
-      else navigate('/');
+      if (user.type === UserType.Admin) return navigate('/admin');
+      else return navigate('/');
     }).mapLeft(toast.error);
   };
 

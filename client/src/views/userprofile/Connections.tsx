@@ -26,7 +26,7 @@ const Connections: React.FC<PropType> = ({ filterFriends }) => {
         .map(setPeople)
         .mapLeft(toast.error))();
     }
-  }, []);
+  }, [filterFriends, user._id]);
 
   return (
     <div className="flex-container">

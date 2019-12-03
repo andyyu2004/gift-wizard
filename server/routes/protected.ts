@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 import { saveQuestionnaire, getQuestionnaires } from "../controllers/questionnaire";
-import { getUser, patchUser } from '../controllers/user';
+import { getUser, patchUser, getUsers, getFriends } from '../controllers/user';
 
 const router = Router();
 
@@ -29,6 +29,28 @@ router.get('/user/:userid', async (req, res) => {
     }
 });
 
+router.get('/user/:userid/friends', async (req, res) => {
+    try {
+        const { userid } = req.params;
+        (await getFriends(userid))
+            .map(friends => res.send({ friends }))
+            .mapLeft(error => res.status(400).send({ error }));
+    } catch (error) {
+        console.log(`Error: ${error.message} (in GET /protected/user/:userid/friends)`);
+        return res.status(500).json({ error: error.message });
+    }
+});
+
+router.get('/users', async (req, res) => {
+    try {
+        let users = await getUsers().catch(err => { throw err; });
+        res.json({ users });
+    } catch (error) {
+        console.log(`Error: ${error.message} (in GET /protected/users)`);
+        return res.status(500).json({ error: error.message });
+    }
+});
+
 router.post('/user/logout', async (req, res) => {
     req.session?.destroy(error => {
         if (error) {
@@ -53,7 +75,8 @@ router.patch('/user/:userid', async (req, res) => {
     }
 });
 
-router.post('/questionnaires/save', async (req, res) => {
+/** Upsert a questionnaire */
+router.post('/questionnaire', async (req, res) => {
     try {
         const { questionnaire } = req.body;
         if (!questionnaire) return res.status(400).json({ error: "Require questionnaire" });

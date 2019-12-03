@@ -1,6 +1,6 @@
-import { DeleteQTemplateAction, SaveQuestionnaireAction, UpdateUserTypeAction, SetUserAction } from ".";
-import { FormRepr, Questionnaire, User } from "shared/types";
-import { UserType } from "shared/types";
+import { FormRepr, Questionnaire, User, UserType } from "shared/types";
+import socketio from 'socket.io-client';
+import { DeleteQTemplateAction, SaveQuestionnaireAction, SetUserAction, UpdateUserAction, UpdateUserTypeAction } from ".";
 import { AddFormAction, AddOptionAction, RemoveFormAction, RemoveOptionAction, ReorderRankAction, SetCheckboxStatusAction, SetQuestionAction, SetShortAnswerAction, UpdateOptionAction, UpdateRatingAction } from "../types/FormActions";
 
 /** Redux action creators */
@@ -9,8 +9,17 @@ export const updateUserType: (userType: UserType) => UpdateUserTypeAction = user
     userType,
 });
 
-export const setUser: (user: User) => SetUserAction = user => ({
-    type: "SET_USER",
+export const setUser: (user: User) => SetUserAction = user => {
+    const socket = socketio('/', { query: `userid=${user._id}`});
+    return {
+        type: "SET_USER",
+        user,
+        socket,
+    };
+};
+
+export const updateUser: (iser: User) => UpdateUserAction = user => ({
+    type: "UPDATE_USER",
     user,
 });
 

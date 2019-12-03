@@ -1,13 +1,12 @@
 import { navigate, RouteComponentProps } from '@reach/router';
 import React, { MouseEvent, useCallback, useEffect, useRef, useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { UserType } from 'shared/types';
 import { setUser, updateUserType } from '../actions/actionCreaters';
 import API from '../api';
 import './Login.css';
-
 
 const LoginView: React.FC<RouteComponentProps> = () => {
 
@@ -25,14 +24,7 @@ const LoginView: React.FC<RouteComponentProps> = () => {
       dispatch(setUser(user));
       navigate('/');
     }).mapLeft(toast.error);
-
-
-    // console.log('submitted credentials', username, password);
-    // Make some mock username password called admin admin for now
-    // if (username === "admin" && password === "admin") login(UserType.Admin);
-    // else if (username === "user" && password === "user") login(UserType.Regular);
-    // else setError("Invalid credentials");
-  }
+  };
 
   const setUserType = useCallback((userType: UserType) => dispatch(updateUserType(userType)), [dispatch]);
 

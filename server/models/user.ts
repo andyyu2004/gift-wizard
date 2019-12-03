@@ -1,5 +1,15 @@
 import { model, Schema, Document } from 'mongoose';
-import { User, UserType } from 'shared/types';
+import { User, UserType, Notification, NotificationType } from 'shared/types';
+
+export type TNotification = Notification & Document;
+const NotificationSchema = new Schema({
+    msg: String,
+    sender: Schema.Types.ObjectId,
+    type: Schema.Types.Mixed,
+    creationTime: Date,
+});
+
+export const NotificationModel = model<TNotification>("Notification", NotificationSchema);
 
 type TUserModel = User & Document;
 const UserModel = model<TUserModel>("User", new Schema({
@@ -11,6 +21,7 @@ const UserModel = model<TUserModel>("User", new Schema({
         type: String,
         required: true,
     },
+    profilepicture: String, /* Path of background image */
     bio: String,
     wishlist: [String],
     interests: [String],
@@ -25,6 +36,7 @@ const UserModel = model<TUserModel>("User", new Schema({
     province: String,
     city: String,
     type: String,
+    notifications: [NotificationSchema],
 }));
 
 export {

@@ -10,6 +10,29 @@
     box-shadow: 0 5px 10px 0 #F0F0F0, 0 5px 10px 0 #F0F0F0;
 }
 
+.header-username {
+    color: #66B3FF;
+}
+
+.header-notification {
+    margin: 0px 10px;
+}
+
+.header-notification:focus {outline:0;}
+
+#notification-toggle {
+    background-color: #F0F0F0;
+    color: black;
+    border-radius: 5px;
+    border: none;
+}
+
+#notification-toggle:focus {outline:0;}
+
+#notification-toggle:hover {
+    box-shadow: 0 3px 6px 0 #DFDFDF, 0 3px 6px 0 #DFDFDF;
+}
+
 #navbar-brand {
     padding: 10px;
 }

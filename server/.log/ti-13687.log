@@ -1,0 +1,42 @@
+[22:15:20.641] Global cache location '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7', safe file path '/home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/typingSafeList.json', types map path /home/andyyu2004/programming/javascript/gift-wizard/server/node_modules/typescript/lib/typesMap.json
+[22:15:20.642] Processing cache location '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7'
+[22:15:20.642] Trying to find '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/package.json'...
+[22:15:20.642] Loaded content of '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/package.json': {"private":true,"dependencies":{"types-registry":"^0.1.467"},"devDependencies":{"@types/atob":"^2.1.2","@types/bcrypt":"^3.0.0","@types/body-parser":"^1.17.1","@types/bson":"^4.0.1","@types/bytes":"^3.1.0","@types/concurrently":"^4.1.0","@types/content-type":"^1.1.3","@types/cors":"^2.8.6","@types/debug":"^4.1.5","@types/depd":"^1.1.32","@types/express":"^4.17.2","@types/express-session":"^1.15.16","@types/http-errors":"^1.6.3","@types/jsonwebtoken":"^8.3.5","@types/merge-descriptors":"^1.0.1","@types/mongodb":"^3.3.11","@types/mongoose":"^5.5.32","@types/node":"^12.12.14","@types/nodemon":"^1.19.0","@types/qs":"^6.9.0","@types/serve-static":"^1.13.3","@types/sprintf":"^0.1.0","@types/type-is":"^1.6.3"}}
+[22:15:20.642] Loaded content of '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/package-lock.json'
+[22:15:20.648] Adding entry into typings cache: 'atob' => '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/node_modules/@types/atob/index.d.ts'
+[22:15:20.650] Adding entry into typings cache: 'bcrypt' => '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/node_modules/@types/bcrypt/index.d.ts'
+[22:15:20.652] Adding entry into typings cache: 'body-parser' => '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/node_modules/@types/body-parser/index.d.ts'
+[22:15:20.654] Adding entry into typings cache: 'bson' => '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/node_modules/@types/bson/index.d.ts'
+[22:15:20.657] Adding entry into typings cache: 'bytes' => '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/node_modules/@types/bytes/index.d.ts'
+[22:15:20.659] Adding entry into typings cache: 'concurrently' => '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/node_modules/@types/concurrently/index.d.ts'
+[22:15:20.662] Adding entry into typings cache: 'content-type' => '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/node_modules/@types/content-type/index.d.ts'
+[22:15:20.663] Adding entry into typings cache: 'cors' => '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/node_modules/@types/cors/index.d.ts'
+[22:15:20.665] Adding entry into typings cache: 'debug' => '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/node_modules/@types/debug/index.d.ts'
+[22:15:20.667] Adding entry into typings cache: 'depd' => '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/node_modules/@types/depd/index.d.ts'
+[22:15:20.669] Adding entry into typings cache: 'express' => '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/node_modules/@types/express/index.d.ts'
+[22:15:20.672] Adding entry into typings cache: 'express-session' => '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/node_modules/@types/express-session/index.d.ts'
+[22:15:20.674] Adding entry into typings cache: 'http-errors' => '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/node_modules/@types/http-errors/index.d.ts'
+[22:15:20.675] Adding entry into typings cache: 'jsonwebtoken' => '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/node_modules/@types/jsonwebtoken/index.d.ts'
+[22:15:20.676] Adding entry into typings cache: 'merge-descriptors' => '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/node_modules/@types/merge-descriptors/index.d.ts'
+[22:15:20.678] Adding entry into typings cache: 'mongodb' => '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/node_modules/@types/mongodb/index.d.ts'
+[22:15:20.681] Adding entry into typings cache: 'mongoose' => '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/node_modules/@types/mongoose/index.d.ts'
+[22:15:20.685] Adding entry into typings cache: 'node' => '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/node_modules/@types/node/ts3.2/index.d.ts'
+[22:15:20.686] Adding entry into typings cache: 'nodemon' => '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/node_modules/@types/nodemon/index.d.ts'
+[22:15:20.688] Adding entry into typings cache: 'qs' => '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/node_modules/@types/qs/index.d.ts'
+[22:15:20.689] Adding entry into typings cache: 'serve-static' => '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/node_modules/@types/serve-static/index.d.ts'
+[22:15:20.690] Adding entry into typings cache: 'sprintf' => '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/node_modules/@types/sprintf/index.d.ts'
+[22:15:20.691] Adding entry into typings cache: 'type-is' => '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/node_modules/@types/type-is/index.d.ts'
+[22:15:20.691] Finished processing cache location '/home/andyyu2004/snap/emacs/common/.cache/typescript/3.7'
+[22:15:20.691] Process id: 13699
+[22:15:20.691] NPM location: /usr/bin/npm (explicit '--npmLocation' not  provided)
+[22:15:20.691] validateDefaultNpmLocation: false
+[22:15:20.691] Npm config file: /home/andyyu2004/snap/emacs/common/.cache/typescript/3.7/package.json
+[22:15:20.691] Updating types-registry npm package...
+[22:15:20.691] Exec: /usr/bin/npm install --ignore-scripts types-registry@latest
+[22:15:24.590]     Succeeded. stdout:
+    + types-registry@0.1.467
+    updated 1 package and audited 84 packages in 3.588s
+found 0 vulnerabilities
+
+
+[22:15:24.590] Updated types-registry npm package

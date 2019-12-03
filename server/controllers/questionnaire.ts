@@ -6,13 +6,9 @@ import { QuestionnaireModel, TQuestionnaire } from "../models/questionnaire";
  */
 export async function saveQuestionnaire(userid: string, questionnaire: Questionnaire): Promise<TQuestionnaire> {
     const { forms, background, label } = questionnaire;
-    const q = new QuestionnaireModel({
-        userid,
-        forms,
-        label,
-        background,
-    });
-
+    const q = await QuestionnaireModel.findOneAndUpdate({ label }, {
+        userid, forms, background, label
+    }, { upsert: true, new: true  });
     return await q.save();
 }
 

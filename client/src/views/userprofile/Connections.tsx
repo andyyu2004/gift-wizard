@@ -1,20 +1,37 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Cell } from '../../components';
-import { fakeusers } from '../../mockdata/mockpeople';
 import { navigate } from '@reach/router';
-import { Friend } from 'shared/types';
+import { Friend, User } from 'shared/types';
+import API from '../../api';
+import { toast } from 'react-toastify';
+import { useSelector } from 'react-redux';
+import { AppState } from '../../reducers';
 
 type PropType = {
-  friendIds: string[]
+  filterFriends: boolean;
 };
 
-const Connections: React.FC<PropType> = ({ friendIds }) => {
-  const friends: Friend[] = []
+const Connections: React.FC<PropType> = ({ filterFriends }) => {
+  const [people, setPeople] = useState<User[]>([]);
+  const user = useSelector<AppState, User>(state => state.user.user!);
+
+  useEffect(() => {
+    if (filterFriends) {
+      (async () => (await API.getFriends(user._id))
+        .map(setPeople)
+        .mapLeft(toast.error))();
+    } else {
+      // Fetch all users
+      (async () => (await API.getAllUsers())
+        .map(setPeople)
+        .mapLeft(toast.error))();
+    }
+  }, []);
+
   return (
     <div className="flex-container">
-      {friends.map(({ relationship, userid }) => {
-        const { picture, firstname, surname } = fakeusers.find(x => x._id === userid) || {};
-        return <Cell key={userid} text={`${firstname} ${surname}`} subtext={relationship} image={picture} onClick={() => navigate(`/people/${userid}`)} />
+      {people.map(({ username, picture, bio, _id }) => {
+        return <Cell key={_id} text={`${username}`} subtext={bio} image={picture} onClick={() => navigate(`/people/${_id}`)} />
       })}
     </div>
   );

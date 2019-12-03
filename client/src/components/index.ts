@@ -4,3 +4,4 @@ export { default as CellRow } from "./CellRow";
 export { default as Sidebar } from "./Sidebar";
 export { default as ThemeSelection } from "./ThemeSelection";
 export { default as AdminSettings } from './AdminSettings';
+export { default as DisplayNotification } from './DisplayNotifications';

@@ -22,7 +22,8 @@ router.get('/', (req, res) => {
     res.send("API Root");
 });
 
-router.post('/user/create', async (req, res) => {
+/** Create new user */
+router.post('/user', async (req, res) => {
     const { username, email, password, picture } = req.body;
     try {
         (await createUser(username, email, password, picture))
@@ -32,7 +33,6 @@ router.post('/user/create', async (req, res) => {
         console.log(error);
         res.status(500).json({ error });
     }
-
 });
 
 router.post('/user/login', async (req, res) => {
@@ -44,7 +44,7 @@ router.post('/user/login', async (req, res) => {
             req.session!.userid = user._id;
             req.session?.save(err => { if (err) console.log(`Failed to save session ${err}`); });
             res.json({ user });
-        }).mapLeft(error => res.status(200).json({ error }));
+        }).mapLeft(error => res.status(422).json({ error }));
     } catch (error) {
         console.log(`Error: ${error.message} (at api/user/login)`);
         return res.status(500).json({ error });

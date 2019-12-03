@@ -4,6 +4,12 @@
     border: 2px solid transparent;
     border-radius: 50%;
 }
+
+/* .header-container {
+    height: 100%;
+    flex: 1;
+} */
+
 .small-icon:hover{
     cursor: pointer;
     border-color: #87CEFA;

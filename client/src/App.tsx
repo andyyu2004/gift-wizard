@@ -20,14 +20,13 @@ const App: React.SFC = () => {
       <Header 
         title={mainTitle}
         subtitle={mainSubtitle} />
-      <Router>
+      <Router className="main-container">
         <Home path="/" />
         <Dashboard path="admin" />
         <QCreate path="create" />
         <LoginView path="login" />
         <ProfileView path="profile/*" />
         <PeopleView path="people/:userid" />
-        {/* Getting saved user forms from redux store for now */}
         <BrowsePeople path="people" />
         <SavedTemplates path="open" />
         <Signup path="signup" />

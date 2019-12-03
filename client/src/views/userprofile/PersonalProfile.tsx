@@ -62,7 +62,7 @@ const PersonalProfile: React.FC<PropType> = ({ user }) => {
 	};
 
 	return (
-		<div>
+		<div className="personal-profile-container">
 			<div className="profileInfo">
 				<img src={picture} className="profilePicture" alt="profilepicture" />
 				<button type="button" id="changeProfile" onClick={e=>setShowUploadPhoto(true)}><strong>Change Profile Photo</strong></button>

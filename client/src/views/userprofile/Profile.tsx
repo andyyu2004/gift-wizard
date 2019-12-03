@@ -42,12 +42,12 @@ const Profile: React.FC<PropType> = props => {
   const entries: [string, () => void][] = Object.values(Subview).map(subview => [subview, () => setView(subview)]);
   
   return (
-    <div className="flex-container" style={{ backgroundColor: 'white' }}>
+    <div className="flex-container">
       <Sidebar
         img={user.picture}
         text={user.username}
         entries={entries} />
-        <main>
+        <main className="flex-container">
           {viewMap[view]}
         </main>
     </div>

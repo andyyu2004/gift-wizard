@@ -1,12 +1,14 @@
 .App {
-  height: 100vmin;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-
+/* 
 .App-logo {
   height: 40vmin;
-}
+} */
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -15,15 +17,23 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .App-link {
   color: #09d3ac;
 }
 
+.main-container {
+  height: 100%;
+  width: 100%;
+  /* align-content: center; */
+}
+
 .flex-container {
   display: flex;
   height: 100%;
+  width: 100%;
+  flex: 1;
 }
 
 /* Vertical flex */

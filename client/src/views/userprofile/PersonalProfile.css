@@ -1,3 +1,9 @@
+.personal-profile-container {
+	height: 100%;
+	width: 100%;
+	overflow-y: scroll;
+}
+
 .profileInfo {
 	width: 130vmin;
 	text-align: center;

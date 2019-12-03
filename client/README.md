@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-Simply `npm install` in the root directory, and then `npm start` to run this application.
+Simply `npm install` under /team03/client, and then `npm start` to run this application.
 
 ## Home View (/)
 

@@ -29,11 +29,11 @@ const Header: React.FC<PropTypes> = ({ title, subtitle }) => {
       e.preventDefault();
       /** Destroy session, socket, and reset redux store */
       socket && socket.close();
-      (await API.logout()).map(msg => {
-        toast.success(msg);
-        navigate('/login');
-        dispatch({ type: "LOGOUT" });
-      }).mapLeft(toast.error);
+      API.logout();
+        // .map(toast.success)
+        // .mapLeft(toast.error);
+      navigate('/login');
+      dispatch({ type: "LOGOUT" });
   };
 
   const fetchNotifications = useCallback(async () => {

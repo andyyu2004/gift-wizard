@@ -8,8 +8,8 @@ import createNewIcon from '../images/create_new_icon.png';
 import areaOfInterestIcon from '../images/hobby_icon.png';
 import openFromExistingIcon from '../images/open_icon.png';
 import settingsIcon from '../images/settings_icon.svg';
-import template1icon from '../images/template1.png';
-import template2icon from '../images/template2.png';
+import mailIcon from '../images/mail_icon.png';
+import peopleIcon from '../images/people_icon.png';
 import template3icon from '../images/template4.png';
 import wishListIcon from '../images/wishlist_icon2.png';
 import { AppState } from '../reducers';
@@ -47,9 +47,9 @@ const Home: React.FC<RouteComponentProps> = props => {
         subtitle="By sending him/her an anonymous questionnaire, get the best 'hints'!">
         <Cell image={createNewIcon} text="Create New" onClick={() => navigate("/create")} />
         <Cell image={openFromExistingIcon} text="Open Existing" onClick={handleOpenUserTemplates} />
-        <Cell image={template1icon} text="Mail" onClick={() => navigate('mail')} />
+        <Cell image={mailIcon} text="Mail" onClick={() => navigate('mail')} />
         {/* <Cell image={template2icon} text="Template 2" onClick={() => navigateWithDefaultLoadedQuestionnaire(templates["Template Questionnaire"])} /> */}
-        <Cell image={connectionsIcon} text="People" onClick={() => navigate('/people')} />
+        <Cell image={peopleIcon} text="People" onClick={() => navigate('/people')} />
         <Cell image={template3icon} text="All Templates" onClick={handleOpenAllTemplates} />
       </CellRow>
       <CellRow 

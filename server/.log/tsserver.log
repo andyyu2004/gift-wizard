@@ -53,3 +53,14 @@ Info 18   [19:55:39.130] Search path: /home/andyyu2004/programming/javascript/gi
 Info 19   [19:55:39.130] For info: /home/andyyu2004/programming/javascript/gift-wizard/server/routes/protected.ts :: Config file name: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
 Info 20   [20:4:56.838] Search path: /home/andyyu2004/programming/javascript/gift-wizard/server
 Info 21   [20:4:56.838] For info: /home/andyyu2004/programming/javascript/gift-wizard/server/server.ts :: Config file name: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 22   [20:20:30.911] Search path: /home/andyyu2004/programming/javascript/gift-wizard/server/routes
+Info 23   [20:20:30.911] For info: /home/andyyu2004/programming/javascript/gift-wizard/server/routes/api.ts :: Config file name: /home/andyyu2004/programming/javascript/gift-wizard/server/tsconfig.json
+Info 24   [20:20:55.270] getCompletionData: Get current token: 0
+Info 25   [20:20:55.270] getCompletionData: Is inside comment: 0
+Info 26   [20:20:55.270] getCompletionData: Get previous token 1: 0
+Info 27   [20:20:55.270] getCompletionsAtPosition: isCompletionListBlocker: 0
+Info 28   [20:20:55.275] getSymbolsFromOtherSourceFileExports: Recomputing list
+Info 29   [20:20:55.282] forEachExternalModuleToImportFrom: filtered out 45 modules by package.json contents
+Info 30   [20:20:55.282] getSymbolsFromOtherSourceFileExports: 7
+Info 31   [20:20:55.286] getCompletionData: Semantic work: 15
+Info 32   [20:20:55.299] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 13

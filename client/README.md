@@ -1,7 +1,7 @@
 # Gift Wizard - Team 03
 
 ## Getting Started
-
+Go to https://gift-wizard.herokuapp.com/ this is our deployed url.
 Simply `npm install` under `/team03/client` directory, and then `npm start` to run this application.
 
 ## Home View (/)
@@ -46,6 +46,11 @@ In this view you can view the templates you have saved from the `/create` view
 
 On this page you can view the template, but it is locked for editing. 
 You can edit it by clicking the respective edit which takes you back to the `/create` page.
+
+## Mail
+You can see the received questionnaires and sent questionnaires, for received ones, you can click on one questionnaire and click edit, and send it to the sender
+
+
 
 ## All Templates 
 

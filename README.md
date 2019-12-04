@@ -91,9 +91,7 @@ The Connections view lists your connections and you can check out their profile 
 ## Admin 
 after logging in as an admin, one can create questionnaires and choose to publish it, which means the questionnaires created will appear in every user's template database, and users can use them.
 
-  
-## Deployed Address
-https://gift-wizard.herokuapp.com/
+
 
   
 

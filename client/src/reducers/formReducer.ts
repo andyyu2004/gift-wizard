@@ -6,7 +6,6 @@ export type FormState = {
     templates: { [key: string]: Questionnaire },
 };
 
-
 /** Some random form templates to retrieve instead of fetching from server */
 const initialFormState: FormState = {
     user: {

@@ -11,7 +11,7 @@ const Sidebar: React.FC<PropTypes> = ({ img, text, entries }) => {
   return (
     <div className="sidebar">
       <div className="user">
-        <img src={img} alt="sidebarimage" style={{padding: "10px"}}/>
+        <img src={img} alt="" style={{padding: "10px"}}/>
         <h6 className="userText">{text}</h6>
       </div>
       

@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useCallback } from 'react'
 import { RouteComponentProps } from '@reach/router';
-import { QMail, Questionnaire } from 'shared/types';
-import { navigateWithDefaultLoadedQuestionnaire } from '../actions/navigation';
-import API from '../api';
+import React, { useCallback, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-import { Tabs, Tab } from 'react-bootstrap';
+import { QMail, Questionnaire } from 'shared/types';
+import { navigateWithDefaultLoadedQuestionnaire, answerQuestionnaire } from '../actions/navigation';
+import API from '../api';
 import { Sidebar } from '../components';
 import { QEdit } from '../components/questions';
+import mailicon from '../images/mail_icon.png';
 
 const Mail: React.FC<RouteComponentProps> = () => {
   const [received, setReceived] = useState<QMail[]>([]);
@@ -30,11 +30,16 @@ const Mail: React.FC<RouteComponentProps> = () => {
   useEffect(() => {
     loadReceived();
     loadSent();
-  }, [loadReceived]);
+  }, [loadReceived, loadSent]);
+
+  const handleClick = (q: Questionnaire) => {
+    if (mailbox == "Sent") navigateWithDefaultLoadedQuestionnaire(q);
+    else if (mailbox == "Received") answerQuestionnaire(q);
+  };
 
   return (
     <div className="flex-container">
-      <Sidebar entries={[["Received", () => setMailbox("Received")], ["Sent", () => setMailbox("Sent")]]} />
+      <Sidebar img={mailicon} entries={[["Received", () => setMailbox("Received")], ["Sent", () => setMailbox("Sent")]]} />
       <div className="templateContainer">
         <h6>{mailbox}</h6>
         {mail.map(t => 
@@ -48,8 +53,8 @@ const Mail: React.FC<RouteComponentProps> = () => {
             <button 
               style={{marginTop:"5px", marginBottom: "5px", backgroundColor:"#FFF"}}
               className="generic-button"
-              onClick={() => navigateWithDefaultLoadedQuestionnaire(t.questionnaire)}
-              >Edit
+              onClick={() => handleClick(t.questionnaire)}
+              >{mailbox == "Received" ? "Answer" : "Edit"}
             </button>
           </div>
           )

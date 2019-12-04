@@ -5,3 +5,4 @@ export { default as LoginView } from './Login';
 export { default as SavedTemplates } from './SavedTemplates';
 export { default as Signup} from './Signup';
 export { default as Mail } from './Mail';
+export { default as QAnswer } from './QAnswer';

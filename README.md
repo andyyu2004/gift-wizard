@@ -1,8 +1,11 @@
 # Gift Wizard - Team 03
 
-## Getting Started
+## Deployed Address
+https://gift-wizard.herokuapp.com/
 
-Simply `npm install` under `/team03/client` directory, and then `npm start` under both `/team03/client` and `/team03/server` to start this application.
+## Getting Started
+Choice 1: Go to deployed address directly
+Choice 2: Simply `npm install` under `/team03/client` directory, and then `npm start` under both `/team03/client` and `/team03/server` to start this application.
 
 ## Home View (/)
 
@@ -47,6 +50,12 @@ In this view you can view the templates you have saved from the `/create` view
 On this page you can view the template, but it is locked for editing. 
 You can edit it by clicking the respective edit which takes you back to the `/create` page.
 
+## Mail
+You can see the received questionnaires and sent questionnaires, for received ones, you can click on one questionnaire and click edit, you can now edit and answer it and send it to the sender.
+
+## People
+you can view all users, and if you click on one user, you can send add friend request here.
+
 ## All Templates 
 
 There are two spaces on the home screen which we will reserve for the most popular 
@@ -58,10 +67,14 @@ The All Templates page is very similar to the /open page in which you can view b
 edit templates. The difference is in which templates show up, the open shows personal templates,
 while the All Templates page shows site wide templates set by an administrator.
 
+
 ## Profile Shortcuts
 The bottom few icons are shortcuts to the profile section which can also be accessed through 
 the icon in the header after logging in.
 Currently, you can also access profile without logging in for your convenience.
+
+## Notification
+Access notifications through the button on the left of profile picture in the header, you can accept or reject add friend request there.
 
 ## Login
 Access this page through the Log In/Sign Up button in the top right.
@@ -71,10 +84,14 @@ The default credentials are user/user and admin/admin for regular user and admin
 ## Profile
 Once logged in as a user, the header changes and you can access the profile through the user icon in the top right of the homepage.
 The profile has five subviews: Personal Profile, Area of Interests, Wishlist, Connections and Settings.
-The Personal Profile is where you can edit your personal information (edit is not currently enabled)
-The Area of Interests and Wishlist sections currently only display the user's "area of interests" and "wishlist" attributes, the user will be allowed to change those fields later. 
+The Personal Profile is where you can edit your personal information, and you can change your profile picture
+The Area of Interests and Wishlist sections display the user's "area of interests" and "wishlist" attributes, user is able to edit and save it.
 The Connections view lists your connections and you can check out their profile information by clicking on their icon.
 
+## Admin 
+after logging in as an admin, one can create questionnaires and choose to publish it, which means the questionnaires created will appear in every user's template database, and users can use them.
+
+  
 ## Deployed Address
 https://gift-wizard.herokuapp.com/
 

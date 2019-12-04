@@ -5,6 +5,8 @@
     border: none;
     margin-right:10px;
     min-width: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 .userButton:hover{
     box-shadow: 0 3px 6px 0 #F0F0F0, 0 3px 6px 0 #F0F0F0;

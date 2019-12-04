@@ -44,7 +44,7 @@ const PeopleView: React.FC<PropType> = ({ userid }) => {
       {
         isFriend || _id === me._id
           ? <h6>You are friends!</h6>
-          : <button className="generic-button" onClick={sendFriendReq} disabled={disableRequest}>Send friend request</button>
+          : <button className="friendRequestButton" onClick={sendFriendReq} disabled={disableRequest}>Send friend request</button>
       }
       
       {wishlist && wishlist.length !== 0 &&

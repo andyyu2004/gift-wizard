@@ -4,8 +4,8 @@
 https://gift-wizard.herokuapp.com/
 
 ## Getting Started
-1. Choice 1: Go to deployed address directly
-2. Choice 2: Simply `npm install` under `/team03/client` directory, and then `npm start` under both `/team03/client` and `/team03/server` to start this application.
+1. Go to deployed address directly
+2. Simply `npm install` under `/team03/client` directory, and then `npm start` under both `/team03/client` and `/team03/server` to start this application.
 
 ## Home View (/)
 

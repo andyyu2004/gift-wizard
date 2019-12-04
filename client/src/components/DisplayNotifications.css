@@ -1,0 +1,30 @@
+.acceptFriendButton{
+    background-color: #F0F0F0;
+	padding: 5px 10px;
+	border-radius: 5px;
+    border: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    min-width: 150px;
+}
+
+.acceptFriendButton:hover{
+    box-shadow: 0 3px 6px 0 #F0F0F0, 0 3px 6px 0 #F0F0F0;
+	background-color: #deebfc;
+}
+
+.singleNotification{
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top:2px;
+    margin-bottom: 2px;
+    border: solid 2px #deebfc;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+

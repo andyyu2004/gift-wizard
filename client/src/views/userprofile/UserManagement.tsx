@@ -3,6 +3,7 @@ import { User } from 'shared/types';
 import PersonalProfile from './PersonalProfile';
 import API from '../../api';
 import { toast } from 'react-toastify';
+import './UserManagement.css';
 
 const UserManagement = () => {
 
@@ -21,9 +22,9 @@ const UserManagement = () => {
   }, []);
 
   return (
-    <div>
+    <div className="userManagementPage">
       <h4>User Management</h4>
-      {users.map(user => <button className="generic-button" key={user._id} onClick={() => handleViewUser(user)}>{user.firstname} {user.surname}</button>)}
+      {users.map(user => <button className="userButton" key={user._id} onClick={() => handleViewUser(user)}>{user.username}</button>)}
       {currentUser && <PersonalProfile user={currentUser} />}
     </div>
   );

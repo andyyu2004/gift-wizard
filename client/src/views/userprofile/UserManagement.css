@@ -1,0 +1,20 @@
+.userButton{
+    background-color: #F0F0F0;
+	padding: 5px 10px;
+	border-radius: 5px;
+    border: none;
+    margin-right:10px;
+    min-width: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.userButton:hover{
+    box-shadow: 0 3px 6px 0 #F0F0F0, 0 3px 6px 0 #F0F0F0;
+	background-color: #deebfc;
+}
+
+.userManagementPage{
+    margin-left: 30px;
+    margin-top: 20px;
+}
+

@@ -1,0 +1,15 @@
+.adminchangepwdButton{
+    background-color: #F0F0F0;
+	padding: 5px 10px;
+	border-radius: 5px;
+    border: none;
+}
+.adminchangepwdButton:hover{
+    box-shadow: 0 3px 6px 0 #F0F0F0, 0 3px 6px 0 #F0F0F0;
+	background-color: #deebfc;
+}
+
+.adminSettingPage{
+    margin-left: 30px;
+    margin-top: 20px;
+}

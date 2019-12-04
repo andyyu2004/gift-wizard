@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Notification, NotificationType, User } from 'shared/types';
 import useSocket from '../hooks/useSocket';
 import { AppState } from '../reducers';
+import './DisplayNotifications.css';
 
 type PropType = {
 	notification: Notification,
@@ -35,11 +36,11 @@ const DisplayNotifications: React.FC<PropType> = ({ notification }) => {
 	const handleDismiss = () => socket.emit('dismiss', _id);
 
 	return (
-		<div>
+		<div className="singleNotification">
 			<h6>{creationTime}</h6>
 			<h6>{msg}</h6>
-			<button className='generic-button' onClick={handleEvent}>{getActionName()}</button>
-			<button className='generic-button' onClick={handleDismiss}>Dismiss</button>
+			<button className='acceptFriendButton' onClick={handleEvent}>{getActionName()}</button>
+			<button className='acceptFriendButton' onClick={handleDismiss}>Dismiss</button>
 		</div>
 	);
 };

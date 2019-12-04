@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import { Tabs, Tab } from 'react-bootstrap';
 import { Sidebar } from '../components';
 import { QEdit } from '../components/questions';
+import './Mail.css';
 
 const Mail: React.FC<RouteComponentProps> = () => {
   const [received, setReceived] = useState<QMail[]>([]);
@@ -29,12 +30,12 @@ const Mail: React.FC<RouteComponentProps> = () => {
   return (
     <div className="flex-container">
       <Sidebar entries={[["Received", () => setMailbox("Received")], ["Sent", () => setMailbox("Sent")]]} />
-      <div className="templateContainer">
+      <div className="templateContainerMail">
         <h6>{mailbox}</h6>
         {mail.map(t => 
           <div key={t.questionnaire._id}>
             <button
-              style={{marginTop:"5px", marginBottom: "5px", border: "solid 2px #C4E1FF", backgroundColor:"#FFFFFF"}}
+              style={{marginTop:"5px", marginBottom: "5px", marginRight:"10px", border: "solid 2px #C4E1FF", backgroundColor:"#FFFFFF"}}
               className="generic-button"
               onClick={() => toggleForm(t.questionnaire)}
             >{t.questionnaire.label}
@@ -50,7 +51,7 @@ const Mail: React.FC<RouteComponentProps> = () => {
         }
       </div>
 
-      <div className="step">
+      <div className="stepMail">
         {currentQ && 
           <div>
             <h6 className="qtitle">{currentQ.label}</h6>

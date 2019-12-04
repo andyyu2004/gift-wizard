@@ -38,3 +38,9 @@ export async function sendQuestionnaire(sender: string, receiver: string, questi
 export async function getReceived(receiver: string): Promise<TQMail[]> {
     return await QMailModel.find({ receiver });
 }
+
+export async function getSent(sender: string): Promise<TQMail[]> {
+    return await QMailModel.find({ sender });
+}
+
+

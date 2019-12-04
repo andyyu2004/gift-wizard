@@ -11,9 +11,10 @@ import { QEdit } from '../components/questions';
 const Mail: React.FC<RouteComponentProps> = () => {
   const [received, setReceived] = useState<QMail[]>([]);
   const [sent, setSent] = useState<QMail[]>([]);
+
   // Alternator between sent and received
   const [mailbox, setMailbox] = useState<string>("Received");
-  const mail = mailbox == "Received" ? received : sent;
+  const mail = mailbox == "Sent" ? sent : received;
   
   const [currentQ, setCurrentQ] = useState<Questionnaire>();
   const toggleForm = (q: Questionnaire) => currentQ !== q || currentQ === undefined ? setCurrentQ(q) : setCurrentQ(undefined);
@@ -22,8 +23,13 @@ const Mail: React.FC<RouteComponentProps> = () => {
     .map(setReceived)
     .mapLeft(toast.error), []);
   
+  const loadSent = useCallback(async () => (await API.loadSentMail())
+    .map(setSent)
+    .mapLeft(toast.error), []);
+  
   useEffect(() => {
     loadReceived();
+    loadSent();
   }, [loadReceived]);
 
   return (
@@ -63,3 +69,24 @@ const Mail: React.FC<RouteComponentProps> = () => {
 };
 
 export default Mail;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

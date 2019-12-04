@@ -31,7 +31,7 @@ const LoginView: React.FC<RouteComponentProps> = () => {
     <div className='loginForm'>
       <Form>
         <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label>Username</Form.Label>
           <Form.Control 
             ref={inputRef}
             type="text" 

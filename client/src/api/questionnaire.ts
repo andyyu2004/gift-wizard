@@ -38,3 +38,10 @@ export async function loadReceived(): Promise<Either<string, QMail[]>> {
         .catch(apiErrorHandler);
 }
 
+export async function loadSentMail(): Promise<Either<string, QMail[]>> {
+    return axios.get(`/api/protected/questionnaires/sent`)
+        .then<any>(res => new Right(res.data.mail))
+        .catch(apiErrorHandler);
+}
+
+

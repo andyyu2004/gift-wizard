@@ -42,23 +42,22 @@ const AreaOfInterest: React.FC<PropType> = ({ interests }) => {
   
   return (
     <div>
-      <h5>Personal Area of Interests</h5>
+      <h5 className="aoi-title">Personal Area of Interests</h5>
 
       <form className="addInterest"> 
         <input type="text" value={newInterest} onChange={e => setNewInterest(e.target.value)}/>
         <input type="submit" value="Add Interest" className="addInterestButton" onClick={e =>addInterest(e, newInterest)} />
-      </form>      
-
-      <div className="interestButtons">
-        <button className="saveInterestButton" onClick={saveInterests}>Save</button>
-      </div>
+      </form>     
 
       <div id="interests">
         {myInterests && myInterests.map((interest, i) => 
-        <span key={i} className={getRandom(cssclasses)}>
+        <span key={i} className="interest-item">
           {interest} 
           <img onClick={e=>removeInterest(interest)} className="deleteInterest" src={deleteimg}/>
         </span>)}
+      </div>
+      <div className="interestButtons">
+        <button className="saveInterestButton" onClick={saveInterests}>Save</button>
       </div>
 
     </div>

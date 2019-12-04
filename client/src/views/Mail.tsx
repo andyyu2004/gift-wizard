@@ -34,14 +34,14 @@ const Mail: React.FC<RouteComponentProps> = () => {
   }, [loadReceived, loadSent]);
 
   const handleClick = (q: Questionnaire) => {
-    navigateWithDefaultLoadedQuestionnaire(q);
-    // if (mailbox == "Sent") navigateWithDefaultLoadedQuestionnaire(q);
-    // else if (mailbox == "Received") answerQuestionnaire(q);
+    // navigateWithDefaultLoadedQuestionnaire(q);
+    if (mailbox == "Sent") navigateWithDefaultLoadedQuestionnaire(q);
+    else if (mailbox == "Received") answerQuestionnaire(q);
   };
 
   return (
     <div className="flex-container">
-      <Sidebar entries={[["Received", () => setMailbox("Received")], ["Sent", () => setMailbox("Sent")]]} />
+      <Sidebar img={mailicon} entries={[["Received", () => setMailbox("Received")], ["Sent", () => setMailbox("Sent")]]} />
       <div className="templateContainerMail">
         <h6>{mailbox}</h6>
         {mail.map(t => 

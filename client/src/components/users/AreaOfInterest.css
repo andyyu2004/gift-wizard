@@ -1,3 +1,7 @@
+.aoi-title {
+  margin: 30px 40px;
+}
+
 #interests {
   margin-left: 40px;
   margin-top: 30px;
@@ -45,6 +49,7 @@
   width: 20px;
   height: 20px;
   padding:0;
+  margin-left: 10px;
 }
 
 .deleteInterest:hover{
@@ -91,7 +96,7 @@
   border: none;
   margin-left: 40px;
   margin-right: 20px;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .saveInterestButton:hover{
@@ -100,3 +105,11 @@
 }
 
 
+.interest-item {
+  background-color: #cce6ff;
+  padding: 12px 15px;
+  font: 14px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 20px;
+}

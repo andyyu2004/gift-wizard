@@ -10,12 +10,13 @@ import mailicon from '../images/mail_icon.png';
 import './Mail.css';
 
 const Mail: React.FC<RouteComponentProps> = () => {
+
   const [received, setReceived] = useState<QMail[]>([]);
   const [sent, setSent] = useState<QMail[]>([]);
 
   // Alternator between sent and received
   const [mailbox, setMailbox] = useState<string>("Received");
-  const mail = mailbox == "Sent" ? sent : received;
+  const mail = mailbox === "Sent" ? sent : received;
   
   const [currentQ, setCurrentQ] = useState<Questionnaire>();
   const toggleForm = (q: Questionnaire) => currentQ !== q || currentQ === undefined ? setCurrentQ(q) : setCurrentQ(undefined);
@@ -33,10 +34,10 @@ const Mail: React.FC<RouteComponentProps> = () => {
     loadSent();
   }, [loadReceived, loadSent]);
 
-  const handleClick = (q: Questionnaire) => {
+  const handleClick = (q: QMail) => {
     // navigateWithDefaultLoadedQuestionnaire(q);
-    if (mailbox == "Sent") navigateWithDefaultLoadedQuestionnaire(q);
-    else if (mailbox == "Received") answerQuestionnaire(q);
+    if (mailbox === "Sent") navigateWithDefaultLoadedQuestionnaire(q.questionnaire);
+    else if (mailbox === "Received") answerQuestionnaire(q);
   };
 
   return (
@@ -55,7 +56,7 @@ const Mail: React.FC<RouteComponentProps> = () => {
             <button 
               style={{marginTop:"5px", marginBottom: "5px", backgroundColor:"#FFF"}}
               className="generic-button"
-              onClick={() => handleClick(t.questionnaire)}
+              onClick={() => handleClick(t)}
               >{mailbox == "Received" ? "Answer" : "Edit"}
             </button>
           </div>

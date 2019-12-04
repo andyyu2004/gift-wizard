@@ -1,4 +1,4 @@
-import { Questionnaire } from "shared/types";
+import { Questionnaire, QMail } from "shared/types";
 import { navigate } from "@reach/router";
 
   /** Navigate to the questionnaire edit page with the questionnaire set to the parameter of this function */
@@ -10,10 +10,10 @@ import { navigate } from "@reach/router";
     });
   };
 
-  export const answerQuestionnaire = (questionnaire: Questionnaire) => {
+  export const answerQuestionnaire = (qmail: QMail) => {
     navigate("/answer", { 
       state: { 
-        questionnaire
+        qmail,
       },
     });
   };

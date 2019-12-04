@@ -59,14 +59,13 @@ type PropType = {
 const QEditContainer: React.FC<PropType> = ({ dispatch, questionnaire, allowEditable }) => {
 
   const [editable, setEditable] = useState<boolean>(allowEditable);
-  console.log("edtiable", editable);
 
   return (
     <>
       {allowEditable && <button className="preview" onClick={() => setEditable(!editable)}>Toggle Preview</button>}
       {/* <h6>Editable? (for debug): {editable.toString()}</h6> */}
       <div className="flex-container">
-        <QuestionSelection dispatch={dispatch} questionData={questionData} />
+        {allowEditable && <QuestionSelection dispatch={dispatch} questionData={questionData} />}
         <QEdit editable={editable} dispatch={dispatch} questionnaire={questionnaire} />
       </div>
     </>

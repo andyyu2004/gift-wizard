@@ -43,7 +43,7 @@ const MultichoiceQ: React.FC<PropType> = ({ formRepr, dispatch, editable }) => {
           <input className="checkbox" disabled={frozen} type="checkbox" id={id} checked={isChecked} onChange={e => dispatch && dispatch(setCheckboxStatus(i, e.target.checked, formRepr.id))} /> 
           {editable 
             ? <input className="optionbox" type="text" value={choice} onChange={e => {
-              console.log("sdfsdf");
+              console.log("dispatching");
               dispatch && dispatch(updateOption(e.target.value, i, formRepr.id) 
             )}}/>
             : <label className="options" htmlFor={id}>{choice}</label>}

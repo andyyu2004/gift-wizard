@@ -3,9 +3,12 @@
 ## Deployed Address
 https://gift-wizard.herokuapp.com/
 
+## Note for markers
+Please refer to the latest commit before the due date for the code to mark. The later few commits are minor updates for the demo which is allowed.
+
 ## Getting Started
-1. Go to deployed address directly
-2. Simply `npm install` under `/team03/client` directory, and then `npm start` under both `/team03/client` and `/team03/server` to start this application.
+To run on local machine
+run `install.sh` in the root directory, and then `npm start` (also in root) to run this application
 
 ## Home View (/)
 

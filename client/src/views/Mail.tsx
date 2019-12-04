@@ -6,7 +6,11 @@ import { navigateWithDefaultLoadedQuestionnaire, answerQuestionnaire } from '../
 import API from '../api';
 import { Sidebar } from '../components';
 import { QEdit } from '../components/questions';
+<<<<<<< HEAD
 import mailicon from '../images/mail_icon.png';
+=======
+import './Mail.css';
+>>>>>>> 30d347c44d2a035be374d14768f2c81c9f24ed0f
 
 const Mail: React.FC<RouteComponentProps> = () => {
   const [received, setReceived] = useState<QMail[]>([]);
@@ -39,13 +43,13 @@ const Mail: React.FC<RouteComponentProps> = () => {
 
   return (
     <div className="flex-container">
-      <Sidebar img={mailicon} entries={[["Received", () => setMailbox("Received")], ["Sent", () => setMailbox("Sent")]]} />
-      <div className="templateContainer">
+      <Sidebar entries={[["Received", () => setMailbox("Received")], ["Sent", () => setMailbox("Sent")]]} />
+      <div className="templateContainerMail">
         <h6>{mailbox}</h6>
         {mail.map(t => 
           <div key={t.questionnaire._id}>
             <button
-              style={{marginTop:"5px", marginBottom: "5px", border: "solid 2px #C4E1FF", backgroundColor:"#FFFFFF"}}
+              style={{marginTop:"5px", marginBottom: "5px", marginRight:"10px", border: "solid 2px #C4E1FF", backgroundColor:"#FFFFFF"}}
               className="generic-button"
               onClick={() => toggleForm(t.questionnaire)}
             >{t.questionnaire.label}
@@ -61,7 +65,7 @@ const Mail: React.FC<RouteComponentProps> = () => {
         }
       </div>
 
-      <div className="step">
+      <div className="stepMail">
         {currentQ && 
           <div>
             <h6 className="qtitle">{currentQ.label}</h6>

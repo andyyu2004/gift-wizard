@@ -37,13 +37,13 @@ const PeopleView: React.FC<PropType> = ({ userid }) => {
 
   return (
     <div className="peopleView">
-      <h4>{username}</h4>
+      <h5>{username}</h5>
       <h5><strong>{firstname} {surname}</strong></h5>
       <img src={picture} alt="profilepic" />
       <p>{bio}</p>
       {
         isFriend || _id === me._id
-          ? <h6>You are friends!</h6>
+          ? <h6>You guys are friends already!</h6>
           : <button className="friendRequestButton" onClick={sendFriendReq} disabled={disableRequest}>Send friend request</button>
       }
       

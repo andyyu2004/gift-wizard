@@ -7,9 +7,9 @@ import connectionsIcon from '../images/connections_btn1.png';
 import createNewIcon from '../images/create_new_icon.png';
 import areaOfInterestIcon from '../images/hobby_icon.png';
 import openFromExistingIcon from '../images/open_icon.png';
-import settingsIcon from '../images/settings_icon.svg';
+import settingsIcon from '../images/settings_icon.png';
 import mailIcon from '../images/mail_icon.png';
-import peopleIcon from '../images/people_icon.png';
+import friendsIcon from '../images/friends_icon.png';
 import template3icon from '../images/template4.png';
 import wishListIcon from '../images/wishlist_icon2.png';
 import { AppState } from '../reducers';
@@ -49,7 +49,7 @@ const Home: React.FC<RouteComponentProps> = props => {
         <Cell image={openFromExistingIcon} text="Open Existing" onClick={handleOpenUserTemplates} />
         <Cell image={mailIcon} text="Mail" onClick={() => navigate('mail')} />
         {/* <Cell image={template2icon} text="Template 2" onClick={() => navigateWithDefaultLoadedQuestionnaire(templates["Template Questionnaire"])} /> */}
-        <Cell image={peopleIcon} text="People" onClick={() => navigate('/people')} />
+        <Cell image={connectionsIcon} text="People" onClick={() => navigate('/people')} />
         <Cell image={template3icon} text="All Templates" onClick={handleOpenAllTemplates} />
       </CellRow>
       <CellRow 
@@ -57,7 +57,7 @@ const Home: React.FC<RouteComponentProps> = props => {
         subtitle="To help out your family/friends picking a gift for you!">
         <Cell icon="areaOfInterest" image={areaOfInterestIcon} text="Area of Interest" onClick={() => navigate("/profile/Areas of Interest")} />
         <Cell icon="wishlist" image={wishListIcon} text="Wish List" onClick={() => navigate("/profile/Wish List")} />
-        <Cell icon="connection" image={connectionsIcon} text="Connections" onClick={() => navigate("/profile/Connections")} />
+        <Cell icon="connection" image={friendsIcon} text="Connections" onClick={() => navigate("/profile/Connections")} />
         <Cell text="Settings" image={settingsIcon} icon="settings" onClick={() => navigate("profile/Settings")} />        
       </CellRow>
     </main>

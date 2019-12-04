@@ -82,7 +82,7 @@ const Header: React.FC<PropTypes> = ({ title, subtitle }) => {
               </Dropdown.Menu>
             </Dropdown>
             <div>
-              <img src={usericon} className="small-icon" onClick={() => navigate(`/${user.type === UserType.Admin ? 'admin' : 'profile'}`)} alt="profilepic" /> 
+              <img src={user.picture} className="small-icon" onClick={() => navigate(`/${user.type === UserType.Admin ? 'admin' : 'profile'}`)} alt="profilepic" /> 
               <button id="logoutButton" type="button" onClick={handleLogout}>Logout</button>
             </div>
           </>)

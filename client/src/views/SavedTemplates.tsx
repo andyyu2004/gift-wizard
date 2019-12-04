@@ -33,7 +33,7 @@ const SavedTemplates: React.FC<PropType> = props => {
             >{t.label}
             </button>
             <button 
-              style={{marginTop:"5px", marginBottom: "5px", backgroundColor:"#FFF"}}
+              style={{marginTop:"5px", marginBottom: "5px", marginLeft: "10px", backgroundColor:"#FFF"}}
               className="generic-button"
               onClick={() => navigateWithDefaultLoadedQuestionnaire(t)}
               >Edit

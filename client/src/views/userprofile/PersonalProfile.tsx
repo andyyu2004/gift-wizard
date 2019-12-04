@@ -65,7 +65,7 @@ const PersonalProfile: React.FC<PropType> = ({ user }) => {
 		<div className="personal-profile-container">
 			<div className="profileInfo">
 				<img src={picture} className="profilePicture" alt="profilepicture" />
-				<button type="button" id="changeProfile" onClick={e=>setShowUploadPhoto(true)}><strong>Change Profile Photo</strong></button>
+				<button type="button" id="changeProfile" onClick={e=>setShowUploadPhoto(!showUploadPhoto)}><strong>Change Profile Photo</strong></button>
 				{showUploadPhoto && 
 					<div className="uploadPhoto"> 
 						<input type="file" accept="image/jpg,image/png,image/jpeg,image/gif" required  multiple={false} onChange={e => updatePicture(e.target.files)}/>

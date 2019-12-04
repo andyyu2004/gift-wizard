@@ -53,12 +53,13 @@ const questionData: [QuestionType, string, (id: string) => FormRepr][] = [
 type PropType = {
   dispatch: Dispatch<FormAction>,
   questionnaire: Questionnaire,
-  allowEditable?: boolean,
+  allowEditable: boolean,
 };
 
 const QEditContainer: React.FC<PropType> = ({ dispatch, questionnaire, allowEditable }) => {
 
-  const [editable, setEditable] = useState<boolean>(allowEditable || true);
+  const [editable, setEditable] = useState<boolean>(allowEditable);
+  console.log("edtiable", editable);
 
   return (
     <>
@@ -68,7 +69,6 @@ const QEditContainer: React.FC<PropType> = ({ dispatch, questionnaire, allowEdit
         <QuestionSelection dispatch={dispatch} questionData={questionData} />
         <QEdit editable={editable} dispatch={dispatch} questionnaire={questionnaire} />
       </div>
-  
     </>
   );
 };

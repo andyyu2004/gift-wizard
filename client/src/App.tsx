@@ -24,7 +24,7 @@ const App: React.SFC = () => {
         <Home path="/" />
         <Dashboard path="admin" />
         <QCreate path="create" />
-        <QAnswer path="answer" />
+        {/* <QAnswer path="answer" /> */}
         <LoginView path="login" />
         <ProfileView path="profile/*" />
         <PeopleView path="people/:userid" />

@@ -17,7 +17,7 @@ const QAnswer = props => {
         <div className= "title">
           <span>Title: </span>
         </div>
-        <QEditContainer dispatch={dispatch} questionnaire={{ label, forms, background }} allowEditable={true} />
+        <QEditContainer dispatch={dispatch} questionnaire={{ label, forms, background }} allowEditable={false} />
       </div>
     </div>
   );

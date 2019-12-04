@@ -34,8 +34,9 @@ const Mail: React.FC<RouteComponentProps> = () => {
   }, [loadReceived, loadSent]);
 
   const handleClick = (q: Questionnaire) => {
-    if (mailbox == "Sent") navigateWithDefaultLoadedQuestionnaire(q);
-    else if (mailbox == "Received") answerQuestionnaire(q);
+    navigateWithDefaultLoadedQuestionnaire(q);
+    // if (mailbox == "Sent") navigateWithDefaultLoadedQuestionnaire(q);
+    // else if (mailbox == "Received") answerQuestionnaire(q);
   };
 
   return (

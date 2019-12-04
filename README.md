@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-Simply `npm install` under `/team03/client` directory, and then `npm start` to run this application.
+Simply `npm install` under `/team03/client` directory, and then `npm start` under both `/team03/client` and `/team03/server` to run this application.
 
 ## Home View (/)
 
@@ -63,7 +63,6 @@ The bottom few icons are shortcuts to the profile section which can also be acce
 the icon in the header after logging in.
 Currently, you can also access profile without logging in for your convenience.
 
-
 ## Login
 Access this page through the Log In/Sign Up button in the top right.
 
@@ -76,7 +75,8 @@ The Personal Profile is where you can edit your personal information (edit is no
 The Area of Interests and Wishlist sections currently only display the user's "area of interests" and "wishlist" attributes, the user will be allowed to change those fields later. 
 The Connections view lists your connections and you can check out their profile information by clicking on their icon.
 
-
+## Deployed Address
+https://gift-wizard.herokuapp.com/
 
   
 

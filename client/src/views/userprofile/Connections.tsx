@@ -31,10 +31,12 @@ const Connections: React.FC<PropType> = ({ filterFriends }) => {
   }, [filterFriends, user._id]);
 
   return (
-    <div className="flex-container" style={{ overflowWrap: "normal" }}>
-      {people.map(({ username, picture, bio, _id }) => {
-        return <Cell key={_id} text={`${username}`} subtext={bio} image={picture} onClick={() => navigate(`/people/${_id}`)} />
-      })}
+    <div style={{ overflowWrap: "normal" }}>
+      {people.map(({ username, picture, bio, _id }) => 
+        <div style={{ display: "inline-block" }}>
+          <Cell key={_id} text={`${username}`} image={picture} onClick={() => navigate(`/people/${_id}`)} />
+        </div>
+      )}
     </div>
   );
 };

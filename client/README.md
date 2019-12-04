@@ -58,11 +58,14 @@ The All Templates page is very similar to the /open page in which you can view b
 edit templates. The difference is in which templates show up, the open shows personal templates,
 while the All Templates page shows site wide templates set by an administrator.
 
+
 ## Profile Shortcuts
 The bottom few icons are shortcuts to the profile section which can also be accessed through 
 the icon in the header after logging in.
 Currently, you can also access profile without logging in for your convenience.
 
+## Notification
+Access notifications through the button on the left of profile picture in the header, you can accept or reject add friend request there.
 
 ## Login
 Access this page through the Log In/Sign Up button in the top right.

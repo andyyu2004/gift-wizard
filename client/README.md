@@ -72,8 +72,8 @@ The default credentials are user/user and admin/admin for regular user and admin
 ## Profile
 Once logged in as a user, the header changes and you can access the profile through the user icon in the top right of the homepage.
 The profile has five subviews: Personal Profile, Area of Interests, Wishlist, Connections and Settings.
-The Personal Profile is where you can edit your personal information (edit is not currently enabled)
-The Area of Interests and Wishlist sections currently only display the user's "area of interests" and "wishlist" attributes, the user will be allowed to change those fields later. 
+The Personal Profile is where you can edit your personal information, and you can change your profile picture
+The Area of Interests and Wishlist sections display the user's "area of interests" and "wishlist" attributes, user is able to edit it
 The Connections view lists your connections and you can check out their profile information by clicking on their icon.
 
 

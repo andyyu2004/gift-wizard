@@ -18,7 +18,7 @@ const SavedTemplates: React.FC<PropType> = props => {
   const title = props.title || (props.location && props.location.state.title);
 
   /** If currently selected questionnaire is not q, or q is currently undefined, then set currentQ to q, else toggle back to undefined*/
-  const toggleForm = (q: Questionnaire) => currentQ !== q || currentQ === undefined ? setCurrentQ(q) : setCurrentQ(undefined) ;
+  const toggleForm = (q: Questionnaire) => currentQ !== q || currentQ === undefined ? setCurrentQ(q) : setCurrentQ(undefined);
 
   return (
     <div className="page">

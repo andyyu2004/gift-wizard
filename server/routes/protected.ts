@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { saveQuestionnaire, getQuestionnaires, getRepoQuestionnaires, sendQuestionnaire, getReceived } from "../controllers/questionnaire";
+import { saveQuestionnaire, getQuestionnaires, getRepoQuestionnaires, sendQuestionnaire, getReceived, getSent } from "../controllers/questionnaire";
 import { getUser, patchUser, getUsers, getFriends } from '../controllers/user';
 
 const router = Router();
@@ -101,6 +101,12 @@ router.get('/questionnaires', async (req, res) => {
 
 router.get('/questionnaires/received', async (req, res) => {
     getReceived(req.session!.userid)
+        .then(mail => res.send({ mail }))
+        .catch(err => res.status(500).send({ error: err.message }));
+});
+
+router.get('/questionnaires/sent', async (req, res) => {
+    getSent(req.session!.userid)
         .then(mail => res.send({ mail }))
         .catch(err => res.status(500).send({ error: err.message }));
 });

@@ -6,11 +6,8 @@ import { navigateWithDefaultLoadedQuestionnaire, answerQuestionnaire } from '../
 import API from '../api';
 import { Sidebar } from '../components';
 import { QEdit } from '../components/questions';
-<<<<<<< HEAD
 import mailicon from '../images/mail_icon.png';
-=======
 import './Mail.css';
->>>>>>> 30d347c44d2a035be374d14768f2c81c9f24ed0f
 
 const Mail: React.FC<RouteComponentProps> = () => {
   const [received, setReceived] = useState<QMail[]>([]);

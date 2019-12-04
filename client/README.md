@@ -50,7 +50,8 @@ You can edit it by clicking the respective edit which takes you back to the `/cr
 ## Mail
 You can see the received questionnaires and sent questionnaires, for received ones, you can click on one questionnaire and click edit, and send it to the sender
 
-
+##People
+you can add friends here
 
 ## All Templates 
 

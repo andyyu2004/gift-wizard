@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { saveQuestionnaire, getQuestionnaires, getRepoQuestionnaires } from "../controllers/questionnaire";
+import { saveQuestionnaire, getQuestionnaires, getRepoQuestionnaires, sendQuestionnaire, getReceived } from "../controllers/questionnaire";
 import { getUser, patchUser, getUsers, getFriends } from '../controllers/user';
 
 const router = Router();
@@ -99,11 +99,17 @@ router.get('/questionnaires', async (req, res) => {
     }
 });
 
+router.get('/questionnaires/received', async (req, res) => {
+    getReceived(req.session!.userid)
+        .then(mail => res.send({ mail }))
+        .catch(err => res.status(500).send({ error: err.message }));
+});
+
 /** Get saved questionnaires for a user */
 router.get('/questionnaires/:userid', async (req, res) => {
     try {
         const { userid } = req.params;
-        const questionnaires = await getQuestionnaires(userid);
+        const questionnaires = await getQuestionnaires(userid).catch(err => { throw err; });
         return res.json({ questionnaires });
     } catch (error) {
         console.log(`Error ${error.message} (in api/questionnaires/:userid)`);
@@ -111,10 +117,17 @@ router.get('/questionnaires/:userid', async (req, res) => {
     }
 });
 
+/** Send a questionnaire from current user to :receiverid */
+router.post('/questionnaires/:receiverid', async (req, res) => {
+    const { receiverid } = req.params;
+    const { questionnaire } = req.body;
+    sendQuestionnaire(req.session!.userid, receiverid, questionnaire)
+        .then(questionnaires => res.send({ questionnaires }))
+        .catch(err => res.status(500).send({ error: err.message }));
+});
+
 
 export default router;
-
-
 
 
 

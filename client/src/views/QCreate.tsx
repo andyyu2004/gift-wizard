@@ -2,7 +2,7 @@
  * Questionnaire creation page
  */
 import { RouteComponentProps } from '@reach/router';
-import React, { useReducer, useState } from 'react';
+import React, { useReducer, useState, FormEvent } from 'react';
 import { toast } from 'react-toastify';
 import { FormRepr, MultichoiceRepr, Questionnaire, RankFormRepr, RateFormRepr, ShortAnswerRepr, User, UserType } from 'shared/types';
 import uuid from 'uuid/v4';
@@ -14,7 +14,8 @@ import { FormAction } from '../types/FormActions';
 import './QCreate.css';
 import { useSelector } from 'react-redux';
 import { AppState } from '../reducers';
-
+import Popup from 'reactjs-popup';
+import useSocket from '../hooks/useSocket';
 
 type ReducerType = (state: FormRepr[], action: FormAction) => FormRepr[];
 
@@ -131,11 +132,16 @@ const QCreate: React.FC<PropType> = props => {
   /** Workaround to destructuring undefined */
   const { forms: starterForms, label: starterLabel, background: starterBackground } = starterQuestionnaire || {};
 
-  const isAdmin = useSelector<AppState, UserType>(state => state.user.user!.type) === UserType.Admin;
+  const user = useSelector<AppState, User>(state => state.user.user!);
+  const isAdmin = user.type === UserType.Admin;
 
   const [forms, dispatch] = useReducer<ReducerType>(reducer, starterForms || []);
   const [label, setLabel] = useState<string>(starterLabel || "");
   const [background, setBackground] = useState<string>(starterBackground || "grey");
+  const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
+
+  const socket = useSocket();
+  const [friends, setFriends] = useState<User[]>([]);
 
   const saveForm = async () => {
     const errors = validateForm(label, forms);
@@ -155,6 +161,21 @@ const QCreate: React.FC<PropType> = props => {
       .mapLeft(toast.error);
   };
 
+  const fetchFriends = async () => {
+    (await API.getFriends(user._id))
+      .map(setFriends)
+      .mapLeft(toast.error);
+  };
+
+  const sendForm = async (userid: string, username: string) => {
+    const errors = validateForm(label, forms);
+    if (errors.length) return errors.forEach(err => toast.error(err));
+    
+    setIsPopupOpen(false);
+    (await API.sendQuestionnaire({ label, forms, background }, userid))
+      .map(_ => toast.success(`Successfully sent questionnaire to ${username}`))
+      .mapLeft(toast.error);
+  };
 
   return (
     <div className="questionnaire">
@@ -172,8 +193,22 @@ const QCreate: React.FC<PropType> = props => {
       </div>
       {/** Temporarily save form to redux store for now */}
       <button type="button" className="saveForm" onClick={saveForm}>Save</button>
-      <button type="button" className="saveForm" onClick={() => alert("Bit hard to even partially implement this without some form of backend")}>Send To</button>
+      <button type="button" className="saveForm" onClick={() => setIsPopupOpen(true)}>Send To</button>
       {isAdmin && <button type="submit" className="saveForm" onClick={publishForm}>Publish</button>}
+
+      <Popup open={isPopupOpen} position="right center" onClose={() => setIsPopupOpen(false)} onOpen={fetchFriends}>
+        <div>
+          <h5>Choose which friend to send to:</h5>
+          <form>
+            {friends.map(({ _id, picture, username, firstname, surname }) => 
+              <div key={_id}>
+                <img src={picture} style={{ width: "30px"}} />
+                <button type="button" id={_id} className="generic-button" onClick={() => sendForm(_id, username!)}>{username}: {firstname} {surname}</button>
+              </div>
+            )}
+          </form>
+        </div>
+      </Popup>
     </div>
   );
 };

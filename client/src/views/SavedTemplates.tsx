@@ -13,7 +13,6 @@ type PropType = RouteComponentProps & {
 
 const SavedTemplates: React.FC<PropType> = props => {
   const [currentQ, setCurrentQ] = useState<Questionnaire>();
-  console.log(props)
   /** If templates are passed directly use that, else use the ones passed from router */
   const templates: Questionnaire[] = props.templates || (props.location && props.location.state.templates) || [];
   const title = props.title || (props.location && props.location.state.title);

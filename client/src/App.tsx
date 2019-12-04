@@ -2,7 +2,7 @@ import { Router } from '@reach/router';
 import * as React from 'react';
 import './App.css';
 import { Header } from './components';
-import { ErrorsView, Home, LoginView, QCreate, SavedTemplates, Signup } from './views';
+import { ErrorsView, Home, LoginView, QCreate, SavedTemplates, Signup, Mail } from './views';
 import { Dashboard, PeopleView, ProfileView, BrowsePeople } from './views/userprofile';
 
 /**
@@ -29,6 +29,7 @@ const App: React.SFC = () => {
         <PeopleView path="people/:userid" />
         <BrowsePeople path="people" />
         <SavedTemplates path="open" />
+        <Mail path="mail" />
         <Signup path="signup" />
         <ErrorsView path="*" errorCode={404}/>
       </Router>

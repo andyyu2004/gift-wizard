@@ -17,6 +17,11 @@ export declare type Questionnaire = {
     background?: string;
     _id?: string;
 };
+export declare type QMail = {
+    receiver: string;
+    sender: string;
+    questionnaire: Questionnaire;
+};
 export declare type FormRepr = MultichoiceRepr | ShortAnswerRepr | RankFormRepr | RateFormRepr;
 export interface ShortAnswerRepr extends IForm {
     kind: "SAR";

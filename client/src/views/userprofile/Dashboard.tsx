@@ -66,7 +66,7 @@ function QuestionnaireLib() {
   /** Fetch site wide templates */
   useEffect(() => {
     fetchTemplates();
-  }, []);
+  }, [fetchTemplates]);
 
   return (
     <div className= "adminview">

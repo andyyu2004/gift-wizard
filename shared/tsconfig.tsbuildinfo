@@ -70,8 +70,8 @@
         "signature": "9cf0e707801b4563720829841d874ee07389dbbc59dd8a5baee0795743471f4a"
       },
       "./types/form.ts": {
-        "version": "02dbb7072bc3130948ada76872c37071989bc74ccc864299ea0e72d07eefdcbb",
-        "signature": "f340a2330760e3940f79892e4c7475eaf629010a5ce795ba26b673db74e5923e"
+        "version": "a8f3f0f2151979b2e9710d710009d8858bb1222572d78790ac1f36c2a7970f3e",
+        "signature": "0d53b9f80447e53430312b21c78eaf5158f5bae16d33b6bef187be8ac8c2a3fd"
       },
       "./types/notifications.ts": {
         "version": "dfd9b7fc30b9fc2a927e420ba29b6bf635bf442f02c640ca00113e71289e2424",
@@ -135,10 +135,10 @@
       "../../../../../../usr/lib/node_modules/typescript/lib/lib.es2015.symbol.d.ts",
       "../../../../../../usr/lib/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
       "./types/Either.ts",
-      "./types/form.ts",
       "./types/notifications.ts",
-      "./types/index.ts",
-      "./types/user.ts"
+      "./types/user.ts",
+      "./types/form.ts",
+      "./types/index.ts"
     ]
   },
   "version": "3.7.2"

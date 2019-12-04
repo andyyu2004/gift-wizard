@@ -68,7 +68,7 @@ io.on('connection', socket => {
     const { userid } = socket.handshake.query;
     socketmap[userid] = socket.id;
 
-    console.log(`user connected ${userid}`);
+    // console.log(`user connected ${userid}`);
 
     /** Receives parameter of friend id */
     socket.on('send-f-req', async fid => {
@@ -99,7 +99,7 @@ io.on('connection', socket => {
     });
 
     socket.on('disconnect', () => {
-        console.log(`user disconnected ${userid}`);
+        // console.log(`user disconnected ${userid}`);
         delete socketmap[userid];
     });
 });

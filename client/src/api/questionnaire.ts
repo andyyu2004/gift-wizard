@@ -1,4 +1,4 @@
-import { Questionnaire, Left, Right, Either } from "shared/types";
+import { Questionnaire, Left, Right, Either, QMail } from "shared/types";
 import axios from 'axios';
 import { apiErrorHandler } from "./util";
 
@@ -24,5 +24,17 @@ export async function saveRepoQuestionnaire(questionnaire: Questionnaire): Promi
     return axios.post('/api/admin/repo', { questionnaire })
     .then<any>(res => new Right(res.data.questionnaire))
     .catch(apiErrorHandler);
+}
+
+export async function sendQuestionnaire(questionnaire: Questionnaire, receiverid: string): Promise<Either<string, QMail>> {
+    return axios.post(`/api/protected/questionnaires/${receiverid}`, { questionnaire })
+        .then<any>(res => new Right(res.data.questionnaire))
+        .catch(apiErrorHandler);
+}
+
+export async function loadReceived(): Promise<Either<string, QMail[]>> {
+    return axios.get(`/api/protected/questionnaires/received`)
+        .then<any>(res => new Right(res.data.mail))
+        .catch(apiErrorHandler);
 }
 

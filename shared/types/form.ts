@@ -21,6 +21,12 @@ export type Questionnaire = {
     _id?: string,
 };
 
+export type QMail = {
+    receiver: string,
+    sender: string,
+    questionnaire: Questionnaire,
+};
+
 export type FormRepr 
     = MultichoiceRepr 
     | ShortAnswerRepr

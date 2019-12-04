@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useCallback } from 'react'
 import { RouteComponentProps } from '@reach/router';
-import { QMail, Questionnaire } from 'shared/types';
-import { navigateWithDefaultLoadedQuestionnaire } from '../actions/navigation';
-import API from '../api';
+import React, { useCallback, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-import { Tabs, Tab } from 'react-bootstrap';
+import { QMail, Questionnaire } from 'shared/types';
+import { navigateWithDefaultLoadedQuestionnaire, answerQuestionnaire } from '../actions/navigation';
+import API from '../api';
 import { Sidebar } from '../components';
 import { QEdit } from '../components/questions';
+import mailicon from '../images/mail_icon.png';
+import './Mail.css';
 
 const Mail: React.FC<RouteComponentProps> = () => {
   const [received, setReceived] = useState<QMail[]>([]);
@@ -30,17 +31,23 @@ const Mail: React.FC<RouteComponentProps> = () => {
   useEffect(() => {
     loadReceived();
     loadSent();
-  }, [loadReceived]);
+  }, [loadReceived, loadSent]);
+
+  const handleClick = (q: Questionnaire) => {
+    navigateWithDefaultLoadedQuestionnaire(q);
+    // if (mailbox == "Sent") navigateWithDefaultLoadedQuestionnaire(q);
+    // else if (mailbox == "Received") answerQuestionnaire(q);
+  };
 
   return (
     <div className="flex-container">
       <Sidebar entries={[["Received", () => setMailbox("Received")], ["Sent", () => setMailbox("Sent")]]} />
-      <div className="templateContainer">
+      <div className="templateContainerMail">
         <h6>{mailbox}</h6>
         {mail.map(t => 
           <div key={t.questionnaire._id}>
             <button
-              style={{marginTop:"5px", marginBottom: "5px", border: "solid 2px #C4E1FF", backgroundColor:"#FFFFFF"}}
+              style={{marginTop:"5px", marginBottom: "5px", marginRight:"10px", border: "solid 2px #C4E1FF", backgroundColor:"#FFFFFF"}}
               className="generic-button"
               onClick={() => toggleForm(t.questionnaire)}
             >{t.questionnaire.label}
@@ -48,15 +55,15 @@ const Mail: React.FC<RouteComponentProps> = () => {
             <button 
               style={{marginTop:"5px", marginBottom: "5px", backgroundColor:"#FFF"}}
               className="generic-button"
-              onClick={() => navigateWithDefaultLoadedQuestionnaire(t.questionnaire)}
-              >Edit
+              onClick={() => handleClick(t.questionnaire)}
+              >{mailbox == "Received" ? "Answer" : "Edit"}
             </button>
           </div>
           )
         }
       </div>
 
-      <div className="step">
+      <div className="stepMail">
         {currentQ && 
           <div>
             <h6 className="qtitle">{currentQ.label}</h6>

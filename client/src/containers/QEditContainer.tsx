@@ -1,5 +1,4 @@
 import React, { Dispatch, useState } from 'react';
-import { Button } from 'react-bootstrap';
 import 'react-toastify/dist/ReactToastify.css';
 import { FormRepr, Questionnaire, QuestionType } from 'shared/types';
 import uuid from 'uuid/v4';
@@ -54,21 +53,22 @@ const questionData: [QuestionType, string, (id: string) => FormRepr][] = [
 type PropType = {
   dispatch: Dispatch<FormAction>,
   questionnaire: Questionnaire,
+  allowEditable: boolean,
 };
 
-const QEditContainer: React.FC<PropType> = ({ dispatch, questionnaire }) => {
+const QEditContainer: React.FC<PropType> = ({ dispatch, questionnaire, allowEditable }) => {
 
-  const [editable, setEditable] = useState<boolean>(true);
+  const [editable, setEditable] = useState<boolean>(allowEditable);
+  console.log("edtiable", editable);
 
   return (
     <>
-      <button className="preview" onClick={() => setEditable(!editable)}>Toggle Preview</button>
-      {/* <h6>Editable? (for debug): {editable.toString()}</h6> */}
+      {allowEditable && <button className="preview" onClick={() => setEditable(!editable)}>Toggle Preview</button>}
+      <h6>Editable? (for debug): {editable.toString()}</h6>
       <div className="flex-container">
         <QuestionSelection dispatch={dispatch} questionData={questionData} />
         <QEdit editable={editable} dispatch={dispatch} questionnaire={questionnaire} />
       </div>
-  
     </>
   );
 };

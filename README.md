@@ -54,19 +54,13 @@ On this page you can view the template, but it is locked for editing.
 You can edit it by clicking the respective edit which takes you back to the `/create` page.
 
 ## Mail
-You can see the received questionnaires and sent questionnaires, for received ones, you can click on one questionnaire and click edit, you can now edit and answer it and send it to the sender.
+You can see the received questionnaires and sent questionnaires, for received ones, you can click on one questionnaire and click `amswer`, you can now answer it and send it to the sender.
 
 ## People
-you can view all users, and if you click on one user, you can send add friend request here.
+You can view all users, and if you click on one user, you can view further details and send a friend request.
 
 ## All Templates 
-
-There are two spaces on the home screen which we will reserve for the most popular 
-templates, which you can click to take you directly to the create screen where the
-template will be preloaded for you to begin editing.
-The two templates are currently simply named Template 1 and Template 2.  
-
-The All Templates page is very similar to the /open page in which you can view but not 
+The All Templates page is very similar to the /open page in which you can view but not
 edit templates. The difference is in which templates show up, the open shows personal templates,
 while the All Templates page shows site wide templates set by an administrator.
 
@@ -92,7 +86,7 @@ The Area of Interests and Wishlist sections display the user's "area of interest
 The Connections view lists your connections and you can check out their profile information by clicking on their icon.
 
 ## Admin 
-after logging in as an admin, one can create questionnaires and choose to publish it, which means the questionnaires created will appear in every user's template database, and users can use them.
+After logging in as an admin, one can create questionnaires and choose to publish it, which means the questionnaires created will appear in every user's template database, and users can use them.
 
 
 

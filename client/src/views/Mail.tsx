@@ -8,6 +8,7 @@ import { Sidebar } from '../components';
 import { QEdit } from '../components/questions';
 import mailicon from '../images/mail_icon.png';
 import './Mail.css';
+import { withProtection } from '../components/hoc';
 
 const Mail: React.FC<RouteComponentProps> = () => {
 
@@ -76,7 +77,7 @@ const Mail: React.FC<RouteComponentProps> = () => {
   );
 };
 
-export default Mail;
+export default withProtection(Mail);
 
 
 

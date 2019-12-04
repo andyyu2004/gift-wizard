@@ -51,7 +51,7 @@ On this page you can view the template, but it is locked for editing.
 You can edit it by clicking the respective edit which takes you back to the `/create` page.
 
 ## Mail
-You can see the received questionnaires and sent questionnaires, for received ones, you can click on one questionnaire and click edit, and send it to the sender
+You can see the received questionnaires and sent questionnaires, for received ones, you can click on one questionnaire and click `reply`, and send it to the sender
 
 ##People
 you can add friends here

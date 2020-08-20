@@ -19,7 +19,7 @@
     "@types/mongodb": "^3.3.10",
     "@types/mongoose": "^5.5.31",
     "@types/socket.io": "^2.1.4",
-    "bcrypt": "^3.0.7",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "concurrently": "^5.0.0",
     "cors": "^2.8.5 ",

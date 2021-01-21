@@ -30,7 +30,7 @@
     "mongoose": "^5.7.10",
     "nodemon": "^1.19.4",
     "shared": "file:../shared",
-    "socket.io": "^2.3.0",
+    "socket.io": "^2.4.0",
     "typescript": "^3.7.2"
   },
   "devDependencies": {
